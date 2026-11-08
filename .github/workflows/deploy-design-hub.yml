@@ -1,0 +1,78 @@
+name: Deploy Design Hub (Cloudflare)
+
+on:
+  push:
+    branches:
+      - main
+      - 'preview/**'
+      - 'feat/**'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Workers Static Assets
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Sync latest Storybook index metadata (optional non-blocking)
+        run: node scripts/sync-storybook-baseline.mjs || true
+
+      - name: Deploy Production (main branch)
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          npx --yes wrangler@4 deploy --config ./wrangler.jsonc
+          echo "DEPLOY_URL=https://x-talent-design-hub.x-talent.workers.dev" >> "$GITHUB_ENV"
+
+      - name: Deploy Preview (preview/* branch or PR)
+        if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+        run: |
+          npx --yes wrangler@4 deploy --config ./wrangler.preview.jsonc
+          echo "DEPLOY_URL=https://x-talent-design-hub-preview.x-talent.workers.dev" >> "$GITHUB_ENV"
+
+      - name: Comment Preview URL on Commit / PR
+        if: always() && env.DEPLOY_URL != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = process.env.DEPLOY_URL;
+            const isProd = context.ref === 'refs/heads/main' && context.eventName !== 'pull_request';
+            const body = isProd
+              ? `✅ **X-Talent Design Hub 正式站已更新**：\n👉 ${url}`
+              : `🔍 **X-Talent Design Hub 預覽站已更新（請先找 Jack / PM 確認無舊畫面衝突後再合入 main）**：\n👉 ${url}`;
+            if (context.payload.pull_request) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body
+              });
+            } else {
+              await github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha,
+                body
+              });
+            }

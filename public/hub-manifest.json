@@ -1,0 +1,36 @@
+{
+  "updatedAt": "2026-11-08T05:32:52.464Z",
+  "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
+  "figmaSourceOfTruthUrl": "https://www.figma.com/design/caZJl0JBnxn0KZunPev0fX/",
+  "devSiteUrl": "https://xtalentdev.vercel.app",
+  "screens": [
+    {
+      "id": "chat-654",
+      "title": "聊聊設計探索 (Mentee 發起對話與聊天室)",
+      "ticket": "#654",
+      "status": "Design Review",
+      "author": "Bonny (@bonny8000)",
+      "updatedAt": "2026-11-07",
+      "path": "./screens/chat-654.html",
+      "notes": "由 Bonny 建立之互動原型與流程參考頁面（已從 bonny80.chatgpt.site 遷移至公開 Cloudflare CDN）"
+    },
+    {
+      "id": "mentor-card-737",
+      "title": "搜尋頁 Mentor 卡片顯示平均分與收藏 (Option B)",
+      "ticket": "#737 / #753",
+      "status": "Approved",
+      "author": "Bonny (@bonny8000)",
+      "updatedAt": "2026-11-07",
+      "path": "./screens/mentor-card-737.html",
+      "notes": "名字右側 9.8 / 10、職稱、職稱正下方對齊已完成 N 場 1-on-1，右上角書籤收藏按鈕"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-07",
+      "ticket": "#826 / #654 / #737",
+      "author": "Jack & Bonny",
+      "summary": "建立公開 X-Talent Design Hub (Cloudflare 自動部署)，串接即時線上 Storybook 元件庫 (x-talent-storybook.x-talent.workers.dev) 與全站 Figma Source of Truth，取代私有 401 chatgpt.site 連結。"
+    }
+  ]
+}

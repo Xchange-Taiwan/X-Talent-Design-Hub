@@ -1,0 +1,8 @@
+{
+  "name": "x-talent-design-hub-preview",
+  "compatibility_date": "2026-10-29",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public"
+  }
+}
