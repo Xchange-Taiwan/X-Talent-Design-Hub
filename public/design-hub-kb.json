@@ -1,0 +1,2597 @@
+{
+  "syncedAt": "2026-11-09T16:29:18.723Z",
+  "revision": "github-alignment-2026-11-07",
+  "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
+  "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
+  "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
+  "repository": "Xchange-Taiwan/X-Talent-Design-Hub",
+  "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
+  "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+  "summary": {
+    "totalScreens": 29,
+    "totalComponents": 28,
+    "existingStorybookMappedCount": 11,
+    "newCompositeDesignsCount": 14,
+    "totalStorybookStories": 372,
+    "trackedTicketsCount": 9
+  },
+  "tickets": [
+    {
+      "id": "737",
+      "name": "導師卡平均分與完成場次",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "740",
+      "name": "登入後填寫回饋",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "710",
+      "name": "首頁推薦語輪播",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "730",
+      "name": "歷史紀錄與會談回饋",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "709",
+      "name": "首頁 CTA",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "742",
+      "name": "導師資料建立與完成",
+      "date": "2026-11-03"
+    },
+    {
+      "id": "274",
+      "name": "導師個人頁與評價",
+      "date": "2026-10-15"
+    },
+    {
+      "id": "753",
+      "name": "收藏導師",
+      "date": "2026-10-13"
+    },
+    {
+      "id": "774",
+      "name": "預約與聊聊整合"
+    },
+    {
+      "id": "654",
+      "name": "聊聊設計探索 (Mentee 發起對話與聊天室)",
+      "date": "2026-11-07"
+    }
+  ],
+  "screenGroups": [
+    {
+      "group": "探索與首頁",
+      "count": 3,
+      "screens": [
+        {
+          "id": "home",
+          "name": "首頁",
+          "tickets": [
+            "709",
+            "710"
+          ],
+          "version": "GitHub 核對 11/07",
+          "scenariosCount": 5,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=home"
+        },
+        {
+          "id": "mentor-search",
+          "name": "尋找導師",
+          "route": "/mentor-pool",
+          "tickets": [
+            "737",
+            "753"
+          ],
+          "version": "11/07 核對 · #737 B",
+          "scenariosCount": 5,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-search"
+        },
+        {
+          "id": "about",
+          "name": "關於 X-Talent",
+          "route": "/about",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=about"
+        }
+      ]
+    },
+    {
+      "group": "預約與回饋",
+      "count": 4,
+      "screens": [
+        {
+          "id": "history",
+          "name": "歷史紀錄與回饋",
+          "tickets": [
+            "730"
+          ],
+          "version": "4",
+          "scenariosCount": 4,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=history"
+        },
+        {
+          "id": "login-feedback",
+          "name": "登入回饋",
+          "tickets": [
+            "740"
+          ],
+          "version": "GitHub 核對 11/07",
+          "scenariosCount": 7,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=login-feedback"
+        },
+        {
+          "id": "mentor-reservations",
+          "name": "擔任導師",
+          "route": "/reservation/mentor",
+          "tickets": [
+            "774"
+          ],
+          "version": "11/07 會議 · 聊聊整合",
+          "scenariosCount": 3,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
+        },
+        {
+          "id": "mentee-reservations",
+          "name": "預約導師",
+          "route": "/reservation/mentee",
+          "tickets": [
+            "774"
+          ],
+          "version": "11/07 會議 · 聊聊整合",
+          "scenariosCount": 3,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-reservations"
+        }
+      ]
+    },
+    {
+      "group": "導師與個人頁",
+      "count": 8,
+      "screens": [
+        {
+          "id": "mentor-form",
+          "name": "導師資料建立",
+          "tickets": [
+            "742"
+          ],
+          "version": "7",
+          "scenariosCount": 10,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-form"
+        },
+        {
+          "id": "mentor-welcome",
+          "name": "導師建立完成",
+          "tickets": [
+            "742"
+          ],
+          "version": "7",
+          "scenariosCount": 4,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-welcome"
+        },
+        {
+          "id": "public-profile",
+          "name": "導師公開頁",
+          "route": "/profile/1",
+          "tickets": [
+            "774",
+            "274",
+            "753"
+          ],
+          "version": "11/07 會議 · 聊聊整合",
+          "scenariosCount": 7,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=public-profile"
+        },
+        {
+          "id": "mentor-calendar",
+          "name": "導師行事曆",
+          "route": "/profile/100",
+          "tickets": [
+            "274"
+          ],
+          "version": "交付稿 2026.10",
+          "scenariosCount": 3,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-calendar"
+        },
+        {
+          "id": "mentee-profile",
+          "name": "學員個人頁",
+          "route": "/profile/100?role=mentee",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-profile"
+        },
+        {
+          "id": "mentee-edit",
+          "name": "學員編輯資料",
+          "route": "/profile/100/edit",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 2,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-edit"
+        },
+        {
+          "id": "mentee-card",
+          "name": "學員建立完成",
+          "route": "/profile/card",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-card"
+        },
+        {
+          "id": "favorites",
+          "name": "我的收藏",
+          "route": "/favorites",
+          "tickets": [
+            "737",
+            "753"
+          ],
+          "version": "11/07 核對 · #737 B",
+          "scenariosCount": 3,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=favorites"
+        }
+      ]
+    },
+    {
+      "group": "帳號與註冊",
+      "count": 9,
+      "screens": [
+        {
+          "id": "signin",
+          "name": "登入",
+          "route": "/auth/signin",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 2,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=signin"
+        },
+        {
+          "id": "signup",
+          "name": "註冊",
+          "route": "/auth/signup",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=signup"
+        },
+        {
+          "id": "onboarding",
+          "name": "首次個人資料",
+          "route": "/auth/onboarding",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 5,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=onboarding"
+        },
+        {
+          "id": "verify",
+          "name": "驗證信箱",
+          "route": "/auth/email-verify",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=verify"
+        },
+        {
+          "id": "verified",
+          "name": "信箱驗證結果",
+          "route": "/auth/email-verified",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 2,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=verified"
+        },
+        {
+          "id": "forgot",
+          "name": "忘記密碼",
+          "route": "/auth/password-forgot",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=forgot"
+        },
+        {
+          "id": "forgot-sent",
+          "name": "密碼重設信件",
+          "route": "/auth/password-forgot-success",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=forgot-sent"
+        },
+        {
+          "id": "reset",
+          "name": "重設密碼",
+          "route": "/auth/password-reset?token=preview",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=reset"
+        },
+        {
+          "id": "reset-done",
+          "name": "密碼重設完成",
+          "route": "/auth/password-reset-success",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=reset-done"
+        }
+      ]
+    },
+    {
+      "group": "其他頁面",
+      "count": 3,
+      "screens": [
+        {
+          "id": "privacy",
+          "name": "隱私權政策",
+          "route": "/privacy",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=privacy"
+        },
+        {
+          "id": "terms",
+          "name": "服務條款",
+          "route": "/terms",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=terms"
+        },
+        {
+          "id": "maintenance",
+          "name": "維護頁面",
+          "route": "/maintenance",
+          "tickets": [],
+          "version": "develop · c6c3660",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=maintenance"
+        }
+      ]
+    },
+    {
+      "group": "獨立探索原型 (Standalone Screens)",
+      "count": 2,
+      "screens": [
+        {
+          "id": "chat-654",
+          "name": "聊聊設計探索 (Mentee 發起對話與聊天室)",
+          "tickets": [
+            "654"
+          ],
+          "version": "Design Review",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html"
+        },
+        {
+          "id": "mentor-card-737",
+          "name": "搜尋頁 Mentor 卡片顯示平均分與收藏 (Option B)",
+          "tickets": [
+            "737",
+            "753"
+          ],
+          "version": "Approved",
+          "scenariosCount": 1,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/mentor-card-737.html"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "id": "home",
+      "name": "首頁",
+      "group": "探索與首頁",
+      "description": "首頁 CTA、推薦語輪播",
+      "module": "home",
+      "tickets": [
+        "709",
+        "710"
+      ],
+      "date": "2026-11-07",
+      "version": "GitHub 核對 11/07",
+      "sourceKind": "confirmed-update",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/710#issuecomment-6642719422",
+      "frontendCode": "src/app/(landing)/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "訪客 · 完整首頁"
+        },
+        {
+          "key": "quotes",
+          "label": "推薦語輪播"
+        },
+        {
+          "key": "cta",
+          "label": "訪客 · 首頁 CTA"
+        },
+        {
+          "key": "mentee-cta",
+          "label": "Mentee · 首頁 CTA"
+        },
+        {
+          "key": "mentor-cta",
+          "label": "Mentor · 首頁 CTA"
+        }
+      ],
+      "components": [
+        "header",
+        "hero",
+        "quote",
+        "avatar"
+      ],
+      "note": "#710 依會議結論使用既有輪播，六則獨立文案、Carolina 真人照片與五張插畫。元件與資產取自 PR #1184（尚未合併），不是宣稱正式站已上線。#709 角色 CTA 依已合併 PR #1205；保留既有交付按鈕樣式。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=home"
+    },
+    {
+      "id": "history",
+      "name": "歷史紀錄與回饋",
+      "group": "預約與回饋",
+      "description": "單場回饋、查看紀錄",
+      "module": "730",
+      "tickets": [
+        "730"
+      ],
+      "date": "2026-10-26",
+      "version": "4",
+      "sourceKind": "delivery-snapshot",
+      "sourceUrl": "https://xtalent-feedback-730.bonny80.chatgpt.site/",
+      "frontendCode": "src/app/reservation/mentee/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "歷史紀錄"
+        },
+        {
+          "key": "form",
+          "label": "填寫回饋 · 第一步"
+        },
+        {
+          "key": "rating",
+          "label": "評分與文字回饋"
+        },
+        {
+          "key": "failure",
+          "label": "送出失敗 · 可重試"
+        }
+      ],
+      "components": [
+        "header",
+        "reservation",
+        "feedback",
+        "rating",
+        "textarea",
+        "toast",
+        "button"
+      ],
+      "note": "以你的交付設計為主。沿用 #730 v4。可填寫、送出及查看回饋。情境切換會重設這一段示範資料。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=history"
+    },
+    {
+      "id": "login-feedback",
+      "name": "登入回饋",
+      "group": "預約與回饋",
+      "description": "登入彈窗、逐場填寫",
+      "module": "740",
+      "tickets": [
+        "740"
+      ],
+      "date": "2026-11-07",
+      "version": "GitHub 核對 11/07",
+      "sourceKind": "confirmed-update",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/740#issuecomment-6582813408",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "Mentee · 三場待回饋"
+        },
+        {
+          "key": "single",
+          "label": "Mentee · 只有一場"
+        },
+        {
+          "key": "mentor",
+          "label": "Mentor · 三場待回饋"
+        },
+        {
+          "key": "peer",
+          "label": "對方已回答未進行"
+        },
+        {
+          "key": "signin",
+          "label": "從登入前開始"
+        },
+        {
+          "key": "answered",
+          "label": "已完成回饋 · 不彈窗"
+        },
+        {
+          "key": "empty",
+          "label": "沒有待回饋 · 不彈窗"
+        }
+      ],
+      "components": [
+        "header",
+        "queue",
+        "feedback",
+        "rating",
+        "textarea",
+        "toast",
+        "button"
+      ],
+      "note": "沿用 #740 卡疊與 #730 表單。依 PM 決議，X 只略過本次登入的當前場次，下次重新登入仍提醒未回答場次；Mentor 取消 14 天截止。可關完彈窗後從帳號選單登出，再登入驗證。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=login-feedback"
+    },
+    {
+      "id": "mentor-form",
+      "name": "導師資料建立",
+      "group": "導師與個人頁",
+      "description": "FR-01 · 表單與主要狀態",
+      "module": "742",
+      "tickets": [
+        "742"
+      ],
+      "date": "2026-11-03",
+      "version": "7",
+      "sourceKind": "delivery-snapshot",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+      "frontendCode": "src/app/profile/[pageUserId]/edit/page.tsx",
+      "scenarios": [
+        {
+          "key": "fresh",
+          "label": "首次建立 · 只有姓名"
+        },
+        {
+          "key": "partial",
+          "label": "部分完成"
+        },
+        {
+          "key": "complete",
+          "label": "資料完整"
+        },
+        {
+          "key": "name-edit",
+          "label": "編輯姓名"
+        },
+        {
+          "key": "service-open",
+          "label": "服務選單展開"
+        },
+        {
+          "key": "work-empty",
+          "label": "工作經驗 · 尚未新增"
+        },
+        {
+          "key": "work-filled",
+          "label": "工作經驗 · 已新增"
+        },
+        {
+          "key": "education-empty",
+          "label": "教育經歷 · 尚未新增"
+        },
+        {
+          "key": "education-filled",
+          "label": "教育經歷 · 已新增"
+        },
+        {
+          "key": "save-error",
+          "label": "儲存失敗 · 內容保留"
+        }
+      ],
+      "components": [
+        "header",
+        "avatar",
+        "profile",
+        "input",
+        "textarea",
+        "chip",
+        "button",
+        "toast"
+      ],
+      "note": "以你的交付設計為主。沿用 #742 v7，保留既有元件與字距。最新 PM 調整已在原 site，尚未同步至 Figma。 11/07 #742 新增雙軌導師規劃，涉及新增方案／後台（#830–#832），尚無本平台已交付畫面；本次保留已 review 的 v7，待新流程設計。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-form"
+    },
+    {
+      "id": "mentor-welcome",
+      "name": "導師建立完成",
+      "group": "導師與個人頁",
+      "description": "FR-02 · 導師卡與設定時段",
+      "module": "742",
+      "tickets": [
+        "742"
+      ],
+      "date": "2026-11-03",
+      "version": "7",
+      "sourceKind": "delivery-snapshot",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+      "frontendCode": "src/app/profile/card/page.tsx",
+      "scenarios": [
+        {
+          "key": "welcome",
+          "label": "建立成功 · 小卡正面"
+        },
+        {
+          "key": "card-back",
+          "label": "導師小卡背面"
+        },
+        {
+          "key": "personal-profile",
+          "label": "返回個人頁"
+        },
+        {
+          "key": "booking-settings",
+          "label": "設定預約時段"
+        }
+      ],
+      "components": [
+        "header",
+        "member",
+        "booking",
+        "button"
+      ],
+      "note": "以你的交付設計為主。沿用 #742 v7 的導師小卡、翻面及後續設定；點「編輯資料」可以回到既有表單。 11/07 #742 新增雙軌導師規劃，涉及新增方案／後台（#830–#832），尚無本平台已交付畫面；本次保留已 review 的 v7，待新流程設計。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-welcome"
+    },
+    {
+      "id": "mentor-search",
+      "name": "尋找導師",
+      "group": "探索與首頁",
+      "module": "frontend",
+      "route": "/mentor-pool",
+      "tickets": [
+        "737",
+        "753"
+      ],
+      "date": "2026-11-07",
+      "version": "11/07 核對 · #737 B",
+      "sourceKind": "confirmed-update",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "登入後 · 導師池"
+        },
+        {
+          "key": "guest",
+          "label": "訪客 · 導師池"
+        },
+        {
+          "key": "menu",
+          "label": "帳號選單"
+        },
+        {
+          "key": "empty",
+          "label": "沒有搜尋結果"
+        },
+        {
+          "key": "no-ratings",
+          "label": "尚無評價與完成場次"
+        }
+      ],
+      "components": [
+        "favorites-header",
+        "favorite-card",
+        "favorite-toggle",
+        "account-menu",
+        "favorite-login",
+        "toast"
+      ],
+      "note": "補入已交付 #753 導師池、帳號選單及收藏流程。沿用 10/13 中文 header 和全螢幕 Mobile 帳號選單；Tablet 由同一設計響應調整。最新 ticket 已排除新時段通知。 #737 已確認 B 版：姓名左／純數字平均分右，職稱公司滿寬，完成場次另列；保留 #753 照片比例與收藏。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-search"
+    },
+    {
+      "id": "about",
+      "name": "關於 X-Talent",
+      "group": "探索與首頁",
+      "module": "frontend",
+      "route": "/about",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/about/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "完整頁面"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=about"
+    },
+    {
+      "id": "signin",
+      "name": "登入",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/signin",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/(sign)/signin/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "登入表單"
+        },
+        {
+          "key": "error",
+          "label": "登入失敗"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=signin"
+    },
+    {
+      "id": "signup",
+      "name": "註冊",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/signup",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/(sign)/signup/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "註冊表單"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=signup"
+    },
+    {
+      "id": "onboarding",
+      "name": "首次個人資料",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/onboarding",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/(sign)/onboarding/page.tsx",
+      "scenarios": [
+        {
+          "key": "step1",
+          "label": "姓名與頭像"
+        },
+        {
+          "key": "step2",
+          "label": "個人資訊"
+        },
+        {
+          "key": "step3",
+          "label": "職位"
+        },
+        {
+          "key": "step4",
+          "label": "技能"
+        },
+        {
+          "key": "step5",
+          "label": "主題"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=onboarding"
+    },
+    {
+      "id": "verify",
+      "name": "驗證信箱",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/email-verify",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/email-verify/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "驗證信已送出"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=verify"
+    },
+    {
+      "id": "verified",
+      "name": "信箱驗證結果",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/email-verified",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/email-verified/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "驗證成功"
+        },
+        {
+          "key": "failure",
+          "label": "連結失效"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=verified"
+    },
+    {
+      "id": "forgot",
+      "name": "忘記密碼",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/password-forgot",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/password-forgot/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "輸入信箱"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=forgot"
+    },
+    {
+      "id": "forgot-sent",
+      "name": "密碼重設信件",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/password-forgot-success",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/password-forgot-success/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "寄送成功"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=forgot-sent"
+    },
+    {
+      "id": "reset",
+      "name": "重設密碼",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/password-reset?token=preview",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/password-reset/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "重設密碼"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=reset"
+    },
+    {
+      "id": "reset-done",
+      "name": "密碼重設完成",
+      "group": "帳號與註冊",
+      "module": "frontend",
+      "route": "/auth/password-reset-success",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/auth/password-reset-success/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "完成"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=reset-done"
+    },
+    {
+      "id": "public-profile",
+      "name": "導師公開頁",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/profile/1",
+      "tickets": [
+        "774",
+        "274",
+        "753"
+      ],
+      "date": "2026-11-08",
+      "version": "11/07 會議 · 聊聊整合",
+      "sourceKind": "design",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/274#issuecomment-6109852726",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "簡介與收藏"
+        },
+        {
+          "key": "guest",
+          "label": "訪客 · 個人頁"
+        },
+        {
+          "key": "login",
+          "label": "登入攔截"
+        },
+        {
+          "key": "saved",
+          "label": "收藏成功"
+        },
+        {
+          "key": "failure",
+          "label": "收藏失敗 · 可重試"
+        },
+        {
+          "key": "reviews",
+          "label": "評價與分頁"
+        },
+        {
+          "key": "no-reviews",
+          "label": "尚無評價"
+        }
+      ],
+      "components": [
+        "favorites-header",
+        "mentor-profile",
+        "mentor-reviews",
+        "mentor-booking",
+        "favorite-toggle",
+        "favorite-login",
+        "toast"
+      ],
+      "note": "還原 #274 導師頁與 #753 收藏交付：Zahra 示範資料、簡介／評價／空評價、三裝置排列、收藏與登入攔截。收藏狀態與導師池、我的收藏共用。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=public-profile"
+    },
+    {
+      "id": "mentor-calendar",
+      "name": "導師行事曆",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/profile/100",
+      "tickets": [
+        "274"
+      ],
+      "date": "2026-10-15",
+      "version": "交付稿 2026.10",
+      "sourceKind": "design",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/274#issuecomment-6109852726",
+      "scenarios": [
+        {
+          "key": "owner",
+          "label": "導師查看"
+        },
+        {
+          "key": "schedule",
+          "label": "設定預約時段"
+        },
+        {
+          "key": "empty",
+          "label": "尚無時段"
+        }
+      ],
+      "components": [
+        "header",
+        "mentor-profile",
+        "mentor-reviews",
+        "mentor-booking",
+        "avatar",
+        "button"
+      ],
+      "note": "以已交付 #274 導師頁的雙欄、簡介／評價分頁及預約側欄為主，#753 收藏控制保留。人物內容使用模擬資料。導師設定時段彈窗沿用前端既有功能，尚無已確認的對應交付稿。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-calendar"
+    },
+    {
+      "id": "mentee-profile",
+      "name": "學員個人頁",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/profile/100?role=mentee",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/profile/[pageUserId]/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "已完成資料"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-profile"
+    },
+    {
+      "id": "mentee-edit",
+      "name": "學員編輯資料",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/profile/100/edit",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/profile/[pageUserId]/edit/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "已有資料"
+        },
+        {
+          "key": "empty",
+          "label": "尚未填寫"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-edit"
+    },
+    {
+      "id": "mentee-card",
+      "name": "學員建立完成",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/profile/card",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/profile/card/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "個人小卡"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-card"
+    },
+    {
+      "id": "mentor-reservations",
+      "name": "擔任導師",
+      "group": "預約與回饋",
+      "module": "frontend",
+      "route": "/reservation/mentor",
+      "tickets": [
+        "774"
+      ],
+      "date": "2026-11-08",
+      "version": "11/07 會議 · 聊聊整合",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "即將到來"
+        },
+        {
+          "key": "pending",
+          "label": "待確認"
+        },
+        {
+          "key": "empty",
+          "label": "尚無預約"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
+    },
+    {
+      "id": "mentee-reservations",
+      "name": "預約導師",
+      "group": "預約與回饋",
+      "module": "frontend",
+      "route": "/reservation/mentee",
+      "tickets": [
+        "774"
+      ],
+      "date": "2026-11-08",
+      "version": "11/07 會議 · 聊聊整合",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "即將到來"
+        },
+        {
+          "key": "pending",
+          "label": "待確認"
+        },
+        {
+          "key": "empty",
+          "label": "尚無預約"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-reservations"
+    },
+    {
+      "id": "privacy",
+      "name": "隱私權政策",
+      "group": "其他頁面",
+      "module": "frontend",
+      "route": "/privacy",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/privacy/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "完整頁面"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=privacy"
+    },
+    {
+      "id": "terms",
+      "name": "服務條款",
+      "group": "其他頁面",
+      "module": "frontend",
+      "route": "/terms",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/terms/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "完整頁面"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=terms"
+    },
+    {
+      "id": "maintenance",
+      "name": "維護頁面",
+      "group": "其他頁面",
+      "module": "frontend",
+      "route": "/maintenance",
+      "tickets": [],
+      "date": "2026-11-07",
+      "version": "develop · c6c3660",
+      "sourceKind": "frontend",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/maintenance/page.tsx",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "維護中"
+        }
+      ],
+      "components": [
+        "header",
+        "button",
+        "avatar",
+        "input",
+        "textarea",
+        "reservation"
+      ],
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=maintenance"
+    },
+    {
+      "id": "favorites",
+      "name": "我的收藏",
+      "group": "導師與個人頁",
+      "module": "frontend",
+      "route": "/favorites",
+      "tickets": [
+        "737",
+        "753"
+      ],
+      "date": "2026-11-07",
+      "version": "11/07 核對 · #737 B",
+      "sourceKind": "confirmed-update",
+      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "收藏清單"
+        },
+        {
+          "key": "one",
+          "label": "剩一位導師"
+        },
+        {
+          "key": "empty-favorites",
+          "label": "尚無收藏"
+        }
+      ],
+      "components": [
+        "favorites-header",
+        "favorite-card",
+        "favorite-toggle",
+        "favorites-empty",
+        "account-menu",
+        "toast"
+      ],
+      "note": "依 #753 原交付重建收藏清單、剩一位與空狀態。取消即移除，最後一位取消後顯示尋找導師；不通知導師、不發送新時段通知。 #737 已確認 B 版：姓名左／純數字平均分右，職稱公司滿寬，完成場次另列；保留 #753 照片比例與收藏。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=favorites"
+    },
+    {
+      "id": "chat-654",
+      "name": "聊聊設計探索 (Mentee 發起對話與聊天室)",
+      "group": "獨立探索原型 (Standalone Screens)",
+      "module": "standalone",
+      "tickets": [
+        "654"
+      ],
+      "date": "2026-11-07",
+      "version": "Design Review",
+      "sourceKind": "standalone-prototype",
+      "sourceUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "聊聊設計探索 (Mentee 發起對話與聊天室)"
+        }
+      ],
+      "components": [],
+      "note": "由 Bonny 建立之互動原型與流程參考頁面（已從 bonny80.chatgpt.site 遷移至公開 Cloudflare CDN）",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html"
+    },
+    {
+      "id": "mentor-card-737",
+      "name": "搜尋頁 Mentor 卡片顯示平均分與收藏 (Option B)",
+      "group": "獨立探索原型 (Standalone Screens)",
+      "module": "standalone",
+      "tickets": [
+        "737",
+        "753"
+      ],
+      "date": "2026-11-07",
+      "version": "Approved",
+      "sourceKind": "standalone-prototype",
+      "sourceUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/mentor-card-737.html",
+      "scenarios": [
+        {
+          "key": "default",
+          "label": "搜尋頁 Mentor 卡片顯示平均分與收藏 (Option B)"
+        }
+      ],
+      "components": [],
+      "note": "名字右側 9.8 / 10、職稱、職稱正下方對齊已完成 N 場 1-on-1，右上角書籤收藏按鈕",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/mentor-card-737.html"
+    }
+  ],
+  "components": [
+    {
+      "id": "header",
+      "name": "Header",
+      "label": "頁首導覽",
+      "kind": "共用區塊",
+      "code": "src/components/layout/Header/Header.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "home",
+        "history",
+        "login-feedback",
+        "mentor-form"
+      ],
+      "rules": [
+        "訪客與登入狀態依各交付畫面呈現。",
+        "桌面與行動版沿用各原型的既有導覽。"
+      ],
+      "changes": [],
+      "mapping": "分類位置已找到；各版本狀態尚未逐一核對。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-header--unresolved-state"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "label": "按鈕",
+      "kind": "基礎元件",
+      "code": "src/components/ui/button.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "history",
+        "login-feedback",
+        "mentor-form"
+      ],
+      "rules": [
+        "保留既有 primary、outline、ghost 樣式。",
+        "Hover、focus 與 disabled 由各來源元件呈現。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-11-03",
+          "text": "稍後再設定：淺灰文字、與區塊拉開距離、水平置中。"
+        },
+        {
+          "ticket": "730",
+          "date": "2026-10-26",
+          "text": "移除稍後再填；保留關閉及上一步。"
+        }
+      ],
+      "mapping": "已找到 Figma 目錄與前端檔案；不是自動同步。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+    },
+    {
+      "id": "hero",
+      "name": "Homepage CTA",
+      "label": "首頁行動區",
+      "kind": "頁面區塊",
+      "code": "src/components/landing/HomePageCtaButton.tsx",
+      "commit": "9de3a203cfde4fba687bdd526e75313b561e708d",
+      "screens": [
+        "home"
+      ],
+      "scenario": "cta",
+      "rules": [
+        "保留已交付 CTA 的字級、留白與箭頭互動。",
+        "Hero／頁尾：訪客加入→註冊；登入後尋找導師→導師池。",
+        "中段：訪客成為 Mentor/Mentee→註冊；Mentee 成為 Mentor→建立頁；Mentor 開放預約時段→自己的行事曆並開啟設定。"
+      ],
+      "changes": [
+        {
+          "ticket": "709",
+          "date": "2026-11-07",
+          "text": "對齊已合併前端的 Visitor／Mentee／Mentor 文案及目的頁。"
+        },
+        {
+          "ticket": "709",
+          "date": "2026-10-06",
+          "text": "首頁主 CTA 與 Mentor／Mentee 共用加入入口。"
+        }
+      ],
+      "mapping": "角色分流取自已合併 PR #1205；帳號使用本地模擬資料。",
+      "storybookUrl": null
+    },
+    {
+      "id": "quote",
+      "name": "HomePageSlider",
+      "label": "推薦語輪播",
+      "kind": "業務元件",
+      "code": "src/components/landing/HomePageSlider.tsx",
+      "commit": "b9e79681a72d59f68667fa774395c0352775acc2",
+      "screens": [
+        "home"
+      ],
+      "scenario": "quotes",
+      "rules": [
+        "依前端既有版型：寬度 >1024px 同時顯示兩則，其餘顯示一則。",
+        "六則獨立文案；Carolina 保留真人照片，其他五位使用已交付插畫。圖片失敗也回退至插畫。",
+        "沿用 Swiper 的圓點、滑動、5 秒自動輪播；檢視模式暫停，返回操作後繼續。"
+      ],
+      "changes": [
+        {
+          "ticket": "710",
+          "date": "2026-11-07",
+          "text": "依最新前端回覆保留既有輪播，移除舊三張卡與姓名縮寫，改用六則文案、真人／插畫頭像。"
+        },
+        {
+          "ticket": "710",
+          "date": "2026-10-26",
+          "text": "補照片／姓名縮寫兩種 Avatar；字母置中且不換行。"
+        }
+      ],
+      "mapping": "直接引用 PR #1184 的 HomePageSlider 與資料、六個 WebP 資產。PR 尚未合併，平台先展示已確認需求的測試版本。",
+      "storybookUrl": null
+    },
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "label": "頭像",
+      "kind": "基礎元件",
+      "code": "src/components/ui/avatar.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "home",
+        "mentor-form"
+      ],
+      "rules": [
+        "#710：真人照片優先，未提供／載入失敗使用插畫。",
+        "#742：沿用既有預設插畫，可點擊更換照片。"
+      ],
+      "changes": [
+        {
+          "ticket": "710",
+          "date": "2026-11-07",
+          "text": "輪播採用 Bonny 提供的插畫，不再使用姓名縮寫 fallback。"
+        },
+        {
+          "ticket": "742",
+          "date": "2026-10-29",
+          "text": "建立資料使用既有預設頭像，直接點擊上傳。"
+        },
+        {
+          "ticket": "710",
+          "date": "2026-10-26",
+          "text": "推薦語卡片加入照片及姓名縮寫狀態。"
+        }
+      ],
+      "mapping": "兩種產品情境的 fallback 有別，不合併成同一預設規則。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+    },
+    {
+      "id": "reservation",
+      "name": "ReservationCard",
+      "label": "歷史紀錄卡片",
+      "kind": "業務元件",
+      "code": "src/components/reservation/ReservationCard.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "history"
+      ],
+      "rules": [
+        "展開內容維持原卡片寬度。",
+        "狀態保留右上，內部不重複顯示。"
+      ],
+      "changes": [
+        {
+          "ticket": "730",
+          "date": "2026-10-26",
+          "text": "保留回饋入口、移除重複狀態並對齊內部內容。"
+        }
+      ],
+      "mapping": "前端有同名元件；本畫面來自交付 site，尚未宣稱實作一致。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-預約管理-reservation-reservationcard--pending"
+    },
+    {
+      "id": "feedback",
+      "name": "FeedbackForm",
+      "label": "會談回饋表單",
+      "kind": "業務元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "history",
+        "login-feedback"
+      ],
+      "scenario": "form",
+      "rules": [
+        "先確認會談是否進行，再填評分或未進行原因。",
+        "#730 單場表單；#740 共用設計並加上登入與佇列規則。",
+        "Mentee 送出即公開；不顯示冷凍期／尚未公開狀態。未進行原因統一使用「未出席」。"
+      ],
+      "changes": [
+        {
+          "ticket": "730",
+          "date": "2026-11-07",
+          "text": "共用未進行原因統一「未出席」；保留送出後不可編輯。"
+        },
+        {
+          "ticket": "740",
+          "date": "2026-10-31",
+          "text": "原因文字「對方未出席」改成「未出席」。"
+        },
+        {
+          "ticket": "730",
+          "date": "2026-10-26",
+          "text": "單場表單移除稍後再填。"
+        }
+      ],
+      "mapping": "共用設計關係已確認；未找到一對一的前端元件對照。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "出席確認、未進行原因、評分與送出狀態一起維護。",
+        "reuse": [
+          {
+            "name": "Dialog",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-dialog--default"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Input",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-input--default"
+          },
+          {
+            "name": "Textarea",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-textarea--default"
+          },
+          {
+            "name": "Select",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-select--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rating",
+      "name": "FeedbackStarRating",
+      "label": "十顆星評分",
+      "kind": "業務元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "history",
+        "login-feedback"
+      ],
+      "scenario": "rating",
+      "rules": [
+        "沿用十顆星與 1–10 分。",
+        "可點選分數，也可用鍵盤調整。"
+      ],
+      "changes": [
+        {
+          "ticket": "730",
+          "date": "2026-10-23",
+          "text": "評分滑桿改成十顆星，沿用至 #740。"
+        }
+      ],
+      "mapping": "Figma 已有星星版；舊 Slider 留作歷史，不作本次示範。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "基礎元素",
+        "scope": "十顆星的選取、Hover、鍵盤及停用狀態共用；套用在 #730、#740。",
+        "reuse": []
+      }
+    },
+    {
+      "id": "queue",
+      "name": "FeedbackQueue",
+      "label": "登入回饋卡疊",
+      "kind": "互動模式",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "login-feedback"
+      ],
+      "rules": [
+        "多場顯示進度與後方卡片；單場不顯示進度條。",
+        "X 只略過當前場次並顯示下一場；本次登入不重複，重新登入後仍提醒未填寫場次。",
+        "Mentor 已取消 14 天回覆截止。已回答場次不再彈出。"
+      ],
+      "changes": [
+        {
+          "ticket": "740",
+          "date": "2026-11-07",
+          "text": "對齊 PM：關閉後下次重新登入仍提醒，取消 Mentor 14 天截止；完成者不再彈出。"
+        },
+        {
+          "ticket": "740",
+          "date": "2026-10-24",
+          "text": "完成三裝置、Mentor／Mentee、單場／多場的登入回饋示範。"
+        }
+      ],
+      "mapping": "交付原型；程式實作對照待補。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "卡疊、場次進度、換場動畫與略過規則一起維護；內容沿用會談回饋表單。",
+        "reuse": [
+          {
+            "name": "Dialog",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-dialog--default"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "label": "文字輸入框",
+      "kind": "基礎元件",
+      "code": "src/components/ui/input.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-form"
+      ],
+      "scenario": "name-edit",
+      "rules": [
+        "沿用 #742 既有字級、字重及焦點樣式。",
+        "姓名上限與字數顯示依原 v7。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-11-03",
+          "text": "依 PM 清單：姓名 1–20 字，欄位尾端字數顯示。"
+        }
+      ],
+      "mapping": "已找到來源；設計稿與前端 responsive 字級仍待完整核對。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-input--default"
+    },
+    {
+      "id": "textarea",
+      "name": "Textarea",
+      "label": "多行輸入框",
+      "kind": "基礎元件",
+      "code": "src/components/ui/textarea.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-form",
+        "history"
+      ],
+      "scenario": "partial",
+      "rules": [
+        "保留原型的內容字級與正常字重。",
+        "檢視模式切換不清除已輸入文字。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-10-29",
+          "text": "調整內容字級、字重，字距設定為 5%。"
+        },
+        {
+          "ticket": "730",
+          "date": "2026-10-23",
+          "text": "縮小 Mobile 提示文字，與原 site 保持一致。"
+        }
+      ],
+      "mapping": "保留各交付範圍；5% 字距沒有直接擴大成全站規則。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-textarea--default"
+    },
+    {
+      "id": "chip",
+      "name": "Chip",
+      "label": "已選項目標籤",
+      "kind": "基礎元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-form"
+      ],
+      "scenario": "partial",
+      "rules": [
+        "沿用既有淺青底、關閉按鈕及文字間距。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-10-29",
+          "text": "調整左右留白、文字與叉叉間距及字距。"
+        }
+      ],
+      "mapping": "沿用 #742 的實際標籤；canonical master 待核對。",
+      "storybookUrl": null
+    },
+    {
+      "id": "profile",
+      "name": "ProfileSection",
+      "label": "個人資料區塊",
+      "kind": "業務元件",
+      "code": "src/components/profile/edit/Section.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-form"
+      ],
+      "rules": [
+        "沿用個人頁雙欄，在內容位置編輯。",
+        "依原型保留空白、部分完成與完整資料狀態。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-11-03",
+          "text": "保留教育經歷必填，Mentor 不顯示交流偏好。"
+        }
+      ],
+      "mapping": "原型已使用前端元件來源；最新畫面未同步 Figma。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-edit-section--default"
+    },
+    {
+      "id": "member",
+      "name": "MentorMemberCard",
+      "label": "導師小卡",
+      "kind": "業務元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-welcome"
+      ],
+      "scenario": "welcome",
+      "rules": [
+        "保留正反面翻轉與自然陰影。",
+        "卡片底部編輯資料可回到表單。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-11-03",
+          "text": "PM 規格調整後保留小卡與翻面；完成後只留下設定時段。"
+        }
+      ],
+      "mapping": "既有 site 設計；尚無已核對的 Figma／前端實作連結。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "小卡正反面、翻轉動畫、陰影與編輯入口一起維護。",
+        "reuse": [
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Badge",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-badge--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking",
+      "name": "BookingSetupAction",
+      "label": "設定預約時段",
+      "kind": "業務元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-welcome"
+      ],
+      "scenario": "welcome",
+      "rules": [
+        "保留縮小後的區塊與右側主要按鈕。",
+        "稍後再設定置中，維持與區塊的距離。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-11-03",
+          "text": "縮小設定時段區塊，調整稍後再設定的顏色、間距與對齊。"
+        }
+      ],
+      "mapping": "來自 #742 v7；時段頁為原交付的銜接示意。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "圖示、文案、設定時段與稍後再設定的排列一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Card",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-card--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "label": "提示通知",
+      "kind": "基礎元件",
+      "code": "src/components/ui/toast.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "history",
+        "mentor-form"
+      ],
+      "scenario": "failure",
+      "rules": [
+        "原交付：top bar 下方覆蓋顯示，不推動表單。",
+        "關閉叉叉保持清楚可見。"
+      ],
+      "changes": [
+        {
+          "ticket": "742",
+          "date": "2026-10-29",
+          "text": "延用表單失敗時保留內容與提示。"
+        },
+        {
+          "ticket": "730",
+          "date": "2026-10-23",
+          "text": "通知改為 top bar 下方的浮層，不改變表單位置。"
+        }
+      ],
+      "mapping": "待同步差異：查核的前端預設定位／關閉樣式與此交付不同。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-toast--default"
+    },
+    {
+      "id": "mentor-profile",
+      "name": "MentorProfileWithMetrics",
+      "label": "導師個人資訊",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "public-profile",
+        "mentor-calendar"
+      ],
+      "rules": [
+        "沿用 #274 已交付的頭像、姓名、職稱與摘要排列。",
+        "保留 #753 右側收藏按鈕；導師查看自己的頁面時顯示編輯資料。"
+      ],
+      "changes": [
+        {
+          "ticket": "274",
+          "date": "2026-10-15",
+          "text": "補齊 Desktop、Tablet、Mobile 個人頁與簡介／評價分頁。"
+        },
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "共用收藏控制與訪客狀態。"
+        }
+      ],
+      "mapping": "已交付設計補入平台；人物與數據為模擬資料。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "個人資訊、評分摘要與右側操作一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mentor-reviews",
+      "name": "MentorReviewList",
+      "label": "導師評價清單",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "public-profile",
+        "mentor-calendar"
+      ],
+      "rules": [
+        "評價呈現在原有分頁，使用遮罩姓名、分數與日期。",
+        "保留每頁十則、分頁及尚無評價情境。"
+      ],
+      "changes": [
+        {
+          "ticket": "274",
+          "date": "2026-10-15",
+          "text": "導師評價與空白狀態的三裝置設計。"
+        }
+      ],
+      "mapping": "沿用 #274 交付稿。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "評價列、分頁與空白狀態一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mentor-booking",
+      "name": "ResponsiveBookingPanel",
+      "label": "導師頁預約區",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "public-profile",
+        "mentor-calendar"
+      ],
+      "rules": [
+        "Desktop、Tablet 在右欄，Mobile 接在內容下方。",
+        "訪客預約與導師設定時段的操作分開。"
+      ],
+      "changes": [
+        {
+          "ticket": "274",
+          "date": "2026-10-15",
+          "text": "沿用交付稿的日曆與時段區排列。"
+        }
+      ],
+      "mapping": "日曆側欄依交付設計；設定時段彈窗沿用現行前端功能。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "日曆與時段區的三裝置排列一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "BookingForm",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-reservation-bookingform--mentee-profile-view"
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorite-toggle",
+      "name": "FavoriteToggle",
+      "label": "收藏按鈕",
+      "kind": "基礎元素",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "public-profile",
+        "favorites"
+      ],
+      "rules": [
+        "只保留一個獨立書籤按鈕；與卡片導覽分開。",
+        "未收藏外框、已收藏品牌色實心；hover、focus 與 aria-pressed 共用。",
+        "導師池、個人頁、收藏清單同步；失敗維持原狀態。"
+      ],
+      "changes": [
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "基礎元素",
+        "scope": "只保留一個獨立書籤按鈕；與卡片導覽分開。 / 未收藏外框、已收藏品牌色實心；hover、focus 與 aria-pressed 共用。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorite-card",
+      "name": "FavoriteMentorCard",
+      "label": "可收藏導師卡片",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "favorites"
+      ],
+      "rules": [
+        "Desktop 卡片上限 414px、照片 412:292；Mobile 卡片上限 334px、照片 332:292（扣除邊框）。照片隨寬度等比縮放。",
+        "Desktop／Tablet 欄距 20px；Mobile 列距 24px。內容左右 16px、底部 24px；高度隨內容。",
+        "Tablet 沿用桌機比例做雙欄；剩一、兩位時不拉寬卡片。",
+        "點卡片進入對應導師個人頁；點書籤只改收藏。",
+        "#737 B：姓名左、平均分右；純數字，無星星／評價則數。尚無評價不顯示評分；職稱公司滿寬一列，完成場次下一列靠左。"
+      ],
+      "changes": [
+        {
+          "ticket": "737",
+          "date": "2026-11-07",
+          "text": "依 Bonny 確認的 B 版統一卡片資訊排列，保留 #753 尺寸與收藏操作。"
+        },
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "依 #737 issuecomment-6648566371 批准 B 版整合至 #753 共用卡片；尚未找到對應程式 PR，不標示為已上線。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "沿用 #753 已交付三欄／單欄卡片、原始照片與資訊層級。 / 點卡片進入對應導師個人頁；點書籤只改收藏。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorites-header",
+      "name": "FavoritesHeader",
+      "label": "含收藏入口的頁首",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "public-profile",
+        "favorites"
+      ],
+      "rules": [
+        "10/13 交付：中文導覽；訪客顯示登入與註冊。",
+        "帳號選單的我的收藏位於我的預約下方。",
+        "Mobile 帳號選單滿版，保留提供回饋。"
+      ],
+      "changes": [
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "10/13 交付：中文導覽；訪客顯示登入與註冊。 / 帳號選單的我的收藏位於我的預約下方。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "NotificationBell",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-notificationbell--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "account-menu",
+      "name": "AccountMenu",
+      "label": "帳號選單",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "favorites"
+      ],
+      "rules": [
+        "Desktop 264px 浮層；Mobile 滿版。",
+        "我的收藏顯示目前收藏數，點擊進入清單。"
+      ],
+      "changes": [
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "Desktop 264px 浮層；Mobile 滿版。 / 我的收藏顯示目前收藏數，點擊進入清單。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorite-login",
+      "name": "FavoriteLoginDialog",
+      "label": "登入並收藏",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "public-profile"
+      ],
+      "rules": [
+        "訪客收藏顯示登入攔截，登入後回到同一位導師並完成收藏。",
+        "使用既有 Dialog 的焦點管理、Escape 與關閉控制。"
+      ],
+      "changes": [
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "訪客收藏顯示登入攔截，登入後回到同一位導師並完成收藏。 / 使用既有 Dialog 的焦點管理、Escape 與關閉控制。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "favorites-empty",
+      "name": "FavoritesEmptyState",
+      "label": "收藏空狀態",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "favorites"
+      ],
+      "rules": [
+        "取消最後一位收藏立即顯示空狀態。",
+        "尋找導師回到導師池。"
+      ],
+      "changes": [
+        {
+          "ticket": "753",
+          "date": "2026-10-13",
+          "text": "已交付收藏流程；補入平台並保留原設計。"
+        }
+      ],
+      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "取消最後一位收藏立即顯示空狀態。 / 尋找導師回到導師池。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mentor-filter",
+      "name": "MentorFilterDropdown",
+      "label": "MentorFilterDropdown",
+      "kind": "既有前端元件",
+      "code": "src/components/filter/MentorFilterDropdown.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search"
+      ],
+      "rules": [
+        "直接使用前端篩選浮層、Select 與條件套用流程。",
+        "此處選項與結果為本地模擬資料。"
+      ],
+      "changes": [],
+      "mapping": "已直接引用前端元件，Storybook 已有對應。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-篩選器-filter-mentorfilterdropdown--default"
+    },
+    {
+      "id": "booking-form",
+      "name": "BookingForm",
+      "label": "BookingForm",
+      "kind": "既有前端元件",
+      "code": "src/components/profile/reservation/BookingForm.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "public-profile",
+        "mentor-calendar"
+      ],
+      "rules": [
+        "直接使用前端預約表單、訪客提示與導師時段控制。",
+        "沿用原有驗證；示範預約不送出 API。"
+      ],
+      "changes": [],
+      "mapping": "已直接引用前端元件，Storybook 已有對應。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-reservation-bookingform--mentee-profile-view"
+    },
+    {
+      "id": "notification-bell",
+      "name": "NotificationBell",
+      "label": "NotificationBell",
+      "kind": "既有前端元件",
+      "code": "src/components/layout/Header/NotificationBell.tsx",
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "mentor-search",
+        "public-profile",
+        "favorites"
+      ],
+      "rules": [
+        "直接使用前端通知元件；本示範呈現空狀態。"
+      ],
+      "changes": [],
+      "mapping": "已直接引用前端元件，Storybook 已有對應。",
+      "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-notificationbell--default"
+    }
+  ],
+  "componentMap": {
+    "verifiedAt": "2026-11-07",
+    "indexSource": "https://x-talent-storybook.x-talent.workers.dev/index.json",
+    "entries": 386,
+    "existing": {
+      "header": {
+        "name": "Header",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-header--unresolved-state"
+      },
+      "button": {
+        "name": "Button",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+      },
+      "avatar": {
+        "name": "Avatar",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+      },
+      "reservation": {
+        "name": "ReservationCard",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-預約管理-reservation-reservationcard--pending"
+      },
+      "input": {
+        "name": "Input",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-input--default"
+      },
+      "textarea": {
+        "name": "Textarea",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-textarea--default"
+      },
+      "profile": {
+        "name": "Section",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-edit-section--default"
+      },
+      "toast": {
+        "name": "Toast",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-toast--default"
+      },
+      "mentor-filter": {
+        "name": "MentorFilterDropdown",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-篩選器-filter-mentorfilterdropdown--default"
+      },
+      "booking-form": {
+        "name": "BookingForm",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-reservation-bookingform--mentee-profile-view"
+      },
+      "notification-bell": {
+        "name": "NotificationBell",
+        "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-notificationbell--default"
+      }
+    },
+    "newDesigns": {
+      "feedback": {
+        "level": "組合元件",
+        "scope": "出席確認、未進行原因、評分與送出狀態一起維護。",
+        "reuse": [
+          {
+            "name": "Dialog",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-dialog--default"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Input",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-input--default"
+          },
+          {
+            "name": "Textarea",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-textarea--default"
+          },
+          {
+            "name": "Select",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-select--default"
+          }
+        ]
+      },
+      "queue": {
+        "level": "組合元件",
+        "scope": "卡疊、場次進度、換場動畫與略過規則一起維護；內容沿用會談回饋表單。",
+        "reuse": [
+          {
+            "name": "Dialog",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-dialog--default"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      },
+      "rating": {
+        "level": "基礎元素",
+        "scope": "十顆星的選取、Hover、鍵盤及停用狀態共用；套用在 #730、#740。",
+        "reuse": []
+      },
+      "member": {
+        "level": "組合元件",
+        "scope": "小卡正反面、翻轉動畫、陰影與編輯入口一起維護。",
+        "reuse": [
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          },
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Badge",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-badge--default"
+          }
+        ]
+      },
+      "booking": {
+        "level": "組合元件",
+        "scope": "圖示、文案、設定時段與稍後再設定的排列一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Card",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-card--default"
+          }
+        ]
+      },
+      "mentor-profile": {
+        "level": "組合元件",
+        "scope": "個人資訊、評分摘要與右側操作一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          }
+        ]
+      },
+      "mentor-reviews": {
+        "level": "組合元件",
+        "scope": "評價列、分頁與空白狀態一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      },
+      "mentor-booking": {
+        "level": "組合元件",
+        "scope": "日曆與時段區的三裝置排列一起維護。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "BookingForm",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/業務模組元件-個人檔案-profile-reservation-bookingform--mentee-profile-view"
+          }
+        ]
+      },
+      "favorite-toggle": {
+        "level": "基礎元素",
+        "scope": "只保留一個獨立書籤按鈕；與卡片導覽分開。 / 未收藏外框、已收藏品牌色實心；hover、focus 與 aria-pressed 共用。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      },
+      "favorite-card": {
+        "level": "組合元件",
+        "scope": "沿用 #753 已交付三欄／單欄卡片、原始照片與資訊層級。 / 點卡片進入對應導師個人頁；點書籤只改收藏。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "Avatar",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-avatar--with-image"
+          }
+        ]
+      },
+      "favorites-header": {
+        "level": "組合元件",
+        "scope": "10/13 交付：中文導覽；訪客顯示登入與註冊。 / 帳號選單的我的收藏位於我的預約下方。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          },
+          {
+            "name": "NotificationBell",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-notificationbell--default"
+          }
+        ]
+      },
+      "account-menu": {
+        "level": "組合元件",
+        "scope": "Desktop 264px 浮層；Mobile 滿版。 / 我的收藏顯示目前收藏數，點擊進入清單。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      },
+      "favorite-login": {
+        "level": "組合元件",
+        "scope": "訪客收藏顯示登入攔截，登入後回到同一位導師並完成收藏。 / 使用既有 Dialog 的焦點管理、Escape 與關閉控制。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      },
+      "favorites-empty": {
+        "level": "組合元件",
+        "scope": "取消最後一位收藏立即顯示空狀態。 / 尋找導師回到導師池。",
+        "reuse": [
+          {
+            "name": "Button",
+            "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
+          }
+        ]
+      }
+    }
+  }
+}
