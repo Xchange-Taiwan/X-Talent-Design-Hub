@@ -37,7 +37,7 @@ async function main() {
 
   // 1. Sync latest Storybook baseline first so we don't drift
   try {
-    execSync('node scripts/sync-storybook-baseline.mjs', { stdio: 'inherit' });
+    execSync('node scripts/sync-storybook-baseline.mjs && node scripts/build-design-hub-kb.mjs', { stdio: 'inherit' });
   } catch {}
 
   // 2. If --file is provided, auto-register in public/hub-manifest.json
