@@ -1,0 +1,2611 @@
+{
+  "syncedAt": "2026-11-09T09:45:43.183Z",
+  "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
+  "totalStories": 372,
+  "stories": [
+    {
+      "id": "onboarding-wizard-integratedwizard--interactive-wizard",
+      "title": "Onboarding/Wizard/IntegratedWizard",
+      "name": "Interactive Wizard",
+      "importPath": "./src/app/auth/(sign)/onboarding/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=onboarding-wizard-integratedwizard--interactive-wizard&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-emailverifiedpresentation--verification-success",
+      "title": "業務模組元件/會員驗證(Auth)/EmailVerifiedPresentation",
+      "name": "Verification Success",
+      "importPath": "./src/app/auth/email-verified/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-emailverifiedpresentation--verification-success&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-emailverifiedpresentation--verification-expired-or-failed",
+      "title": "業務模組元件/會員驗證(Auth)/EmailVerifiedPresentation",
+      "name": "Verification Expired Or Failed",
+      "importPath": "./src/app/auth/email-verified/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-emailverifiedpresentation--verification-expired-or-failed&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-emailverificationpage--pending-verification",
+      "title": "業務模組元件/會員驗證(Auth)/EmailVerificationPage",
+      "name": "Pending Verification",
+      "importPath": "./src/app/auth/email-verify/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-emailverificationpage--pending-verification&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorgridskeleton--default",
+      "title": "業務模組元件/導師池(MentorPool)/MentorGridSkeleton",
+      "name": "Default",
+      "importPath": "./src/app/mentor-pool/MentorGridSkeleton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorgridskeleton--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-popularpositionchips--desktop-trimmed",
+      "title": "業務模組元件/導師池(MentorPool)/PopularPositionChips",
+      "name": "Desktop Trimmed",
+      "importPath": "./src/app/mentor-pool/PopularPositionChips.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-popularpositionchips--desktop-trimmed&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-popularpositionchips--narrow-horizontal-scroll",
+      "title": "業務模組元件/導師池(MentorPool)/PopularPositionChips",
+      "name": "Narrow Horizontal Scroll",
+      "importPath": "./src/app/mentor-pool/PopularPositionChips.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-popularpositionchips--narrow-horizontal-scroll&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--default-success",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Default Success",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--default-success&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--with-active-filter-badges",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "With Active Filter Badges",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--with-active-filter-badges&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--replacing-overlay",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Replacing Overlay",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--replacing-overlay&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--loading-more-state",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Loading More State",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--loading-more-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--loading-state",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Loading State",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--empty-no-results",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Empty No Results",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--empty-no-results&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorpoolui--error-retry-state",
+      "title": "業務模組元件/導師池(MentorPool)/MentorPoolUI",
+      "name": "Error Retry State",
+      "importPath": "./src/app/mentor-pool/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorpoolui--error-retry-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentor-owner-view",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentor Owner View",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-owner-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentor-visitor-view",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentor Visitor View",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-visitor-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentee-profile-view",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentee Profile View",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentee-profile-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--loading-skeleton",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Loading Skeleton",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--loading-skeleton&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilecardui--mentee-completed-view",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileCardUI",
+      "name": "Mentee Completed View",
+      "importPath": "./src/app/profile/card/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilecardui--mentee-completed-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilecardui--mentor-completed-view",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileCardUI",
+      "name": "Mentor Completed View",
+      "importPath": "./src/app/profile/card/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilecardui--mentor-completed-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authbutton--default",
+      "title": "業務模組元件/會員驗證(Auth)/AuthButton",
+      "name": "Default",
+      "importPath": "./src/components/auth/AuthButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authbutton--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authbutton--submitting",
+      "title": "業務模組元件/會員驗證(Auth)/AuthButton",
+      "name": "Submitting",
+      "importPath": "./src/components/auth/AuthButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authbutton--submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authcard--default-without-banner",
+      "title": "業務模組元件/會員驗證(Auth)/AuthCard",
+      "name": "Default Without Banner",
+      "importPath": "./src/components/auth/AuthCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authcard--default-without-banner&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authcard--with-top-icon-banner",
+      "title": "業務模組元件/會員驗證(Auth)/AuthCard",
+      "name": "With Top Icon Banner",
+      "importPath": "./src/components/auth/AuthCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authcard--with-top-icon-banner&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authcard--custom-width-and-spacing",
+      "title": "業務模組元件/會員驗證(Auth)/AuthCard",
+      "name": "Custom Width And Spacing",
+      "importPath": "./src/components/auth/AuthCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authcard--custom-width-and-spacing&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authforminput--normal",
+      "title": "業務模組元件/會員驗證(Auth)/AuthFormInput",
+      "name": "Normal",
+      "importPath": "./src/components/auth/AuthFormInput.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authforminput--normal&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authforminput--password",
+      "title": "業務模組元件/會員驗證(Auth)/AuthFormInput",
+      "name": "Password",
+      "importPath": "./src/components/auth/AuthFormInput.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authforminput--password&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authforminput--validation-error",
+      "title": "業務模組元件/會員驗證(Auth)/AuthFormInput",
+      "name": "Validation Error",
+      "importPath": "./src/components/auth/AuthFormInput.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authforminput--validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authlink--sign-up-link",
+      "title": "業務模組元件/會員驗證(Auth)/AuthLink",
+      "name": "Sign Up Link",
+      "importPath": "./src/components/auth/AuthLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authlink--sign-up-link&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authlink--sign-in-link",
+      "title": "業務模組元件/會員驗證(Auth)/AuthLink",
+      "name": "Sign In Link",
+      "importPath": "./src/components/auth/AuthLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authlink--sign-in-link&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authmessagecard--default",
+      "title": "業務模組元件/會員驗證(Auth)/AuthMessageCard",
+      "name": "Default",
+      "importPath": "./src/components/auth/AuthMessageCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authmessagecard--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authmessagecard--email-notification-sent",
+      "title": "業務模組元件/會員驗證(Auth)/AuthMessageCard",
+      "name": "Email Notification Sent",
+      "importPath": "./src/components/auth/AuthMessageCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authmessagecard--email-notification-sent&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authmessagecard--verification-success",
+      "title": "業務模組元件/會員驗證(Auth)/AuthMessageCard",
+      "name": "Verification Success",
+      "importPath": "./src/components/auth/AuthMessageCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authmessagecard--verification-success&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authmessagecard--verification-failed-or-expired",
+      "title": "業務模組元件/會員驗證(Auth)/AuthMessageCard",
+      "name": "Verification Failed Or Expired",
+      "importPath": "./src/components/auth/AuthMessageCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authmessagecard--verification-failed-or-expired&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authtitle--sign-in-title",
+      "title": "業務模組元件/會員驗證(Auth)/AuthTitle",
+      "name": "Sign In Title",
+      "importPath": "./src/components/auth/AuthTitle.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authtitle--sign-in-title&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-authtitle--sign-up-title",
+      "title": "業務模組元件/會員驗證(Auth)/AuthTitle",
+      "name": "Sign Up Title",
+      "importPath": "./src/components/auth/AuthTitle.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-authtitle--sign-up-title&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-deleteaccountdialog--password-delete",
+      "title": "業務模組元件/會員驗證(Auth)/DeleteAccountDialog",
+      "name": "Password Delete",
+      "importPath": "./src/components/auth/DeleteAccountDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-deleteaccountdialog--password-delete&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-deleteaccountdialog--password-delete-submitting",
+      "title": "業務模組元件/會員驗證(Auth)/DeleteAccountDialog",
+      "name": "Password Delete Submitting",
+      "importPath": "./src/components/auth/DeleteAccountDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-deleteaccountdialog--password-delete-submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-deleteaccountdialog--google-delete",
+      "title": "業務模組元件/會員驗證(Auth)/DeleteAccountDialog",
+      "name": "Google Delete",
+      "importPath": "./src/components/auth/DeleteAccountDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-deleteaccountdialog--google-delete&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-deleteaccountdialog--google-delete-submitting",
+      "title": "業務模組元件/會員驗證(Auth)/DeleteAccountDialog",
+      "name": "Google Delete Submitting",
+      "importPath": "./src/components/auth/DeleteAccountDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-deleteaccountdialog--google-delete-submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-deleteaccountdialog--blocked-by-reservations",
+      "title": "業務模組元件/會員驗證(Auth)/DeleteAccountDialog",
+      "name": "Blocked By Reservations",
+      "importPath": "./src/components/auth/DeleteAccountDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-deleteaccountdialog--blocked-by-reservations&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-divider--default",
+      "title": "業務模組元件/會員驗證(Auth)/Divider",
+      "name": "Default",
+      "importPath": "./src/components/auth/Divider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-divider--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-divider--with-text",
+      "title": "業務模組元件/會員驗證(Auth)/Divider",
+      "name": "With Text",
+      "importPath": "./src/components/auth/Divider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-divider--with-text&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-googlebutton--sign-in-button",
+      "title": "業務模組元件/會員驗證(Auth)/GoogleButton",
+      "name": "Sign In Button",
+      "importPath": "./src/components/auth/GoogleButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-googlebutton--sign-in-button&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-googlebutton--sign-up-button",
+      "title": "業務模組元件/會員驗證(Auth)/GoogleButton",
+      "name": "Sign Up Button",
+      "importPath": "./src/components/auth/GoogleButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-googlebutton--sign-up-button&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-googlebutton--submitting",
+      "title": "業務模組元件/會員驗證(Auth)/GoogleButton",
+      "name": "Submitting",
+      "importPath": "./src/components/auth/GoogleButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-googlebutton--submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-forgotpasswordlink--default",
+      "title": "業務模組元件/會員驗證(Auth)/ForgotPasswordLink",
+      "name": "Default",
+      "importPath": "./src/components/auth/signin/ForgotPasswordLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-forgotpasswordlink--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signinform--default",
+      "title": "業務模組元件/會員驗證(Auth)/SignInForm",
+      "name": "Default",
+      "importPath": "./src/components/auth/signin/SignInForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signinform--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signinform--filled",
+      "title": "業務模組元件/會員驗證(Auth)/SignInForm",
+      "name": "Filled",
+      "importPath": "./src/components/auth/signin/SignInForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signinform--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signinform--validation-error",
+      "title": "業務模組元件/會員驗證(Auth)/SignInForm",
+      "name": "Validation Error",
+      "importPath": "./src/components/auth/signin/SignInForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signinform--validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signinform--submitting",
+      "title": "業務模組元件/會員驗證(Auth)/SignInForm",
+      "name": "Submitting",
+      "importPath": "./src/components/auth/signin/SignInForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signinform--submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--default",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Default",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--filled",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Filled",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--validation-error",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Validation Error",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--empty-submit-validation-error",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Empty Submit Validation Error",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--empty-submit-validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--password-mismatch",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Password Mismatch",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--password-mismatch&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-signupform--submitting",
+      "title": "業務模組元件/會員驗證(Auth)/SignUpForm",
+      "name": "Submitting",
+      "importPath": "./src/components/auth/signup/SignUpForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-signupform--submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-termsofservicecheckbox--unchecked",
+      "title": "業務模組元件/會員驗證(Auth)/TermsOfServiceCheckbox",
+      "name": "Unchecked",
+      "importPath": "./src/components/auth/signup/TermsOfServiceCheckbox.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-termsofservicecheckbox--unchecked&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-termsofservicecheckbox--checked",
+      "title": "業務模組元件/會員驗證(Auth)/TermsOfServiceCheckbox",
+      "name": "Checked",
+      "importPath": "./src/components/auth/signup/TermsOfServiceCheckbox.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-termsofservicecheckbox--checked&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-會員驗證-auth-termsofservicecheckbox--validation-error",
+      "title": "業務模組元件/會員驗證(Auth)/TermsOfServiceCheckbox",
+      "name": "Validation Error",
+      "importPath": "./src/components/auth/signup/TermsOfServiceCheckbox.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%9C%83%E5%93%A1%E9%A9%97%E8%AD%89-auth-termsofservicecheckbox--validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-filterselect--skill",
+      "title": "業務模組元件/篩選器(Filter)/FilterSelect",
+      "name": "Skill",
+      "importPath": "./src/components/filter/FilterSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-filterselect--skill&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-filterselect--topic",
+      "title": "業務模組元件/篩選器(Filter)/FilterSelect",
+      "name": "Topic",
+      "importPath": "./src/components/filter/FilterSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-filterselect--topic&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-filterselect--industry",
+      "title": "業務模組元件/篩選器(Filter)/FilterSelect",
+      "name": "Industry",
+      "importPath": "./src/components/filter/FilterSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-filterselect--industry&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-filterselect--long-options-scrollable",
+      "title": "業務模組元件/篩選器(Filter)/FilterSelect",
+      "name": "Long Options Scrollable",
+      "importPath": "./src/components/filter/FilterSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-filterselect--long-options-scrollable&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-mentorfilterdropdown--default",
+      "title": "業務模組元件/篩選器(Filter)/MentorFilterDropdown",
+      "name": "Default",
+      "importPath": "./src/components/filter/MentorFilterDropdown.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-mentorfilterdropdown--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-篩選器-filter-mentorfilterdropdown--pre-selected",
+      "title": "業務模組元件/篩選器(Filter)/MentorFilterDropdown",
+      "name": "Pre Selected",
+      "importPath": "./src/components/filter/MentorFilterDropdown.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-mentorfilterdropdown--pre-selected&viewMode=story"
+    },
+    {
+      "id": "system-icon-gallery--all-icons",
+      "title": "System/Icon Gallery",
+      "name": "所有圖示",
+      "importPath": "./src/components/icon/Icons.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=system-icon-gallery--all-icons&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--gallery",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "所有彩色圖標 (All Color Icons)",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--gallery&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--facebook-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Facebook Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--facebook-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--google-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Google Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--google-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--instagram-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Instagram Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--instagram-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--linkedin-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Linkedin Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--linkedin-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--twitter-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Twitter Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--twitter-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--website-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Website Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--website-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-icon-coloricons--youtube-icon",
+      "title": "基礎/原子元件/Icon/ColorIcons",
+      "name": "Youtube Icon",
+      "importPath": "./src/components/icon/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-icon-coloricons--youtube-icon&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-featureitem--default",
+      "title": "業務模組元件/首頁(Landing)/FeatureItem",
+      "name": "Default",
+      "importPath": "./src/components/landing/FeatureItem.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-featureitem--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-featureitem--all-features-grid",
+      "title": "業務模組元件/首頁(Landing)/FeatureItem",
+      "name": "All Features Grid",
+      "importPath": "./src/components/landing/FeatureItem.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-featureitem--all-features-grid&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepagectabutton--guest-state",
+      "title": "業務模組元件/首頁(Landing)/HomePageCtaButton",
+      "name": "Guest State",
+      "importPath": "./src/components/landing/HomePageCtaButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepagectabutton--guest-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepagectabutton--mentee-state",
+      "title": "業務模組元件/首頁(Landing)/HomePageCtaButton",
+      "name": "Mentee State",
+      "importPath": "./src/components/landing/HomePageCtaButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepagectabutton--mentee-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepagectabutton--mentor-state",
+      "title": "業務模組元件/首頁(Landing)/HomePageCtaButton",
+      "name": "Mentor State",
+      "importPath": "./src/components/landing/HomePageCtaButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepagectabutton--mentor-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepagectabutton--loading-skeleton",
+      "title": "業務模組元件/首頁(Landing)/HomePageCtaButton",
+      "name": "Loading Skeleton",
+      "importPath": "./src/components/landing/HomePageCtaButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepagectabutton--loading-skeleton&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepageslider--default",
+      "title": "業務模組元件/首頁(Landing)/HomePageSlider",
+      "name": "Default",
+      "importPath": "./src/components/landing/HomePageSlider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepageslider--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-首頁-landing-homepagesliderclient--default",
+      "title": "業務模組元件/首頁(Landing)/HomePageSliderClient",
+      "name": "Default",
+      "importPath": "./src/components/landing/HomePageSliderClient.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A6%96%E9%A0%81-landing-homepagesliderclient--default&viewMode=story"
+    },
+    {
+      "id": "佈局元件-announcementbanner--active-maintenance-notice",
+      "title": "佈局元件/AnnouncementBanner",
+      "name": "Active Maintenance Notice",
+      "importPath": "./src/components/layout/AnnouncementBanner/AnnouncementBanner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-announcementbanner--active-maintenance-notice&viewMode=story"
+    },
+    {
+      "id": "佈局元件-announcementbanner--hidden-when-disabled",
+      "title": "佈局元件/AnnouncementBanner",
+      "name": "Hidden When Disabled",
+      "importPath": "./src/components/layout/AnnouncementBanner/AnnouncementBanner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-announcementbanner--hidden-when-disabled&viewMode=story"
+    },
+    {
+      "id": "佈局元件-footer--default",
+      "title": "佈局元件/Footer",
+      "name": "Default",
+      "importPath": "./src/components/layout/Footer/Footer.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-footer--default&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-disabledawarelink--default",
+      "title": "佈局元件/Header/DisabledAwareLink",
+      "name": "Default",
+      "importPath": "./src/components/layout/Header/DisabledAwareLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-disabledawarelink--default&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-disabledawarelink--disabled",
+      "title": "佈局元件/Header/DisabledAwareLink",
+      "name": "Disabled",
+      "importPath": "./src/components/layout/Header/DisabledAwareLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-disabledawarelink--disabled&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-disabledawarelink--custom-style",
+      "title": "佈局元件/Header/DisabledAwareLink",
+      "name": "Custom Style",
+      "importPath": "./src/components/layout/Header/DisabledAwareLink.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-disabledawarelink--custom-style&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-guestactionbuttons--confirmed-guest",
+      "title": "佈局元件/Header/GuestActionButtons",
+      "name": "Confirmed Guest",
+      "importPath": "./src/components/layout/Header/GuestActionButtons.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-guestactionbuttons--confirmed-guest&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-guestactionbuttons--unknown-pre-hydration-guest",
+      "title": "佈局元件/Header/GuestActionButtons",
+      "name": "Unknown Pre Hydration Guest",
+      "importPath": "./src/components/layout/Header/GuestActionButtons.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-guestactionbuttons--unknown-pre-hydration-guest&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-guestactionbuttons--hidden-for-confirmed-member",
+      "title": "佈局元件/Header/GuestActionButtons",
+      "name": "Hidden For Confirmed Member",
+      "importPath": "./src/components/layout/Header/GuestActionButtons.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-guestactionbuttons--hidden-for-confirmed-member&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-hamburgermenu--guest",
+      "title": "佈局元件/Header/HamburgerMenu",
+      "name": "Guest",
+      "importPath": "./src/components/layout/Header/HamburgerMenu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-hamburgermenu--guest&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-hamburgermenu--pre-hydration",
+      "title": "佈局元件/Header/HamburgerMenu",
+      "name": "Pre Hydration",
+      "importPath": "./src/components/layout/Header/HamburgerMenu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-hamburgermenu--pre-hydration&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--unresolved-state",
+      "title": "佈局元件/Header/Header",
+      "name": "Unresolved State",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--unresolved-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--guest-state",
+      "title": "佈局元件/Header/Header",
+      "name": "Guest State",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--guest-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--mentor-session",
+      "title": "佈局元件/Header/Header",
+      "name": "Mentor Session",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--mentor-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--mentee-session",
+      "title": "佈局元件/Header/Header",
+      "name": "Mentee Session",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--mentee-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--resolving-user-state",
+      "title": "佈局元件/Header/Header",
+      "name": "Resolving User State",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--resolving-user-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-header--resolving-mentor-v-2-hint-state",
+      "title": "佈局元件/Header/Header",
+      "name": "Resolving Mentor V 2 Hint State",
+      "importPath": "./src/components/layout/Header/Header.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-header--resolving-mentor-v-2-hint-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-mobileusermenu--mentor-session",
+      "title": "佈局元件/Header/MobileUserMenu",
+      "name": "Mentor Session",
+      "importPath": "./src/components/layout/Header/MobileUserMenu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-mobileusermenu--mentor-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-mobileusermenu--mentee-session",
+      "title": "佈局元件/Header/MobileUserMenu",
+      "name": "Mentee Session",
+      "importPath": "./src/components/layout/Header/MobileUserMenu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-mobileusermenu--mentee-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-mobileusermenu--anonymous-session",
+      "title": "佈局元件/Header/MobileUserMenu",
+      "name": "Anonymous Session",
+      "importPath": "./src/components/layout/Header/MobileUserMenu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-mobileusermenu--anonymous-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--default",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Default",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--default&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--upcoming-reservation-with-dtstart",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Upcoming Reservation With Dtstart",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--upcoming-reservation-with-dtstart&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--canceled-reservation-by-role",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Canceled Reservation By Role",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--canceled-reservation-by-role&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--loading-state",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Loading State",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--loading-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--error-state",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Error State",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--error-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--empty-state",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Empty State",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--empty-state&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--over-99-notifications",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Over 99 Notifications",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--over-99-notifications&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-notificationbell--long-text",
+      "title": "佈局元件/Header/NotificationBell",
+      "name": "Long Text",
+      "importPath": "./src/components/layout/Header/NotificationBell.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-notificationbell--long-text&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-shareprofiledialog--default-open",
+      "title": "佈局元件/Header/ShareProfileDialog",
+      "name": "Default Open",
+      "importPath": "./src/components/layout/Header/ShareProfileDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-shareprofiledialog--default-open&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-shareprofiledialog--without-avatar",
+      "title": "佈局元件/Header/ShareProfileDialog",
+      "name": "Without Avatar",
+      "importPath": "./src/components/layout/Header/ShareProfileDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-shareprofiledialog--without-avatar&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-shareprofiledialog--without-subtitle-or-links",
+      "title": "佈局元件/Header/ShareProfileDialog",
+      "name": "Without Subtitle Or Links",
+      "importPath": "./src/components/layout/Header/ShareProfileDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-shareprofiledialog--without-subtitle-or-links&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-shareprofiledialog--interactive",
+      "title": "佈局元件/Header/ShareProfileDialog",
+      "name": "Interactive",
+      "importPath": "./src/components/layout/Header/ShareProfileDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-shareprofiledialog--interactive&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-useravatar--default-fallback",
+      "title": "佈局元件/Header/UserAvatar",
+      "name": "Default Fallback",
+      "importPath": "./src/components/layout/Header/UserAvatar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-useravatar--default-fallback&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-useravatar--custom-avatar-image",
+      "title": "佈局元件/Header/UserAvatar",
+      "name": "Custom Avatar Image",
+      "importPath": "./src/components/layout/Header/UserAvatar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-useravatar--custom-avatar-image&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-useravatar--sizes-showcase",
+      "title": "佈局元件/Header/UserAvatar",
+      "name": "Sizes Showcase",
+      "importPath": "./src/components/layout/Header/UserAvatar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-useravatar--sizes-showcase&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-userdropdown--mentor-session",
+      "title": "佈局元件/Header/UserDropdown",
+      "name": "Mentor Session",
+      "importPath": "./src/components/layout/Header/UserDropdown.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-userdropdown--mentor-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-userdropdown--mentee-session",
+      "title": "佈局元件/Header/UserDropdown",
+      "name": "Mentee Session",
+      "importPath": "./src/components/layout/Header/UserDropdown.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-userdropdown--mentee-session&viewMode=story"
+    },
+    {
+      "id": "佈局元件-header-userdropdown--anonymous-session",
+      "title": "佈局元件/Header/UserDropdown",
+      "name": "Anonymous Session",
+      "importPath": "./src/components/layout/Header/UserDropdown.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-userdropdown--anonymous-session&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcardlist--default",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCardList",
+      "name": "Default",
+      "importPath": "./src/components/mentor-pool/mentor-card-list/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcardlist--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcardlist--single-page-full-list",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCardList",
+      "name": "Single Page Full List",
+      "importPath": "./src/components/mentor-pool/mentor-card-list/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcardlist--single-page-full-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcardlist--short-list",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCardList",
+      "name": "Short List",
+      "importPath": "./src/components/mentor-pool/mentor-card-list/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcardlist--short-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcardlist--filtered-skill-prioritized",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCardList",
+      "name": "Filtered Skill Prioritized",
+      "importPath": "./src/components/mentor-pool/mentor-card-list/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcardlist--filtered-skill-prioritized&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcardlist--empty-list",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCardList",
+      "name": "Empty List",
+      "importPath": "./src/components/mentor-pool/mentor-card-list/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcardlist--empty-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-avatarwithbadge--default",
+      "title": "業務模組元件/導師池(MentorPool)/AvatarWithBadge",
+      "name": "Default",
+      "importPath": "./src/components/mentor-pool/mentor-card/AvatarWithBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-avatarwithbadge--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-avatarwithbadge--local-default-avatar",
+      "title": "業務模組元件/導師池(MentorPool)/AvatarWithBadge",
+      "name": "Local Default Avatar",
+      "importPath": "./src/components/mentor-pool/mentor-card/AvatarWithBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-avatarwithbadge--local-default-avatar&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-avatarwithbadge--over-ten-years",
+      "title": "業務模組元件/導師池(MentorPool)/AvatarWithBadge",
+      "name": "Over Ten Years",
+      "importPath": "./src/components/mentor-pool/mentor-card/AvatarWithBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-avatarwithbadge--over-ten-years&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--default",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Default",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--short-about-and-few-tags",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Short About And Few Tags",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--short-about-and-few-tags&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--long-company-and-many-tags",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Long Company And Many Tags",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--long-company-and-many-tags&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--missing-role-and-short-about",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Missing Role And Short About",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--missing-role-and-short-about&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-tag--default",
+      "title": "業務模組元件/導師池(MentorPool)/Tag",
+      "name": "Default",
+      "importPath": "./src/components/mentor-pool/mentor-card/Tag.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-tag--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-tag--short-label",
+      "title": "業務模組元件/導師池(MentorPool)/Tag",
+      "name": "Short Label",
+      "importPath": "./src/components/mentor-pool/mentor-card/Tag.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-tag--short-label&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-tag--long-label",
+      "title": "業務模組元件/導師池(MentorPool)/Tag",
+      "name": "Long Label",
+      "importPath": "./src/components/mentor-pool/mentor-card/Tag.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-tag--long-label&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--default",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "Default",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--frontend-engineer",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "Frontend Engineer",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--frontend-engineer&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--staff-product-manager",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "Staff Product Manager",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--staff-product-manager&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--short-bio-without-role",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "Short Bio Without Role",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--short-bio-without-role&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-groupedselections--default",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/GroupedSelections",
+      "name": "Default",
+      "importPath": "./src/components/onboarding/steps/GroupedSelections.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-groupedselections--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-groupedselections--fully-selected",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/GroupedSelections",
+      "name": "Fully Selected",
+      "importPath": "./src/components/onboarding/steps/GroupedSelections.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-groupedselections--fully-selected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-groupedselections--static-empty-and-preselected",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/GroupedSelections",
+      "name": "Static Empty And Preselected",
+      "importPath": "./src/components/onboarding/steps/GroupedSelections.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-groupedselections--static-empty-and-preselected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-interestedposition--empty-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/InterestedPosition",
+      "name": "Empty Selection (空選狀態)",
+      "importPath": "./src/components/onboarding/steps/InterestedPosition.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-interestedposition--empty-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-interestedposition--partial-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/InterestedPosition",
+      "name": "Partial Selection (部分選取)",
+      "importPath": "./src/components/onboarding/steps/InterestedPosition.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-interestedposition--partial-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-interestedposition--max-selection-reached",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/InterestedPosition",
+      "name": "Max Selection Reached (達選取上限)",
+      "importPath": "./src/components/onboarding/steps/InterestedPosition.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-interestedposition--max-selection-reached&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-personalinfo--empty",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/PersonalInfo",
+      "name": "Empty",
+      "importPath": "./src/components/onboarding/steps/PersonalInfo.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-personalinfo--empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-personalinfo--filled",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/PersonalInfo",
+      "name": "Filled",
+      "importPath": "./src/components/onboarding/steps/PersonalInfo.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-personalinfo--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-personalinfo--validation-error",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/PersonalInfo",
+      "name": "Validation Error",
+      "importPath": "./src/components/onboarding/steps/PersonalInfo.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-personalinfo--validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-skillstoimprove--empty-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/SkillsToImprove",
+      "name": "Empty Selection (空選狀態)",
+      "importPath": "./src/components/onboarding/steps/SkillsToImprove.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-skillstoimprove--empty-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-skillstoimprove--partial-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/SkillsToImprove",
+      "name": "Partial Selection (部分選取)",
+      "importPath": "./src/components/onboarding/steps/SkillsToImprove.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-skillstoimprove--partial-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-skillstoimprove--max-selection-reached",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/SkillsToImprove",
+      "name": "Max Selection Reached (達選取上限)",
+      "importPath": "./src/components/onboarding/steps/SkillsToImprove.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-skillstoimprove--max-selection-reached&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-tagmultiselect--default",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TagMultiSelect",
+      "name": "Default",
+      "importPath": "./src/components/onboarding/steps/TagMultiSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-tagmultiselect--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-tagmultiselect--selected",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TagMultiSelect",
+      "name": "Selected",
+      "importPath": "./src/components/onboarding/steps/TagMultiSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-tagmultiselect--selected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-tagmultiselect--max-selection-reached",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TagMultiSelect",
+      "name": "Max Selection Reached",
+      "importPath": "./src/components/onboarding/steps/TagMultiSelect.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-tagmultiselect--max-selection-reached&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-topicstodiscuss--empty-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TopicsToDiscuss",
+      "name": "Empty Selection (空選狀態)",
+      "importPath": "./src/components/onboarding/steps/TopicsToDiscuss.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-topicstodiscuss--empty-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-topicstodiscuss--partial-selection",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TopicsToDiscuss",
+      "name": "Partial Selection (部分選取)",
+      "importPath": "./src/components/onboarding/steps/TopicsToDiscuss.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-topicstodiscuss--partial-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-topicstodiscuss--max-selection-reached",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/TopicsToDiscuss",
+      "name": "Max Selection Reached (達選取上限)",
+      "importPath": "./src/components/onboarding/steps/TopicsToDiscuss.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-topicstodiscuss--max-selection-reached&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-whoareyou--loading-or-unresolved",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/WhoAreYou",
+      "name": "Loading Or Unresolved",
+      "importPath": "./src/components/onboarding/steps/WhoAreYou.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-whoareyou--loading-or-unresolved&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-whoareyou--mentee-selected",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/WhoAreYou",
+      "name": "Mentee Selected",
+      "importPath": "./src/components/onboarding/steps/WhoAreYou.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-whoareyou--mentee-selected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-新手引導-onboarding-steps-whoareyou--google-o-auth-avatar",
+      "title": "業務模組元件/新手引導(Onboarding)/Steps/WhoAreYou",
+      "name": "Google O Auth Avatar",
+      "importPath": "./src/components/onboarding/steps/WhoAreYou.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E6%96%B0%E6%89%8B%E5%BC%95%E5%B0%8E-onboarding-steps-whoareyou--google-o-auth-avatar&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-avatarcard--default",
+      "title": "業務模組元件/個人檔案(Profile)/AvatarCard",
+      "name": "Default",
+      "importPath": "./src/components/profile/avatar-card/AvatarCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-avatarcard--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-avatarcard--no-linked-in",
+      "title": "業務模組元件/個人檔案(Profile)/AvatarCard",
+      "name": "No Linked In",
+      "importPath": "./src/components/profile/avatar-card/AvatarCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-avatarcard--no-linked-in&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-avatarcard--no-company-job",
+      "title": "業務模組元件/個人檔案(Profile)/AvatarCard",
+      "name": "No Company Job",
+      "importPath": "./src/components/profile/avatar-card/AvatarCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-avatarcard--no-company-job&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-avatarcard--default-avatar",
+      "title": "業務模組元件/個人檔案(Profile)/AvatarCard",
+      "name": "Default Avatar",
+      "importPath": "./src/components/profile/avatar-card/AvatarCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-avatarcard--default-avatar&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-avatarsection--default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/AvatarSection",
+      "name": "Default",
+      "importPath": "./src/components/profile/edit/AvatarSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-avatarsection--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-avatarsection--with-initial-avatar",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/AvatarSection",
+      "name": "With Initial Avatar",
+      "importPath": "./src/components/profile/edit/AvatarSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-avatarsection--with-initial-avatar&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-avatarsection--mentor-required-state",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/AvatarSection",
+      "name": "導師必填狀態 (IsMentor)",
+      "importPath": "./src/components/profile/edit/AvatarSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-avatarsection--mentor-required-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-categorymultiselectfield--tree-structure",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/CategoryMultiSelectField",
+      "name": "分組樹狀結構 (預設)",
+      "importPath": "./src/components/profile/edit/CategoryMultiSelectField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-categorymultiselectfield--tree-structure&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-categorymultiselectfield--flat-list",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/CategoryMultiSelectField",
+      "name": "扁平化標籤列表 (Flat Mode)",
+      "importPath": "./src/components/profile/edit/CategoryMultiSelectField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-categorymultiselectfield--flat-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-categorymultiselectfield--limit-selection",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/CategoryMultiSelectField",
+      "name": "設定選取數量限制 (Limit: 2)",
+      "importPath": "./src/components/profile/edit/CategoryMultiSelectField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-categorymultiselectfield--limit-selection&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-categorymultiselectfield--search-and-filter-showcase",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/CategoryMultiSelectField",
+      "name": "搜尋與過濾功能展示",
+      "importPath": "./src/components/profile/edit/CategoryMultiSelectField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-categorymultiselectfield--search-and-filter-showcase&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-confirmdialog--delete-education",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/ConfirmDialog",
+      "name": "Delete Education",
+      "importPath": "./src/components/profile/edit/ConfirmDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-confirmdialog--delete-education&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-confirmdialog--logout",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/ConfirmDialog",
+      "name": "Logout",
+      "importPath": "./src/components/profile/edit/ConfirmDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-confirmdialog--logout&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-editpageheader--edit-profile",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EditPageHeader",
+      "name": "編輯個人頁面",
+      "importPath": "./src/components/profile/edit/EditPageHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-editpageheader--edit-profile&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-editpageheader--mentor-onboarding",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EditPageHeader",
+      "name": "導師完成個人資料",
+      "importPath": "./src/components/profile/edit/EditPageHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-editpageheader--mentor-onboarding&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-editpageheader--saving",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EditPageHeader",
+      "name": "儲存中狀態",
+      "importPath": "./src/components/profile/edit/EditPageHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-editpageheader--saving&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--text-field-default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "TextField / 預設狀態",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--text-field-default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--text-field-with-placeholder",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "TextField / 包含提示文字",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--text-field-with-placeholder&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--text-field-validation-error",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "TextField / 驗證錯誤狀態",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--text-field-validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--textarea-field-default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "TextareaField / 預設高度 (rows=6)",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--textarea-field-default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--textarea-field-custom-rows",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "TextareaField / 自訂高度 (rows=3)",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--textarea-field-custom-rows&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--select-field-with-selected-value",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "SelectField / 已選擇選項",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--select-field-with-selected-value&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--select-field-empty",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "SelectField / 空白未選擇狀態",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--select-field-empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--combobox-field-with-selected-value",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "ComboboxField / 已選擇選項",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--combobox-field-with-selected-value&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-fields--combobox-field-empty",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Fields",
+      "name": "ComboboxField / 空白未選擇狀態",
+      "importPath": "./src/components/profile/edit/Fields.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-fields--combobox-field-empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-jobexperiencesection--empty",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/JobExperienceSection",
+      "name": "Empty",
+      "importPath": "./src/components/profile/edit/JobExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-jobexperiencesection--empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-jobexperiencesection--filled",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/JobExperienceSection",
+      "name": "Filled",
+      "importPath": "./src/components/profile/edit/JobExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-jobexperiencesection--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-jobexperiencesection--multiple-entries",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/JobExperienceSection",
+      "name": "Multiple Entries",
+      "importPath": "./src/components/profile/edit/JobExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-jobexperiencesection--multiple-entries&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-linkssection--default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/LinksSection",
+      "name": "空白連結區塊",
+      "importPath": "./src/components/profile/edit/LinkSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-linkssection--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-linkssection--filled",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/LinksSection",
+      "name": "已填寫連結區塊",
+      "importPath": "./src/components/profile/edit/LinkSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-linkssection--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-linkssection--with-validation-errors",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/LinksSection",
+      "name": "有格式錯誤狀態",
+      "importPath": "./src/components/profile/edit/LinkSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-linkssection--with-validation-errors&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-requiredindicator--default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/RequiredIndicator",
+      "name": "Default",
+      "importPath": "./src/components/profile/edit/RequiredIndicator.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-requiredindicator--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-requiredindicator--hidden",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/RequiredIndicator",
+      "name": "Hidden",
+      "importPath": "./src/components/profile/edit/RequiredIndicator.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-requiredindicator--hidden&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-section--default",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Section",
+      "name": "Default",
+      "importPath": "./src/components/profile/edit/Section.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-section--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-section--required",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Section",
+      "name": "Required",
+      "importPath": "./src/components/profile/edit/Section.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-section--required&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-section--required-indicator-demo",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/Section",
+      "name": "RequiredIndicator 獨立展示",
+      "importPath": "./src/components/profile/edit/Section.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-section--required-indicator-demo&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-educationsection--empty",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EducationSection",
+      "name": "Empty",
+      "importPath": "./src/components/profile/edit/educationSection/educationSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-educationsection--empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-educationsection--filled",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EducationSection",
+      "name": "Filled",
+      "importPath": "./src/components/profile/edit/educationSection/educationSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-educationsection--filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-edit-educationsection--multiple-entries",
+      "title": "業務模組元件/個人檔案(Profile)/Edit/EducationSection",
+      "name": "Multiple Entries",
+      "importPath": "./src/components/profile/edit/educationSection/educationSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-edit-educationsection--multiple-entries&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--default-empty",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Default Empty",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--default-empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--default-filled",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Default Filled",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--default-filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--work-section-empty",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Work Section Empty",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--work-section-empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--work-section-filled",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Work Section Filled",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--work-section-filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--education-section-empty",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Education Section Empty",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--education-section-empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-experiencesection-experiencesection--education-section-filled",
+      "title": "業務模組元件/個人檔案(Profile)/ExperienceSection/ExperienceSection",
+      "name": "Education Section Filled",
+      "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--education-section-filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebanner--default",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBanner",
+      "name": "Default",
+      "importPath": "./src/components/profile/profile-banner/ProfileBanner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebanner--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebanner--with-mentor-card",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBanner",
+      "name": "With Mentor Card",
+      "importPath": "./src/components/profile/profile-banner/ProfileBanner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebanner--with-mentor-card&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebanner--with-mentee-card",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBanner",
+      "name": "With Mentee Card",
+      "importPath": "./src/components/profile/profile-banner/ProfileBanner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebanner--with-mentee-card&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilecard--mentor",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileCard",
+      "name": "Mentor",
+      "importPath": "./src/components/profile/profile-card/ProfileCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilecard--mentor&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilecard--mentee",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileCard",
+      "name": "Mentee",
+      "importPath": "./src/components/profile/profile-card/ProfileCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilecard--mentee&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-bookingform--user-data-loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/BookingForm",
+      "name": "User Data Loading",
+      "importPath": "./src/components/profile/reservation/BookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-bookingform--user-data-loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-bookingform--mentor-own-profile",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/BookingForm",
+      "name": "Mentor Own Profile",
+      "importPath": "./src/components/profile/reservation/BookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-bookingform--mentor-own-profile&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-bookingform--mentee-profile-view",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/BookingForm",
+      "name": "Mentee Profile View",
+      "importPath": "./src/components/profile/reservation/BookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-bookingform--mentee-profile-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-bookingform--unauthenticated-visitor-view",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/BookingForm",
+      "name": "Unauthenticated Visitor View",
+      "importPath": "./src/components/profile/reservation/BookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-bookingform--unauthenticated-visitor-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-bookingform--no-available-slots-view",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/BookingForm",
+      "name": "No Available Slots View",
+      "importPath": "./src/components/profile/reservation/BookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-bookingform--no-available-slots-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-confirmedreservationdialog--default",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ConfirmedReservationDialog",
+      "name": "Default",
+      "importPath": "./src/components/profile/reservation/ConfirmedReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-confirmedreservationdialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-confirmedreservationdialog--imminent-session",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ConfirmedReservationDialog",
+      "name": "Imminent Session",
+      "importPath": "./src/components/profile/reservation/ConfirmedReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-confirmedreservationdialog--imminent-session&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Loading",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--unauthenticated",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Unauthenticated",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--unauthenticated&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--unauthenticated-sign-in-prompt",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Unauthenticated Sign In Prompt",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--unauthenticated-sign-in-prompt&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--no-available-slots",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "No Available Slots",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--no-available-slots&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--not-selected",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Not Selected",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--not-selected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--slot-selected",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Slot Selected",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--slot-selected&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-menteebookingform--submitting",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MenteeBookingForm",
+      "name": "Submitting",
+      "importPath": "./src/components/profile/reservation/MenteeBookingForm.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-menteebookingform--submitting&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduleconfig--loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleConfig",
+      "name": "Loading",
+      "importPath": "./src/components/profile/reservation/MentorScheduleConfig.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduleconfig--loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduleconfig--empty",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleConfig",
+      "name": "Empty",
+      "importPath": "./src/components/profile/reservation/MentorScheduleConfig.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduleconfig--empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduleconfig--with-slots",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleConfig",
+      "name": "With Slots",
+      "importPath": "./src/components/profile/reservation/MentorScheduleConfig.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduleconfig--with-slots&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduleconfig--with-mixed-slots",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleConfig",
+      "name": "With Mixed Slots",
+      "importPath": "./src/components/profile/reservation/MentorScheduleConfig.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduleconfig--with-mixed-slots&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduledialog--default",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleDialog",
+      "name": "Default",
+      "importPath": "./src/components/profile/reservation/MentorScheduleDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduledialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduledialog--with-booked-and-pending-prompts",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleDialog",
+      "name": "With Booked And Pending Prompts",
+      "importPath": "./src/components/profile/reservation/MentorScheduleDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduledialog--with-booked-and-pending-prompts&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduledialog--orphan-virtual-reservation-slot",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleDialog",
+      "name": "Orphan Virtual Reservation Slot",
+      "importPath": "./src/components/profile/reservation/MentorScheduleDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduledialog--orphan-virtual-reservation-slot&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-mentorscheduledialog--loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/MentorScheduleDialog",
+      "name": "Loading",
+      "importPath": "./src/components/profile/reservation/MentorScheduleDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-mentorscheduledialog--loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-quickreplydialog--default",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/QuickReplyDialog",
+      "name": "Default",
+      "importPath": "./src/components/profile/reservation/QuickReplyDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-quickreplydialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-quickreplydialog--without-mentee-message",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/QuickReplyDialog",
+      "name": "Without Mentee Message",
+      "importPath": "./src/components/profile/reservation/QuickReplyDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-quickreplydialog--without-mentee-message&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--default",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "Default",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--with-available-dates",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "With Available Dates",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--with-available-dates&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--profile-size",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "Profile Size",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--profile-size&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "Loading",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--past-disabled",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "Past Disabled",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--past-disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--with-status-dots",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "With Status Dots",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--with-status-dots&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-schedulecalendar--controlled-month-cursor",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleCalendar",
+      "name": "Controlled Month Cursor",
+      "importPath": "./src/components/profile/reservation/ScheduleCalendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-schedulecalendar--controlled-month-cursor&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-scheduleslotlist--loading",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleSlotList",
+      "name": "Loading",
+      "importPath": "./src/components/profile/reservation/ScheduleSlotList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-scheduleslotlist--loading&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-scheduleslotlist--empty",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleSlotList",
+      "name": "Empty",
+      "importPath": "./src/components/profile/reservation/ScheduleSlotList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-scheduleslotlist--empty&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-reservation-scheduleslotlist--with-slots",
+      "title": "業務模組元件/個人檔案(Profile)/Reservation/ScheduleSlotList",
+      "name": "With Slots",
+      "importPath": "./src/components/profile/reservation/ScheduleSlotList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-reservation-scheduleslotlist--with-slots&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebadgesection--mentor-expertise",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBadgeSection",
+      "name": "Mentor Expertise",
+      "importPath": "./src/components/profile/view/ProfileBadgeSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebadgesection--mentor-expertise&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebadgesection--mentor-services",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBadgeSection",
+      "name": "Mentor Services",
+      "importPath": "./src/components/profile/view/ProfileBadgeSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebadgesection--mentor-services&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebadgesection--mentee-interested-roles",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBadgeSection",
+      "name": "Mentee Interested Roles",
+      "importPath": "./src/components/profile/view/ProfileBadgeSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebadgesection--mentee-interested-roles&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebadgesection--mentee-skill-enhancement",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBadgeSection",
+      "name": "Mentee Skill Enhancement",
+      "importPath": "./src/components/profile/view/ProfileBadgeSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebadgesection--mentee-skill-enhancement&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilebadgesection--mentee-talk-topics",
+      "title": "業務模組元件/個人檔案(Profile)/ProfileBadgeSection",
+      "name": "Mentee Talk Topics",
+      "importPath": "./src/components/profile/view/ProfileBadgeSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilebadgesection--mentee-talk-topics&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-acceptreservationdialog--default",
+      "title": "業務模組元件/預約管理(Reservation)/AcceptReservationDialog",
+      "name": "Default",
+      "importPath": "./src/components/reservation/AcceptReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-acceptreservationdialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-acceptreservationdialog--loading-state",
+      "title": "業務模組元件/預約管理(Reservation)/AcceptReservationDialog",
+      "name": "Loading State",
+      "importPath": "./src/components/reservation/AcceptReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-acceptreservationdialog--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-acceptreservationdialog--disabled",
+      "title": "業務模組元件/預約管理(Reservation)/AcceptReservationDialog",
+      "name": "Disabled",
+      "importPath": "./src/components/reservation/AcceptReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-acceptreservationdialog--disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-acceptreservationdialog--no-mentee-message",
+      "title": "業務模組元件/預約管理(Reservation)/AcceptReservationDialog",
+      "name": "No Mentee Message",
+      "importPath": "./src/components/reservation/AcceptReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-acceptreservationdialog--no-mentee-message&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-cancelreservationdialog--default",
+      "title": "業務模組元件/預約管理(Reservation)/CancelReservationDialog",
+      "name": "Default",
+      "importPath": "./src/components/reservation/CancelReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-cancelreservationdialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-cancelreservationdialog--loading-state",
+      "title": "業務模組元件/預約管理(Reservation)/CancelReservationDialog",
+      "name": "Loading State",
+      "importPath": "./src/components/reservation/CancelReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-cancelreservationdialog--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-cancelreservationdialog--disabled",
+      "title": "業務模組元件/預約管理(Reservation)/CancelReservationDialog",
+      "name": "Disabled",
+      "importPath": "./src/components/reservation/CancelReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-cancelreservationdialog--disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-joinmeetbutton--default",
+      "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
+      "name": "Default",
+      "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-joinmeetbutton--pending-state",
+      "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
+      "name": "Pending State",
+      "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--pending-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-joinmeetbutton--disabled-state",
+      "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
+      "name": "Disabled State",
+      "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--disabled-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-rejectreservationdialog--default",
+      "title": "業務模組元件/預約管理(Reservation)/RejectReservationDialog",
+      "name": "Default",
+      "importPath": "./src/components/reservation/RejectReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-rejectreservationdialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-rejectreservationdialog--loading-state",
+      "title": "業務模組元件/預約管理(Reservation)/RejectReservationDialog",
+      "name": "Loading State",
+      "importPath": "./src/components/reservation/RejectReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-rejectreservationdialog--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-rejectreservationdialog--disabled",
+      "title": "業務模組元件/預約管理(Reservation)/RejectReservationDialog",
+      "name": "Disabled",
+      "importPath": "./src/components/reservation/RejectReservationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-rejectreservationdialog--disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-replymessagefield--collapsed",
+      "title": "業務模組元件/預約管理(Reservation)/ReplyMessageField",
+      "name": "Collapsed",
+      "importPath": "./src/components/reservation/ReplyMessageField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-replymessagefield--collapsed&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-replymessagefield--expanded",
+      "title": "業務模組元件/預約管理(Reservation)/ReplyMessageField",
+      "name": "Expanded",
+      "importPath": "./src/components/reservation/ReplyMessageField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-replymessagefield--expanded&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-replymessagefield--with-validation-error",
+      "title": "業務模組元件/預約管理(Reservation)/ReplyMessageField",
+      "name": "With Validation Error",
+      "importPath": "./src/components/reservation/ReplyMessageField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-replymessagefield--with-validation-error&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-replymessagefield--disabled",
+      "title": "業務模組元件/預約管理(Reservation)/ReplyMessageField",
+      "name": "Disabled",
+      "importPath": "./src/components/reservation/ReplyMessageField.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-replymessagefield--disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--pending",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "Pending",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--pending&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--accept",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "Accept",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--accept&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--reject",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "Reject",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--reject&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--system-auto-cancelled",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "System Auto Cancelled",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--system-auto-cancelled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--history-completed",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "History Completed",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-completed&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--default",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "Default",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--mentee-view",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "Mentee View",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--mentee-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--multi-turn-conversation",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "Multi Turn Conversation",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--multi-turn-conversation&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--empty-conversation",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "Empty Conversation",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--empty-conversation&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--system-auto-cancelled",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "System Auto Cancelled",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--system-auto-cancelled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--cancelled-with-reason",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
+      "name": "Cancelled With Reason",
+      "importPath": "./src/components/reservation/ReservationConversationDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationconversationdialog--cancelled-with-reason&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationdashboard--mentor-view",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationDashboard",
+      "name": "Mentor View",
+      "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--mentor-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationdashboard--mentee-view",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationDashboard",
+      "name": "Mentee View",
+      "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--mentee-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationdashboard--empty-state",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationDashboard",
+      "name": "Empty State",
+      "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--empty-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationdashboard--loading-state",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationDashboard",
+      "name": "Loading State",
+      "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationdashboard--history-loading-with-preserved-counts",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationDashboard",
+      "name": "History Loading With Preserved Counts",
+      "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--history-loading-with-preserved-counts&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--default",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Default",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--compact-with-status-badge",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Compact With Status Badge",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--compact-with-status-badge&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--with-mentee-message",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "With Mentee Message",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--with-mentee-message&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--with-mentee-and-mentor-messages",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "With Mentee And Mentor Messages",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--with-mentee-and-mentor-messages&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--disabled",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Disabled",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--no-profile-link",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "No Profile Link",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--no-profile-link&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--linking-disabled",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Linking Disabled",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--linking-disabled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--without-messages",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Without Messages",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--without-messages&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentity--accept-dialog-style",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentity",
+      "name": "Accept Dialog Style",
+      "importPath": "./src/components/reservation/ReservationIdentity.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentity--accept-dialog-style&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentityheader--default",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentityHeader",
+      "name": "Default",
+      "importPath": "./src/components/reservation/ReservationIdentityHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentityheader--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentityheader--card-style",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentityHeader",
+      "name": "Card Style",
+      "importPath": "./src/components/reservation/ReservationIdentityHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentityheader--card-style&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationidentityheader--no-profile-link",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationIdentityHeader",
+      "name": "No Profile Link",
+      "importPath": "./src/components/reservation/ReservationIdentityHeader.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationidentityheader--no-profile-link&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--upcoming-list",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Upcoming List",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--upcoming-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--pending-mentee-list",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Pending Mentee List",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--pending-mentee-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--pending-mentor-list",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Pending Mentor List",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--pending-mentor-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--history-list",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "History List",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--history-list&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-state",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty State",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-upcoming-mentee",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty Upcoming Mentee",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-upcoming-mentee&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-pending-mentee",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty Pending Mentee",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-pending-mentee&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-history-mentee",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty History Mentee",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-history-mentee&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-upcoming-mentor",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty Upcoming Mentor",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-upcoming-mentor&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-pending-mentor",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty Pending Mentor",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-pending-mentor&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--empty-history-mentor",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Empty History Mentor",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--empty-history-mentor&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--loading-state",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Loading State",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--cancelled-history-with-reason",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Cancelled History With Reason",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--cancelled-history-with-reason&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationmessagepreview--card-variant-with-both-messages",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationMessagePreview",
+      "name": "Card Variant With Both Messages",
+      "importPath": "./src/components/reservation/ReservationMessagePreview.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationmessagepreview--card-variant-with-both-messages&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationmessagepreview--dialog-variant-with-both-messages",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationMessagePreview",
+      "name": "Dialog Variant With Both Messages",
+      "importPath": "./src/components/reservation/ReservationMessagePreview.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationmessagepreview--dialog-variant-with-both-messages&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationmessagepreview--mentee-message-only",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationMessagePreview",
+      "name": "Mentee Message Only",
+      "importPath": "./src/components/reservation/ReservationMessagePreview.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationmessagepreview--mentee-message-only&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationmessagepreview--cancelled-with-reason",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationMessagePreview",
+      "name": "Cancelled With Reason",
+      "importPath": "./src/components/reservation/ReservationMessagePreview.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationmessagepreview--cancelled-with-reason&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationstatusbadge--pending",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationStatusBadge",
+      "name": "Pending",
+      "importPath": "./src/components/reservation/ReservationStatusBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationstatusbadge--pending&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationstatusbadge--accept",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationStatusBadge",
+      "name": "Accept",
+      "importPath": "./src/components/reservation/ReservationStatusBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationstatusbadge--accept&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationstatusbadge--reject",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationStatusBadge",
+      "name": "Reject",
+      "importPath": "./src/components/reservation/ReservationStatusBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationstatusbadge--reject&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationstatusbadge--imminent",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationStatusBadge",
+      "name": "Imminent",
+      "importPath": "./src/components/reservation/ReservationStatusBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationstatusbadge--imminent&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationstatusbadge--soon",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationStatusBadge",
+      "name": "Soon",
+      "importPath": "./src/components/reservation/ReservationStatusBadge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationstatusbadge--soon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-avatarcropmodal--default",
+      "title": "基礎/原子元件/AvatarCropModal",
+      "name": "Default",
+      "importPath": "./src/components/ui/avatar-crop-modal.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-avatarcropmodal--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-avatarupload--default",
+      "title": "基礎/原子元件/AvatarUpload",
+      "name": "Default",
+      "importPath": "./src/components/ui/avatar-upload.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-avatarupload--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-avatarupload--with-initial-avatar",
+      "title": "基礎/原子元件/AvatarUpload",
+      "name": "With Initial Avatar",
+      "importPath": "./src/components/ui/avatar-upload.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-avatarupload--with-initial-avatar&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-avatar--with-image",
+      "title": "基礎/原子元件/Avatar",
+      "name": "With Image",
+      "importPath": "./src/components/ui/avatar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-avatar--with-image&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-avatar--fallback-only",
+      "title": "基礎/原子元件/Avatar",
+      "name": "Fallback Only",
+      "importPath": "./src/components/ui/avatar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-avatar--fallback-only&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-badge--default",
+      "title": "基礎/原子元件/Badge",
+      "name": "Default",
+      "importPath": "./src/components/ui/badge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-badge--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-badge--all-variants",
+      "title": "基礎/原子元件/Badge",
+      "name": "All Variants",
+      "importPath": "./src/components/ui/badge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-badge--all-variants&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-badge--content-types",
+      "title": "基礎/原子元件/Badge",
+      "name": "Content Types",
+      "importPath": "./src/components/ui/badge.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-badge--content-types&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--default",
+      "title": "基礎/原子元件/Button",
+      "name": "Default",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--all-variants",
+      "title": "基礎/原子元件/Button",
+      "name": "All Variants",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--all-variants&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--all-sizes",
+      "title": "基礎/原子元件/Button",
+      "name": "All Sizes",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--all-sizes&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--all-shapes",
+      "title": "基礎/原子元件/Button",
+      "name": "All Shapes",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--all-shapes&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--disabled",
+      "title": "基礎/原子元件/Button",
+      "name": "Disabled",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--disabled&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--loading",
+      "title": "基礎/原子元件/Button",
+      "name": "Loading",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--loading&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-button--with-icon",
+      "title": "基礎/原子元件/Button",
+      "name": "With Icon",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-button--with-icon&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-calendar--default",
+      "title": "基礎/原子元件/Calendar",
+      "name": "Default",
+      "importPath": "./src/components/ui/calendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-calendar--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-calendar--profile-variant",
+      "title": "基礎/原子元件/Calendar",
+      "name": "Profile Variant",
+      "importPath": "./src/components/ui/calendar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-calendar--profile-variant&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-card--default",
+      "title": "基礎/原子元件/Card",
+      "name": "Default",
+      "importPath": "./src/components/ui/card.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-card--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-card--content-only",
+      "title": "基礎/原子元件/Card",
+      "name": "Content Only",
+      "importPath": "./src/components/ui/card.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-card--content-only&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-card--status-card",
+      "title": "基礎/原子元件/Card",
+      "name": "Status Card",
+      "importPath": "./src/components/ui/card.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-card--status-card&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-categorymultiselect--default",
+      "title": "基礎/原子元件/CategoryMultiSelect",
+      "name": "Default",
+      "importPath": "./src/components/ui/category-multi-select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-categorymultiselect--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-categorymultiselect--flat-list",
+      "title": "基礎/原子元件/CategoryMultiSelect",
+      "name": "Flat List",
+      "importPath": "./src/components/ui/category-multi-select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-categorymultiselect--flat-list&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-checkbox--default",
+      "title": "基礎/原子元件/Checkbox",
+      "name": "Default",
+      "importPath": "./src/components/ui/checkbox.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-checkbox--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-checkbox--disabled",
+      "title": "基礎/原子元件/Checkbox",
+      "name": "Disabled",
+      "importPath": "./src/components/ui/checkbox.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-checkbox--disabled&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-command--default",
+      "title": "基礎/原子元件/Command",
+      "name": "Default",
+      "importPath": "./src/components/ui/command.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-command--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-dialog--default",
+      "title": "基礎/原子元件/Dialog",
+      "name": "Default",
+      "importPath": "./src/components/ui/dialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-dialog--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-dialog--confirmation",
+      "title": "基礎/原子元件/Dialog",
+      "name": "Confirmation",
+      "importPath": "./src/components/ui/dialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-dialog--confirmation&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-dropdownmenu--default",
+      "title": "基礎/原子元件/DropdownMenu",
+      "name": "Default",
+      "importPath": "./src/components/ui/dropdown-menu.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-dropdownmenu--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-form--default",
+      "title": "基礎/原子元件/Form",
+      "name": "Default",
+      "importPath": "./src/components/ui/form.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-form--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-input--default",
+      "title": "基礎/原子元件/Input",
+      "name": "Default",
+      "importPath": "./src/components/ui/input.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-input--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-input--input-types",
+      "title": "基礎/原子元件/Input",
+      "name": "Input Types",
+      "importPath": "./src/components/ui/input.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-input--input-types&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-input--special-states",
+      "title": "基礎/原子元件/Input",
+      "name": "Special States",
+      "importPath": "./src/components/ui/input.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-input--special-states&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-label--default",
+      "title": "基礎/原子元件/Label",
+      "name": "Default",
+      "importPath": "./src/components/ui/label.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-label--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-loadingspinner--default",
+      "title": "基礎/原子元件/LoadingSpinner",
+      "name": "Default",
+      "importPath": "./src/components/ui/loading-spinner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-loadingspinner--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-loadingspinner--all-sizes",
+      "title": "基礎/原子元件/LoadingSpinner",
+      "name": "All Sizes",
+      "importPath": "./src/components/ui/loading-spinner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-loadingspinner--all-sizes&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-loadingspinner--page-loading-demo",
+      "title": "基礎/原子元件/LoadingSpinner",
+      "name": "Page Loading Demo",
+      "importPath": "./src/components/ui/loading-spinner.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-loadingspinner--page-loading-demo&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-popover--default",
+      "title": "基礎/原子元件/Popover",
+      "name": "Default",
+      "importPath": "./src/components/ui/popover.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-popover--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-searchbar--default",
+      "title": "基礎/原子元件/SearchBar",
+      "name": "Default",
+      "importPath": "./src/components/ui/search-bar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-searchbar--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-searchableselect--default",
+      "title": "基礎/原子元件/SearchableSelect",
+      "name": "預設（依視窗寬度切換 popover / 底部面板）",
+      "importPath": "./src/components/ui/searchable-select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-searchableselect--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-searchableselect--mobile-sheet",
+      "title": "基礎/原子元件/SearchableSelect",
+      "name": "手機版底部面板",
+      "importPath": "./src/components/ui/searchable-select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-searchableselect--mobile-sheet&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-select--default",
+      "title": "基礎/原子元件/Select",
+      "name": "Default",
+      "importPath": "./src/components/ui/select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-select--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-select--disabled",
+      "title": "基礎/原子元件/Select",
+      "name": "Disabled",
+      "importPath": "./src/components/ui/select.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-select--disabled&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-sheet--default",
+      "title": "基礎/原子元件/Sheet",
+      "name": "Default",
+      "importPath": "./src/components/ui/sheet.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-sheet--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-sheet--left-side",
+      "title": "基礎/原子元件/Sheet",
+      "name": "Left Side",
+      "importPath": "./src/components/ui/sheet.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-sheet--left-side&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-skeleton--default",
+      "title": "基礎/原子元件/Skeleton",
+      "name": "Default",
+      "importPath": "./src/components/ui/skeleton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-skeleton--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-skeleton--loading-card",
+      "title": "基礎/原子元件/Skeleton",
+      "name": "Loading Card",
+      "importPath": "./src/components/ui/skeleton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-skeleton--loading-card&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-slider--default",
+      "title": "基礎/原子元件/Slider",
+      "name": "Default",
+      "importPath": "./src/components/ui/slider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-slider--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-slider--custom-step-and-range",
+      "title": "基礎/原子元件/Slider",
+      "name": "Custom Step And Range",
+      "importPath": "./src/components/ui/slider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-slider--custom-step-and-range&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-slider--disabled",
+      "title": "基礎/原子元件/Slider",
+      "name": "Disabled",
+      "importPath": "./src/components/ui/slider.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-slider--disabled&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-tabs--default",
+      "title": "基礎/原子元件/Tabs",
+      "name": "Default",
+      "importPath": "./src/components/ui/tabs.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-tabs--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-textarea--default",
+      "title": "基礎/原子元件/Textarea",
+      "name": "Default",
+      "importPath": "./src/components/ui/textarea.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-textarea--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-textarea--disabled",
+      "title": "基礎/原子元件/Textarea",
+      "name": "Disabled",
+      "importPath": "./src/components/ui/textarea.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-textarea--disabled&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-toast--default",
+      "title": "基礎/原子元件/Toast",
+      "name": "Default",
+      "importPath": "./src/components/ui/toast.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-toast--default&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-toast--destructive",
+      "title": "基礎/原子元件/Toast",
+      "name": "Destructive",
+      "importPath": "./src/components/ui/toast.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-toast--destructive&viewMode=story"
+    },
+    {
+      "id": "基礎-原子元件-toaster--default",
+      "title": "基礎/原子元件/Toaster",
+      "name": "Default",
+      "importPath": "./src/components/ui/toaster.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E-%E5%8E%9F%E5%AD%90%E5%85%83%E4%BB%B6-toaster--default&viewMode=story"
+    }
+  ]
+}
