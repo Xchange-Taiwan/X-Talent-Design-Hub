@@ -46,7 +46,7 @@ jobs:
         run: |
           npx --yes wrangler@4 deploy --config ./wrangler.jsonc
           echo "DEPLOY_URL=https://x-talent-design-hub.x-talent.workers.dev" >> "$GITHUB_ENV"
-          curl -sS -X POST https://x-talent-discord-mention-notify.x-talent.workers.dev/__sync-design-hub || true
+          curl -sS -X POST -H "Content-Type: application/json" --data-binary @public/design-hub-kb.json https://x-talent-discord-mention-notify.x-talent.workers.dev/__sync-design-hub || true
 
       - name: Deploy Preview (preview/* branch or PR)
         if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
