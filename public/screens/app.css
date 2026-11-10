@@ -355,3 +355,26 @@ body.chat-view{background:#fff}.chat-shell{width:100%;height:calc(100dvh - 80px)
  .role-menu{max-width:calc(100vw - 32px)}
 }
 @media(prefers-reduced-motion:reduce){.history-loading svg{animation:none}}
+
+/* 2026-11-10 confirmed #654 updates (T03, T05, T09, T10) */
+.list-search-row{display:flex;align-items:center;gap:8px;padding:16px 20px 0}
+.list-search-row .search-wrap{flex:1;margin:0!important;width:auto}
+.list-back-inline{display:none;flex:none;width:36px;height:36px;border-radius:8px;color:var(--color-text-primary)}
+.search-match-bold{font-weight:700;color:var(--color-text-primary);background:#fff3bf;padding:0 2px;border-radius:3px}
+.dm-booking-form{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.dm-slot-title{margin:0;font-size:13px;font-weight:600;color:var(--color-text-primary)}
+.dm-slot-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dm-slot-btn{height:38px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-weight:500;background:#fff;color:var(--color-text-primary);cursor:pointer}
+.dm-slot-btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.dm-note-label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;color:var(--color-text-secondary)}
+.dm-note-input{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:13px;resize:vertical}
+.dm-book-submit{width:100%;justify-content:center;margin-top:4px}
+@media(min-width:768px){
+  .mobile-invalid-only{display:none!important}
+  .desktop-invalid-empty{display:block}
+}
+@media(max-width:767px){
+  .list-back-inline{display:inline-grid;place-items:center}
+  .list-search-row{padding:12px 16px 0}
+  .desktop-invalid-empty{display:none!important}
+}

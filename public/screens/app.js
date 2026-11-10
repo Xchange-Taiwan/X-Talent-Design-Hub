@@ -14234,7 +14234,7 @@ var initialThreads = () => ({
   sarah: { ...emptyThread(), messages: [msg("s1", false, "\u5F88\u958B\u5FC3\u9019\u6B21\u7684\u4EA4\u6D41\u5C0D\u4F60\u6709\u5E6B\u52A9 \u{1F60A}", days(5, 19, 6))] }
 });
 function initialState(scene2) {
-  const profileScenes = ["profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry"];
+  const profileScenes = ["profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry", "t10-with-note", "t10-empty-note"];
   const booking = scene2.startsWith("booking-");
   const s = { threads: initialThreads(), people: basePeople.map((p) => ({ ...p })), route: { view: profileScenes.includes(scene2) ? "profile" : booking ? "bookings" : "chat", active: ["list", "empty", "list-failure", "search", "unread", "unread-99", "notifications", "empty-unread", "search-short", "search-content"].includes(scene2) ? null : ["invalid-link", "forbidden-link"].includes(scene2) ? "invalid" : "zahra", origin: booking ? "bookings" : "profile" }, member: !["guest", "login-failure"].includes(scene2), role: ["mentor-profile", "role-switch"].includes(scene2) || scene2.startsWith("booking-mentor") ? "mentor" : "mentee", search: "", filter: scene2.startsWith("unread") || scene2 === "empty-unread" ? "unread" : "all", scroll: 0, offset: 0, listError: scene2 === "list-failure", profileMode: scene2 === "self-profile" ? "self" : scene2 === "paused" ? "paused" : scene2 === "missing-profile" ? "missing" : "normal", bookingTab: scene2.includes("history") ? "history" : scene2.includes("pending") ? "pending" : "upcoming" };
   if (profileScenes.includes(scene2) || ["new", "first-failure", "drafts"].includes(scene2)) s.threads.zahra = emptyThread();
@@ -14313,7 +14313,15 @@ var searchQuery = (s) => s.search.trim().toLocaleLowerCase();
 var isSearching = (s) => Array.from(searchQuery(s)).length >= 2;
 function matchedMessage(s, id) {
   const q = searchQuery(s);
-  return isSearching(s) ? success(s.threads[id]).filter((m) => !m.removed && m.text.toLocaleLowerCase().includes(q)).at(-1) : void 0;
+  return isSearching(s) ? success(s.threads[id]).filter((m) => !m.removed && (m.text.toLocaleLowerCase().includes(q) || m.files?.some((f) => f.name.toLocaleLowerCase().includes(q))))[0] : void 0;
+}
+function formatMatchPreview(m, q) {
+  const textMatch = m.text && m.text.toLocaleLowerCase().includes(q);
+  const raw = textMatch ? m.text : (m.files?.find((f) => f.name.toLocaleLowerCase().includes(q))?.name || m.text);
+  const prefix = m.own ? "\u4F60\uFF1A" : "";
+  const idx = raw.toLocaleLowerCase().indexOf(q);
+  if (idx < 0 || !q) return prefix + raw;
+  return [prefix + raw.slice(0, idx), /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("b", { className: "search-match-bold", children: raw.slice(idx, idx + q.length) }, "hl"), raw.slice(idx + q.length)];
 }
 function listedPeople(s) {
   const query = searchQuery(s);
@@ -14411,8 +14419,8 @@ function ChatFab({ unread, onClick }) {
 // src/Profile.tsx
 var import_react7 = __toESM(require_react(), 1);
 var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
-function Profile({ onContact, mode = "normal", onFind, allowContact = true }) {
-  const [saved, setSaved] = (0, import_react7.useState)(false), [tab, setTab] = (0, import_react7.useState)("overview"), [expanded, setExpanded] = (0, import_react7.useState)(false), [day, setDay] = (0, import_react7.useState)(17), [month, setMonth] = (0, import_react7.useState)(11);
+function Profile({ onContact, onBook, initialNote = "", mode = "normal", onFind, allowContact = true }) {
+  const [saved, setSaved] = (0, import_react7.useState)(false), [tab, setTab] = (0, import_react7.useState)("overview"), [expanded, setExpanded] = (0, import_react7.useState)(false), [day, setDay] = (0, import_react7.useState)(17), [month, setMonth] = (0, import_react7.useState)(11), [slot, setSlot] = (0, import_react7.useState)("19:00 \u2013 19:30"), [bookingNote, setBookingNote] = (0, import_react7.useState)(initialNote);
   if (mode === "missing") return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("main", { className: "page-empty", children: [
     /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h1", { children: "\u6B64\u5C0E\u5E2B\u4E0D\u5B58\u5728" }),
     /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { className: "primary-button", onClick: onFind, children: "\u5C0B\u627E\u5C0E\u5E2B" })
@@ -14513,6 +14521,15 @@ function Profile({ onContact, mode = "normal", onFind, allowContact = true }) {
           /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-calendar-grid", children: [
             ["\u65E5", "\u4E00", "\u4E8C", "\u4E09", "\u56DB", "\u4E94", "\u516D"].map((d) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "dm-weekday", children: d }, d)),
             Array.from({ length: 30 }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { className: "dm-day", "aria-pressed": day === i + 1, disabled: i + 1 < 8, onClick: () => setDay(i + 1), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: i + 1 }) }, i))
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-booking-form", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "dm-slot-title", children: "\u7576\u65E5\u53EF\u9810\u7D04\u6642\u6BB5" }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "dm-slot-grid", children: ["19:00 \u2013 19:30", "20:00 \u2013 20:30"].map((sl) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { type: "button", className: "dm-slot-btn" + (slot === sl ? " active" : ""), onClick: () => setSlot(sl), children: sl }, sl)) }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("label", { className: "dm-note-label", children: [
+              "\u4F60\u60F3\u554F\u5C0E\u5E2B\u7684\u554F\u984C\uFF08\u9078\u586B\uFF0C\u78BA\u8A8D\u9810\u7D04\u5F8C\u5C07\u9001\u5165\u804A\u804A\uFF09",
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("textarea", { className: "dm-note-input", rows: 3, placeholder: "\u8ACB\u5728\u6B64\u8F38\u5165\u4F60\u7684\u554F\u984C\u2026", value: bookingNote, onChange: (e) => setBookingNote(e.target.value) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { type: "button", className: "primary-button dm-book-submit", disabled: !allowContact || mode === "self", onClick: () => onBook && onBook(bookingNote), children: "\u78BA\u8A8D\u9810\u7D04" })
           ] })
         ] }) })
       ] })
@@ -14608,23 +14625,18 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
     });
     update((t) => ({ ...t, files: [...t.files, ...next] }));
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("main", { className: `chat-shell ${overview ? "no-thread inbox-overview" : "has-thread"}`, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("main", { className: `chat-shell ${overview ? "no-thread inbox-overview" : invalid ? "has-thread is-invalid" : "has-thread"}`, children: [
     /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("aside", { className: "conversation-list", "aria-label": "\u5C0D\u8A71\u5217\u8868", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { className: "list-back", onClick: back, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ArrowLeft, { size: 16 }),
-        " \u8FD4\u56DE\u539F\u9801"
-      ] }),
       /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-tools", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-heading", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "list-heading-icon", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 18, strokeWidth: 1.8 }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h1", { children: "\u7AD9\u5167\u804A\u804A" })
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-search-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8FD4\u56DE\u539F\u9801", className: "list-back-inline", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ArrowLeft, { size: 20 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "search-wrap", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Search, { size: 18 }),
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("input", { "aria-label": "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", placeholder: "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", value: s.search, onChange: (e) => setState((p) => ({ ...p, search: e.target.value })) }),
+            s.search && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u6E05\u9664\u641C\u5C0B", onClick: () => setState((p) => ({ ...p, search: "" })), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(X, { size: 16 }) })
+          ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "search-wrap", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Search, { size: 18 }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("input", { "aria-label": "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", placeholder: "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", value: s.search, onChange: (e) => setState((p) => ({ ...p, search: e.target.value })) }),
-          s.search && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u6E05\u9664\u641C\u5C0B", onClick: () => setState((p) => ({ ...p, search: "" })), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(X, { size: 16 }) })
-        ] }),
-        s.search.trim() && !searching && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: "search-hint", role: "status", children: "\u8ACB\u8F38\u5165\u81F3\u5C11 2 \u500B\u5B57\u5143" })
+        s.search.trim() && !searching && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: "search-hint", role: "status", children: "\u8ACB\u8F38\u5165\u81F3\u5C11 2 \u500B\u5B57\uFF0C\u624D\u6703\u958B\u59CB\u641C\u5C0B\u3002" })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "list-tabs", role: "tablist", "aria-label": "\u8A0A\u606F\u7BE9\u9078", children: [["all", "\u5168\u90E8"], ["unread", "\u672A\u8B80"]].map(([value, label]) => /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { role: "tab", "aria-selected": s.filter === value, onClick: () => setState((p) => ({ ...p, filter: value })), children: [
         label,
@@ -14646,7 +14658,7 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
               /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("strong", { children: p.name }),
               last && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("time", { children: listTime(last.at, now(s)) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: preview(t).startsWith("\u8349\u7A3F\uFF1A") ? "draft-label" : "", children: match ? match.text : preview(t) })
+            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: preview(t).startsWith("\u8349\u7A3F\uFF1A") ? "draft-label" : "", children: match ? formatMatchPreview(match, searchQuery(s)) : preview(t) })
           ] }),
           isUnread && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "unread-dot", "aria-label": "\u672A\u8B80" })
         ] }, p.id);
@@ -14658,12 +14670,17 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
     ] }),
     overview && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("section", { className: "chat-room empty-room", "aria-label": "\u5C1A\u672A\u9078\u53D6\u5C0D\u8A71", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "chat-empty-content", children: [
       /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 30, strokeWidth: 1.6 }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u9078\u64C7\u4E00\u6BB5\u5C0D\u8A71" }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u8ACB\u9078\u64C7\u4E00\u5247\u5C0D\u8A71" }),
       /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "\u5F9E\u5DE6\u5074\u5217\u8868\u9078\u53D6\u5C0D\u8A71\uFF0C\u958B\u59CB\u4EA4\u6D41\u3002" })
     ] }) }),
     invalid ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "chat-room invalid-room", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("header", { className: "thread-header", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ChevronLeft, { size: 22 }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "invalid-content", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "chat-empty-content desktop-invalid-empty", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 30, strokeWidth: 1.6 }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u8ACB\u9078\u64C7\u4E00\u5247\u5C0D\u8A71" }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "\u5F9E\u5DE6\u5074\u5217\u8868\u9078\u53D6\u5C0D\u8A71\uFF0C\u958B\u59CB\u4EA4\u6D41\u3002" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("header", { className: "thread-header mobile-invalid-only", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ChevronLeft, { size: 22 }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "invalid-content mobile-invalid-only", children: [
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 28 }),
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u7121\u6CD5\u958B\u555F\u6B64\u5C0D\u8A71" }),
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "outline-button", onClick: back, children: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868" })
@@ -14726,7 +14743,7 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
       ] }),
       deleted && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "unavailable-area", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "unavailable-notice", role: "status", children: [
         /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 18 }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0F\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F\u3002" }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: person.deleted === "mentee" ? "\u6B64\u5B78\u54E1\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u7E7C\u7E8C\u50B3\u9001\u8A0A\u606F\u3002" : "\u6B64\u5C0E\u5E2B\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u7E7C\u7E8C\u50B3\u9001\u8A0A\u606F\u3002" }),
         person.deleted === "mentor" && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { onClick: find, children: "\u641C\u5C0B\u5C0E\u5E2B" })
       ] }) }),
       /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "composer-area", children: [
@@ -15192,7 +15209,21 @@ function App() {
       if (role === "mentor" && state.route.view === "chat" && state.route.active && !isEstablished(state.threads[state.route.active])) changeRoute({ ...state.route, active: null }, true);
     } }),
     state.member && !["chat", "login", "email"].includes(state.route.view) && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ChatFab, { unread, onClick: openInbox }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Profile, { allowContact: !state.member || state.role === "mentee", mode: state.profileMode, onContact: () => contact(), onFind: () => go("pool") }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Profile, { allowContact: !state.member || state.role === "mentee", mode: state.profileMode, initialNote: scene === "t10-with-note" ? "\u8001\u5E2B\u4F60\u597D\uFF0C\u60F3\u8ACB\u6559\u6211\u7684 UX \u4F5C\u54C1\u96C6\u67B6\u69CB\u8207\u9762\u8A66\u6E96\u5099\u65B9\u5411\uFF01" : "", onContact: () => contact(), onFind: () => go("pool"), onBook: (note) => {
+      if (!state.member) { setLoginTarget("zahra"); go("login"); return; }
+      const clean = (note || "").trim();
+      if (clean) {
+        setState((s) => {
+          const prev = s.threads.zahra || emptyThread();
+          const newMsg = msg(crypto.randomUUID(), true, clean, now(s));
+          return { ...s, threads: { ...s.threads, zahra: { ...prev, messages: [...prev.messages, newMsg], unread: false } }, route: { view: "chat", active: "zahra", origin: "profile" } };
+        });
+        showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u5DF2\u5C07\u4F60\u7684\u9810\u7D04\u7559\u8A00\u9001\u5165\u804A\u804A\u3002", false);
+      } else {
+        go("bookings");
+        showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u672A\u586B\u5BEB\u9810\u7D04\u7559\u8A00\uFF0C\u4E0D\u81EA\u52D5\u958B\u555F\u804A\u804A\u3002", false);
+      }
+    } }) }),
     /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "chat-page", hidden: state.route.view !== "chat", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Chat, { state, setState, open: (id) => openThread(id), back, find: () => go("pool"), send: () => send(), retry: send, toast: showToast }) }),
     /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { hidden: state.route.view !== "bookings", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Bookings, { state, setState, contact: (id) => contact(id), toast: (a, b) => showToast(a, b, false) }) }),
     state.route.view === "login" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Login, { failed: loginError, onCancel: () => go("profile"), onSubmit: () => {
