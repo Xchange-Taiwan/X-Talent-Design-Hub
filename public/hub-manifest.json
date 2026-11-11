@@ -6,13 +6,13 @@
   "screens": [
     {
       "id": "chat-654",
-      "title": "聊聊設計探索 (Mentee 發起對話與聊天室)",
-      "ticket": "#654",
-      "status": "Design Review",
+      "title": "導師個人頁統一版面（簡介／評價 Tab、4格摘要列）與聊聊設計探索",
+      "ticket": "#654 / #736 / #753 / #830",
+      "status": "Approved",
       "author": "Bonny (@bonny8000)",
-      "updatedAt": "2026-11-07",
+      "updatedAt": "2026-11-10",
       "path": "./screens/chat-654.html",
-      "notes": "由 Bonny 建立之互動原型與流程參考頁面（已從 bonny80.chatgpt.site 遷移至公開 Cloudflare CDN）"
+      "notes": "Bonny 定案之導師個人頁統一基底：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點）＋固定產業膠囊列，下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）"
     },
     {
       "id": "mentor-card-737",
