@@ -44,7 +44,7 @@ window.HUB_DATA = {
 for(const [id,code] of Object.entries({home:'src/app/(landing)/page.tsx',history:'src/app/reservation/mentee/page.tsx','mentor-form':'src/app/profile/[pageUserId]/edit/page.tsx','mentor-welcome':'src/app/profile/card/page.tsx'})){const s=window.HUB_DATA.screens.find(x=>x.id===id);s.frontendCode=code;s.note='以你的交付設計為主。'+s.note;}
 
 window.HUB_DATA.components.push(
- {id:'mentor-profile',name:'MentorProfileWithMetrics',label:'導師個人資訊與滿寬摘要列',kind:'組合元件',code:'src/app/profile/[pageUserId]/ui.tsx',screens:['public-profile','mentor-calendar'],rules:['頂部摘要列（100% 滿寬橫跨雙欄之上）：有評價時為 4 欄等寬均分（評分 ★ X.X / 10 ｜ 已完成 1-on-1 N 場 ｜ 經驗 ｜ 地點）；0 則評價時隱藏評分格，其餘欄位自動均分滿寬（絕不可只做左半邊 2 小格導致右側留白）。','固定產業標籤列：緊接在頂部摘要列正下方、雙欄切分之上，左側顯示「產業」小標與圓角膠囊標籤，切換簡介／評價分頁時固定顯示。','雙欄頂部水平齊平：摘要列與產業列下方才切分為左欄（簡介｜評價 N 分頁與內容）與右欄（預約會談／可預約日期卡片），左欄分頁列頂端必須與右欄預約卡片頂端水平對齊。','個人連結使用既有 6/7 大平台專屬彩色圖示（platformLabelMap.tsx）；保留 #753 右側收藏按鈕，導師本人查看時顯示編輯資料。'],changes:[{ticket:'736',date:'2026-11-10',text:'對齊 Bonny 統一導師頁原型（screens/chat-654.html）：滿寬 4 格摘要列＋產業列置於雙欄切分上方，左欄分頁與右欄行事曆頂端水平齊平。'},{ticket:'274',date:'2026-10-15',text:'補齊 Desktop、Tablet、Mobile 個人頁與簡介／評價分頁。'},{ticket:'753',date:'2026-10-13',text:'共用收藏控制與訪客狀態。'}],mapping:'對齊 #736 最新定案設計與 screens/chat-654.html。'},
+ {id:'mentor-profile',name:'MentorProfileWithMetrics',label:'導師個人資訊與滿寬摘要列',kind:'組合元件',code:'src/app/profile/[pageUserId]/ui.tsx',screens:['public-profile','mentor-calendar'],rules:['頂部摘要列（100% 滿寬橫跨雙欄之上）：有評價時為 4 欄等寬均分（評分 ★ X.X / 10 ｜ 已完成 1-on-1 N 場 ｜ 經驗 ｜ 地點）；0 則評價時隱藏評分格，其餘欄位自動均分滿寬（絕不可只做左半邊 2 小格導致右側留白）。','導師產業 #hashtag（2026-11-12 更新）：已移除頂部摘要列下方的獨立「產業」膠囊橫列；改用單純 #hashtag（例如 #設計及創意相關業）放在左欄「簡介」分頁內「關於我」標題正下方、自我介紹內文上方。','雙欄頂部水平齊平：頂部滿寬摘要列下方直接切分為左欄（簡介｜評價 N 分頁與內容）與右欄（預約會談／可預約日期或方案卡片），左欄分頁列頂端必須與右欄預約卡片頂端水平對齊。','個人連結使用既有 6/7 大平台專屬彩色圖示（platformLabelMap.tsx）；保留 #753 右側收藏按鈕，導師本人查看時顯示編輯資料。'],changes:[{ticket:'736',date:'2026-11-12',text:'依 Bonny 03:31 更新：移除頂部數據摘要列下方的獨立「產業」橫列，改用單純 #hashtag（如 #設計及創意相關業）置於左欄「關於我」標題正下方、自我介紹上方。'},{ticket:'736',date:'2026-11-10',text:'對齊 Bonny 統一導師頁原型：滿寬 4 格摘要列置於雙欄切分上方，左欄分頁與右欄行事曆頂端水平齊平。'},{ticket:'274',date:'2026-10-15',text:'補齊 Desktop、Tablet、Mobile 個人頁與簡介／評價分頁。'},{ticket:'753',date:'2026-10-13',text:'共用收藏控制與訪客狀態。'}],mapping:'對齊 #736 最新定案設計與 screens/chat-654.html。'},
  {id:'mentor-reviews',name:'MentorReviewList',label:'導師評價分頁與清單',kind:'組合元件',code:'src/components/profile/feedback/MentorFeedbackSection.tsx',screens:['public-profile','mentor-calendar'],rules:['分頁標籤：左欄預設停在「簡介」，右側為「評價 N」（0 則顯示「評價 0」）；選取態為品牌青綠字與底線（評價文字 font-medium、右側數字較小且留有間距），未選取態為清楚深灰字（不可過淡或整串粗體擠在一起）。','頂部總分摘要卡：有評價時於列表上方顯示大字平均分「X.X / 10」與「★ N 則會談評價」。','單筆評價卡片：左側為遮罩姓氏首字圓形頭像（如「陳」）＋遮罩姓名（如「陳**」）；右上角靠右對齊顯示單顆空心星「☆ X / 10」與評價日期「YYYY/MM/DD」；下方顯示保留換行的評價內容；所有分數維持同一品牌色樣式。','分頁與空狀態：每 10 則一頁，超過 10 則才顯示分頁器；0 則評價顯示對話框圖示、標題「目前還沒有評價」與副標「完成會談後，學員的評價會顯示在這裡。」。'],changes:[{ticket:'736',date:'2026-11-10',text:'對齊姓氏首字圓形頭像、頂部總分卡、中性空狀態文案與每頁 10 筆分頁規則。'},{ticket:'274',date:'2026-10-15',text:'導師評價與空白狀態的三裝置設計。'}],mapping:'對齊 #736 最新定案設計與 screens/chat-654.html。'},
  {id:'mentor-booking',name:'ResponsiveBookingPanel',label:'導師頁預約區',kind:'組合元件',code:null,screens:['public-profile','mentor-calendar'],rules:['Desktop、Tablet 固定在右欄，切換左欄簡介／評價分頁時永遠固定不動，且卡片頂緣與左欄 Tabs 頂緣水平齊平；Mobile 接在內容下方。','訪客預約與導師設定時段的操作分開。'],changes:[{ticket:'736',date:'2026-11-10',text:'切換簡介｜評價分頁時右欄行事曆維持固定顯示且頂部與左欄 Tabs 對齊。'},{ticket:'274',date:'2026-10-15',text:'沿用交付稿的日曆與時段區排列。'}],mapping:'日曆側欄依交付設計；設定時段彈窗沿用現行前端功能。'}
 );
@@ -54,10 +54,13 @@ window.HUB_DATA.components.push(...[{"id": "favorite-toggle", "name": "FavoriteT
 // Human-confirmed changes audited on 2026-11-07. Frozen delivery snapshots remain intact.
 (() => {
  const d=window.HUB_DATA,component=id=>d.components.find(x=>x.id===id),screen=id=>d.screens.find(x=>x.id===id);
- d.revision='github-alignment-2026-11-11';
+ d.revision='github-alignment-2026-11-12';
  d.tickets.unshift(
-   {id:'736',name:'導師頁摘要列與評價 Tab',date:'2026-11-10'},
-   {id:'830',name:'成為導師與導師頁 v2',date:'2026-11-10'},
+   {id:'736',name:'導師頁摘要列與評價 Tab（#hashtag 產業）',date:'2026-11-12'},
+   {id:'830',name:'成為導師與導師頁 v2',date:'2026-11-12'},
+   {id:'832',name:'導師管理後台與預約管理 1096px 滿寬對齊',date:'2026-11-12'},
+   {id:'842',name:'預約管理 v2（靠左對齊與 1096px 滿寬卡片）',date:'2026-11-12'},
+   {id:'654',name:'站內聊聊：基礎聊天室（含 #727／#729／#774）',date:'2026-11-12'},
    {id:'737',name:'導師卡平均分與完成場次',date:'2026-11-07'}
  );
  for(const id of ['709','710','730','740'])d.tickets.find(t=>t.id===id).date='2026-11-07';

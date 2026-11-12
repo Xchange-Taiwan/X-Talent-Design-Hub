@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-11T21:46:12.520Z",
-  "revision": "github-alignment-2026-11-11",
+  "syncedAt": "2026-11-12T14:59:27.061Z",
+  "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
   "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
@@ -12,19 +12,34 @@
     "totalComponents": 28,
     "existingStorybookMappedCount": 11,
     "newCompositeDesignsCount": 14,
-    "totalStorybookStories": 372,
-    "trackedTicketsCount": 12
+    "totalStorybookStories": 390,
+    "trackedTicketsCount": 14
   },
   "tickets": [
     {
       "id": "736",
-      "name": "導師頁摘要列與評價 Tab",
-      "date": "2026-11-10"
+      "name": "導師頁摘要列與評價 Tab（#hashtag 產業）",
+      "date": "2026-11-12"
     },
     {
       "id": "830",
       "name": "成為導師與導師頁 v2",
-      "date": "2026-11-10"
+      "date": "2026-11-12"
+    },
+    {
+      "id": "832",
+      "name": "導師管理後台與預約管理 1096px 滿寬對齊",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "842",
+      "name": "預約管理 v2（靠左對齊與 1096px 滿寬卡片）",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "654",
+      "name": "站內聊聊：基礎聊天室（含 #727／#729／#774）",
+      "date": "2026-11-12"
     },
     {
       "id": "737",
@@ -69,11 +84,6 @@
     {
       "id": "774",
       "name": "預約與聊聊整合"
-    },
-    {
-      "id": "654",
-      "name": "聊聊設計探索 (Mentee 發起對話與聊天室)",
-      "date": "2026-11-07"
     }
   ],
   "screenGroups": [
@@ -148,9 +158,11 @@
           "name": "擔任導師",
           "route": "/reservation/mentor",
           "tickets": [
-            "774"
+            "774",
+            "832",
+            "842"
           ],
-          "version": "11/07 會議 · 聊聊整合",
+          "version": "11/12 核對 · 後台滿寬對齊與聊聊",
           "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
         },
@@ -396,8 +408,13 @@
           "name": "導師個人頁統一版面（簡介／評價 Tab、4格摘要列）與聊聊設計探索",
           "tickets": [
             "654",
+            "727",
+            "729",
+            "774",
             "736",
             "753",
+            "756",
+            "734",
             "830"
           ],
           "version": "Approved",
@@ -1227,10 +1244,12 @@
       "module": "frontend",
       "route": "/reservation/mentor",
       "tickets": [
-        "774"
+        "774",
+        "832",
+        "842"
       ],
-      "date": "2026-11-08",
-      "version": "11/07 會議 · 聊聊整合",
+      "date": "2026-11-12",
+      "version": "11/12 核對 · 後台滿寬對齊與聊聊",
       "sourceKind": "frontend",
       "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
       "scenarios": [
@@ -1255,7 +1274,7 @@
         "textarea",
         "reservation"
       ],
-      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
+      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。11/08：移除學員留言／導師回覆板，預約卡提供「聯絡學員」按鈕（即使預約未留問題亦可開啟空白聊聊，#774）。11/12 對齊（#832／#842）：導師管理後台「預約管理」標題與「即將到來 / 待您回復 / 歷史紀錄」分頁一律靠左對齊，下方預約卡片拉長為 100% 滿版寬度（桌機版 1096px），左邊界與上方「導師管理後台」及「成長總覽」對齊於同一垂直線。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
     },
     {
@@ -1429,11 +1448,16 @@
       "module": "standalone",
       "tickets": [
         "654",
+        "727",
+        "729",
+        "774",
         "736",
         "753",
+        "756",
+        "734",
         "830"
       ],
-      "date": "2026-11-10",
+      "date": "2026-11-12",
       "version": "Approved",
       "sourceKind": "standalone-prototype",
       "sourceUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html",
@@ -1444,7 +1468,7 @@
         }
       ],
       "components": [],
-      "note": "Bonny 定案之導師個人頁統一基底：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點）＋固定產業膠囊列，下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）",
+      "note": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html"
     },
     {
@@ -2013,15 +2037,20 @@
       ],
       "rules": [
         "頂部摘要列（100% 滿寬橫跨雙欄之上）：有評價時為 4 欄等寬均分（評分 ★ X.X / 10 ｜ 已完成 1-on-1 N 場 ｜ 經驗 ｜ 地點）；0 則評價時隱藏評分格，其餘欄位自動均分滿寬（絕不可只做左半邊 2 小格導致右側留白）。",
-        "固定產業標籤列：緊接在頂部摘要列正下方、雙欄切分之上，左側顯示「產業」小標與圓角膠囊標籤，切換簡介／評價分頁時固定顯示。",
-        "雙欄頂部水平齊平：摘要列與產業列下方才切分為左欄（簡介｜評價 N 分頁與內容）與右欄（預約會談／可預約日期卡片），左欄分頁列頂端必須與右欄預約卡片頂端水平對齊。",
+        "導師產業 #hashtag（2026-11-12 更新）：已移除頂部摘要列下方的獨立「產業」膠囊橫列；改用單純 #hashtag（例如 #設計及創意相關業）放在左欄「簡介」分頁內「關於我」標題正下方、自我介紹內文上方。",
+        "雙欄頂部水平齊平：頂部滿寬摘要列下方直接切分為左欄（簡介｜評價 N 分頁與內容）與右欄（預約會談／可預約日期或方案卡片），左欄分頁列頂端必須與右欄預約卡片頂端水平對齊。",
         "個人連結使用既有 6/7 大平台專屬彩色圖示（platformLabelMap.tsx）；保留 #753 右側收藏按鈕，導師本人查看時顯示編輯資料。"
       ],
       "changes": [
         {
           "ticket": "736",
+          "date": "2026-11-12",
+          "text": "依 Bonny 03:31 更新：移除頂部數據摘要列下方的獨立「產業」橫列，改用單純 #hashtag（如 #設計及創意相關業）置於左欄「關於我」標題正下方、自我介紹上方。"
+        },
+        {
+          "ticket": "736",
           "date": "2026-11-10",
-          "text": "對齊 Bonny 統一導師頁原型（screens/chat-654.html）：滿寬 4 格摘要列＋產業列置於雙欄切分上方，左欄分頁與右欄行事曆頂端水平齊平。"
+          "text": "對齊 Bonny 統一導師頁原型：滿寬 4 格摘要列置於雙欄切分上方，左欄分頁與右欄行事曆頂端水平齊平。"
         },
         {
           "ticket": "274",
