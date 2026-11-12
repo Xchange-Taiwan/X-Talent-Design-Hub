@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-12T14:59:27.061Z",
+  "syncedAt": "2026-11-12T17:54:02.979Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -12,7 +12,7 @@
     "totalComponents": 28,
     "existingStorybookMappedCount": 11,
     "newCompositeDesignsCount": 14,
-    "totalStorybookStories": 390,
+    "totalStorybookStories": 415,
     "trackedTicketsCount": 14
   },
   "tickets": [

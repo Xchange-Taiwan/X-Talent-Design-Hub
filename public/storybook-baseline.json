@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-11-12T02:01:00.373Z",
+  "syncedAt": "2026-11-12T17:54:02.904Z",
   "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
-  "totalStories": 390,
+  "totalStories": 415,
   "stories": [
     {
       "id": "onboarding-wizard-integratedwizard--interactive-wizard",
@@ -163,6 +163,41 @@
       "name": "Mentor Completed View",
       "importPath": "./src/app/profile/card/ui.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilecardui--mentor-completed-view&viewMode=story"
+    },
+    {
+      "id": "基礎設施元件-analytics-analyticsusersync--authenticated-mentee",
+      "title": "基礎設施元件/Analytics/AnalyticsUserSync",
+      "name": "Authenticated Mentee",
+      "importPath": "./src/components/AnalyticsUserSync.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E5%85%83%E4%BB%B6-analytics-analyticsusersync--authenticated-mentee&viewMode=story"
+    },
+    {
+      "id": "基礎設施元件-analytics-analyticsusersync--authenticated-mentor",
+      "title": "基礎設施元件/Analytics/AnalyticsUserSync",
+      "name": "Authenticated Mentor",
+      "importPath": "./src/components/AnalyticsUserSync.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E5%85%83%E4%BB%B6-analytics-analyticsusersync--authenticated-mentor&viewMode=story"
+    },
+    {
+      "id": "基礎設施元件-analytics-analyticsusersync--unauthenticated-guest",
+      "title": "基礎設施元件/Analytics/AnalyticsUserSync",
+      "name": "Unauthenticated Guest",
+      "importPath": "./src/components/AnalyticsUserSync.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E5%85%83%E4%BB%B6-analytics-analyticsusersync--unauthenticated-guest&viewMode=story"
+    },
+    {
+      "id": "基礎設施元件-analytics-pageviewtracker--initial-home-page-view",
+      "title": "基礎設施元件/Analytics/PageViewTracker",
+      "name": "Initial Home Page View",
+      "importPath": "./src/components/PageViewTracker.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E5%85%83%E4%BB%B6-analytics-pageviewtracker--initial-home-page-view&viewMode=story"
+    },
+    {
+      "id": "基礎設施元件-analytics-pageviewtracker--spa-mentor-pool-route",
+      "title": "基礎設施元件/Analytics/PageViewTracker",
+      "name": "Spa Mentor Pool Route",
+      "importPath": "./src/components/PageViewTracker.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E5%85%83%E4%BB%B6-analytics-pageviewtracker--spa-mentor-pool-route&viewMode=story"
     },
     {
       "id": "業務模組元件-會員驗證-auth-authbutton--default",
@@ -1929,11 +1964,46 @@
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-cancelreservationdialog--disabled&viewMode=story"
     },
     {
+      "id": "業務模組元件-預約管理-reservation-feedbackstarrating--default-full-score",
+      "title": "業務模組元件/預約管理(Reservation)/FeedbackStarRating",
+      "name": "Default Full Score",
+      "importPath": "./src/components/reservation/FeedbackStarRating.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-feedbackstarrating--default-full-score&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-feedbackstarrating--partial-score-eight",
+      "title": "業務模組元件/預約管理(Reservation)/FeedbackStarRating",
+      "name": "Partial Score Eight",
+      "importPath": "./src/components/reservation/FeedbackStarRating.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-feedbackstarrating--partial-score-eight&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-feedbackstarrating--disabled-state",
+      "title": "業務模組元件/預約管理(Reservation)/FeedbackStarRating",
+      "name": "Disabled State",
+      "importPath": "./src/components/reservation/FeedbackStarRating.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-feedbackstarrating--disabled-state&viewMode=story"
+    },
+    {
       "id": "業務模組元件-預約管理-reservation-joinmeetbutton--default",
       "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
       "name": "Default",
       "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--default&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-joinmeetbutton--mentor-reservation-card",
+      "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
+      "name": "Mentor Reservation Card",
+      "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--mentor-reservation-card&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-joinmeetbutton--mentee-confirmed-dialog",
+      "title": "業務模組元件/預約管理(Reservation)/JoinMeetButton",
+      "name": "Mentee Confirmed Dialog",
+      "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--mentee-confirmed-dialog&viewMode=story"
     },
     {
       "id": "業務模組元件-預約管理-reservation-joinmeetbutton--pending-state",
@@ -1948,6 +2018,55 @@
       "name": "Disabled State",
       "importPath": "./src/components/reservation/JoinMeetButton.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-joinmeetbutton--disabled-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--closed-trigger",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Closed Trigger",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--closed-trigger&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--step-attendance-open",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Step Attendance Open",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--step-attendance-open&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--step-rating-stars-open",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Step Rating Stars Open",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--step-rating-stars-open&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--step-rating-slider-open",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Step Rating Slider Open",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--step-rating-slider-open&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--step-not-happened-open",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Step Not Happened Open",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--step-not-happened-open&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--edit-trigger-closed",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Edit Trigger Closed",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--edit-trigger-closed&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-meetingfeedbackdialog--edit-mode-prefilled-open",
+      "title": "業務模組元件/預約管理(Reservation)/MeetingFeedbackDialog",
+      "name": "Edit Mode Prefilled Open",
+      "importPath": "./src/components/reservation/MeetingFeedbackDialog.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-meetingfeedbackdialog--edit-mode-prefilled-open&viewMode=story"
     },
     {
       "id": "業務模組元件-預約管理-reservation-rejectreservationdialog--default",
@@ -2034,6 +2153,34 @@
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-completed&viewMode=story"
     },
     {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--history-mentee-needs-feedback",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "History Mentee Needs Feedback",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-mentee-needs-feedback&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--history-mentee-rated-public",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "History Mentee Rated Public",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-mentee-rated-public&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--history-mentee-rated-unpublicized",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "History Mentee Rated Unpublicized",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-mentee-rated-unpublicized&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationcard--history-mentee-not-happened",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationCard",
+      "name": "History Mentee Not Happened",
+      "importPath": "./src/components/reservation/ReservationCard.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationcard--history-mentee-not-happened&viewMode=story"
+    },
+    {
       "id": "業務模組元件-預約管理-reservation-reservationconversationdialog--default",
       "title": "業務模組元件/預約管理(Reservation)/ReservationConversationDialog",
       "name": "Default",
@@ -2109,6 +2256,27 @@
       "name": "History Loading With Preserved Counts",
       "importPath": "./src/components/reservation/ReservationDashboard.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationdashboard--history-loading-with-preserved-counts&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationfeedbackblock--mentee-public-rating",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationFeedbackBlock",
+      "name": "Mentee Public Rating",
+      "importPath": "./src/components/reservation/ReservationFeedbackBlock.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationfeedbackblock--mentee-public-rating&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationfeedbackblock--mentor-public-rating",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationFeedbackBlock",
+      "name": "Mentor Public Rating",
+      "importPath": "./src/components/reservation/ReservationFeedbackBlock.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationfeedbackblock--mentor-public-rating&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationfeedbackblock--mentee-unpublicized-rating",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationFeedbackBlock",
+      "name": "Mentee Unpublicized Rating",
+      "importPath": "./src/components/reservation/ReservationFeedbackBlock.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationfeedbackblock--mentee-unpublicized-rating&viewMode=story"
     },
     {
       "id": "業務模組元件-預約管理-reservation-reservationidentity--default",
@@ -2284,6 +2452,13 @@
       "name": "Cancelled History With Reason",
       "importPath": "./src/components/reservation/ReservationList.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--cancelled-history-with-reason&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-預約管理-reservation-reservationlist--mentee-history-feedback-states",
+      "title": "業務模組元件/預約管理(Reservation)/ReservationList",
+      "name": "Mentee History Feedback States",
+      "importPath": "./src/components/reservation/ReservationList.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E9%A0%90%E7%B4%84%E7%AE%A1%E7%90%86-reservation-reservationlist--mentee-history-feedback-states&viewMode=story"
     },
     {
       "id": "業務模組元件-預約管理-reservation-reservationmessagepreview--card-variant-with-both-messages",
