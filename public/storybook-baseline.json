@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-11-09T09:45:43.183Z",
+  "syncedAt": "2026-11-12T02:01:00.373Z",
   "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
-  "totalStories": 372,
+  "totalStories": 390,
   "stories": [
     {
       "id": "onboarding-wizard-integratedwizard--interactive-wizard",
@@ -114,6 +114,27 @@
       "name": "Mentor Visitor View",
       "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-visitor-view&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentor-feedback-tab-active",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentor Feedback Tab Active",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-feedback-tab-active&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentor-zero-reviews-empty-state",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentor Zero Reviews Empty State",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-zero-reviews-empty-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-profilepageui--mentor-new-zero-sessions-and-zero-reviews",
+      "title": "業務模組元件/個人檔案(Profile)/ProfilePageUI",
+      "name": "Mentor New Zero Sessions And Zero Reviews",
+      "importPath": "./src/app/profile/[pageUserId]/ui.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-profilepageui--mentor-new-zero-sessions-and-zero-reviews&viewMode=story"
     },
     {
       "id": "業務模組元件-個人檔案-profile-profilepageui--mentee-profile-view",
@@ -914,6 +935,27 @@
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--default&viewMode=story"
     },
     {
+      "id": "業務模組元件-導師池-mentorpool-information--completed-sessions-without-rating",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Completed Sessions Without Rating",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--completed-sessions-without-rating&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--no-ratings-and-no-sessions",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "No Ratings And No Sessions",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--no-ratings-and-no-sessions&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-information--mobile-long-name-truncation",
+      "title": "業務模組元件/導師池(MentorPool)/Information",
+      "name": "Mobile Long Name Truncation",
+      "importPath": "./src/components/mentor-pool/mentor-card/Information.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-information--mobile-long-name-truncation&viewMode=story"
+    },
+    {
       "id": "業務模組元件-導師池-mentorpool-information--short-about-and-few-tags",
       "title": "業務模組元件/導師池(MentorPool)/Information",
       "name": "Short About And Few Tags",
@@ -975,6 +1017,20 @@
       "name": "Staff Product Manager",
       "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--staff-product-manager&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--no-ratings-or-sessions",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "No Ratings Or Sessions",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--no-ratings-or-sessions&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-導師池-mentorpool-mentorcard--long-name-with-rating",
+      "title": "業務模組元件/導師池(MentorPool)/MentorCard",
+      "name": "Long Name With Rating",
+      "importPath": "./src/components/mentor-pool/mentor-card/index.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%B0%8E%E5%B8%AB%E6%B1%A0-mentorpool-mentorcard--long-name-with-rating&viewMode=story"
     },
     {
       "id": "業務模組元件-導師池-mentorpool-mentorcard--short-bio-without-role",
@@ -1444,6 +1500,76 @@
       "name": "Education Section Filled",
       "importPath": "./src/components/profile/experience-section/ExperienceSection.stories.tsx",
       "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-experiencesection-experiencesection--education-section-filled&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--default-with-reviews",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "Default With Reviews",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--default-with-reviews&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--with-pagination-over-ten",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "With Pagination Over Ten",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--with-pagination-over-ten&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--empty-zero-reviews",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "Empty Zero Reviews",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--empty-zero-reviews&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--fallback-unavailable-with-stats",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "Fallback Unavailable With Stats",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--fallback-unavailable-with-stats&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--loading-state",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "Loading State",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--loading-state&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorfeedbacksection--error-with-retry",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorFeedbackSection",
+      "name": "Error With Retry",
+      "importPath": "./src/components/profile/feedback/MentorFeedbackSection.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorfeedbacksection--error-with-retry&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorsummarybar--four-columns-with-ratings",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorSummaryBar",
+      "name": "Four Columns With Ratings",
+      "importPath": "./src/components/profile/feedback/MentorSummaryBar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorsummarybar--four-columns-with-ratings&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorsummarybar--three-columns-zero-ratings",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorSummaryBar",
+      "name": "Three Columns Zero Ratings",
+      "importPath": "./src/components/profile/feedback/MentorSummaryBar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorsummarybar--three-columns-zero-ratings&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorsummarybar--three-columns-zero-sessions",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorSummaryBar",
+      "name": "Three Columns Zero Sessions",
+      "importPath": "./src/components/profile/feedback/MentorSummaryBar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorsummarybar--three-columns-zero-sessions&viewMode=story"
+    },
+    {
+      "id": "業務模組元件-個人檔案-profile-feedback-mentorsummarybar--new-mentor-zero-sessions-and-zero-ratings",
+      "title": "業務模組元件/個人檔案(Profile)/Feedback/MentorSummaryBar",
+      "name": "New Mentor Zero Sessions And Zero Ratings",
+      "importPath": "./src/components/profile/feedback/MentorSummaryBar.stories.tsx",
+      "iframeUrl": "https://x-talent-storybook.x-talent.workers.dev/iframe.html?id=%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88-profile-feedback-mentorsummarybar--new-mentor-zero-sessions-and-zero-ratings&viewMode=story"
     },
     {
       "id": "業務模組元件-個人檔案-profile-profilebanner--default",
