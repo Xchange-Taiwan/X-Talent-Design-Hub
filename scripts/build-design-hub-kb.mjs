@@ -33,6 +33,7 @@ async function main() {
   const pubDir = path.resolve(process.cwd(), 'public');
   const regJs = await readTextIfExists(path.join(pubDir, 'registry.js'));
   const feRegJs = await readTextIfExists(path.join(pubDir, 'frontend-registry.js'));
+  const chatRegJs = await readTextIfExists(path.join(pubDir, 'chat-registry.js'));
   const cmpMapJs = await readTextIfExists(path.join(pubDir, 'component-map.js'));
   const manifestJson = await readJsonIfExists(path.join(pubDir, 'hub-manifest.json'), { screens: [] });
   const sbBaselineJson = await readJsonIfExists(path.join(pubDir, 'storybook-baseline.json'), { totalStories: 0 });
@@ -58,6 +59,7 @@ async function main() {
   if (regJs) vm.runInContext(regJs, sandbox);
   if (feRegJs) vm.runInContext(feRegJs, sandbox);
   if (cmpMapJs) vm.runInContext(cmpMapJs, sandbox);
+  if (chatRegJs) vm.runInContext(chatRegJs, sandbox);
 
   const HUB_DATA = sandbox.window.HUB_DATA || { tickets: [], screens: [], components: [] };
   const HUB_COMPONENT_MAP = sandbox.window.HUB_COMPONENT_MAP || { existing: {}, newDesigns: {} };

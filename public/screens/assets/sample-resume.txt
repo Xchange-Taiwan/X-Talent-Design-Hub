@@ -1,0 +1,4 @@
+X-Talent prototype sample attachment
+Alex Chen — Frontend Engineer
+React / TypeScript / UI development
+This file is demonstration content only.

@@ -7279,7 +7279,7 @@ var require_jsx_runtime = __commonJS({
 });
 
 // src/app.tsx
-var import_react10 = __toESM(require_react(), 1);
+var import_react12 = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
 
 // node_modules/lucide-react/dist/esm/createLucideIcon.js
@@ -7353,6 +7353,12 @@ var createLucideIcon = (iconName, iconNode) => {
   return Component;
 };
 
+// node_modules/lucide-react/dist/esm/icons/arrow-down.js
+var ArrowDown = createLucideIcon("ArrowDown", [
+  ["path", { d: "M12 5v14", key: "s699le" }],
+  ["path", { d: "m19 12-7 7-7-7", key: "1idqje" }]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/arrow-left.js
 var ArrowLeft = createLucideIcon("ArrowLeft", [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
@@ -7363,6 +7369,18 @@ var ArrowLeft = createLucideIcon("ArrowLeft", [
 var ArrowRight = createLucideIcon("ArrowRight", [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/arrow-up-right.js
+var ArrowUpRight = createLucideIcon("ArrowUpRight", [
+  ["path", { d: "M7 7h10v10", key: "1tivn9" }],
+  ["path", { d: "M7 17 17 7", key: "1vkiza" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/arrow-up.js
+var ArrowUp = createLucideIcon("ArrowUp", [
+  ["path", { d: "m5 12 7-7 7 7", key: "hav0vg" }],
+  ["path", { d: "M12 19V5", key: "x0mq9r" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/bell.js
@@ -7380,6 +7398,14 @@ var Bell = createLucideIcon("Bell", [
 // node_modules/lucide-react/dist/esm/icons/bookmark.js
 var Bookmark = createLucideIcon("Bookmark", [
   ["path", { d: "m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z", key: "1fy3hk" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/briefcase-business.js
+var BriefcaseBusiness = createLucideIcon("BriefcaseBusiness", [
+  ["path", { d: "M12 12h.01", key: "1mp3jc" }],
+  ["path", { d: "M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2", key: "1ksdt3" }],
+  ["path", { d: "M22 13a18.15 18.15 0 0 1-20 0", key: "12hx5q" }],
+  ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/calendar-days.js
@@ -7424,17 +7450,16 @@ var CircleAlert = createLucideIcon("CircleAlert", [
   ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ]);
 
+// node_modules/lucide-react/dist/esm/icons/clock-3.js
+var Clock3 = createLucideIcon("Clock3", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16.5 12", key: "1aq6pp" }]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/clock.js
 var Clock = createLucideIcon("Clock", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-]);
-
-// node_modules/lucide-react/dist/esm/icons/code-xml.js
-var CodeXml = createLucideIcon("CodeXml", [
-  ["path", { d: "m18 16 4-4-4-4", key: "1inbqp" }],
-  ["path", { d: "m6 8-4 4 4 4", key: "15zrgr" }],
-  ["path", { d: "m14.5 4-5 16", key: "e7oirm" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/download.js
@@ -7483,6 +7508,37 @@ var Eye = createLucideIcon("Eye", [
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ]);
 
+// node_modules/lucide-react/dist/esm/icons/file-archive.js
+var FileArchive = createLucideIcon("FileArchive", [
+  ["path", { d: "M10 12v-1", key: "v7bkov" }],
+  ["path", { d: "M10 18v-2", key: "1cjy8d" }],
+  ["path", { d: "M10 7V6", key: "dljcrl" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  [
+    "path",
+    { d: "M15.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 .274 1.01", key: "gkbcor" }
+  ],
+  ["circle", { cx: "10", cy: "20", r: "2", key: "1xzdoj" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/file-image.js
+var FileImage = createLucideIcon("FileImage", [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["circle", { cx: "10", cy: "12", r: "2", key: "737tya" }],
+  ["path", { d: "m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22", key: "wt3hpn" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/file-spreadsheet.js
+var FileSpreadsheet = createLucideIcon("FileSpreadsheet", [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M8 13h2", key: "yr2amv" }],
+  ["path", { d: "M14 13h2", key: "un5t4a" }],
+  ["path", { d: "M8 17h2", key: "2yhykz" }],
+  ["path", { d: "M14 17h2", key: "10kma7" }]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/file-text.js
 var FileText = createLucideIcon("FileText", [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
@@ -7492,12 +7548,23 @@ var FileText = createLucideIcon("FileText", [
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ]);
 
-// node_modules/lucide-react/dist/esm/icons/file-x-2.js
-var FileX2 = createLucideIcon("FileX2", [
-  ["path", { d: "M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4", key: "1pf5j1" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "m8 12.5-5 5", key: "b853mi" }],
-  ["path", { d: "m3 12.5 5 5", key: "1qls4r" }]
+// node_modules/lucide-react/dist/esm/icons/file.js
+var File = createLucideIcon("File", [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/graduation-cap.js
+var GraduationCap = createLucideIcon("GraduationCap", [
+  [
+    "path",
+    {
+      d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+      key: "j76jl0"
+    }
+  ],
+  ["path", { d: "M22 10v6", key: "1lu8f3" }],
+  ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5", key: "1r8lef" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/info.js
@@ -7507,34 +7574,34 @@ var Info = createLucideIcon("Info", [
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ]);
 
-// node_modules/lucide-react/dist/esm/icons/layers.js
-var Layers = createLucideIcon("Layers", [
-  [
-    "path",
-    {
-      d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
-      key: "zw3jo"
-    }
-  ],
-  [
-    "path",
-    {
-      d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
-      key: "1wduqc"
-    }
-  ],
-  [
-    "path",
-    {
-      d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
-      key: "kqbvx6"
-    }
-  ]
-]);
-
 // node_modules/lucide-react/dist/esm/icons/loader-circle.js
 var LoaderCircle = createLucideIcon("LoaderCircle", [
   ["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/map-pin.js
+var MapPin = createLucideIcon("MapPin", [
+  [
+    "path",
+    {
+      d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+      key: "1r0f0z"
+    }
+  ],
+  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/message-circle-more.js
+var MessageCircleMore = createLucideIcon("MessageCircleMore", [
+  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }],
+  ["path", { d: "M8 12h.01", key: "czm47f" }],
+  ["path", { d: "M12 12h.01", key: "1mp3jc" }],
+  ["path", { d: "M16 12h.01", key: "1l6xoz" }]
+]);
+
+// node_modules/lucide-react/dist/esm/icons/message-circle.js
+var MessageCircle = createLucideIcon("MessageCircle", [
+  ["path", { d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z", key: "vv11sd" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/message-square.js
@@ -7554,16 +7621,16 @@ var Paperclip = createLucideIcon("Paperclip", [
   ]
 ]);
 
-// node_modules/lucide-react/dist/esm/icons/pen-line.js
-var PenLine = createLucideIcon("PenLine", [
-  ["path", { d: "M12 20h9", key: "t2du7b" }],
+// node_modules/lucide-react/dist/esm/icons/pencil.js
+var Pencil = createLucideIcon("Pencil", [
   [
     "path",
     {
-      d: "M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z",
-      key: "1ykcvy"
+      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
+      key: "1a8usu"
     }
-  ]
+  ],
+  ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
 ]);
 
 // node_modules/lucide-react/dist/esm/icons/rotate-ccw.js
@@ -7618,6 +7685,13 @@ var Trash2 = createLucideIcon("Trash2", [
   ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
 ]);
 
+// node_modules/lucide-react/dist/esm/icons/users-round.js
+var UsersRound = createLucideIcon("UsersRound", [
+  ["path", { d: "M18 21a8 8 0 0 0-16 0", key: "3ypg7q" }],
+  ["circle", { cx: "10", cy: "8", r: "5", key: "o932ke" }],
+  ["path", { d: "M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3", key: "10s06x" }]
+]);
+
 // node_modules/lucide-react/dist/esm/icons/x.js
 var X = createLucideIcon("X", [
   ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
@@ -7626,6 +7700,39 @@ var X = createLucideIcon("X", [
 
 // src/ui.tsx
 var import_react5 = __toESM(require_react(), 1);
+
+// src/assets/default-avatar-1.webp
+var default_avatar_1_default = "data:image/webp;base64,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";
+
+// src/assets/default-avatar-2.webp
+var default_avatar_2_default = "data:image/webp;base64,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";
+
+// src/assets/default-avatar-3.webp
+var default_avatar_3_default = "data:image/webp;base64,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";
+
+// src/assets/default-avatar-4.webp
+var default_avatar_4_default = "data:image/webp;base64,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";
+
+// src/assets/default-avatar-5.webp
+var default_avatar_5_default = "data:image/webp;base64,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";
+
+// src/assets/default-avatar-6.webp
+var default_avatar_6_default = "data:image/webp;base64,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";
+
+// src/avatar-policy.ts
+var DEFAULT_AVATAR_COUNT = 6;
+function normalizeAvatarSelection(value) {
+  if (value?.kind === "uploaded" && value.url.trim()) return { ...value, url: value.url.trim() };
+  const index2 = value?.kind === "default" ? value.defaultIndex : 0;
+  return { kind: "default", defaultIndex: Number.isInteger(index2) && index2 >= 0 && index2 < DEFAULT_AVATAR_COUNT ? index2 : 0 };
+}
+
+// src/default-avatars.ts
+var DEFAULT_AVATARS = [default_avatar_1_default, default_avatar_2_default, default_avatar_3_default, default_avatar_4_default, default_avatar_5_default, default_avatar_6_default];
+function avatarSource(value) {
+  const avatar = normalizeAvatarSelection(value);
+  return avatar.kind === "uploaded" ? avatar.url : DEFAULT_AVATARS[avatar.defaultIndex];
+}
 
 // node_modules/@radix-ui/react-dropdown-menu/dist/index.mjs
 var React34 = __toESM(require_react(), 1);
@@ -14157,10 +14264,10 @@ function Modal({ open, title, children, onClose, actions, className = "" }) {
     ] })
   ] }) });
 }
-var defaultAvatar = "./assets/default-avatar-742.png";
 var deletedAvatar = "./assets/deleted-account-avatar.png";
 function Avatar({ person, deleted = false, className = "" }) {
   const [failedSource, setFailedSource] = (0, import_react5.useState)(null);
+  const defaultAvatar = avatarSource({ kind: "default", defaultIndex: person.avatarPreset ?? 0 });
   const source = deleted ? deletedAvatar : person.avatar && failedSource !== person.avatar ? person.avatar : defaultAvatar;
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("img", { className: `avatar ${className}`, src: source, alt: "", "data-avatar-kind": deleted ? "deleted" : source === defaultAvatar ? "default" : "uploaded", onError: source === person.avatar ? () => setFailedSource(person.avatar) : void 0 });
 }
@@ -14170,11 +14277,7 @@ function MessageActions({ id, failed, onRetry, onDeleteFailed, onDelete, hasAtta
     /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DropdownMenuPortal, { children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DropdownMenuContent, { className: "message-menu", side: "top", align: "start", sideOffset: 4, collisionPadding: 12, children: failed ? /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DropdownMenuItem, { onSelect: onRetry, children: [
         /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(RotateCcw, { size: 16 }),
-        "\u5168\u90E8\u91CD\u8A66"
-      ] }),
-      hasAttachments && hasText && /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DropdownMenuItem, { onSelect: onTextOnly, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(FileX2, { size: 16 }),
-        "\u79FB\u9664\u9644\u4EF6\uFF0C\u50C5\u91CD\u9001\u7D14\u6587\u5B57"
+        "\u91CD\u65B0\u50B3\u9001"
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DropdownMenuItem, { className: "menu-item-danger", onSelect: onDeleteFailed, children: [
         /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Trash2, { size: 16 }),
@@ -14206,11 +14309,14 @@ function DeleteConfirmation({ open, onClose, onConfirm }) {
 // src/Header.tsx
 var import_react6 = __toESM(require_react(), 1);
 
+// src/booking-records.ts
+var bookingSeeds = [{ id: "u1", person: "zahra", tab: "upcoming", date: "2026/11/12", time: "19:00\u201319:30" }, { id: "u2", person: "emily", tab: "upcoming", date: "2026/11/15", time: "20:00\u201320:30" }, { id: "p1", person: "sarah", tab: "pending", date: "2026/11/20", time: "19:00\u201319:30" }, { id: "h1", person: "zahra", tab: "history", date: "2026/10/28", time: "19:00\u201319:30", feedback: { rating: 8, comment: "\u7D66\u4E86\u6211\u5F88\u5177\u9AD4\u7684\u4F5C\u54C1\u96C6\u5EFA\u8B70\uFF0C\u8B93\u6211\u66F4\u6E05\u695A\u4E0B\u4E00\u6B65\u7684\u6E96\u5099\u65B9\u5411\u3002" } }, { id: "h2", person: "emily", tab: "history", date: "2026/10/26", time: "20:00\u201320:30" }, { id: "h3", person: "alex", tab: "history", date: "2026/10/20", time: "19:00\u201319:30", status: "Cancelled" }, { id: "h4", person: "sarah", tab: "history", date: "2026/10/19", time: "20:00\u201320:30", status: "\u5DF2\u5A49\u62D2" }];
+
 // src/model.ts
 var asset = (name) => `./assets/753-${name}`;
 var basePeople = [
   { id: "zahra", name: "Zahra Mirzakhani", avatar: asset("zahra.png"), role: "Senior UX Designer" },
-  { id: "emily", name: "Emily Chen", avatar: "", role: "UI/UX \u8A2D\u8A08\u5E2B" },
+  { id: "emily", name: "Emily Chen", avatar: asset("emily.png"), role: "UI/UX \u8A2D\u8A08\u5E2B" },
   { id: "alex", name: "Alex Wang", avatar: asset("alex.png"), role: "\u5F8C\u7AEF\u5DE5\u7A0B\u5E2B" },
   { id: "sarah", name: "Sarah Lin", avatar: asset("sarah.png"), role: "Product Designer" }
 ];
@@ -14234,10 +14340,10 @@ var initialThreads = () => ({
   sarah: { ...emptyThread(), messages: [msg("s1", false, "\u5F88\u958B\u5FC3\u9019\u6B21\u7684\u4EA4\u6D41\u5C0D\u4F60\u6709\u5E6B\u52A9 \u{1F60A}", days(5, 19, 6))] }
 });
 function initialState(scene2) {
-  const profileScenes = ["profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry"];
-  const booking = scene2.startsWith("booking-");
-  const s = { threads: initialThreads(), people: basePeople.map((p) => ({ ...p })), route: { view: profileScenes.includes(scene2) ? "profile" : booking ? "bookings" : "chat", active: ["list", "empty", "list-failure", "search", "unread", "unread-99", "notifications", "empty-unread", "search-short", "search-content"].includes(scene2) ? null : ["invalid-link", "forbidden-link"].includes(scene2) ? "invalid" : "zahra", origin: booking ? "bookings" : "profile" }, member: !["guest", "login-failure"].includes(scene2), role: ["mentor-profile", "role-switch"].includes(scene2) || scene2.startsWith("booking-mentor") ? "mentor" : "mentee", search: "", filter: scene2.startsWith("unread") || scene2 === "empty-unread" ? "unread" : "all", scroll: 0, offset: 0, listError: scene2 === "list-failure", profileMode: scene2 === "self-profile" ? "self" : scene2 === "paused" ? "paused" : scene2 === "missing-profile" ? "missing" : "normal", bookingTab: scene2.includes("history") ? "history" : scene2.includes("pending") ? "pending" : "upcoming" };
-  if (profileScenes.includes(scene2) || ["new", "first-failure", "drafts"].includes(scene2)) s.threads.zahra = emptyThread();
+  const profileScenes = ["favorite-login", "favorite-self", "profile-v2", "profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry", "profile-no-reviews", "reservation-message", "reservation-empty", "reservation-existing", "reservation-failure", "reservation-message-failure"];
+  const booking = scene2.startsWith("booking-") || scene2 === "feedback-unlisted";
+  const s = { threads: initialThreads(), people: basePeople.map((p) => ({ ...p })), route: { view: profileScenes.includes(scene2) ? "profile" : booking ? "bookings" : "chat", active: ["list", "empty", "list-failure", "search", "unread", "unread-99", "notifications", "empty-unread", "search-short", "search-content"].includes(scene2) ? null : ["invalid-link", "forbidden-link"].includes(scene2) ? "invalid" : "zahra", origin: booking ? "bookings" : "profile" }, member: !["guest", "login-failure", "favorite-login", "favorite-self"].includes(scene2), role: ["self-profile", "mentor-profile", "role-switch"].includes(scene2) || scene2.startsWith("booking-mentor") ? "mentor" : "mentee", search: "", filter: scene2.startsWith("unread") || scene2 === "empty-unread" ? "unread" : "all", scroll: 0, offset: 0, listError: scene2 === "list-failure", profileMode: scene2 === "self-profile" ? "self" : scene2 === "paused" ? "paused" : scene2 === "missing-profile" ? "missing" : "normal", bookingTab: scene2.includes("history") || scene2 === "feedback-unlisted" ? "history" : scene2.includes("pending") ? "pending" : "upcoming" };
+  if (profileScenes.includes(scene2) && scene2 !== "reservation-existing" || ["new", "first-failure", "drafts"].includes(scene2)) s.threads.zahra = emptyThread();
   if (scene2 === "guest") s.route = { view: "login", active: null, origin: "profile" };
   if (scene2 === "search") {
     s.filter = "unread";
@@ -14253,10 +14359,19 @@ function initialState(scene2) {
     s.search = "\u7814\u7A76\u904E\u7A0B";
   }
   if (scene2 === "search-short") s.search = "\u9673";
+  if (scene2 === "search-file") {
+    s.route.active = null;
+    s.search = "\u5C65\u6B77";
+    s.threads.zahra.messages.push(msg("search-file-first", true, "\u9019\u662F\u6211\u7684\u7533\u8ACB\u8CC7\u6599\u3002", now(s) - 6e4, { files: [sampleDocument] }), msg("search-file-later", false, "\u6536\u5230\u4F60\u7684\u5C65\u6B77\uFF0C\u6211\u5011\u6703\u8AC7\u6642\u4E00\u8D77\u770B\u3002", now(s) - 3e4));
+  }
   if (scene2 === "attachment-limit") s.threads.zahra.files = Array.from({ length: 10 }, (_, i) => ({ ...sampleDocument, name: `\u4F5C\u54C1\u8CC7\u6599 ${i + 1}.txt` }));
   if (scene2 === "history-loading") s.threads.zahra.messages = Array.from({ length: 100 }, (_, i) => msg("history-" + i, i % 3 !== 0, ["\u9019\u662F\u6211\u6574\u7406\u7684\u4F5C\u54C1\u96C6\uFF0C\u60F3\u8ACB\u4F60\u770B\u770B\u5167\u5BB9\u7684\u5B89\u6392\u3002", "\u53EF\u4EE5\u5148\u5F9E\u554F\u984C\u5B9A\u7FA9\u548C\u7814\u7A76\u7D50\u679C\u958B\u59CB\u8AAA\u660E\u3002", "\u8B1D\u8B1D\u4F60\u7684\u5EFA\u8B70\uFF0C\u6211\u6703\u628A\u8A2D\u8A08\u6C7A\u7B56\u88DC\u5F97\u66F4\u5B8C\u6574\u3002"][i % 3], days(5) + i * 6e4));
   if (scene2 === "empty") s.threads = {};
-  if (booking && scene2.endsWith("-new")) s.threads.zahra = emptyThread();
+  if (booking && scene2.endsWith("-new")) {
+    const targets = scene2.includes("history") ? Object.keys(s.threads) : scene2.includes("pending") ? ["sarah"] : ["zahra"];
+    targets.forEach((id) => s.threads[id] = emptyThread());
+  }
+  if (s.role === "mentor") s.people = s.people.map((p) => p.id === "emily" ? { ...p, avatar: "", avatarPreset: 0 } : p);
   if (scene2 === "empty-unread") Object.values(s.threads).forEach((t) => t.unread = false);
   if (scene2 === "failure" || scene2 === "attachment-failure" || scene2 === "first-failure") {
     s.threads.zahra.messages.push(msg("failed", true, "\u8B1D\u8B1D\uFF01\u6211\u6703\u5148\u6574\u7406\u597D\u5C08\u6848\uFF0C\u671F\u5F85\u548C\u4F60\u4EA4\u6D41\u3002", now(s), { status: "failed", read: false, reason: scene2 === "attachment-failure" ? "\u9644\u4EF6\u4E0A\u50B3\u5931\u6557\uFF0C\u6574\u5247\u8A0A\u606F\u5C1A\u672A\u9001\u51FA\u3002" : "\u7DB2\u8DEF\u9023\u7DDA\u4E2D\u65B7\uFF0C\u8A0A\u606F\u672A\u9001\u51FA\u3002", files: scene2 === "attachment-failure" ? [sampleDocument] : [] }));
@@ -14266,6 +14381,10 @@ function initialState(scene2) {
     s.threads.zahra.draft = "\u4F60\u597D\uFF01\u9810\u7D04\u524D\u60F3\u5148\u78BA\u8A8D\u4F5C\u54C1\u96C6\u7684\u6E96\u5099\u65B9\u5411\u3002";
     s.threads.zahra.files = [sampleDocument];
     s.threads.emily.draft = "\u8B1D\u8B1D\u4F60\u7684\u5EFA\u8B70\uFF0C\u6211\u60F3\u518D\u8ACB\u6559\u2026";
+  }
+  if (/^attachments-(1|3|10)$/.test(scene2)) {
+    const count3 = Number(scene2.split("-")[1]);
+    s.threads.zahra.messages.push(msg("attachment-example", true, "\u9019\u662F\u6211\u6574\u7406\u7684\u4F5C\u54C1\u8CC7\u6599\uFF0C\u60F3\u5728\u6703\u8AC7\u4E2D\u4E00\u8D77\u8A0E\u8AD6\u3002", now(s) - 6e4, { files: Array.from({ length: count3 }, (_, i) => i === 0 ? sampleImage : { ...sampleDocument, name: `\u4F5C\u54C1\u8CC7\u6599 ${i + 1}.txt` }), read: false }));
   }
   if (scene2 === "attachments") {
     s.threads.zahra.messages.push(msg("attachment", true, "\u9019\u662F\u6211\u7684\u4F5C\u54C1\u96C6\u8207\u5C65\u6B77\u3002", now(s) - 6e4, { files: [sampleImage, sampleDocument], read: false }));
@@ -14290,7 +14409,7 @@ function initialState(scene2) {
 var sampleImage = { name: "\u4F5C\u54C1\u96C6\u5C01\u9762.png", url: "./assets/sample-portfolio.png", image: true, type: "PNG" };
 var sampleDocument = { name: "\u5C65\u6B77.txt", url: "./assets/sample-resume.txt", image: false, type: "TXT" };
 var success = (t) => t?.messages.filter((m) => m.status === "sent") || [];
-var latest = (t) => success(t).at(-1);
+var latest = (t) => success(t).reduce((last, m) => !last || m.at >= last.at ? m : last, void 0);
 var isEstablished = (t) => success(t).length > 0;
 function preview(t) {
   if (t.draft.trim() || t.files.length) return "\u8349\u7A3F\uFF1A" + (t.draft.trim() || "[\u9644\u4EF6]");
@@ -14305,15 +14424,31 @@ function listTime(at2, reference = Date.now()) {
 }
 var MAX_ATTACHMENTS = 10;
 var HISTORY_PAGE_SIZE = 20;
+function ownsReservation(s, personId, bookingId) {
+  return [...bookingSeeds, ...s.reservations || []].some((b) => b.id === bookingId && b.person === personId);
+}
+function authorizeReservationContact(s, personId, bookingId) {
+  const person = s.people.find((p) => p.id === personId);
+  if (!s.member || s.route.view !== "bookings" || !person || person.deleted || !ownsReservation(s, personId, bookingId)) return s;
+  return { ...s, reservationChatAccess: { ...s.reservationChatAccess, [personId]: bookingId } };
+}
 var canMessage = (s, id) => {
-  const person = s.people.find((p) => p.id === id);
-  return !!person && !person.deleted && (s.role === "mentee" || isEstablished(s.threads[id]));
+  const person = s.people.find((p) => p.id === id), grant = s.reservationChatAccess?.[id];
+  return s.member && !!person && !person.deleted && (s.role === "mentee" || isEstablished(s.threads[id]) || !!grant && ownsReservation(s, id, grant));
 };
 var searchQuery = (s) => s.search.trim().toLocaleLowerCase();
 var isSearching = (s) => Array.from(searchQuery(s)).length >= 2;
-function matchedMessage(s, id) {
+function matchedMessages(s, id) {
   const q = searchQuery(s);
-  return isSearching(s) ? success(s.threads[id]).filter((m) => !m.removed && m.text.toLocaleLowerCase().includes(q)).at(-1) : void 0;
+  return isSearching(s) ? success(s.threads[id]).filter((m) => !m.removed && (m.text.toLocaleLowerCase().includes(q) || m.files?.some((f) => f.name.toLocaleLowerCase().includes(q)))).sort((a, b) => a.at - b.at) : [];
+}
+function matchedMessage(s, id) {
+  return matchedMessages(s, id)[0];
+}
+function matchPreview(s, m) {
+  const q = searchQuery(s), text = m.text.toLocaleLowerCase().includes(q) ? m.text : m.files?.find((f) => f.name.toLocaleLowerCase().includes(q))?.name || m.text;
+  const start = Math.max(0, text.toLocaleLowerCase().indexOf(q) - 16);
+  return (m.own ? "\u4F60\uFF1A" : "") + (start ? "\u2026" : "") + text.slice(start);
 }
 function listedPeople(s) {
   const query = searchQuery(s);
@@ -14325,15 +14460,24 @@ function listedPeople(s) {
     if (s.filter === "unread") return established && t.unread;
     return established || !!t.draft.trim() || t.files.length > 0 || t.messages.length > 0;
   }).sort((a, b) => {
-    const score = (p) => (isSearching(s) ? matchedMessage(s, p.id) : null)?.at || latest(s.threads[p.id])?.at || s.threads[p.id].openedAt;
+    const score = (p) => latest(s.threads[p.id])?.at || s.threads[p.id].openedAt;
     return score(b) - score(a);
   });
+}
+function confirmReservation(s, reservation, note, messageFailure) {
+  if (!s.member || s.role !== "mentee" || s.profileMode !== "normal" || !s.people.some((p) => p.id === reservation.person && !p.deleted) || s.reservations?.some((b) => b.id === reservation.id)) return s;
+  const hasNote = !!note.trim(), messageId = hasNote ? "reservation-" + reservation.id : void 0;
+  const next = { ...s, reservations: [...s.reservations || [], { ...reservation, messageId }] };
+  if (!hasNote) return next;
+  const t = s.threads[reservation.person] || emptyThread();
+  const message = { id: messageId, own: true, text: note, at: now(s), status: messageFailure ? "failed" : "sent", read: false, reason: messageFailure };
+  return { ...next, search: "", filter: "all", scroll: 0, threads: { ...s.threads, [reservation.person]: { ...t, messages: [...t.messages, message], unread: false } }, route: { view: "chat", active: reservation.person, origin: "profile" } };
 }
 function readThread(s, id) {
   return { ...s, threads: { ...s.threads, [id]: { ...s.threads[id] || emptyThread(), unread: false } } };
 }
 function leaveChat(s) {
-  return { ...s, search: "", filter: "all", scroll: 0, threads: Object.fromEntries(Object.entries(s.threads).filter(([, t]) => isEstablished(t)).map(([id, t]) => [id, { ...t, draft: "", files: [] }])) };
+  return { ...s, search: "", filter: "all", scroll: 0, reservationChatAccess: {}, threads: Object.fromEntries(Object.entries(s.threads).filter(([, t]) => isEstablished(t)).map(([id, t]) => [id, { ...t, draft: "", files: [] }])) };
 }
 function receive(s, id, failed = false) {
   if (failed) return s;
@@ -14409,131 +14553,665 @@ function ChatFab({ unread, onClick }) {
 }
 
 // src/Profile.tsx
+var import_react9 = __toESM(require_react(), 1);
+
+// src/MentorReadView.tsx
+var import_react8 = __toESM(require_react(), 1);
+
+// src/LevelVisual.tsx
 var import_react7 = __toESM(require_react(), 1);
 var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
-function Profile({ onContact, mode = "normal", onFind, allowContact = true }) {
-  const [saved, setSaved] = (0, import_react7.useState)(false), [tab, setTab] = (0, import_react7.useState)("overview"), [expanded, setExpanded] = (0, import_react7.useState)(false), [day, setDay] = (0, import_react7.useState)(17), [month, setMonth] = (0, import_react7.useState)(11);
-  if (mode === "missing") return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("main", { className: "page-empty", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h1", { children: "\u6B64\u5C0E\u5E2B\u4E0D\u5B58\u5728" }),
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { className: "primary-button", onClick: onFind, children: "\u5C0B\u627E\u5C0E\u5E2B" })
+var clamp2 = (level) => Math.min(5, Math.max(1, Math.round(level) || 1));
+var LEVEL_HOURS = [0, 50, 100, 150, 200];
+var rounded = (pts, r) => pts.map((p, i) => {
+  const a = pts[(i - 1 + pts.length) % pts.length], b = pts[(i + 1) % pts.length], v1 = [a[0] - p[0], a[1] - p[1]], v2 = [b[0] - p[0], b[1] - p[1]], l1 = Math.hypot(v1[0], v1[1]), l2 = Math.hypot(v2[0], v2[1]), k = Math.min(r, l1 / 2, l2 / 2), f = (n) => n.toFixed(2);
+  return (i ? "L" : "M") + f(p[0] + v1[0] / l1 * k) + " " + f(p[1] + v1[1] / l1 * k) + "Q" + f(p[0]) + " " + f(p[1]) + " " + f(p[0] + v2[0] / l2 * k) + " " + f(p[1] + v2[1] / l2 * k);
+}).join("") + "Z";
+var ring = (n, outer, inner = outer, turn = -90, cx = 60, cy = 56) => Array.from({ length: n }, (_, i) => {
+  const a = (turn + i * 360 / n) * Math.PI / 180, r = i % 2 ? inner : outer;
+  return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+});
+var star = rounded(ring(16, 48, 39), 7);
+var tiers = [
+  { shape: rounded(ring(40, 44), 0), face: ["#fbfcfd", "#cdd6de"], side: "#9eabb7", plate: ["#dfe5ea", "#bcc7d1"], gem: ["#ffffff", "#c9f4f0", "#6bd9d4", "#27b3b6"], scale: 0.86, twinkles: 0 },
+  { shape: rounded(ring(6, 48), 11), face: ["#9df3ea", "#1cbcc0"], side: "#10868b", plate: ["#34cdd0", "#149ea4"], gem: ["#ffffff", "#e3fcfa", "#b4f0ed", "#7fdedc"], scale: 1, twinkles: 0 },
+  { shape: rounded([[22, 16], [98, 16], [98, 58], [60, 98], [22, 58]], 13), face: ["#a9d0ff", "#2b7af0"], side: "#1b54b8", plate: ["#4a93f8", "#2163d6"], gem: ["#ffffff", "#e2efff", "#b7d6ff", "#86b8fb"], scale: 1.06, twinkles: 1 },
+  { shape: star, face: ["#d2c3ff", "#7653e6"], side: "#4f34b4", plate: ["#8f70f3", "#613fd0"], gem: ["#ffffff", "#f3ebff", "#dccaff", "#bea2fb"], scale: 1.1, twinkles: 2 },
+  { shape: star, back: rounded(ring(16, 50, 40, -67.5), 7), face: ["#fff0b5", "#f6ab0e"], side: "#c27a03", plate: ["#fcc537", "#e2950a"], gem: ["#f4eaff", "#cfb2ff", "#9c6cf2", "#6f41d6"], scale: 1.16, twinkles: 3 }
+];
+var twinkle = (x, y, s) => `M${x} ${y - s}Q${x} ${y} ${x + s} ${y}Q${x} ${y} ${x} ${y + s}Q${x} ${y} ${x - s} ${y}Q${x} ${y} ${x} ${y - s}Z`;
+var twinkleSpots = [[93, 22, 7], [24, 30, 4.5], [100, 74, 3.5]];
+function LevelEmblem({ level = 1, className = "" }) {
+  const n = clamp2(level), t = tiers[n - 1], id = "xl" + (0, import_react7.useId)().replace(/[^a-zA-Z0-9]/g, ""), [g0, g1, g2, g3] = t.gem;
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("svg", { className: "xl-emblem " + className, viewBox: "0 0 120 120", "aria-hidden": "true", focusable: "false", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("defs", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("linearGradient", { id: id + "f", x1: ".2", y1: "0", x2: ".8", y2: "1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: "0", stopColor: t.face[0] }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: "1", stopColor: t.face[1] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("linearGradient", { id: id + "p", x1: ".2", y1: "0", x2: ".8", y2: "1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: "0", stopColor: t.plate[0] }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: "1", stopColor: t.plate[1] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("linearGradient", { id: id + "s", x1: "0", y1: "0", x2: "1", y2: "1", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: "0", stopColor: "#fff", stopOpacity: ".7" }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("stop", { offset: ".55", stopColor: "#fff", stopOpacity: "0" })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("clipPath", { id: id + "c", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape }) })
+    ] }),
+    t.back && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.back, transform: "translate(0 7)", fill: t.side, opacity: ".85" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.back, fill: t.plate[1] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape, transform: "translate(0 7)", fill: t.side }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape, fill: `url(#${id}f)` }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("g", { clipPath: `url(#${id}c)`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("ellipse", { cx: "34", cy: "20", rx: "52", ry: "30", transform: "rotate(-24 34 20)", fill: "#fff", opacity: ".3" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape, fill: "none", stroke: `url(#${id}s)`, strokeWidth: "4" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("g", { transform: "translate(60 56) scale(.7) translate(-60 -56)", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape, transform: "translate(0 2.5)", fill: "#fff", opacity: ".45" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: t.shape, fill: `url(#${id}p)` })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("g", { transform: `translate(60 57) scale(${t.scale}) translate(-60 -58)`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("ellipse", { cx: "60", cy: "78", rx: "12", ry: "2.6", fill: "#000", opacity: ".14" }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M49.5 44H70.5L78 53.5H42Z", fill: g1 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M42 53.5H78L60 76Z", fill: g2 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M42 53.5L49.5 44L53 53.5Z", fill: g2 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M78 53.5L70.5 44L67 53.5Z", fill: g2 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M53 53.5L60 44L67 53.5Z", fill: g0 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M53 53.5H67L60 76Z", fill: g1 }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: "M67 53.5H78L60 76Z", fill: g3 })
+    ] }),
+    twinkleSpots.slice(0, t.twinkles).map(([x, y, s]) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("path", { d: twinkle(x, y, s), fill: "#fff" }, x))
   ] });
-  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("main", { className: "delivered-mentor", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "dm-cover" }),
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-wrap", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { className: "dm-identity", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("img", { className: "dm-portrait", src: asset("zahra.png"), alt: "Zahra Mirzakhani" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-person", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-name", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h1", { children: "Zahra Mirzakhani" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: "https://www.linkedin.com/", target: "_blank", rel: "noreferrer", className: "dm-linkedin", "aria-label": "LinkedIn", children: "in" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: "Senior UX Designer \xB7 CreativeUX Design Studio" }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-metrics", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Star, { size: 18 }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("b", { children: "8.5 / 10" })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "\u5DF2\u5B8C\u6210 128 \u5834 1-on-1" })
+}
+function LevelTile({ level = 1, locked = false, className = "" }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "xl-tile " + className, "data-level": clamp2(level), "data-locked": locked || void 0, "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelEmblem, { level }) });
+}
+function LevelPill({ level = 1 }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { className: "xl-pill", "data-level": clamp2(level), children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelEmblem, { level }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { children: [
+      "L",
+      clamp2(level)
+    ] })
+  ] });
+}
+function LevelLadder({ level }) {
+  const current = level === void 0 ? 0 : clamp2(level);
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("ol", { className: "xl-ladder", "aria-label": "\u7B49\u7D1A\u8207\u6240\u9700\u6642\u6578", children: LEVEL_HOURS.map((hours, i) => {
+    const n = i + 1, state = !current ? "plain" : n === current ? "current" : n < current ? "earned" : "locked";
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("li", { "data-level": n, "data-state": state, "aria-current": state === "current" ? "step" : void 0, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "xl-ladder-node", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelEmblem, { level: n }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("b", { children: [
+        "L",
+        n
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { children: [
+        hours,
+        " \u5C0F\u6642"
+      ] })
+    ] }, n);
+  }) });
+}
+function ProfileLevel({ level }) {
+  const [open, setOpen] = (0, import_react7.useState)(false), root = (0, import_react7.useRef)(null);
+  (0, import_react7.useEffect)(() => {
+    if (!open) return;
+    const close = (e) => {
+      if (e.type === "keydown" ? e.key === "Escape" : !root.current?.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", close);
+    document.addEventListener("keydown", close);
+    return () => {
+      document.removeEventListener("pointerdown", close);
+      document.removeEventListener("keydown", close);
+    };
+  }, [open]);
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { className: "mp-level-group", ref: root, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelPill, { level }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { className: "xl-info", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { type: "button", className: "xl-info-button", "aria-label": "\u67E5\u770B\u5C0E\u5E2B\u7B49\u7D1A\u8AAA\u660E", "aria-expanded": open, onClick: () => setOpen(!open), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Info, { size: 16 }) }),
+      open && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "xl-popover", role: "dialog", "aria-label": "\u5C0E\u5E2B\u7B49\u7D1A\u8AAA\u660E", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "xl-popover-head", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelTile, { level }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("small", { children: "\u5C0E\u5E2B\u7B49\u7D1A" }),
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("strong", { children: [
+              "L",
+              clamp2(level)
+            ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "profile-actions", children: [
-          mode !== "self" && allowContact && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(IconButton, { label: "\u806F\u7D61\u5C0E\u5E2B", className: "profile-action", onClick: onContact, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(MessageSquare, { size: 22, strokeWidth: 1.8 }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(IconButton, { label: saved ? "\u53D6\u6D88\u6536\u85CF" : "\u6536\u85CF\u5C0E\u5E2B", className: "profile-action", "aria-pressed": saved, onClick: () => setSaved(!saved), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Bookmark, { size: 22, strokeWidth: 1.8, fill: saved ? "currentColor" : "none" }) })
-        ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-tabs", role: "tablist", "aria-label": "\u5C0E\u5E2B\u8CC7\u6599", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { role: "tab", "aria-selected": tab === "overview", onClick: () => setTab("overview"), children: "\u7C21\u4ECB" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("button", { role: "tab", "aria-selected": tab === "reviews", onClick: () => setTab("reviews"), children: [
-          "\u8A55\u50F9 ",
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "12" })
-        ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-columns", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { children: tab === "overview" ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-overview", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { children: "About" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
-              "Hello, I'm Zahra Mirzakhani, a passionate UX Designer from Tehran, Iran, with a rich background in graphic design and over seven years of experience in the tech industry. My educational journey began at the University of Art\u2026",
-              expanded && " I enjoy helping designers find their voice, explore new ideas, and turn research into thoughtful digital experiences.",
-              " ",
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { className: "dm-more", onClick: () => setExpanded(!expanded), children: expanded ? "Show Less" : "Show More" })
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { children: "Expertise" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "dm-expertise", children: [["UI Design", "Creating visually appealing and functional user interfaces.", CodeXml], ["UX Design", "Enhancing user satisfaction by improving usability and accessibility.", Layers], ["SEO Writing", "Writing content optimized for search engines.", PenLine]].map(([title, description, Icon2], i) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-expertise-row", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: `dm-skill-icon tone-${i}`, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Icon2, { size: 24, strokeWidth: 1.5 }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h3", { children: title }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: description })
-              ] })
-            ] }, title)) })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("section", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { children: "Work Experience" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-experience", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-experience-meta", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "CreativeUX Design Studio" }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: "2020 \u2013 Present" })
-              ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h3", { children: "Senior UX Designer" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: "Creating thoughtful digital experiences through research and collaborative design." })
-            ] })
-          ] })
-        ] }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "dm-reviews", children: ["\u5206\u4EAB\u4E86\u5F88\u5177\u9AD4\u7684\u5EFA\u8B70\uFF0C\u4E5F\u5E6B\u52A9\u6211\u91D0\u6E05\u4E0B\u4E00\u6B65\u7684\u65B9\u5411\u3002", "\u5F88\u6709\u8010\u5FC3\u5730\u56DE\u7B54\u554F\u984C\uFF0C\u6703\u8AC7\u524D\u4E5F\u6709\u5148\u4E86\u89E3\u6211\u7684\u9700\u6C42\u3002", "\u5C65\u6B77\u8207\u4F5C\u54C1\u96C6\u7684\u5EFA\u8B70\u5F88\u5BE6\u7528\uFF0C\u8B1D\u8B1D\u5C0E\u5E2B\uFF01"].map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("article", { className: "dm-review", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("b", { children: ["\u9673**", "\u6797**", "A**"][i] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { children: [
-              [9, 10, 8][i],
-              " / 10"
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("time", { children: "2026/10/28" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: t })
-        ] }, t)) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("aside", { className: "dm-booking", children: mode === "paused" ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "paused-booking", children: "\u76EE\u524D\u66AB\u505C\u63A5\u53D7\u9810\u7D04" }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-calendar", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-calendar-head", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: "Book a Session" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("h2", { children: [
-              month,
-              " \u6708 ",
-              day,
-              " \u65E5"
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-month", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("span", { children: [
-              "2026 \u5E74 ",
-              month,
-              " \u6708"
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(IconButton, { label: "\u4E0A\u500B\u6708", onClick: () => setMonth((m) => m === 1 ? 12 : m - 1), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(ChevronLeft, { size: 18 }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(IconButton, { label: "\u4E0B\u500B\u6708", onClick: () => setMonth((m) => m === 12 ? 1 : m + 1), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(ChevronRight, { size: 18 }) })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "dm-calendar-grid", children: [
-            ["\u65E5", "\u4E00", "\u4E8C", "\u4E09", "\u56DB", "\u4E94", "\u516D"].map((d) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "dm-weekday", children: d }, d)),
-            Array.from({ length: 30 }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { className: "dm-day", "aria-pressed": day === i + 1, disabled: i + 1 < 8, onClick: () => setDay(i + 1), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: i + 1 }) }, i))
-          ] })
-        ] }) })
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "xl-lead", children: "\u7B49\u7D1A\u4F9D\u6709\u6548\u670D\u52D9\u6642\u6578\u7D2F\u7A4D\uFF0C\u4EE3\u8868\u5728 X-Talent \u7684\u4EA4\u6D41\u6B77\u7A0B\u3002" }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LevelLadder, { level }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "xl-popover-note", children: "\u96D9\u65B9\u78BA\u8A8D\u5B8C\u6210\u7684\u6703\u8AC7\u624D\u6703\u8A08\u5165\u6642\u6578\u3002" })
       ] })
     ] })
   ] });
 }
 
-// src/Chat.tsx
-var import_react8 = __toESM(require_react(), 1);
+// src/SocialLinks.tsx
 var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
-function TextContent({ text }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_jsx_runtime17.Fragment, { children: text.split(/(https?:\/\/[^\s]+)/g).map((p, i) => /^https?:\/\//.test(p) ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("a", { href: p, target: "_blank", rel: "noreferrer", children: p }, i) : p) });
+var linkedin = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "2.5 2.5 15 15",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M15.2801 15.2825H13.0589V11.8018C13.0589 10.9718 13.0421 9.90375 11.9014 9.90375C10.7433 9.90375 10.5664 10.8069 10.5664 11.7406V15.2825H8.34514V8.125H10.4789V9.10058H10.5076C10.8058 8.53808 11.5308 7.94437 12.6139 7.94437C14.8646 7.94437 15.2808 9.42567 15.2808 11.3538L15.2801 15.2825ZM5.83642 7.14562C5.12142 7.14562 4.54704 6.56687 4.54704 5.855C4.54704 5.14375 5.12204 4.56563 5.83642 4.56563C6.54892 4.56563 7.12642 5.14375 7.12642 5.855C7.12642 6.56687 6.54829 7.14562 5.83642 7.14562ZM6.95017 15.2825H4.72267V8.125H6.95017V15.2825ZM16.3914 2.5H3.60767C2.99579 2.5 2.50079 2.98375 2.50079 3.58063V16.4194C2.50079 17.0168 2.99579 17.5 3.60767 17.5H16.3896C17.0008 17.5 17.5008 17.0168 17.5008 16.4194V3.58063C17.5008 2.98375 17.0008 2.5 16.3896 2.5H16.3914Z",
+        fill: "#0A66C2"
+      }
+    )
+  }
+);
+var facebook = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 18 18",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M12.4024 18V11.0344H14.7347L15.0838 8.3265H12.4024V6.59765C12.4024 5.81364 12.62 5.27934 13.7443 5.27934L15.1783 5.27867V2.85676C14.9302 2.82382 14.0791 2.75006 13.0888 2.75006C11.0213 2.75006 9.606 4.01198 9.606 6.32952V8.3265H7.2677V11.0344H9.606V18H1C0.44772 18 0 17.5523 0 17V1C0 0.44772 0.44772 0 1 0H17C17.5523 0 18 0.44772 18 1V17C18 17.5523 17.5523 18 17 18H12.4024Z",
+        fill: "#1877F2"
+      }
+    )
+  }
+);
+var github = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("svg", { width: "1em", height: "1em", viewBox: "0 0 16 16", className: "social-platform-icon", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("path", { fill: "#181717", d: "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z" }) });
+var instagram = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 20 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M10.002 7C8.34457 7 7.00195 8.3431 7.00195 10C7.00195 11.6573 8.34507 13 10.002 13C11.6593 13 13.002 11.6569 13.002 10C13.002 8.3427 11.6589 7 10.002 7ZM10.002 5C12.7624 5 15.002 7.2371 15.002 10C15.002 12.7605 12.7649 15 10.002 15C7.24148 15 5.00195 12.7629 5.00195 10C5.00195 7.23953 7.23905 5 10.002 5ZM16.502 4.74915C16.502 5.43926 15.9412 5.99917 15.252 5.99917C14.5619 5.99917 14.002 5.4384 14.002 4.74915C14.002 4.0599 14.5627 3.5 15.252 3.5C15.9403 3.49913 16.502 4.0599 16.502 4.74915ZM10.002 2C7.52747 2 7.12415 2.00655 5.97324 2.0578C5.18912 2.09461 4.6635 2.20007 4.17513 2.38967C3.74113 2.55799 3.42806 2.75898 3.09449 3.09255C2.75964 3.4274 2.55901 3.73963 2.39137 4.17383C2.20133 4.66332 2.0959 5.18811 2.05975 5.97115C2.008 7.0752 2.00195 7.46105 2.00195 10C2.00195 12.4745 2.0085 12.8778 2.05974 14.0286C2.09657 14.8124 2.20217 15.3388 2.39131 15.826C2.56007 16.2606 2.76147 16.5744 3.09343 16.9064C3.4296 17.2421 3.74276 17.4434 4.17284 17.6094C4.66716 17.8005 5.19245 17.9061 5.97309 17.9422C7.07715 17.9939 7.463 18 10.002 18C12.4765 18 12.8798 17.9934 14.0306 17.9422C14.8127 17.9055 15.3395 17.7996 15.828 17.6106C16.2614 17.4423 16.5762 17.2402 16.9084 16.9085C17.2446 16.5718 17.4455 16.2594 17.6117 15.8283C17.8023 15.3358 17.9081 14.8098 17.9442 14.0289C17.9959 12.9248 18.002 12.5389 18.002 10C18.002 7.52552 17.9954 7.12221 17.9442 5.97137C17.9074 5.18906 17.8015 4.66149 17.6123 4.17318C17.4444 3.74038 17.2427 3.42635 16.9094 3.09255C16.574 2.75715 16.2626 2.55693 15.8281 2.38942C15.339 2.19954 14.8134 2.09396 14.0308 2.05781C12.9268 2.00605 12.5409 2 10.002 2ZM10.002 0C12.7186 0 13.0578 0.00999994 14.1245 0.0599999C15.1886 0.10917 15.9145 0.2775 16.552 0.525C17.2111 0.77917 17.7678 1.1225 18.3236 1.67833C18.8786 2.23417 19.222 2.7925 19.477 3.45C19.7236 4.08667 19.892 4.81333 19.942 5.8775C19.9895 6.94417 20.002 7.28333 20.002 10C20.002 12.7167 19.992 13.0558 19.942 14.1225C19.8928 15.1867 19.7236 15.9125 19.477 16.55C19.2228 17.2092 18.8786 17.7658 18.3236 18.3217C17.7678 18.8767 17.2086 19.22 16.552 19.475C15.9145 19.7217 15.1886 19.89 14.1245 19.94C13.0578 19.9875 12.7186 20 10.002 20C7.28528 20 6.94611 19.99 5.87945 19.94C4.81528 19.8908 4.09028 19.7217 3.45195 19.475C2.79361 19.2208 2.23611 18.8767 1.68028 18.3217C1.12445 17.7658 0.781953 17.2067 0.526953 16.55C0.279453 15.9125 0.111953 15.1867 0.0619533 14.1225C0.0144533 13.0558 0.00195312 12.7167 0.00195312 10C0.00195312 7.28333 0.0119533 6.94417 0.0619533 5.8775C0.111113 4.8125 0.279453 4.0875 0.526953 3.45C0.781113 2.79167 1.12445 2.23417 1.68028 1.67833C2.23611 1.1225 2.79445 0.78 3.45195 0.525C4.08945 0.2775 4.81445 0.11 5.87945 0.0599999C6.94611 0.0124999 7.28528 0 10.002 0Z",
+        fill: "#E1306C"
+      }
+    )
+  }
+);
+var twitter = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 22 20",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M17.2048 0.25H20.5128L13.2858 8.51L21.7878 19.75H15.1308L9.9168 12.933L3.95084 19.75H0.640844L8.37084 10.915L0.214844 0.25H7.04084L11.7538 6.481L17.2048 0.25ZM16.0438 17.77H17.8768L6.04484 2.126H4.07784L16.0438 17.77Z",
+        fill: "#000000"
+      }
+    )
+  }
+);
+var youtube = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 20 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M10.2439 0C10.778 0.00294 12.1143 0.0158601 13.5341 0.0727301L14.0375 0.0946798C15.467 0.16236 16.8953 0.27798 17.6037 0.4755C18.5486 0.74095 19.2913 1.5155 19.5423 2.49732C19.942 4.05641 19.992 7.0994 19.9982 7.8358L19.9991 7.9884V7.9991C19.9991 7.9991 19.9991 8.0028 19.9991 8.0099L19.9982 8.1625C19.992 8.8989 19.942 11.9419 19.5423 13.501C19.2878 14.4864 18.5451 15.261 17.6037 15.5228C16.8953 15.7203 15.467 15.8359 14.0375 15.9036L13.5341 15.9255C12.1143 15.9824 10.778 15.9953 10.2439 15.9983L10.0095 15.9991H9.9991C9.9991 15.9991 9.9956 15.9991 9.9887 15.9991L9.7545 15.9983C8.6241 15.9921 3.89772 15.941 2.39451 15.5228C1.4496 15.2573 0.70692 14.4828 0.45587 13.501C0.0561999 11.9419 0.00624 8.8989 0 8.1625V7.8358C0.00624 7.0994 0.0561999 4.05641 0.45587 2.49732C0.7104 1.51186 1.45308 0.73732 2.39451 0.4755C3.89772 0.0572301 8.6241 0.00622 9.7545 0H10.2439ZM7.99911 4.49914V11.4991L13.9991 7.9991L7.99911 4.49914Z",
+        fill: "#FF0000"
+      }
+    )
+  }
+);
+var website = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  "svg",
+  {
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 18 18",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: "social-platform-icon",
+    "aria-hidden": "true",
+    children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      "path",
+      {
+        d: "M14.6572 11.8287L13.243 10.4145L14.6572 9.00031C16.2193 7.43821 16.2193 4.90555 14.6572 3.34345C13.0951 1.78136 10.5624 1.78136 9.00029 3.34345L7.58609 4.75767L6.17188 3.34345L7.58609 1.92924C9.92919 -0.413913 13.7282 -0.413913 16.0714 1.92924C18.4145 4.27239 18.4145 8.07141 16.0714 10.4145L14.6572 11.8287ZM11.8287 14.6572L10.4145 16.0714C8.07139 18.4145 4.27238 18.4145 1.92924 16.0714C-0.413913 13.7282 -0.413913 9.92921 1.92924 7.58611L3.34345 6.17188L4.75766 7.58611L3.34345 9.00031C1.78135 10.5624 1.78135 13.0951 3.34345 14.6572C4.90555 16.2192 7.43819 16.2192 9.00029 14.6572L10.4145 13.2429L11.8287 14.6572ZM11.8287 4.75767L13.243 6.17188L6.17188 13.2429L4.75766 11.8287L11.8287 4.75767Z",
+        fill: "#4F46E5"
+      }
+    )
+  }
+);
+var platforms = [
+  ["linkedin", "LinkedIn", linkedin],
+  ["facebook", "Facebook", facebook],
+  ["instagram", "Instagram", instagram],
+  ["twitter", "X (formerly Twitter)", twitter],
+  ["youtube", "YouTube", youtube],
+  ["github", "GitHub", github],
+  ["website", "\u500B\u4EBA\u7DB2\u7AD9", website]
+];
+function SocialLinks({ links }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("nav", { className: "xt-social-links", "aria-label": "\u500B\u4EBA\u9023\u7D50", children: platforms.map(([key, label, icon]) => {
+    const raw = links[key]?.url?.trim();
+    const url = raw && key === "github" && !/^https?:\/\//i.test(raw) ? "https://" + raw : raw;
+    const available = !!url && /^https?:\/\//i.test(url);
+    const content = /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [
+      icon,
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: label }),
+      available && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ArrowUpRight, { className: "social-open-arrow", size: 14, "aria-hidden": "true" })
+    ] });
+    return available ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("a", { className: "xt-social-item available", href: url, target: "_blank", rel: "noopener noreferrer", "aria-label": "\u958B\u555F " + label, children: content }, key) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "xt-social-item unavailable", "aria-disabled": "true", children: content }, key);
+  }) });
+}
+
+// src/MentorReadView.tsx
+var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
+var reviewNotes = [
+  "\u5206\u4EAB\u4E86\u5F88\u5177\u9AD4\u7684\u5EFA\u8B70\uFF0C\u4E5F\u5E6B\u52A9\u6211\u91D0\u6E05\u4E0B\u4E00\u6B65\u7684\u65B9\u5411\u3002",
+  "\u5F9E\u4F5C\u54C1\u96C6\u7684\u67B6\u69CB\u5230\u7814\u7A76\u6545\u4E8B\uFF0C\u90FD\u7D66\u4E86\u6211\u53EF\u4EE5\u5BE6\u969B\u57F7\u884C\u7684\u4FEE\u6539\u65B9\u5411\u3002",
+  "\u5F88\u6709\u8010\u5FC3\u5730\u56DE\u7B54\u554F\u984C\uFF0C\u6703\u8AC7\u524D\u4E5F\u6709\u5148\u4E86\u89E3\u6211\u7684\u9700\u6C42\u3002",
+  "\u4E00\u8D77\u91D0\u6E05\u4E86\u8F49\u8077\u76EE\u6A19\uFF0C\u8B93\u6211\u77E5\u9053\u53EF\u4EE5\u5F9E\u54EA\u4E9B\u6280\u80FD\u958B\u59CB\u6E96\u5099\u3002",
+  "\u6A21\u64EC\u9762\u8A66\u7684\u56DE\u994B\u5F88\u5BE6\u7528\uFF0C\u8B93\u6211\u66F4\u6709\u4FE1\u5FC3\u8AAA\u660E\u81EA\u5DF1\u7684\u8A2D\u8A08\u6C7A\u7B56\u3002",
+  "\u5354\u52A9\u6211\u6574\u7406\u4E86\u5C65\u6B77\u91CD\u9EDE\uFF0C\u4E5F\u63D0\u9192\u6211\u7528\u6210\u679C\u4F86\u8AAA\u660E\u81EA\u5DF1\u7684\u8CA2\u737B\u3002",
+  "\u7528\u5F88\u5BB9\u6613\u7406\u89E3\u7684\u4F8B\u5B50\uFF0C\u8AAA\u660E\u5982\u4F55\u628A\u8A2A\u8AC7\u6D1E\u5BDF\u8F49\u5316\u6210\u8A2D\u8A08\u65B9\u5411\u3002",
+  "\u5728\u6709\u9650\u7684\u6642\u9593\u88E1\u805A\u7126\u6700\u9700\u8981\u89E3\u6C7A\u7684\u554F\u984C\uFF0C\u4EA4\u6D41\u904E\u7A0B\u5F88\u81EA\u5728\u3002",
+  "\u5C0D\u8A2D\u8A08\u7CFB\u7D71\u7684\u5EFA\u8B70\u5F88\u6E05\u695A\uFF0C\u6703\u8AC7\u5F8C\u5DF2\u7D93\u958B\u59CB\u8ABF\u6574\u5143\u4EF6\u5206\u985E\u3002",
+  "\u8B1D\u8B1D\u4F60\u5206\u4EAB\u8207\u5DE5\u7A0B\u5E2B\u5408\u4F5C\u7684\u7D93\u9A57\uFF0C\u4E5F\u8B93\u6211\u91CD\u65B0\u770B\u5F85\u6E9D\u901A\u65B9\u5F0F\u3002",
+  "\u8B93\u6211\u767C\u73FE\u4F5C\u54C1\u96C6\u88E1\u53EF\u4EE5\u66F4\u6E05\u695A\u5448\u73FE\u7684\u7814\u7A76\u904E\u7A0B\uFF0C\u6536\u7A6B\u5F88\u591A\u3002",
+  "\u4E0D\u53EA\u63D0\u4F9B\u7B54\u6848\uFF0C\u4E5F\u900F\u904E\u63D0\u554F\u5354\u52A9\u6211\u627E\u5230\u9069\u5408\u81EA\u5DF1\u7684\u4E0B\u4E00\u6B65\u3002"
+];
+function ProfileOwnerActions({ onEdit, onBackend }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-actions mp-owner-actions", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { type: "button", className: "mp-action", "aria-label": "\u7DE8\u8F2F\u8CC7\u6599", title: "\u7DE8\u8F2F\u8CC7\u6599", onClick: onEdit, children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Pencil, { size: 20 }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { type: "button", className: "mp-backend-action", onClick: onBackend, children: [
+      "\u524D\u5F80\u5F8C\u53F0",
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ArrowUpRight, { size: 16 })
+    ] })
+  ] });
+}
+function ProfilePlans({ plans, owner = false, onManage }) {
+  const published = plans.filter((p) => p.published);
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-setting-card mp-plans", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-booking-title", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: owner ? "\u6211\u7684\u65B9\u6848" : "\u9810\u7D04\u6703\u8AC7" }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(CalendarDays, { size: 20 })
+    ] }),
+    published.length ? published.map((plan) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { className: "mp-plan", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: plan.name }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: plan.description }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
+          plan.duration,
+          " \u5206\u9418"
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: plan.price ? "NT$ " + plan.price.toLocaleString() : "\u514D\u8CBB" })
+      ] }),
+      plan.slots.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("small", { children: [
+        "\u53EF\u9810\u7D04 \xB7 ",
+        plan.slots[0]
+      ] })
+    ] }, plan.id)) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-plans-empty", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(CalendarDays, { size: 26 }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: owner ? "\u4F60\u9084\u6C92\u6709\u4E0A\u67B6\u7684\u65B9\u6848" : "\u76EE\u524D\u6C92\u6709\u958B\u653E\u7684\u65B9\u6848" })
+    ] }),
+    owner && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "mp-manage-plans", type: "button", onClick: onManage, children: "\u7BA1\u7406\u65B9\u6848" })
+  ] });
+}
+function ProfileSummary({ hasReviews, completed, owner, minutes, experience, location: location2 }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dl", { className: "mp-summary", "data-has-rating": hasReviews, style: { "--summary-count": (hasReviews ? 1 : 0) + (completed > 0 ? 1 : 0) + (owner ? 1 : 0) + 2 }, "aria-label": "\u5C0E\u5E2B\u6703\u8AC7\u8207\u80CC\u666F\u8CC7\u8A0A", children: [
+    hasReviews && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-summary-item", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dt", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Star, { size: 16, fill: "currentColor", className: "mp-summary-star" }),
+        "\u8A55\u5206"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dd", { children: [
+        "8.5 ",
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "/ 10" })
+      ] })
+    ] }),
+    completed > 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-summary-item", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dt", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(UsersRound, { size: 16 }),
+        "\u5DF2\u5B8C\u6210 1-on-1"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dd", { children: [
+        completed,
+        " ",
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "\u5834" })
+      ] })
+    ] }),
+    owner && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-summary-item", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dt", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Clock3, { size: 16 }),
+        "\u6709\u6548\u670D\u52D9\u6642\u6578"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dd", { children: [
+        (minutes / 60).toFixed(1),
+        " ",
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "\u5C0F\u6642" })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-summary-item", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dt", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(BriefcaseBusiness, { size: 16 }),
+        "\u7D93\u9A57"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("dd", { children: experience })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-summary-item", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("dt", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(MapPin, { size: 16 }),
+        "\u5730\u9EDE"
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("dd", { className: "mp-summary-location", children: location2 })
+    ] })
+  ] });
+}
+function ProfileIndustries({ items }) {
+  if (!items?.length) return null;
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mp-about-hashtags", "aria-label": "\u7522\u696D", children: items.map((v) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
+    "#",
+    v
+  ] }, v)) });
+}
+function MentorReadView({ profile: p, owner = false, level, minutes = 0, completed = 128, reviewCount = 12, initialTab = "overview", onContact, aside, ownerActions, favorite, onFavorite }) {
+  const [tab, setTab] = (0, import_react8.useState)(initialTab), [reviewPage, setReviewPage] = (0, import_react8.useState)(0), [saved, setSaved] = (0, import_react8.useState)(false);
+  const isSaved = favorite ?? saved;
+  const reviews = reviewNotes.slice(0, reviewCount), hasReviews = reviews.length > 0;
+  const tabKey = (e) => {
+    if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) {
+      e.preventDefault();
+      const next = e.key === "Home" ? "overview" : e.key === "End" ? "reviews" : tab === "overview" ? "reviews" : "overview";
+      setTab(next);
+      document.getElementById("profile-tab-" + next)?.focus();
+    }
+  };
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "profile-view-container", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("main", { id: "xt-mentor-profile", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "mp-identity-section", "aria-label": "\u5C0E\u5E2B\u500B\u4EBA\u8CC7\u6599", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mp-cover", "aria-hidden": "true" }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-identity-body", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "xt-profile-identity", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("img", { className: "mp-avatar", src: p.avatar, alt: p.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-identity-copy", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-name-row", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h1", { children: p.name }),
+              level !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ProfileLevel, { level })
+            ] }),
+            p.position && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "mp-position", children: p.position })
+          ] }),
+          owner && ownerActions,
+          !owner && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-actions", children: [
+            onContact && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { type: "button", className: "mp-action", "aria-label": "\u806F\u7D61\u5C0E\u5E2B", title: "\u806F\u7D61\u5C0E\u5E2B", onClick: onContact, children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(MessageCircleMore, { size: 20 }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { type: "button", className: "mp-action", "aria-label": isSaved ? "\u53D6\u6D88\u6536\u85CF" : "\u6536\u85CF\u5C0E\u5E2B", title: isSaved ? "\u53D6\u6D88\u6536\u85CF" : "\u6536\u85CF\u5C0E\u5E2B", "aria-pressed": isSaved, onClick: onFavorite || (() => setSaved(!saved)), children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Bookmark, { size: 20, fill: isSaved ? "currentColor" : "none" }) })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ProfileSummary, { hasReviews, completed, owner, minutes, experience: p.experience, location: p.location })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mp-wrap", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-columns", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-main", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "xt-profile-nav", role: "tablist", "aria-label": "\u5C0E\u5E2B\u8CC7\u6599", children: [["overview", "\u7C21\u4ECB"], ["reviews", "\u8A55\u50F9"]].map(([id, label]) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { type: "button", id: "profile-tab-" + id, role: "tab", "aria-controls": "profile-panel-" + id, "aria-selected": tab === id, tabIndex: tab === id ? 0 : -1, onKeyDown: tabKey, onClick: () => setTab(id), children: [
+          label,
+          id === "reviews" && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: reviews.length })
+        ] }, id)) }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { id: "profile-panel-overview", role: "tabpanel", "aria-labelledby": "profile-tab-overview", hidden: tab !== "overview", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u95DC\u65BC\u6211" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ProfileIndustries, { items: p.industries }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mp-about", children: p.about.split(/\n\s*\n/).map((text, i) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: text }, i)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u670D\u52D9\u8207\u5C08\u9577" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-services", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: "\u6211\u80FD\u63D0\u4F9B\u7684\u670D\u52D9" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("ul", { className: "xt-compact-chips", children: p.services.map((v) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { className: "xt-compact-chip", children: v }, v)) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-skills", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: "\u5C08\u696D\u80FD\u529B" }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("ul", { className: "xt-member-card__skills", children: p.skills.map((v) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("li", { children: v }, v)) })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u5DE5\u4F5C\u7D93\u9A57" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "xt-experience-rows", children: p.work.map((w) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "xt-experience-icon", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(BriefcaseBusiness, { size: 20 }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: w.title }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: w.subtitle }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "xt-experience-date", children: w.period }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "xt-experience-description", children: w.description })
+              ] })
+            ] }, w.id)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u6559\u80B2\u7D93\u6B77" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "xt-experience-rows", children: p.education.map((w) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "xt-experience-icon", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(GraduationCap, { size: 20 }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: w.title }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: w.subtitle }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: "xt-experience-date", children: w.period })
+              ] })
+            ] }, w.id)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: "xt-profile-block", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u500B\u4EBA\u9023\u7D50" }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(SocialLinks, { links: p.links })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { id: "profile-panel-reviews", role: "tabpanel", "aria-labelledby": "profile-tab-reviews", hidden: tab !== "reviews", children: hasReviews ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-review-summary", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: "mp-review-score", children: [
+              "8.5 ",
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("small", { children: "/ 10" })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "mp-review-stars", children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Star, { size: 16, fill: "currentColor" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+                reviews.length,
+                " \u5247\u6703\u8AC7\u8A55\u50F9"
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "mp-reviews", children: reviews.slice(reviewPage * 3, reviewPage * 3 + 3).map((text, i) => {
+            const index2 = reviewPage * 3 + i;
+            return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { className: "mp-review", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-review-head", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("img", { className: "mp-review-avatar", src: avatarSource({ kind: "default", defaultIndex: index2 % 6 }), alt: "" }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: ["\u9673**", "\u6797**", "\u738B**", "\u674E**"][index2 % 4] }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: "mp-review-rating", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Star, { size: 14 }),
+                  index2 % 2 === 0 ? 9 : 8,
+                  " / 10"
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("time", { children: [
+                  "2026/",
+                  index2 < 6 ? "10" : "9",
+                  "/",
+                  28 - index2
+                ] })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: text })
+            ] }, index2);
+          }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("nav", { className: "mp-review-pagination", "aria-label": "\u8A55\u50F9\u5206\u9801", children: Array.from({ length: Math.ceil(reviews.length / 3) }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { type: "button", "aria-label": "\u7B2C " + (i + 1) + " \u9801\u8A55\u50F9", "aria-current": reviewPage === i ? "page" : void 0, onClick: () => setReviewPage(i), children: i + 1 }, i)) })
+        ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "mp-review-empty", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(MessageCircle, { size: 28 }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h2", { children: "\u76EE\u524D\u9084\u6C92\u6709\u8A55\u50F9" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u5B8C\u6210\u6703\u8AC7\u5F8C\uFF0C\u5B78\u54E1\u7684\u8A55\u50F9\u6703\u986F\u793A\u5728\u9019\u88E1\u3002" })
+        ] }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("aside", { className: "mp-booking", "aria-label": owner ? "\u6211\u7684\u65B9\u6848" : "\u9810\u7D04\u6703\u8AC7", children: aside })
+    ] }) })
+  ] }) });
+}
+
+// src/profile-fixture.ts
+var zahraProfile = { name: "Zahra Mirzakhani", position: "Senior UX Designer \xB7 CreativeUX Design Studio", about: "\u4F60\u597D\uFF0C\u6211\u662F Zahra\uFF0C\u76EE\u524D\u5728 CreativeUX Design Studio \u64D4\u4EFB Senior UX Designer\uFF0C\u7D2F\u7A4D\u8D85\u904E\u4E03\u5E74\u7684\u6578\u4F4D\u7522\u54C1\u8A2D\u8A08\u7D93\u9A57\u3002\u6211\u559C\u6B61\u5F9E\u4F7F\u7528\u8005\u7814\u7A76\u51FA\u767C\uFF0C\u548C\u4E0D\u540C\u9818\u57DF\u7684\u5925\u4F34\u4E00\u8D77\u5C07\u8907\u96DC\u554F\u984C\u8F49\u5316\u70BA\u6E05\u695A\u3001\u5BE6\u7528\u7684\u7522\u54C1\u9AD4\u9A57\u3002\n\n\u5F9E\u5E73\u9762\u8A2D\u8A08\u8D70\u5411 UX \u7684\u904E\u7A0B\u4E2D\uFF0C\u6211\u4E5F\u66FE\u7D93\u9762\u5C0D\u8F49\u8077\u7684\u4E0D\u78BA\u5B9A\u8207\u4F5C\u54C1\u96C6\u6574\u7406\u7684\u6311\u6230\u3002\u5982\u679C\u4F60\u6B63\u5728\u6E96\u5099\u8F49\u8077\u3001\u6574\u7406\u5C08\u6848\u6545\u4E8B\uFF0C\u6216\u5E0C\u671B\u66F4\u6709\u4FE1\u5FC3\u5730\u9762\u5C0D\u9762\u8A66\uFF0C\u6211\u5F88\u6A02\u610F\u966A\u4F60\u68B3\u7406\u60F3\u6CD5\uFF0C\u5F9E\u4F60\u7684\u7D93\u9A57\u88E1\u627E\u5230\u512A\u52E2\uFF0C\u4E00\u8D77\u898F\u5283\u80FD\u5BE6\u969B\u524D\u9032\u7684\u4E0B\u4E00\u6B65\u3002", industries: ["\u8A2D\u8A08\u53CA\u5275\u610F\u76F8\u95DC\u696D"], services: ["\u5C65\u6B77\u5065\u6AA2", "\u4F5C\u54C1\u96C6\u6AA2\u8996", "\u8077\u6DAF\u898F\u5283", "\u6A21\u64EC\u9762\u8A66"], skills: ["UI Design", "UX Research", "\u8A2D\u8A08\u7CFB\u7D71", "Figma", "\u7522\u54C1\u7B56\u7565", "\u8DE8\u90E8\u9580\u5354\u4F5C"], experience: "5\u201310 \u5E74", location: "\u81FA\u7063", work: [{ id: 1, title: "Senior UX Designer", subtitle: "CreativeUX Design Studio \xB7 \u81FA\u7063 \xB7 \u8A2D\u8A08\u53CA\u5275\u610F\u76F8\u95DC\u696D", period: "2021 \u2014 \u81F3\u4ECA", description: "\u8CA0\u8CAC\u6578\u4F4D\u7522\u54C1\u7684\u4F7F\u7528\u8005\u7814\u7A76\u8207\u9AD4\u9A57\u8A2D\u8A08\uFF0C\u900F\u904E\u8A2A\u8AC7\u3001\u539F\u578B\u8207\u4F7F\u7528\u6027\u6E2C\u8A66\u91D0\u6E05\u9700\u6C42\uFF0C\u4E26\u8207\u7522\u54C1\u53CA\u5DE5\u7A0B\u5718\u968A\u5408\u4F5C\uFF0C\u5EFA\u7ACB\u4E00\u81F4\u7684\u8A2D\u8A08\u7CFB\u7D71\u8207\u670D\u52D9\u9AD4\u9A57\u3002" }, { id: 2, title: "UI / UX Designer", subtitle: "Design Matter Studio \xB7 \u81FA\u7063 \xB7 \u8A2D\u8A08\u53CA\u5275\u610F\u76F8\u95DC\u696D", period: "2018 \u2014 2021", description: "\u53C3\u8207\u7DB2\u7AD9\u8207\u884C\u52D5\u61C9\u7528\u7684\u4ECB\u9762\u8A2D\u8A08\uFF0C\u6574\u7406\u4F7F\u7528\u8005\u6D41\u7A0B\u3001\u88FD\u4F5C\u4E92\u52D5\u539F\u578B\uFF0C\u5354\u52A9\u5718\u968A\u5C07\u7814\u7A76\u767C\u73FE\u8F49\u5316\u70BA\u53EF\u9A57\u8B49\u7684\u8A2D\u8A08\u65B9\u6848\u3002" }], education: [{ id: 1, title: "\u570B\u7ACB\u81FA\u7063\u79D1\u6280\u5927\u5B78", subtitle: "\u8A2D\u8A08\u7CFB \u5DE5\u696D\u8A2D\u8A08\u7D44 \xB7 \u78A9\u58EB", period: "2016 \u2014 2018" }, { id: 2, title: "\u570B\u7ACB\u96F2\u6797\u79D1\u6280\u5927\u5B78", subtitle: "\u8996\u89BA\u50B3\u9054\u8A2D\u8A08\u7CFB \xB7 \u5B78\u58EB", period: "2012 \u2014 2016" }], links: { linkedin: { url: "https://www.linkedin.com/" }, website: { url: "https://example.com/" } } };
+var profileExamplePlans = [{ id: "portfolio", name: "\u4F5C\u54C1\u96C6\u8207\u8077\u6DAF\u65B9\u5411", description: "\u4E00\u8D77\u68B3\u7406\u4F5C\u54C1\u96C6\u6545\u4E8B\uFF0C\u627E\u5230\u9069\u5408\u81EA\u5DF1\u7684\u4E0B\u4E00\u6B65\u3002", duration: 60, price: 0, published: true, slots: ["\u9031\u4E8C 19:00\u201320:00", "\u9031\u56DB 20:00\u201321:00"], questions: [] }, { id: "interview", name: "UX \u6A21\u64EC\u9762\u8A66", description: "\u7DF4\u7FD2\u8AAA\u660E\u4F60\u7684\u8A2D\u8A08\u6C7A\u7B56\uFF0C\u6574\u7406\u5177\u9AD4\u7684\u9762\u8A66\u56DE\u994B\u3002", duration: 45, price: 600, published: true, slots: ["\u9031\u4E94 19:00\u201319:45"], questions: [] }];
+
+// src/Profile.tsx
+var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
+function Profile({ onContact, mode = "normal", onFind, allowContact = true, allowBooking = false, onBook, initialNote = "", reviewCount = 12, v2 = false, favorite, onFavorite }) {
+  const [day, setDay] = (0, import_react9.useState)(17), [month, setMonth] = (0, import_react9.useState)(11), [year, setYear] = (0, import_react9.useState)(2026);
+  const [slot, setSlot] = (0, import_react9.useState)(""), [note, setNote] = (0, import_react9.useState)(initialNote), [confirming, setConfirming] = (0, import_react9.useState)(false), [completed, setCompleted] = (0, import_react9.useState)(false);
+  const reservationKey = (0, import_react9.useState)(() => crypto.randomUUID())[0];
+  const changeDate = () => {
+    setSlot("");
+    setCompleted(false);
+  };
+  const changeMonth = (delta) => {
+    const d = new Date(year, month - 1 + delta, 1);
+    setYear(d.getFullYear());
+    setMonth(d.getMonth() + 1);
+    setDay((n) => Math.min(n, new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate()));
+    changeDate();
+  };
+  const date = year + "/" + month + "/" + day, monthDays = new Date(year, month, 0).getDate(), firstWeekday = new Date(year, month - 1, 1).getDay();
+  const owner = mode === "self", center = "https://xtalent-mentor-742.bonny80.chatgpt.site/";
+  if (mode === "missing") return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("main", { className: "page-empty", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h1", { children: "\u6B64\u5C0E\u5E2B\u4E0D\u5B58\u5728" }),
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", onClick: onFind, children: "\u5C0B\u627E\u5C0E\u5E2B" })
+  ] });
+  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(MentorReadView, { favorite, onFavorite, profile: { ...zahraProfile, avatar: asset("zahra.png") }, owner, level: owner || v2 ? 2 : void 0, minutes: 4110, reviewCount, onContact: !owner && allowContact ? onContact : void 0, ownerActions: owner ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ProfileOwnerActions, { onEdit: () => location.assign(center + "?scene=owner-edit"), onBackend: () => location.assign(center + "?scene=growth-l2") }) : void 0, aside: owner || v2 ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ProfilePlans, { plans: profileExamplePlans, owner, onManage: () => location.assign(center + "?scene=plans-filled") }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_jsx_runtime19.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "xt-profile-setting-card", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mp-booking-title", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h2", { children: "\u9810\u7D04\u6703\u8AC7" }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(CalendarDays, { size: 20, "aria-hidden": "true" })
+      ] }),
+      mode === "paused" ? /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mp-booking-paused", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(CalendarDays, { size: 28 }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h3", { children: "\u76EE\u524D\u66AB\u505C\u63A5\u53D7\u9810\u7D04" }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u4F60\u4ECD\u53EF\u4EE5\u900F\u904E\u804A\u804A\u8207\u5C0E\u5E2B\u4EA4\u6D41\u3002" })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mp-calendar", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mp-calendar-month", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("h3", { children: [
+              year,
+              " \u5E74 ",
+              month,
+              " \u6708"
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(IconButton, { label: "\u4E0A\u500B\u6708", onClick: () => changeMonth(-1), children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ChevronLeft, { size: 18 }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(IconButton, { label: "\u4E0B\u500B\u6708", onClick: () => changeMonth(1), children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ChevronRight, { size: 18 }) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "mp-calendar-grid", children: [
+            ["\u65E5", "\u4E00", "\u4E8C", "\u4E09", "\u56DB", "\u4E94", "\u516D"].map((d) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: "mp-weekday", children: d }, d)),
+            Array.from({ length: firstWeekday }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { "aria-hidden": "true" }, "offset-" + i)),
+            Array.from({ length: monthDays }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "mp-day", "aria-label": month + " \u6708 " + (i + 1) + " \u65E5", "aria-pressed": day === i + 1, disabled: year === 2026 && month === 11 && i + 1 < 8, onClick: () => {
+              setDay(i + 1);
+              changeDate();
+            }, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { children: i + 1 }) }, i))
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("p", { className: "mp-selected-date", children: [
+            month,
+            " \u6708 ",
+            day,
+            " \u65E5",
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { children: "\u81FA\u7063\u6642\u9593\uFF08GMT+8\uFF09" })
+          ] })
+        ] }),
+        allowBooking && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("section", { className: "reservation-form", "aria-label": "\u9810\u7D04\u5C0E\u5E2B", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("fieldset", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("legend", { children: "\u7576\u65E5\u53EF\u9810\u7D04\u6642\u6BB5" }),
+            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "reservation-slots", children: ["19:00\u201319:30", "20:00\u201320:30", "21:00\u201321:30"].map((time) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { type: "button", "aria-pressed": slot === time, disabled: completed, onClick: () => setSlot(time), children: time }, time)) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("label", { htmlFor: "reservation-note", children: "\u4F60\u60F3\u554F\u5C0E\u5E2B\u7684\u554F\u984C\uFF08\u9078\u586B\uFF09" }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("textarea", { id: "reservation-note", className: "form-textarea", placeholder: "\u7C21\u55AE\u5206\u4EAB\u4F60\u60F3\u8A0E\u8AD6\u7684\u554F\u984C\u2026", value: note, disabled: completed, onChange: (e) => setNote(e.target.value) }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-help", children: "\u6709\u586B\u5BEB\u554F\u984C\u6642\uFF0C\u9810\u7D04\u6210\u529F\u5F8C\u6703\u9001\u5230\u8207\u5C0E\u5E2B\u7684\u804A\u804A\u3002" }),
+          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", disabled: !slot || completed, onClick: () => setConfirming(true), children: completed ? "\u9810\u7D04\u5DF2\u6210\u7ACB" : "\u78BA\u8A8D\u9810\u7D04" }),
+          completed && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-success", role: "status", children: "\u9810\u7D04\u5DF2\u6210\u7ACB\uFF0C\u7B49\u5F85\u5C0E\u5E2B\u56DE\u8986\u3002" })
+        ] }),
+        !allowBooking && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "mp-booking-help", children: "\u767B\u5165\u4E26\u4EE5\u5B78\u54E1\u8EAB\u5206\u9810\u7D04\u6703\u8AC7\u3002" })
+      ] })
+    ] }) }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(Modal, { open: confirming, title: "\u78BA\u8A8D\u9810\u7D04\u8CC7\u8A0A", onClose: () => setConfirming(false), actions: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "outline-button", onClick: () => setConfirming(false), children: "\u8FD4\u56DE" }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", disabled: completed, onClick: () => {
+        if (onBook({ id: reservationKey + "-" + date + "-" + slot, person: "zahra", date, time: slot }, note)) {
+          setCompleted(true);
+          setConfirming(false);
+        }
+      }, children: "\u78BA\u8A8D\u9810\u7D04" })
+    ] }), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "Zahra Mirzakhani" }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("p", { children: [
+        date,
+        " \xB7 ",
+        slot
+      ] }),
+      note.trim() ? /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u4F60\u60F3\u554F\u5C0E\u5E2B\u7684\u554F\u984C" }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-note-preview", children: note })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u672A\u586B\u5BEB\u554F\u984C\u7559\u8A00" })
+    ] })
+  ] });
+}
+
+// src/Chat.tsx
+var import_react10 = __toESM(require_react(), 1);
+var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
+function AttachmentIcon({ file }) {
+  const type = file.type.toUpperCase();
+  const Icon2 = file.image ? FileImage : /^(CSV|XLSX?)$/.test(type) ? FileSpreadsheet : /^(ZIP|RAR|7Z)$/.test(type) ? FileArchive : /^(PDF|DOCX?|TXT|PPTX?)$/.test(type) ? FileText : File;
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "attachment-type", "data-type": file.image ? "image" : type.toLowerCase(), title: type, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Icon2, { size: 22 }) });
+}
+function Highlight({ text, query = "" }) {
+  const q = query.trim();
+  if (Array.from(q).length < 2) return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_jsx_runtime20.Fragment, { children: text });
+  const parts = [];
+  let start = 0, index2 = 0;
+  const lower = text.toLocaleLowerCase(), needle = q.toLocaleLowerCase();
+  while ((index2 = lower.indexOf(needle, start)) !== -1) {
+    parts.push(text.slice(start, index2), /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("mark", { children: text.slice(index2, index2 + q.length) }, index2));
+    start = index2 + q.length;
+  }
+  parts.push(text.slice(start));
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_jsx_runtime20.Fragment, { children: parts });
+}
+function TextContent({ text, query = "" }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_jsx_runtime20.Fragment, { children: text.split(/(https?:\/\/[^\s]+)/g).map((p, i) => /^https?:\/\//.test(p) ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("a", { href: p, target: "_blank", rel: "noreferrer", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Highlight, { text: p, query }) }, i) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Highlight, { text: p, query }, i)) });
 }
 var groupEnd = (items, i) => items[i].status === "sent" && (!items[i + 1] || items[i + 1].own !== items[i].own || items[i + 1].status !== "sent" || new Date(items[i].at).toDateString() !== new Date(items[i + 1].at).toDateString());
 function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
   const active = s.route.active, visible = s.route.view === "chat", person = s.people.find((p) => p.id === active), thread = active ? s.threads[active] || emptyThread() : emptyThread(), allItems = thread.messages;
-  const [historyLimit, setHistoryLimit] = (0, import_react8.useState)(HISTORY_PAGE_SIZE), [loadingHistory, setLoadingHistory] = (0, import_react8.useState)(false);
-  const items = allItems.slice(-historyLimit), canCompose = !!active && canMessage(s, active), searching = isSearching(s);
+  const [historyLimit, setHistoryLimit] = (0, import_react10.useState)(HISTORY_PAGE_SIZE), [loadingHistory, setLoadingHistory] = (0, import_react10.useState)(false);
+  const matches = active ? matchedMessages(s, active) : [];
+  const [matchIndex, setMatchIndex] = (0, import_react10.useState)(0);
+  const match = matches[matchIndex % Math.max(1, matches.length)];
+  const matchOffset = match ? allItems.findIndex((m) => m.id === match.id) : -1;
+  const items = allItems.slice(-Math.max(historyLimit, matchOffset >= 0 ? allItems.length - matchOffset : 0)), canCompose = !!active && canMessage(s, active), searching = isSearching(s);
   const overview = active === null, invalid = active === "invalid", first = !isEstablished(thread) && !allItems.some((m) => m.status === "failed" || m.status === "sending"), deleted = !!person?.deleted;
-  const [emojis, setEmojis] = (0, import_react8.useState)(false), [deleteId, setDeleteId] = (0, import_react8.useState)(null), [image, setImage] = (0, import_react8.useState)(null);
-  const composer = (0, import_react8.useRef)(null), transcript = (0, import_react8.useRef)(null), listScroll = (0, import_react8.useRef)(null), uploader = (0, import_react8.useRef)(null);
+  const [emojis, setEmojis] = (0, import_react10.useState)(false), [deleteId, setDeleteId] = (0, import_react10.useState)(null);
+  const composer = (0, import_react10.useRef)(null), transcript = (0, import_react10.useRef)(null), listScroll = (0, import_react10.useRef)(null), uploader = (0, import_react10.useRef)(null);
   const unread = s.people.filter((p) => s.threads[p.id]?.unread && isEstablished(s.threads[p.id])).length;
   const listed = listedPeople(s);
   const update = (fn) => {
@@ -14541,30 +15219,30 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
   };
   const write = (draft) => update((t) => ({ ...t, draft }));
   const removeFailed = (id) => update((t) => ({ ...t, messages: t.messages.filter((m) => m.id !== id) }));
-  (0, import_react8.useEffect)(() => {
+  (0, import_react10.useEffect)(() => {
     setEmojis(false);
   }, [active]);
-  (0, import_react8.useEffect)(() => {
+  (0, import_react10.useEffect)(() => {
     if (listScroll.current && visible) listScroll.current.scrollTop = s.scroll;
   }, [overview, visible]);
-  (0, import_react8.useEffect)(() => {
+  (0, import_react10.useEffect)(() => {
     const el = composer.current;
     if (el) {
       el.style.height = "auto";
       el.style.height = Math.min(el.scrollHeight, 120) + "px";
     }
   }, [thread.draft, active, visible]);
-  const prepend = (0, import_react8.useRef)(null), historyTimer = (0, import_react8.useRef)(), wasNearBottom = (0, import_react8.useRef)(true);
-  (0, import_react8.useEffect)(() => {
+  const prepend = (0, import_react10.useRef)(null), historyTimer = (0, import_react10.useRef)(), wasNearBottom = (0, import_react10.useRef)(true);
+  (0, import_react10.useEffect)(() => {
     clearTimeout(historyTimer.current);
     setLoadingHistory(false);
     setHistoryLimit(HISTORY_PAGE_SIZE);
     prepend.current = null;
-    wasNearBottom.current = true;
-    if (transcript.current) transcript.current.scrollTop = transcript.current.scrollHeight;
+    wasNearBottom.current = !searching;
+    if (transcript.current && !searching) transcript.current.scrollTop = transcript.current.scrollHeight;
     return () => clearTimeout(historyTimer.current);
   }, [active]);
-  (0, import_react8.useLayoutEffect)(() => {
+  (0, import_react10.useLayoutEffect)(() => {
     if (!visible || !transcript.current) return;
     const el = transcript.current;
     if (prepend.current) {
@@ -14572,6 +15250,17 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
       prepend.current = null;
     } else if (wasNearBottom.current) el.scrollTop = el.scrollHeight;
   }, [active, visible, items.length]);
+  (0, import_react10.useEffect)(() => setMatchIndex(0), [active, s.search]);
+  (0, import_react10.useEffect)(() => {
+    if (!visible || !match || !transcript.current) return;
+    wasNearBottom.current = false;
+    setHistoryLimit((n) => Math.max(n, allItems.length - matchOffset));
+    transcript.current.querySelector('[data-message-id="' + CSS.escape(match.id) + '"]')?.scrollIntoView({ block: "center" });
+  }, [active, visible, match?.id, s.search]);
+  const clearSearch = () => {
+    wasNearBottom.current = false;
+    setState((p) => ({ ...p, search: "" }));
+  };
   const scrollHistory = () => {
     const el = transcript.current;
     if (!el) return;
@@ -14608,179 +15297,179 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
     });
     update((t) => ({ ...t, files: [...t.files, ...next] }));
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("main", { className: `chat-shell ${overview ? "no-thread inbox-overview" : "has-thread"}`, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("aside", { className: "conversation-list", "aria-label": "\u5C0D\u8A71\u5217\u8868", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { className: "list-back", onClick: back, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ArrowLeft, { size: 16 }),
-        " \u8FD4\u56DE\u539F\u9801"
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-tools", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-heading", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "list-heading-icon", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 18, strokeWidth: 1.8 }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h1", { children: "\u7AD9\u5167\u804A\u804A" })
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("main", { className: `chat-shell ${overview ? "no-thread inbox-overview" : "has-thread"}`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("aside", { className: "conversation-list", "aria-label": "\u5C0D\u8A71\u5217\u8868", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "list-tools", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "list-search-row", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8FD4\u56DE\u539F\u9801", className: "list-back", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ArrowLeft, { size: 20 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "search-wrap", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Search, { size: 18 }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { "aria-label": "\u641C\u5C0B\u59D3\u540D\u3001\u8A0A\u606F\u6216\u9644\u4EF6\u6A94\u540D", placeholder: "\u641C\u5C0B\u59D3\u540D\u3001\u8A0A\u606F\u6216\u6A94\u540D", value: s.search, onChange: (e) => setState((p) => ({ ...p, search: e.target.value })) }),
+            s.search && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u6E05\u9664\u641C\u5C0B", onClick: clearSearch, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(X, { size: 16 }) })
+          ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "search-wrap", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Search, { size: 18 }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("input", { "aria-label": "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", placeholder: "\u641C\u5C0B\u59D3\u540D\u6216\u8A0A\u606F", value: s.search, onChange: (e) => setState((p) => ({ ...p, search: e.target.value })) }),
-          s.search && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u6E05\u9664\u641C\u5C0B", onClick: () => setState((p) => ({ ...p, search: "" })), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(X, { size: 16 }) })
-        ] }),
-        s.search.trim() && !searching && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: "search-hint", role: "status", children: "\u8ACB\u8F38\u5165\u81F3\u5C11 2 \u500B\u5B57\u5143" })
+        s.search.trim() && !searching && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "search-hint", role: "status", children: "\u8ACB\u8F38\u5165\u81F3\u5C11 2 \u500B\u5B57\uFF0C\u624D\u6703\u958B\u59CB\u641C\u5C0B\u3002" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "list-tabs", role: "tablist", "aria-label": "\u8A0A\u606F\u7BE9\u9078", children: [["all", "\u5168\u90E8"], ["unread", "\u672A\u8B80"]].map(([value, label]) => /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { role: "tab", "aria-selected": s.filter === value, onClick: () => setState((p) => ({ ...p, filter: value })), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "list-tabs", role: "tablist", "aria-label": "\u8A0A\u606F\u7BE9\u9078", children: [["all", "\u5168\u90E8"], ["unread", "\u672A\u8B80"]].map(([value, label]) => /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("button", { role: "tab", "aria-selected": s.filter === value, onClick: () => setState((p) => ({ ...p, filter: value })), children: [
         label,
-        value === "unread" && unread > 0 && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: unread > 99 ? "99+" : unread })
+        value === "unread" && unread > 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: unread > 99 ? "99+" : unread })
       ] }, value)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "list-scroll", ref: listScroll, children: s.listError ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-state", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 24 }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "\u76EE\u524D\u7121\u6CD5\u8F09\u5165\u5C0D\u8A71\uFF0C\u8ACB\u7A0D\u5F8C\u518D\u8A66" }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "outline-button", onClick: () => setState((p) => ({ ...p, listError: false })), children: "\u91CD\u8A66" })
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "list-scroll", ref: listScroll, children: s.listError ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "list-state", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Info, { size: 24 }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: "\u76EE\u524D\u7121\u6CD5\u8F09\u5165\u5C0D\u8A71\uFF0C\u8ACB\u7A0D\u5F8C\u518D\u8A66" }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "outline-button", onClick: () => setState((p) => ({ ...p, listError: false })), children: "\u91CD\u8A66" })
       ] }) : listed.length ? listed.map((p) => {
-        const t = s.threads[p.id], match = matchedMessage(s, p.id), last = match || latest(t), isUnread = t.unread && isEstablished(t);
-        return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("button", { className: `conversation ${p.id === active ? "selected" : ""} ${isUnread ? "unread" : ""}`, onClick: () => {
+        const t = s.threads[p.id], match2 = matchedMessage(s, p.id), last = match2 || latest(t), isUnread = t.unread && isEstablished(t);
+        return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("button", { className: `conversation ${p.id === active ? "selected" : ""} ${isUnread ? "unread" : ""}`, onClick: () => {
           saveScroll();
           open(p.id);
         }, "aria-current": p.id === active ? "true" : void 0, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Avatar, { person: p, deleted: !!p.deleted }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "conversation-copy", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("strong", { children: p.name }),
-              last && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("time", { children: listTime(last.at, now(s)) })
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Avatar, { person: p, deleted: !!p.deleted }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "conversation-copy", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("strong", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Highlight, { text: p.name, query: s.search }) }),
+              last && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("time", { children: listTime(last.at, now(s)) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: preview(t).startsWith("\u8349\u7A3F\uFF1A") ? "draft-label" : "", children: match ? match.text : preview(t) })
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: !match2 && preview(t).startsWith("\u8349\u7A3F\uFF1A") ? "draft-label" : "", children: match2 ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Highlight, { text: matchPreview(s, match2), query: s.search }) : preview(t) })
           ] }),
-          isUnread && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "unread-dot", "aria-label": "\u672A\u8B80" })
+          isUnread && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "unread-dot", "aria-label": "\u672A\u8B80" })
         ] }, p.id);
-      }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "list-state", children: [
-        !searching && s.filter === "all" && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 28 }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: searching ? "\u627E\u4E0D\u5230\u7B26\u5408\u7684\u5C0D\u8A71" : s.filter === "unread" ? "\u76EE\u524D\u6C92\u6709\u672A\u8B80\u8A0A\u606F" : "\u76EE\u524D\u6C92\u6709\u5C0D\u8A71" }),
-        !searching && s.filter === "all" && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "primary-button", onClick: find, children: "\u5C0B\u627E\u5C0E\u5E2B" })
+      }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "list-state", children: [
+        !searching && s.filter === "all" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(MessageSquare, { size: 28 }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: searching ? "\u627E\u4E0D\u5230\u7B26\u5408\u7684\u5C0D\u8A71" : s.filter === "unread" ? "\u76EE\u524D\u6C92\u6709\u672A\u8B80\u8A0A\u606F" : "\u76EE\u524D\u6C92\u6709\u5C0D\u8A71" }),
+        !searching && s.filter === "all" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "primary-button", onClick: find, children: "\u5C0B\u627E\u5C0E\u5E2B" })
       ] }) })
     ] }),
-    overview && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("section", { className: "chat-room empty-room", "aria-label": "\u5C1A\u672A\u9078\u53D6\u5C0D\u8A71", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "chat-empty-content", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 30, strokeWidth: 1.6 }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u9078\u64C7\u4E00\u6BB5\u5C0D\u8A71" }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: "\u5F9E\u5DE6\u5074\u5217\u8868\u9078\u53D6\u5C0D\u8A71\uFF0C\u958B\u59CB\u4EA4\u6D41\u3002" })
+    (overview || invalid) && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("section", { className: "chat-room empty-room " + (invalid ? "invalid-desktop" : ""), "aria-label": "\u5C1A\u672A\u9078\u53D6\u5C0D\u8A71", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "chat-empty-content", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(MessageSquare, { size: 30, strokeWidth: 1.6 }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h2", { children: "\u8ACB\u9078\u64C7\u4E00\u5247\u5C0D\u8A71" }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: "\u5F9E\u5DE6\u5074\u5217\u8868\u9078\u53D6\u5C0D\u8A71\uFF0C\u958B\u59CB\u4EA4\u6D41\u3002" })
     ] }) }),
-    invalid ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "chat-room invalid-room", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("header", { className: "thread-header", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ChevronLeft, { size: 22 }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "invalid-content", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 28 }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: "\u7121\u6CD5\u958B\u555F\u6B64\u5C0D\u8A71" }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "outline-button", onClick: back, children: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868" })
+    invalid ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: "chat-room invalid-room invalid-mobile", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: "thread-header", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ChevronLeft, { size: 22 }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "invalid-content", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Info, { size: 28 }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h2", { children: "\u7121\u6CD5\u958B\u555F\u6B64\u5C0D\u8A71" }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "outline-button", onClick: back, children: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868" })
       ] })
-    ] }) : person && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: "chat-room", "aria-label": `\u8207 ${person.name} \u7684\u5C0D\u8A71`, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("header", { className: "thread-header", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", className: "thread-back", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(ChevronLeft, { size: 22 }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Avatar, { person, deleted }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "thread-identity", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h2", { children: person.name }),
-          !deleted && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { children: person.role })
+    ] }) : person && /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: "chat-room", "aria-label": `\u8207 ${person.name} \u7684\u5C0D\u8A71`, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: "thread-header", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", className: "thread-back", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ChevronLeft, { size: 22 }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Avatar, { person, deleted }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "thread-identity", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h2", { children: person.name }),
+          !deleted && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: person.role })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "transcript", tabIndex: 0, "aria-label": "\u804A\u5929\u7D00\u9304", ref: transcript, onScroll: scrollHistory, children: [
-        loadingHistory && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "history-loading", role: "status", "aria-label": "\u8F09\u5165\u8F03\u65E9\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(LoaderCircle, { size: 16 }) }),
-        items.length === 0 && !deleted ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "first-conversation", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "first-portrait", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Avatar, { person }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageSquare, { size: 20 }) })
+      matches.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "thread-search", role: "region", "aria-label": "\u5C0D\u8A71\u5167\u641C\u5C0B", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("span", { children: [
+          "\u641C\u5C0B\u300C",
+          s.search.trim(),
+          "\u300D"
+        ] }),
+        matches.length > 1 && /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("span", { className: "search-position", role: "status", children: [
+            matchIndex % matches.length + 1,
+            " / ",
+            matches.length
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("h2", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u4E0A\u4E00\u7B46\u641C\u5C0B\u7D50\u679C", onClick: () => setMatchIndex((i) => (i - 1 + matches.length) % matches.length), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ArrowUp, { size: 16 }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u4E0B\u4E00\u7B46\u641C\u5C0B\u7D50\u679C", onClick: () => setMatchIndex((i) => (i + 1) % matches.length), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ArrowDown, { size: 16 }) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u95DC\u9589\u5C0D\u8A71\u641C\u5C0B", onClick: clearSearch, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(X, { size: 16 }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "transcript", tabIndex: 0, "aria-label": "\u804A\u5929\u7D00\u9304", ref: transcript, onScroll: scrollHistory, children: [
+        loadingHistory && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "history-loading", role: "status", "aria-label": "\u8F09\u5165\u8F03\u65E9\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(LoaderCircle, { size: 16 }) }),
+        items.length === 0 && !deleted ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "first-conversation", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "first-portrait", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Avatar, { person }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(MessageSquare, { size: 20 }) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("h2", { children: [
             "\u8207 ",
             person.name,
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("br", {}),
-            "\u958B\u59CB\u5C0D\u8A71"
+            " \u958B\u59CB\u5C0D\u8A71"
           ] })
         ] }) : items.map((m, i) => {
           const newDate = i === 0 || new Date(items[i - 1].at).toDateString() !== new Date(m.at).toDateString();
-          return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_react8.default.Fragment, { children: [
-            newDate && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "date-divider", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: new Date(m.at).toDateString() === new Date(now(s)).toDateString() ? "\u4ECA\u5929" : new Date(m.at).toLocaleDateString("zh-TW") }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: `message-row ${m.own ? "own" : "incoming"} ${!newDate && items[i - 1]?.own === m.own ? "grouped" : ""}`, "data-message-status": m.status, children: [
-              !m.own && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Avatar, { person, deleted }),
-              /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "message-content", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: `bubble ${m.removed ? "removed" : ""}`, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(TextContent, { text: m.removed ? "\u6B64\u8A0A\u606F\u5DF2\u522A\u9664" : m.text }),
-                  !m.removed && m.files?.map((f, j) => f.image ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "image-file", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: "attachment-filename", children: f.name }),
-                    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "image-attachment", disabled: m.status !== "sent", "aria-label": `\u67E5\u770B\u5716\u7247 ${f.name}`, onClick: () => setImage(f), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("img", { src: f.url, alt: f.name }) })
-                  ] }, j) : /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("a", { className: "file-attachment", "aria-disabled": m.status !== "sent", download: f.name, href: m.status === "sent" ? f.url : void 0, children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(FileText, { size: 24 }),
-                    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { children: [
-                      f.name,
-                      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("small", { children: f.type })
-                    ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Download, { size: 18 })
-                  ] }, j))
-                ] }),
-                (m.status === "failed" || groupEnd(items, i)) && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: `message-meta ${m.status === "failed" ? "failed" : ""}`, children: m.status === "failed" ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 12 }),
-                  /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: m.reason })
-                ] }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [
-                  m.own && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: m.read ? "\u5DF2\u8B80" : "\u672A\u8B80" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("time", { children: new Date(m.at).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit", hour12: false }) })
+          return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_react10.default.Fragment, { children: [
+            newDate && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "date-divider", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: new Date(m.at).toDateString() === new Date(now(s)).toDateString() ? "\u4ECA\u5929" : new Date(m.at).toLocaleDateString("zh-TW") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: `message-row ${m.own ? "own" : "incoming"} ${!newDate && items[i - 1]?.own === m.own ? "grouped" : ""}`, "data-message-id": m.id, "data-search-current": m.id === match?.id || void 0, "data-message-status": m.status, children: [
+              !m.own && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Avatar, { person, deleted }),
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "message-content", children: [
+                (m.text || m.removed) && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: `bubble ${m.removed ? "removed" : ""}`, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(TextContent, { text: m.removed ? "\u6B64\u8A0A\u606F\u5DF2\u522A\u9664" : m.text, query: m.status === "sent" && !m.removed ? s.search : "" }) }),
+                !m.removed && !!m.files?.length && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sent-attachments", "aria-label": `${m.files.length} \u500B\u9644\u4EF6`, children: m.files.map((f, j) => /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "sent-file", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "sent-file-heading", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(AttachmentIcon, { file: f }),
+                  /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Highlight, { text: f.name, query: m.status === "sent" ? s.search : "" }) }),
+                  m.status === "sent" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("a", { href: f.url, download: f.name, "aria-label": `\u4E0B\u8F09 ${f.name}`, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Download, { size: 18 }) })
+                ] }) }, j)) }),
+                (m.status === "failed" || groupEnd(items, i)) && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: `message-meta ${m.status === "failed" ? "failed" : ""}`, children: m.status === "failed" ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: m.reason }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [
+                  m.own && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: m.read ? "\u5DF2\u8B80" : "\u672A\u8B80" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("time", { children: new Date(m.at).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit", hour12: false }) })
                 ] }) })
               ] }),
-              m.own && !m.removed && m.status !== "sending" && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(MessageActions, { id: m.id, failed: m.status === "failed", hasAttachments: !!m.files?.length, hasText: !!m.text.trim(), onTextOnly: () => retry(m.id, true), onRetry: () => retry(m.id), onDeleteFailed: () => removeFailed(m.id), onDelete: () => setDeleteId(m.id) })
+              m.own && !m.removed && m.status !== "sending" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(MessageActions, { id: m.id, failed: m.status === "failed", onRetry: () => retry(m.id), onDeleteFailed: () => removeFailed(m.id), onDelete: () => setDeleteId(m.id) })
             ] })
           ] }, m.id);
         })
       ] }),
-      deleted && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "unavailable-area", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "unavailable-notice", role: "status", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Info, { size: 18 }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0F\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F\u3002" }),
-        person.deleted === "mentor" && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { onClick: find, children: "\u641C\u5C0B\u5C0E\u5E2B" })
+      deleted && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "unavailable-area", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "unavailable-notice", role: "status", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Info, { size: 18 }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: person.deleted === "mentor" ? "\u6B64\u5C0E\u5E2B\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u7E7C\u7E8C\u50B3\u9001\u8A0A\u606F\u3002" : "\u6B64\u5B78\u54E1\u4E0D\u5B58\u5728\uFF0C\u7121\u6CD5\u7E7C\u7E8C\u50B3\u9001\u8A0A\u606F\u3002" })
       ] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "composer-area", children: [
-        first && canCompose && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "suggestion-scroll", "aria-label": "\u958B\u5834\u5EFA\u8B70", children: suggestions.map((t) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { title: t, onClick: () => {
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "composer-area", children: [
+        first && canCompose && s.role === "mentee" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "suggestion-scroll", "aria-label": "\u958B\u5834\u5EFA\u8B70", children: suggestions.map((t) => /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { title: t, onClick: () => {
           write(t);
           composer.current?.focus();
         }, children: t }, t)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("form", { className: `composer ${!canCompose ? "is-disabled" : ""}`, onSubmit: (e) => {
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("form", { className: `composer ${!canCompose ? "is-disabled" : ""}`, onSubmit: (e) => {
           e.preventDefault();
           send();
           setEmojis(false);
         }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "composer-input-row", children: [
-            thread.files.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "attachment-drafts", children: thread.files.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { children: [
-              f.image ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("img", { src: f.url, alt: "" }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(FileText, { size: 18 }),
-              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: f.name }),
-              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: `\u79FB\u9664 ${f.name}`, onClick: () => update((t) => ({ ...t, files: t.files.filter((_, j) => i !== j) })), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(X, { size: 16 }) })
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "composer-input-row", children: [
+            thread.files.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "attachment-drafts", children: thread.files.map((f, i) => /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("span", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(AttachmentIcon, { file: f }),
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: f.name }),
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: `\u79FB\u9664 ${f.name}`, onClick: () => update((t) => ({ ...t, files: t.files.filter((_, j) => i !== j) })), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(X, { size: 16 }) })
             ] }, i)) }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("textarea", { disabled: !canCompose, ref: composer, rows: 1, "aria-label": "\u8F38\u5165\u8A0A\u606F", placeholder: deleted ? "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F" : !canCompose ? "\u7531\u5B78\u54E1\u5148\u767C\u8D77\u5C0D\u8A71" : "\u8F38\u5165\u8A0A\u606F\u2026", value: thread.draft, onChange: (e) => write(e.target.value) })
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("textarea", { disabled: !canCompose, ref: composer, rows: 1, "aria-label": "\u8F38\u5165\u8A0A\u606F", placeholder: deleted ? "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F" : !canCompose ? "\u7531\u5B78\u54E1\u5148\u767C\u8D77\u5C0D\u8A71" : "\u8F38\u5165\u8A0A\u606F\u2026", value: thread.draft, onChange: (e) => write(e.target.value) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "composer-controls", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("input", { hidden: true, ref: uploader, type: "file", multiple: true, onChange: (e) => {
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "composer-controls", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { hidden: true, ref: uploader, type: "file", multiple: true, onChange: (e) => {
               attach(Array.from(e.target.files || []));
               e.target.value = "";
             } }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u9644\u52A0\u6A94\u6848", disabled: !canCompose, onClick: () => uploader.current?.click(), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Paperclip, { size: 20 }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: "emoji-wrap", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(IconButton, { label: "\u8868\u60C5\u7B26\u865F", disabled: !canCompose, onClick: () => setEmojis(!emojis), children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Smile, { size: 20 }) }),
-              emojis && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: "emoji-picker", children: ["\u{1F60A}", "\u{1F44B}", "\u{1F64C}", "\u2728", "\u{1F44D}", "\u2764\uFE0F"].map((e) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { type: "button", onClick: () => {
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u9644\u52A0\u6A94\u6848", disabled: !canCompose, onClick: () => uploader.current?.click(), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Paperclip, { size: 20 }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "emoji-wrap", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8868\u60C5\u7B26\u865F", disabled: !canCompose, onClick: () => setEmojis(!emojis), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Smile, { size: 20 }) }),
+              emojis && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "emoji-picker", children: ["\u{1F60A}", "\u{1F44B}", "\u{1F64C}", "\u2728", "\u{1F44D}", "\u2764\uFE0F"].map((e) => /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { type: "button", onClick: () => {
                 write(thread.draft + e);
                 setEmojis(false);
                 composer.current?.focus();
               }, children: e }, e)) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("button", { className: "send-button", type: "submit", disabled: !canCompose || !thread.draft.trim() && !thread.files.length || allItems.some((m) => m.status === "sending"), "aria-label": "\u50B3\u9001\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(SendHorizontal, { size: 21 }) })
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "send-button", type: "submit", disabled: !canCompose || !thread.draft.trim() && !thread.files.length || allItems.some((m) => m.status === "sending"), "aria-label": "\u50B3\u9001\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(SendHorizontal, { size: 21 }) })
           ] })
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(DeleteConfirmation, { open: !!deleteId, onClose: () => setDeleteId(null), onConfirm: () => {
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(DeleteConfirmation, { open: !!deleteId, onClose: () => setDeleteId(null), onConfirm: () => {
       update((t) => ({ ...t, messages: t.messages.map((m) => m.id === deleteId ? { ...m, removed: true, text: "", files: [] } : m) }));
       setDeleteId(null);
       composer.current?.focus();
-    } }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Modal, { open: !!image, title: image?.name || "\u67E5\u770B\u5716\u7247", className: "image-dialog", onClose: () => setImage(null), children: image && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("img", { src: image.url, alt: image.name }) })
+    } })
   ] });
 }
 
 // src/Bookings.tsx
-var import_react9 = __toESM(require_react(), 1);
-var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
-var seeds = [{ id: "u1", person: "zahra", tab: "upcoming", date: "2026/11/12", time: "19:00\u201319:30" }, { id: "u2", person: "emily", tab: "upcoming", date: "2026/11/15", time: "20:00\u201320:30" }, { id: "p1", person: "sarah", tab: "pending", date: "2026/11/20", time: "19:00\u201319:30" }, { id: "h1", person: "zahra", tab: "history", date: "2026/10/28", time: "19:00\u201319:30", feedback: { rating: 8, comment: "\u7D66\u4E86\u6211\u5F88\u5177\u9AD4\u7684\u4F5C\u54C1\u96C6\u5EFA\u8B70\uFF0C\u8B93\u6211\u66F4\u6E05\u695A\u4E0B\u4E00\u6B65\u7684\u6E96\u5099\u65B9\u5411\u3002" } }, { id: "h2", person: "emily", tab: "history", date: "2026/10/26", time: "20:00\u201320:30" }, { id: "h3", person: "alex", tab: "history", date: "2026/10/20", time: "19:00\u201319:30", status: "Cancelled" }, { id: "h4", person: "sarah", tab: "history", date: "2026/10/19", time: "20:00\u201320:30", status: "\u5DF2\u5A49\u62D2" }];
-function Bookings({ state: s, setState, contact, toast }) {
-  const [cards, setCards] = (0, import_react9.useState)(seeds), [expanded, setExpanded] = (0, import_react9.useState)(null), [action, setAction] = (0, import_react9.useState)(null), [reply, setReply] = (0, import_react9.useState)(""), [feedback, setFeedback] = (0, import_react9.useState)(null);
+var import_react11 = __toESM(require_react(), 1);
+var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
+function Bookings({ state: s, setState, contact, toast, heading, showHours = false, feedbackUnlisted = false }) {
+  const [cards, setCards] = (0, import_react11.useState)(() => feedbackUnlisted ? bookingSeeds.map((card) => card.id === "h1" ? { ...card, feedback: { ...card.feedback, isPublic: false } } : card) : bookingSeeds), [expanded, setExpanded] = (0, import_react11.useState)(null), [action, setAction] = (0, import_react11.useState)(null), [reply, setReply] = (0, import_react11.useState)(""), [feedback, setFeedback] = (0, import_react11.useState)(null);
+  (0, import_react11.useEffect)(() => {
+    setCards((current) => [...(s.reservations || []).filter((b) => !current.some((c) => c.id === b.id)).map((b) => ({ id: b.id, person: b.person, date: b.date, time: b.time, tab: "pending" })), ...current]);
+  }, [s.reservations]);
   const mentor = s.role === "mentor", tab = s.bookingTab, allCards = cards, rows = allCards.filter((b) => b.tab === tab);
   const close = () => {
     setAction(null);
@@ -14793,92 +15482,113 @@ function Bookings({ state: s, setState, contact, toast }) {
     close();
     toast(kind === "\u63A5\u53D7\u9810\u7D04" ? "\u5DF2\u63A5\u53D7\u9810\u7D04" : kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5DF2\u5A49\u62D2\u9810\u7D04" : "\u5DF2\u53D6\u6D88\u9810\u7D04");
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("main", { className: "booking-page", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h1", { children: mentor ? "\u64D4\u4EFB\u5C0E\u5E2B" : "\u9810\u7D04\u5C0E\u5E2B" }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "booking-tabs", role: "tablist", "aria-label": "\u9810\u7D04\u72C0\u614B", children: [["upcoming", "\u5373\u5C07\u5230\u4F86"], ["pending", mentor ? "\u5F85\u60A8\u56DE\u8986" : "\u7B49\u5F85\u56DE\u8986"], ["history", "\u6B77\u53F2\u7D00\u9304"]].map(([key, label]) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { role: "tab", "aria-selected": tab === key, onClick: () => setState((p) => ({ ...p, bookingTab: key })), children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("main", { className: "booking-page", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h1", { children: heading || (mentor ? "\u64D4\u4EFB\u5C0E\u5E2B" : "\u9810\u7D04\u5C0E\u5E2B") }),
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "booking-tabs", role: "tablist", "aria-label": "\u9810\u7D04\u72C0\u614B", children: [["upcoming", "\u5373\u5C07\u5230\u4F86"], ["pending", mentor ? "\u5F85\u60A8\u56DE\u8986" : "\u7B49\u5F85\u56DE\u8986"], ["history", "\u6B77\u53F2\u7D00\u9304"]].map(([key, label]) => /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("button", { role: "tab", "aria-selected": tab === key, onClick: () => setState((p) => ({ ...p, bookingTab: key })), children: [
       label,
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: allCards.filter((b) => b.tab === key).length })
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { children: allCards.filter((b) => b.tab === key).length })
     ] }, key)) }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "booking-list", children: rows.map((b) => {
-      const p = s.people.find((p2) => p2.id === b.person);
-      return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { className: "booking-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "booking-identity", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Avatar, { person: p }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: p.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
-              p.role,
-              " \xB7 5\u201310 \u5E74\u5DE5\u4F5C\u7D93\u9A57"
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-list", children: [
+      !rows.length && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-empty", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(CalendarDays, { size: 28 }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h2", { children: tab === "pending" ? "\u76EE\u524D\u6C92\u6709\u5F85\u56DE\u8986\u7684\u9810\u7D04" : tab === "upcoming" ? "\u76EE\u524D\u6C92\u6709\u5373\u5C07\u5230\u4F86\u7684\u9810\u7D04" : "\u76EE\u524D\u6C92\u6709\u6B77\u53F2\u7D00\u9304" })
+      ] }),
+      rows.map((b) => {
+        const p = s.people.find((p2) => p2.id === b.person);
+        const unlisted = !mentor && b.feedback?.isPublic === false;
+        return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("article", { className: `booking-card booking-${b.tab}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-identity", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Avatar, { person: p }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: p.name }),
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { children: [
+                p.role,
+                " \xB7 5\u201310 \u5E74\u5DE5\u4F5C\u7D93\u9A57"
+              ] })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "booking-status", children: unlisted ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "status-badge feedback-unlisted-badge", children: "\u8A55\u50F9\u672A\u516C\u958B" }),
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(IconButton, { label: expanded === b.id ? "\u6536\u5408\u8A55\u50F9\u672A\u516C\u958B\u8AAA\u660E" : "\u5C55\u958B\u8A55\u50F9\u672A\u516C\u958B\u8AAA\u660E", onClick: () => setExpanded(expanded === b.id ? null : b.id), children: expanded === b.id ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronUp, { size: 16 }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronDown, { size: 16 }) })
+            ] }) : b.status ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: "status-badge", children: b.status }),
+              b.feedback && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(IconButton, { label: expanded === b.id ? "\u6536\u5408\u6703\u8AC7\u7D00\u9304" : "\u5C55\u958B\u6703\u8AC7\u7D00\u9304", onClick: () => setExpanded(expanded === b.id ? null : b.id), children: expanded === b.id ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronUp, { size: 16 }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronDown, { size: 16 }) })
+            ] }) : b.feedback ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("button", { className: "text-action", onClick: () => setExpanded(expanded === b.id ? null : b.id), children: [
+              mentor ? "\u67E5\u770B\u7D00\u9304" : "\u67E5\u770B\u56DE\u994B",
+              expanded === b.id ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronUp, { size: 16 }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronDown, { size: 16 })
+            ] }) : b.tab === "history" ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button", onClick: () => setFeedback(b), children: mentor ? "\u78BA\u8A8D\u6703\u8AC7" : "\u586B\u5BEB\u56DE\u994B" }) : null })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-time", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("span", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(CalendarDays, { size: 16 }),
+              b.date
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("span", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Clock, { size: 16 }),
+              b.time
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "booking-status", children: b.status ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: "status-badge", children: b.status }),
-            b.feedback && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(IconButton, { label: expanded === b.id ? "\u6536\u5408\u6703\u8AC7\u7D00\u9304" : "\u5C55\u958B\u6703\u8AC7\u7D00\u9304", onClick: () => setExpanded(expanded === b.id ? null : b.id), children: expanded === b.id ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ChevronUp, { size: 16 }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ChevronDown, { size: 16 }) })
-          ] }) : b.feedback ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { className: "text-action", onClick: () => setExpanded(expanded === b.id ? null : b.id), children: [
-            mentor ? "\u67E5\u770B\u7D00\u9304" : "\u67E5\u770B\u56DE\u994B",
-            expanded === b.id ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ChevronUp, { size: 16 }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ChevronDown, { size: 16 })
-          ] }) : b.tab === "history" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "primary-button", onClick: () => setFeedback(b), children: mentor ? "\u78BA\u8A8D\u6703\u8AC7" : "\u586B\u5BEB\u56DE\u994B" }) : null })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "booking-time", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(CalendarDays, { size: 16 }),
-            b.date
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Clock, { size: 16 }),
-            b.time
-          ] })
-        ] }),
-        expanded === b.id && b.feedback && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "booking-feedback", children: mentor ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "\u6703\u8AC7\u7D00\u9304" }),
-          b.feedback.attendance !== "no" && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { children: "Session complete" })
-        ] }) : b.feedback.reason ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "\u6703\u8AC7\u7D00\u9304" }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
-            b.feedback.actor,
-            " \xB7 ",
-            b.feedback.reason
-          ] })
-        ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: "\u6211\u7684\u56DE\u994B" }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { children: [
-              b.feedback.rating,
-              " / 10"
+          expanded === b.id && b.feedback && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: `booking-feedback ${unlisted ? "booking-feedback--unlisted" : ""}`, children: unlisted ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u8A55\u50F9\u672A\u516C\u958B" }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { children: [
+              "\u9019\u5834\u6703\u8AC7\u5DF2\u88AB\u6A19\u8A3B\u6C92\u6709\u9032\u884C\uFF0C\u56E0\u6B64\u8A55\u50F9\u4E0D\u6703\u516C\u958B\uFF1B\u5982\u6709\u7591\u554F\u53EF\u4EE5\u900F\u904E",
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("a", { href: "https://forms.gle/594hMVdTyoR3Pgtg9", target: "_blank", rel: "noopener noreferrer", children: "\u56DE\u994B\u8868\u55AE" }),
+              "\u806F\u7E6B\u6211\u5011\u3002"
             ] })
+          ] }) : mentor ? b.feedback.reason ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u6703\u8AC7\u7D00\u9304" }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: b.feedback.reason })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u6703\u8AC7\u7D00\u9304" }),
+            b.feedback.attendance !== "no" && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { children: "Session complete" })
+          ] }) : b.feedback.reason ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u6703\u8AC7\u7D00\u9304" }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: b.feedback.reason })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u6211\u7684\u56DE\u994B" }),
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("span", { children: [
+                b.feedback.rating,
+                " / 10"
+              ] })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: b.feedback.comment || "\u6C92\u6709\u7559\u4E0B\u6587\u5B57\u56DE\u994B\u3002" })
+          ] }) }),
+          showHours && mentor && b.tab === "history" && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { className: "fr-booking-hours", children: [
+            "\u8A8D\u5217\u6642\u6578 \xB7 ",
+            b.status || !b.feedback ? "0.0" : "0.5",
+            " \u5C0F\u6642"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: b.feedback.comment || "\u6C92\u6709\u7559\u4E0B\u6587\u5B57\u56DE\u994B\u3002" })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "booking-actions", children: [
-          (!mentor || isEstablished(s.threads[b.person])) && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("button", { className: "outline-button contact-booking", onClick: () => contact(b.person), children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(MessageSquare, { size: 16 }),
-            isEstablished(s.threads[b.person]) ? "\u67E5\u770B\u5C0D\u8A71" : "\u806F\u7D61\u5C0E\u5E2B"
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { children: b.tab === "upcoming" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "outline-button", onClick: () => setAction({ card: b, kind: "\u53D6\u6D88\u9810\u7D04" }), children: "\u53D6\u6D88\u9810\u7D04" }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "primary-button", onClick: () => setAction({ card: b, kind: "\u6703\u8B70\u8CC7\u8A0A" }), children: "\u52A0\u5165 Google Meet" })
-          ] }) : b.tab === "pending" ? mentor ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "outline-button", onClick: () => setAction({ card: b, kind: "\u5A49\u62D2\u9810\u7D04" }), children: "\u5A49\u62D2\u9810\u7D04" }),
-            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "primary-button", onClick: () => setAction({ card: b, kind: "\u63A5\u53D7\u9810\u7D04" }), children: "\u63A5\u53D7\u9810\u7D04" })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "outline-button", onClick: () => setAction({ card: b, kind: "\u53D6\u6D88\u9810\u7D04" }), children: "\u53D6\u6D88\u9810\u7D04" }) : null })
-        ] })
-      ] }, b.id);
-    }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Modal, { open: !!action, title: action?.kind || "", onClose: close, actions: action && action.kind !== "\u6703\u8B70\u8CC7\u8A0A" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "outline-button", onClick: close, children: "\u8FD4\u56DE" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: `primary-button ${action.kind === "\u53D6\u6D88\u9810\u7D04" || action.kind === "\u5A49\u62D2\u9810\u7D04" ? "danger-button" : ""}`, disabled: action.kind !== "\u63A5\u53D7\u9810\u7D04" && !reply.trim(), onClick: perform, children: action.kind })
-    ] }) : null, children: action?.kind === "\u6703\u8B70\u8CC7\u8A0A" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-actions", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("button", { className: "outline-button contact-booking", disabled: !!p.deleted, onClick: () => contact(b.person, b.id), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(MessageSquare, { size: 16 }),
+              mentor ? "\u806F\u7D61\u5B78\u54E1" : "\u806F\u7D61\u5C0E\u5E2B"
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { children: b.tab === "upcoming" ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button danger-button", onClick: () => setAction({ card: b, kind: "\u53D6\u6D88\u9810\u7D04" }), children: "\u53D6\u6D88\u9810\u7D04" }),
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button", onClick: () => setAction({ card: b, kind: "\u6703\u8B70\u8CC7\u8A0A" }), children: "\u52A0\u5165 Google Meet" })
+            ] }) : b.tab === "pending" ? mentor ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "outline-button", onClick: () => setAction({ card: b, kind: "\u5A49\u62D2\u9810\u7D04" }), children: "\u5A49\u62D2\u9810\u7D04" }),
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button", onClick: () => setAction({ card: b, kind: "\u63A5\u53D7\u9810\u7D04" }), children: "\u63A5\u53D7\u9810\u7D04" })
+            ] }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button danger-button", onClick: () => setAction({ card: b, kind: "\u53D6\u6D88\u9810\u7D04" }), children: "\u53D6\u6D88\u9810\u7D04" }) : null })
+          ] })
+        ] }, b.id);
+      })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Modal, { open: !!action, title: action?.kind || "", onClose: close, actions: action && action.kind !== "\u6703\u8B70\u8CC7\u8A0A" ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "outline-button", onClick: close, children: "\u8FD4\u56DE" }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: `primary-button ${action.kind === "\u53D6\u6D88\u9810\u7D04" || action.kind === "\u5A49\u62D2\u9810\u7D04" ? "danger-button" : ""}`, disabled: action.kind !== "\u63A5\u53D7\u9810\u7D04" && !reply.trim(), onClick: perform, children: action.kind })
+    ] }) : null, children: action?.kind === "\u6703\u8B70\u8CC7\u8A0A" ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { children: [
         action.card.date,
         " \xB7 ",
         action.card.time
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u6703\u8B70\u9023\u7D50\u5DF2\u5BC4\u81F3\u60A8\u7684\u4FE1\u7BB1\u3002" })
-    ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: action?.kind === "\u63A5\u53D7\u9810\u7D04" ? "\u78BA\u5B9A\u63A5\u53D7\u9019\u5834\u9810\u7D04\uFF1F" : "\u8ACB\u8AAA\u660E" + (action?.kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5A49\u62D2" : "\u53D6\u6D88") + "\u9810\u7D04\u7684\u539F\u56E0\u3002" }),
-      action?.kind !== "\u63A5\u53D7\u9810\u7D04" && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("textarea", { className: "form-textarea", "aria-label": "\u9810\u7D04\u539F\u56E0", placeholder: "\u60A8\u597D\uFF0C\u2026", value: reply, onChange: (e) => setReply(e.target.value) })
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: "\u6703\u8B70\u9023\u7D50\u5DF2\u5BC4\u81F3\u60A8\u7684\u4FE1\u7BB1\u3002" })
+    ] }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: action?.kind === "\u63A5\u53D7\u9810\u7D04" ? "\u78BA\u5B9A\u63A5\u53D7\u9019\u5834\u9810\u7D04\uFF1F" : "\u8ACB\u8AAA\u660E" + (action?.kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5A49\u62D2" : "\u53D6\u6D88") + "\u9810\u7D04\u7684\u539F\u56E0\u3002" }),
+      action?.kind !== "\u63A5\u53D7\u9810\u7D04" && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("textarea", { className: "form-textarea", "aria-label": "\u9810\u7D04\u539F\u56E0", placeholder: "\u60A8\u597D\uFF0C\u2026", value: reply, onChange: (e) => setReply(e.target.value) })
     ] }) }),
-    feedback && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Feedback, { booking: feedback, person: s.people.find((p) => p.id === feedback.person), mentor, close: () => setFeedback(null), save: (value) => {
+    feedback && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Feedback, { booking: feedback, person: s.people.find((p) => p.id === feedback.person), mentor, close: () => setFeedback(null), save: (value) => {
       setCards((all) => all.map((b) => b.id === feedback.id ? { ...b, feedback: value, status: value.reason || value.attendance === "no" ? "\u672A\u9032\u884C" : void 0 } : b));
       setFeedback(null);
       toast("\u56DE\u994B\u5DF2\u9001\u51FA", "X-Talent \u5DF2\u6536\u5230\u60A8\u7684\u56DE\u994B\uFF0C\u8B1D\u8B1D\u60A8\uFF01");
@@ -14886,100 +15596,98 @@ function Bookings({ state: s, setState, contact, toast }) {
   ] });
 }
 function Feedback({ booking, person, mentor, close, save }) {
-  const [step, setStep] = (0, import_react9.useState)(1), [answer, setAnswer] = (0, import_react9.useState)(""), [rating, setRating] = (0, import_react9.useState)(10), [comment, setComment] = (0, import_react9.useState)(""), [actor, setActor] = (0, import_react9.useState)(""), [reason, setReason] = (0, import_react9.useState)(""), [other, setOther] = (0, import_react9.useState)("");
-  if (mentor) return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(Modal, { open: true, title: "\u78BA\u8A8D\u6703\u8AC7", className: "feedback-dialog", onClose: close, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "feedback-person", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Avatar, { person }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: person.name }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+  const [step, setStep] = (0, import_react11.useState)(1), [answer, setAnswer] = (0, import_react11.useState)(""), [rating, setRating] = (0, import_react11.useState)(10), [comment, setComment] = (0, import_react11.useState)(""), [reason, setReason] = (0, import_react11.useState)(""), [other, setOther] = (0, import_react11.useState)("");
+  const mentorDirectSubmit = mentor && step === 1 && answer !== "no";
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Modal, { open: true, title: mentor ? "\u78BA\u8A8D\u6703\u8AC7" : "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", onClose: close, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-person", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Avatar, { person }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: person.name }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { children: [
           booking.date,
           " \xB7 ",
           booking.time
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { children: "\u9019\u5834\u6703\u8AC7\u662F\u5426\u9806\u5229\u9032\u884C\uFF1F" }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u9078\u64C7\u5F8C\u5373\u9001\u51FA\u6703\u8AC7\u72C0\u6CC1\u3002" }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "choice-row", children: [["yes", "\u6709\u9032\u884C"], ["no", "\u6C92\u6709\u9032\u884C"]].map(([value, label]) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "outline-button mentor-attendance", onClick: () => save({ attendance: value }), children: label }, value)) })
-  ] });
-  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(Modal, { open: true, title: "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", onClose: close, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "feedback-person", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Avatar, { person }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("strong", { children: person.name }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
-          booking.date,
-          " \xB7 ",
-          booking.time
-        ] })
-      ] })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "feedback-step", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-step", children: [
       "\u6B65\u9A5F ",
       step,
       " / 2 \xB7 ",
       step === 1 ? "\u78BA\u8A8D\u6703\u8AC7" : answer === "yes" ? "\u4EA4\u6D41\u56DE\u994B" : "\u6703\u8AC7\u72C0\u6CC1"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("h3", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("h3", { children: [
       step === 1 ? "\u9019\u5834\u6703\u8AC7\u662F\u5426\u9806\u5229\u9032\u884C\uFF1F" : answer === "yes" ? "\u70BA\u672C\u6B21\u6703\u8B70\u8A55\u5206" : "\u672A\u9032\u884C\u6703\u8AC7\u7684\u539F\u56E0",
-      step === 2 && answer === "yes" && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: "privacy-info", tabIndex: 0, "aria-label": "\u59D3\u540D\u906E\u7F69\u8AAA\u660E", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Info, { size: 16 }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { role: "tooltip", children: "\u986F\u793A\u6642\u4E0D\u6703\u5B8C\u6574\u516C\u958B\u59D3\u540D\u8207\u500B\u4EBA\u8CC7\u6599" })
+      step === 2 && answer === "yes" && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("span", { className: "privacy-info", tabIndex: 0, "aria-label": "\u59D3\u540D\u906E\u7F69\u8AAA\u660E", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Info, { size: 16 }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { role: "tooltip", children: "\u986F\u793A\u6642\u4E0D\u6703\u5B8C\u6574\u516C\u958B\u59D3\u540D\u8207\u500B\u4EBA\u8CC7\u6599" })
       ] })
     ] }),
-    step === 1 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u5148\u544A\u8A34\u6211\u5011\u9019\u6B21\u6703\u8AC7\u7684\u72C0\u6CC1\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "choice-row", children: [["yes", "\u6709\u9032\u884C"], ["no", "\u6C92\u6709\u9032\u884C"]].map(([v, l]) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("input", { type: "radio", name: "attended", checked: answer === v, onChange: () => setAnswer(v) }),
+    step === 1 ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: "\u5148\u544A\u8A34\u6211\u5011\u9019\u6B21\u6703\u8AC7\u7684\u72C0\u6CC1\u3002" }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "choice-row", children: [["yes", "\u6709\u9032\u884C"], ["no", "\u6C92\u6709\u9032\u884C"]].map(([v, l]) => /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("label", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("input", { type: "radio", name: "attended", checked: answer === v, onChange: () => setAnswer(v) }),
         l
       ] }, v)) })
-    ] }) : answer === "yes" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { children: [
+    ] }) : answer === "yes" ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("p", { children: [
         "\u8A55\u5206 ",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("b", { className: "score", children: rating }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("b", { className: "score", children: rating }),
         " / 10"
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "rating-stars", role: "radiogroup", "aria-label": "\u8A55\u5206", children: Array.from({ length: 10 }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { role: "radio", "aria-checked": rating === i + 1, "aria-label": `${i + 1} \u5206`, onClick: () => setRating(i + 1), children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Star, { fill: i < rating ? "currentColor" : "none", size: 24 }) }, i)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "field-label", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "rating-stars", role: "radiogroup", "aria-label": "\u8A55\u5206", children: Array.from({ length: 10 }, (_, i) => /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { role: "radio", "aria-checked": rating === i + 1, "aria-label": `${i + 1} \u5206`, onClick: () => setRating(i + 1), children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Star, { fill: i < rating ? "currentColor" : "none", size: 24 }) }, i)) }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("label", { className: "field-label", children: [
         "\u6587\u5B57\u56DE\u994B\uFF08\u9078\u586B\uFF09",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("textarea", { className: "form-textarea", maxLength: 1e3, value: comment, placeholder: "\u5206\u4EAB\u9019\u6B21\u4EA4\u6D41\u7684\u6536\u7A6B\uFF0C\u6216\u7D66\u5C0E\u5E2B\u4E00\u4E9B\u5EFA\u8B70\u2026", onChange: (e) => setComment(e.target.value) })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("textarea", { className: "form-textarea", maxLength: 1e3, value: comment, placeholder: "\u5206\u4EAB\u9019\u6B21\u4EA4\u6D41\u7684\u6536\u7A6B\uFF0C\u6216\u7D66\u5C0E\u5E2B\u4E00\u4E9B\u5EFA\u8B70\u2026", onChange: (e) => setComment(e.target.value) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "field-count", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "field-count", children: [
         comment.length,
         " / 1000"
       ] })
-    ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u8AB0\u6C92\u6709\u9032\u884C\u6703\u8AC7\uFF1F" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "choice-row", children: [mentor ? "\u5B78\u54E1" : "\u5C0E\u5E2B", "\u81EA\u5DF1"].map((l) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("input", { type: "radio", name: "actor", checked: actor === l, onChange: () => setActor(l) }),
+    ] }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: "\u70BA\u4F55\u6C92\u6709\u6210\u529F\u9032\u884C\uFF1F" }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: "reason-options", children: ["\u96D9\u65B9\u6642\u9593\u7121\u6CD5\u914D\u5408", "\u5C0D\u65B9\u672A\u51FA\u5E2D", "\u672A\u6536\u5230\u6216\u932F\u904E\u6703\u8B70\u901A\u77E5", "\u6280\u8853\uFF0F\u9023\u7DDA\u554F\u984C", "\u5176\u4ED6"].map((l) => /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("label", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("input", { type: "radio", name: "reason", checked: reason === l, onChange: () => setReason(l) }),
         l
       ] }, l)) }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { children: "\u70BA\u4F55\u6C92\u6709\u6210\u529F\u9032\u884C\uFF1F" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: "reason-options", children: ["\u96D9\u65B9\u6642\u9593\u7121\u6CD5\u914D\u5408", "\u672A\u51FA\u5E2D", "\u672A\u6536\u5230\u6216\u932F\u904E\u6703\u8B70\u901A\u77E5", "\u6280\u8853\uFF0F\u9023\u7DDA\u554F\u984C", "\u5176\u4ED6"].map((l) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("input", { type: "radio", name: "reason", checked: reason === l, onChange: () => setReason(l) }),
-        l
-      ] }, l)) }),
-      reason === "\u5176\u4ED6" && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("label", { className: "field-label", children: [
-        "\u88DC\u5145\u8AAA\u660E\uFF08\u9078\u586B\uFF09",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("textarea", { className: "form-textarea", value: other, onChange: (e) => setOther(e.target.value), placeholder: "\u8AAA\u8AAA\u767C\u751F\u4E86\u4EC0\u9EBC\u4E8B\u2026" })
+      reason === "\u5176\u4ED6" && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("label", { className: "field-label", children: [
+          "\u88DC\u5145\u8AAA\u660E\uFF08\u9078\u586B\uFF09",
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("textarea", { className: "form-textarea", maxLength: 1e3, value: other, onChange: (e) => setOther(e.target.value), placeholder: "\u8AAA\u8AAA\u767C\u751F\u4E86\u4EC0\u9EBC\u4E8B\u2026" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "field-count", children: [
+          other.length,
+          " / 1000"
+        ] })
+      ] }),
+      mentor && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-noshow-warning", role: "note", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Info, { size: 16 }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { children: "\u9001\u51FA\u5F8C\u4E0D\u80FD\u4FEE\u6539\u3002\u9019\u5834\u6703\u8AC7\u4E0D\u6703\u8A08\u5165\u5DF2\u5B8C\u6210\u5834\u6B21\uFF0C\u5B78\u54E1\u7684\u8A55\u50F9\u4E5F\u4E0D\u6703\u516C\u958B\u3002" })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: "feedback-actions", children: [
-      step === 2 && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "text-action", onClick: () => setStep(1), children: "\u4E0A\u4E00\u6B65" }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("button", { className: "primary-button", disabled: step === 1 ? !answer : answer === "no" && (!reason || !actor), onClick: () => step === 1 ? setStep(2) : save(answer === "yes" ? { rating, comment } : { reason: reason === "\u5176\u4ED6" && other ? "\u5176\u4ED6 \xB7 " + other : reason, actor }), children: step === 1 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-actions", children: [
+      step === 2 && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "text-action", onClick: () => setStep(1), children: "\u4E0A\u4E00\u6B65" }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("button", { className: "primary-button", disabled: step === 1 ? !answer : answer === "no" && !reason, onClick: () => mentorDirectSubmit ? save({ attendance: "yes" }) : step === 1 ? setStep(2) : save(answer === "yes" ? { rating, comment } : { attendance: "no", reason: reason === "\u5176\u4ED6" && other.trim() ? "\u5176\u4ED6 \xB7 " + other.trim() : reason }), children: mentorDirectSubmit ? "\u78BA\u5B9A\u9001\u51FA" : step === 1 ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
         "\u4E0B\u4E00\u6B65",
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(ArrowRight, { size: 16 })
-      ] }) : "\u9001\u51FA\u56DE\u994B" })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ArrowRight, { size: 16 })
+      ] }) : mentor ? "\u9001\u51FA" : "\u9001\u51FA\u56DE\u994B" })
     ] })
   ] });
 }
 
 // src/review-state.ts
-function startReview(scene2, snapshot, target) {
+function startReview(scene2, snapshot, target, entry) {
   if (snapshot?.scene === scene2 && snapshot.state?.people && snapshot.state?.route && snapshot.presentation) return snapshot;
   let state = initialState(scene2);
   const presentation = { noticeOpen: false, openError: scene2 === "open-failure", loginError: scene2 === "login-failure", toast: scene2 === "login-failure" ? { title: "\u767B\u5165\u5931\u6557", body: "\u8ACB\u91CD\u65B0\u767B\u5165\u5F8C\u518D\u8A66\u3002", error: true } : null };
+  if (scene2 === "booking-mentor-contact" && entry?.reservation && entry.person) {
+    const authorized = authorizeReservationContact(state, entry.person, entry.reservation);
+    if (authorized !== state) {
+      state = { ...readThread(authorized, entry.person), route: { view: "chat", active: entry.person, origin: "bookings" } };
+      if (entry.partner?.trim()) state.people = state.people.map((p) => p.id === entry.person ? { ...p, name: entry.partner.trim().slice(0, 80) } : p);
+    }
+    return { scene: scene2, state, presentation };
+  }
   if (target) {
     state.route = { view: "chat", active: state.people.some((p) => p.id === target) ? target : "invalid", origin: "profile" };
     if (state.route.active !== "invalid") state = readThread(state, target);
@@ -14991,20 +15699,20 @@ function startReview(scene2, snapshot, target) {
 }
 
 // src/app.tsx
-var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
 var params = new URLSearchParams(location.search);
 var scene = params.get("scene") || "profile";
-var run = params.get("run") || scene + ":" + (params.get("conversation") || "");
-var storageKey = "xt-chat-v6:" + run + ":" + (params.get("partner") || "");
+var run = params.get("run") || scene + ":" + (params.get("conversation") || "") + ":" + (params.get("reservation") || "") + ":" + (params.get("person") || "");
+var storageKey = "xt-chat-v7:" + run + ":" + (params.get("partner") || "");
 function restored() {
   let snapshot = null;
   try {
     snapshot = JSON.parse(sessionStorage.getItem(storageKey) || "null");
   } catch {
   }
-  const result = startReview(scene, snapshot, params.get("conversation"));
+  const result = startReview(scene, snapshot, params.get("conversation"), { reservation: params.get("reservation"), person: params.get("person"), partner: params.get("partner") });
   const partner = params.get("partner")?.slice(0, 80);
-  if (partner && !snapshot) {
+  if (partner && !snapshot && scene !== "booking-mentor-contact" && result.state.role === "mentee") {
     result.state.people[0] = { ...result.state.people[0], name: partner, avatar: "", role: "\u5C0E\u5E2B" };
     result.state.threads.zahra = emptyThread();
     result.state.role = "mentee";
@@ -15014,8 +15722,8 @@ function restored() {
 }
 var initialReview = restored();
 function App() {
-  const [state, setState] = (0, import_react10.useState)(initialReview.state), [noticeOpen, setNoticeOpen] = (0, import_react10.useState)(initialReview.presentation.noticeOpen), [toast, setToast] = (0, import_react10.useState)(initialReview.presentation.toast), [openError, setOpenError] = (0, import_react10.useState)(initialReview.presentation.openError), [loginTarget, setLoginTarget] = (0, import_react10.useState)("zahra"), [loginError, setLoginError] = (0, import_react10.useState)(initialReview.presentation.loginError);
-  const stateRef = (0, import_react10.useRef)(state), nextFailure = (0, import_react10.useRef)(null), pendingTimers = (0, import_react10.useRef)([]), toastTimer = (0, import_react10.useRef)(), contactButton = (0, import_react10.useRef)(), storageWarning = (0, import_react10.useRef)(false);
+  const [state, setState] = (0, import_react12.useState)(initialReview.state), [noticeOpen, setNoticeOpen] = (0, import_react12.useState)(initialReview.presentation.noticeOpen), [toast, setToast] = (0, import_react12.useState)(initialReview.presentation.toast), [openError, setOpenError] = (0, import_react12.useState)(initialReview.presentation.openError), [loginTarget, setLoginTarget] = (0, import_react12.useState)("zahra"), [loginError, setLoginError] = (0, import_react12.useState)(initialReview.presentation.loginError);
+  const stateRef = (0, import_react12.useRef)(state), nextFailure = (0, import_react12.useRef)(scene === "reservation-message-failure" ? "\u7DB2\u8DEF\u9023\u7DDA\u4E2D\u65B7\uFF0C\u8A0A\u606F\u672A\u9001\u51FA\u3002" : null), pendingTimers = (0, import_react12.useRef)([]), toastTimer = (0, import_react12.useRef)(), contactButton = (0, import_react12.useRef)(), storageWarning = (0, import_react12.useRef)(false);
   stateRef.current = state;
   const unread = Object.values(state.threads).filter((t) => t.unread && isEstablished(t)).length;
   const showToast = (title, body = "", error = true) => {
@@ -15030,7 +15738,7 @@ function App() {
   };
   const go = (view) => changeRoute({ view, active: null, origin: view });
   const openThread = (id, entry = false) => {
-    if (stateRef.current.role === "mentor" && !isEstablished(stateRef.current.threads[id])) return;
+    if (stateRef.current.role === "mentor" && !isEstablished(stateRef.current.threads[id]) && !canMessage(stateRef.current, id)) return;
     const current = stateRef.current.route;
     setNoticeOpen(false);
     if (current.view !== "chat") {
@@ -15042,6 +15750,29 @@ function App() {
     setState((s) => ({ ...readThread(s, id), route, ...entry ? { filter: "all", search: "", scroll: 0 } : {} }));
     window.scrollTo(0, 0);
   };
+  const bookingFailure = (0, import_react12.useRef)(scene === "reservation-failure");
+  const book = (booking, note) => {
+    const current = stateRef.current;
+    if (bookingFailure.current) {
+      bookingFailure.current = false;
+      showToast("\u9810\u7D04\u5931\u6557", "\u76EE\u524D\u7121\u6CD5\u5B8C\u6210\u9810\u7D04\uFF0C\u8ACB\u7A0D\u5F8C\u91CD\u8A66\u3002");
+      return false;
+    }
+    const reason = note.trim() ? nextFailure.current : null;
+    const next = confirmReservation(current, booking, note, reason || void 0);
+    if (next === current) return false;
+    if (note.trim()) nextFailure.current = null;
+    stateRef.current = next;
+    setState(next);
+    if (note.trim()) {
+      history.pushState({ chatRun: run, route: { view: "chat", active: null, origin: "profile" } }, "", location.href);
+      history.pushState({ chatRun: run, route: next.route }, "", location.href);
+      window.scrollTo(0, 0);
+      if (reason) showToast("\u9810\u7D04\u5DF2\u6210\u7ACB\uFF0C\u7559\u8A00\u50B3\u9001\u5931\u6557", reason);
+      else showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u554F\u984C\u5DF2\u9001\u81F3\u8207\u5C0E\u5E2B\u7684\u804A\u804A\u3002", false);
+    } else showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u7B49\u5F85\u5C0E\u5E2B\u56DE\u8986\u3002", false);
+    return true;
+  };
   const back = () => history.back();
   const openInbox = () => {
     setNoticeOpen(false);
@@ -15051,19 +15782,40 @@ function App() {
     } else changeRoute({ view: "chat", active: null, origin: r.view });
     setState((s) => ({ ...s, search: "", filter: "all", scroll: 0 }));
   };
-  const contact = (id = "zahra") => {
-    if (!state.member) {
+  const contact = (id = "zahra", bookingId) => {
+    const current = stateRef.current;
+    if (!current.member) {
+      setState((s) => ({ ...s, pendingFavorite: false }));
       setLoginTarget(id);
       go("login");
       return;
     }
-    if (!canMessage(state, id)) return;
-    if (scene === "open-failure" && state.route.view === "profile") {
+    const authorized = bookingId ? authorizeReservationContact(current, id, bookingId) : current;
+    if (bookingId && authorized === current || !canMessage(authorized, id)) return;
+    if (scene === "open-failure" && current.route.view === "profile") {
       contactButton.current = document.activeElement;
       setOpenError(true);
       return;
     }
+    if (authorized !== current) {
+      stateRef.current = authorized;
+      setState(authorized);
+    }
     openThread(id, true);
+  };
+  const toggleFavorite = () => {
+    const current = stateRef.current;
+    if (!current.member) {
+      setLoginTarget("");
+      setState((s) => ({ ...s, pendingFavorite: true }));
+      go("login");
+      return;
+    }
+    if (scene === "favorite-self" || current.profileMode === "self") {
+      showToast("\u7121\u6CD5\u6536\u85CF\u81EA\u5DF1");
+      return;
+    }
+    setState((s) => ({ ...s, favorite: !s.favorite }));
   };
   function send(retryId, textOnly = false) {
     const s = stateRef.current, id = s.route.active, t = id ? s.threads[id] : null;
@@ -15085,7 +15837,7 @@ function App() {
       if (failedReason) showToast("\u50B3\u9001\u5931\u6557", failedReason);
     }, delay));
   }
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     try {
       sessionStorage.setItem(storageKey, JSON.stringify({ scene, state, presentation: { noticeOpen, toast, openError, loginError } }));
     } catch {
@@ -15095,14 +15847,14 @@ function App() {
       }
     }
   }, [state, noticeOpen, toast, openError, loginError]);
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     window.parent.postMessage({ type: "chat-review-status", route: state.route }, location.origin);
   }, [state]);
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     document.body.classList.toggle("chat-view", state.route.view === "chat");
     window.parent.postMessage({ type: "chat-preview-view", view: state.route.view }, location.origin);
   }, [state.route.view]);
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     if (history.state?.chatRun !== run) {
       const r = stateRef.current.route;
       if (r.view === "chat") {
@@ -15125,10 +15877,13 @@ function App() {
     window.addEventListener("popstate", pop);
     return () => window.removeEventListener("popstate", pop);
   }, []);
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     const events = (e) => {
       if (e.origin !== location.origin || e.source !== parent || e.data?.type !== "chat-review-command") return;
       const { command, id = "emily" } = e.data;
+      if (command === "booking-focus") {
+        document.querySelector(".mp-calendar")?.scrollIntoView({ block: "start", behavior: "smooth" });
+      }
       if (command === "complete-send") setState((s) => {
         const key = s.route.active, t = key ? s.threads[key] : null;
         if (!key || !t) return s;
@@ -15167,11 +15922,11 @@ function App() {
     window.addEventListener("message", events);
     return () => window.removeEventListener("message", events);
   }, []);
-  (0, import_react10.useEffect)(() => () => {
+  (0, import_react12.useEffect)(() => () => {
     pendingTimers.current.forEach(clearTimeout);
     clearTimeout(toastTimer.current);
   }, []);
-  (0, import_react10.useEffect)(() => {
+  (0, import_react12.useEffect)(() => {
     const vv = window.visualViewport;
     if (!vv) return;
     const resize = () => document.documentElement.style.setProperty("--usable-vh", `${vv.height}px`);
@@ -15183,23 +15938,34 @@ function App() {
     setOpenError(false);
     requestAnimationFrame(() => (contactButton.current || document.querySelector('[aria-label="\u806F\u7D61\u5C0E\u5E2B"]'))?.focus());
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
-    state.route.view !== "email" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Header, { state, unread, noticeOpen, setNoticeOpen, onMessages: openInbox, onProfile: () => go("profile"), onFind: () => go("pool"), onLogin: () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(import_jsx_runtime22.Fragment, { children: [
+    state.route.view !== "email" && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Header, { state, unread, noticeOpen, setNoticeOpen, onMessages: openInbox, onProfile: () => go("profile"), onFind: () => go("pool"), onLogin: () => {
+      setState((s) => ({ ...s, pendingFavorite: false }));
       setLoginTarget("");
       go("login");
     }, roleMenuOpen: scene === "role-switch", onRole: (role) => {
       setState((s) => ({ ...s, role }));
-      if (role === "mentor" && state.route.view === "chat" && state.route.active && !isEstablished(state.threads[state.route.active])) changeRoute({ ...state.route, active: null }, true);
+      if (role === "mentor" && state.route.view === "chat" && state.route.active && !isEstablished(state.threads[state.route.active]) && !canMessage({ ...state, role }, state.route.active)) changeRoute({ ...state.route, active: null }, true);
     } }),
-    state.member && !["chat", "login", "email"].includes(state.route.view) && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ChatFab, { unread, onClick: openInbox }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Profile, { allowContact: !state.member || state.role === "mentee", mode: state.profileMode, onContact: () => contact(), onFind: () => go("pool") }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "chat-page", hidden: state.route.view !== "chat", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Chat, { state, setState, open: (id) => openThread(id), back, find: () => go("pool"), send: () => send(), retry: send, toast: showToast }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { hidden: state.route.view !== "bookings", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Bookings, { state, setState, contact: (id) => contact(id), toast: (a, b) => showToast(a, b, false) }) }),
-    state.route.view === "login" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Login, { failed: loginError, onCancel: () => go("profile"), onSubmit: () => {
+    state.member && !["chat", "login", "email"].includes(state.route.view) && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(ChatFab, { unread, onClick: openInbox }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Profile, { favorite: !!state.favorite, onFavorite: toggleFavorite, v2: scene === "profile-v2", reviewCount: scene === "profile-no-reviews" ? 0 : 12, allowBooking: state.member && state.role === "mentee" && state.profileMode === "normal", onBook: book, initialNote: scene.startsWith("reservation-") && scene !== "reservation-empty" ? "\u4F60\u597D\uFF01\u60F3\u8ACB\u6559 UX \u4F5C\u54C1\u96C6\u7684\u6E96\u5099\u65B9\u5411\u3002" : "", allowContact: !state.member || state.role === "mentee", mode: state.profileMode, onContact: () => contact(), onFind: () => go("pool") }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "chat-page", hidden: state.route.view !== "chat", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Chat, { state, setState, open: (id) => openThread(id), back, find: () => go("pool"), send: () => send(), retry: send, toast: showToast }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { hidden: state.route.view !== "bookings", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Bookings, { feedbackUnlisted: scene === "feedback-unlisted", state, setState, contact: (id, bookingId) => contact(id, bookingId), toast: (a, b) => showToast(a, b, false) }) }),
+    state.route.view === "login" && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Login, { failed: loginError, onCancel: () => {
+      setState((s) => ({ ...s, pendingFavorite: false }));
+      go("profile");
+    }, onSubmit: () => {
       if (scene === "login-failure" && !loginError) {
         setLoginError(true);
         go("profile");
         showToast("\u767B\u5165\u5931\u6557", "\u8ACB\u91CD\u65B0\u767B\u5165\u5F8C\u518D\u8A66\u3002");
+        return;
+      }
+      if (stateRef.current.pendingFavorite) {
+        const own = scene === "favorite-self" || stateRef.current.profileMode === "self";
+        setState((s) => ({ ...s, member: true, pendingFavorite: false, favorite: !own }));
+        go("profile");
+        if (own) showToast("\u7121\u6CD5\u6536\u85CF\u81EA\u5DF1");
         return;
       }
       setState((s) => ({ ...s, member: true }));
@@ -15212,97 +15978,97 @@ function App() {
         setState((s) => ({ ...readThread(s, loginTarget), member: true, route }));
       } else go("profile");
     } }),
-    state.route.view === "pool" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(MentorPool, { onSelect: () => {
+    state.route.view === "pool" && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(MentorPool, { onSelect: () => {
       setState((s) => ({ ...s, profileMode: "normal" }));
       go("profile");
     } }),
-    toast && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: `app-toast ${toast.error ? "is-error" : ""}`, role: toast.error ? "alert" : "status", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("strong", { children: toast.title }),
-      toast.body && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: toast.body }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { "aria-label": "\u95DC\u9589\u901A\u77E5", onClick: () => setToast(null), children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(X, { size: 20 }) })
+    toast && /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: `app-toast ${toast.error ? "is-error" : ""}`, role: toast.error ? "alert" : "status", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("strong", { children: toast.title }),
+      toast.body && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { children: toast.body }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { "aria-label": "\u95DC\u9589\u901A\u77E5", onClick: () => setToast(null), children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(X, { size: 20 }) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Modal, { open: openError, title: "\u7121\u6CD5\u958B\u555F\u5C0D\u8A71", onClose: closeError, actions: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("a", { className: "outline-button", href: "https://forms.gle/594hMVdTyoR3Pgtg9", target: "_blank", rel: "noreferrer", children: "\u56DE\u5831\u554F\u984C" }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", onClick: closeError, children: "\u91CD\u8A66" })
-    ] }), children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u76EE\u524D\u7121\u6CD5\u958B\u555F\u5C0D\u8A71\uFF0C\u8ACB\u91CD\u65B0\u9EDE\u64CA\u806F\u7D61\u5C0E\u5E2B\uFF0C\u6216\u7A0D\u5F8C\u518D\u8A66\u3002" }) })
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Modal, { open: openError, title: "\u7121\u6CD5\u958B\u555F\u5C0D\u8A71", onClose: closeError, actions: /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(import_jsx_runtime22.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("a", { className: "outline-button", href: "https://forms.gle/594hMVdTyoR3Pgtg9", target: "_blank", rel: "noreferrer", children: "\u56DE\u5831\u554F\u984C" }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "primary-button", onClick: closeError, children: "\u91CD\u8A66" })
+    ] }), children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { children: "\u76EE\u524D\u7121\u6CD5\u958B\u555F\u5C0D\u8A71\uFF0C\u8ACB\u91CD\u65B0\u9EDE\u64CA\u806F\u7D61\u5C0E\u5E2B\uFF0C\u6216\u7A0D\u5F8C\u518D\u8A66\u3002" }) })
   ] });
 }
 function Login({ failed, onSubmit, onCancel }) {
-  const [email, setEmail] = (0, import_react10.useState)("alex.chen@example.com"), [password, setPassword] = (0, import_react10.useState)("prototype"), [show, setShow] = (0, import_react10.useState)(false);
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("main", { className: "login-page", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h1", { children: "\u767B\u5165 X-Talent \u5E33\u6236" }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("form", { onSubmit: (e) => {
+  const [email, setEmail] = (0, import_react12.useState)("alex.chen@example.com"), [password, setPassword] = (0, import_react12.useState)("prototype"), [show, setShow] = (0, import_react12.useState)(false);
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("main", { className: "login-page", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("h1", { children: "\u767B\u5165 X-Talent \u5E33\u6236" }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("form", { onSubmit: (e) => {
       e.preventDefault();
       onSubmit();
     }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("label", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("label", { children: [
         "\u96FB\u5B50\u90F5\u4EF6",
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("input", { type: "email", autoComplete: "off", required: true, value: email, onChange: (e) => setEmail(e.target.value) })
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("input", { type: "email", autoComplete: "off", required: true, value: email, onChange: (e) => setEmail(e.target.value) })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("label", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("label", { children: [
         "\u5BC6\u78BC",
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "password-field", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("input", { type: show ? "text" : "password", autoComplete: "off", required: true, value: password, onChange: (e) => setPassword(e.target.value) }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(IconButton, { label: show ? "\u96B1\u85CF\u5BC6\u78BC" : "\u986F\u793A\u5BC6\u78BC", onClick: () => setShow(!show), children: show ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(EyeOff, { size: 18 }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Eye, { size: 18 }) })
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "password-field", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("input", { type: show ? "text" : "password", autoComplete: "off", required: true, value: password, onChange: (e) => setPassword(e.target.value) }),
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(IconButton, { label: show ? "\u96B1\u85CF\u5BC6\u78BC" : "\u986F\u793A\u5BC6\u78BC", onClick: () => setShow(!show), children: show ? /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(EyeOff, { size: 18 }) : /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Eye, { size: 18 }) })
         ] })
       ] }),
-      failed && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "field-error", role: "alert", children: "\u767B\u5165\u5931\u6557\uFF0C\u8ACB\u78BA\u8A8D\u5E33\u865F\u5BC6\u78BC\u5F8C\u518D\u8A66\u4E00\u6B21\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", type: "submit", children: "\u767B\u5165" })
+      failed && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: "field-error", role: "alert", children: "\u767B\u5165\u5931\u6557\uFF0C\u8ACB\u78BA\u8A8D\u5E33\u865F\u5BC6\u78BC\u5F8C\u518D\u8A66\u4E00\u6B21\u3002" }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "primary-button", type: "submit", children: "\u767B\u5165" })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "login-divider", children: "\u6216" }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "outline-button google-signin", onClick: onSubmit, children: "\u4F7F\u7528 Google \u5E33\u865F\u767B\u5165" }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "text-action", onClick: onCancel, children: "\u53D6\u6D88\uFF0C\u8FD4\u56DE\u5C0E\u5E2B\u500B\u4EBA\u9801" })
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "login-divider", children: "\u6216" }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "outline-button google-signin", onClick: onSubmit, children: "\u4F7F\u7528 Google \u5E33\u865F\u767B\u5165" }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "text-action", onClick: onCancel, children: "\u53D6\u6D88\uFF0C\u8FD4\u56DE\u5C0E\u5E2B\u500B\u4EBA\u9801" })
   ] });
 }
 function MentorPool({ onSelect }) {
-  const [search, setSearch] = (0, import_react10.useState)(""), [query, setQuery] = (0, import_react10.useState)(""), [saved, setSaved] = (0, import_react10.useState)(false);
+  const [search, setSearch] = (0, import_react12.useState)(""), [query, setQuery] = (0, import_react12.useState)(""), [saved, setSaved] = (0, import_react12.useState)(false);
   const found = !query || "Zahra Mirzakhani Senior UX Designer CreativeUX Design Studio".toLowerCase().includes(query.toLowerCase().trim());
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("main", { className: "f753", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("section", { className: "f753-hero", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h1", { children: "\u548C Mentors \u4E00\u8D77\u63D0\u5347\u4F60\u7684\u8077\u6DAF\u7D93\u9A57\u5427\uFF01" }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("form", { className: "f753-search", onSubmit: (e) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("main", { className: "f753", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("section", { className: "f753-hero", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("h1", { children: "\u548C Mentors \u4E00\u8D77\u63D0\u5347\u4F60\u7684\u8077\u6DAF\u7D93\u9A57\u5427\uFF01" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("form", { className: "f753-search", onSubmit: (e) => {
       e.preventDefault();
       setQuery(search);
     }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Search, { size: 22 }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("input", { "aria-label": "\u641C\u5C0B\u8077\u4F4D\u3001\u516C\u53F8\u6216\u9818\u57DF", placeholder: "\u641C\u5C0B\u8077\u4F4D\u3001\u516C\u53F8\u6216\u9818\u57DF", value: search, onChange: (e) => setSearch(e.target.value) }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "f753-primary", children: "\u641C\u5C0B" })
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Search, { size: 22 }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("input", { "aria-label": "\u641C\u5C0B\u8077\u4F4D\u3001\u516C\u53F8\u6216\u9818\u57DF", placeholder: "\u641C\u5C0B\u8077\u4F4D\u3001\u516C\u53F8\u6216\u9818\u57DF", value: search, onChange: (e) => setSearch(e.target.value) }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "f753-primary", children: "\u641C\u5C0B" })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "f753-list chat-pool-list", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("p", { className: "f753-count", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "f753-list chat-pool-list", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("p", { className: "f753-count", children: [
         "\u627E\u5230 ",
         found ? 1 : 0,
         " \u4F4D\u5C0E\u5E2B"
       ] }),
-      found && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "f753-grid", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("article", { className: "f753-card", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("a", { className: "f753-card-main", href: "?scene=profile", onClick: (e) => {
+      found && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "f753-grid", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("article", { className: "f753-card", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("a", { className: "f753-card-main", href: "?scene=profile", onClick: (e) => {
           e.preventDefault();
           onSelect();
         }, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "f753-image", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("img", { className: "f753-photo", src: asset("zahra.png"), alt: "Zahra Mirzakhani" }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: "f753-experience", children: "5\u201310 \u5E74\u5DE5\u4F5C\u7D93\u9A57" })
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "f753-image", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("img", { className: "f753-photo", src: asset("zahra.png"), alt: "Zahra Mirzakhani" }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: "f753-experience", children: "5\u201310 \u5E74\u5DE5\u4F5C\u7D93\u9A57" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "f753-card-body", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "f753-card-heading", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h2", { children: "Zahra Mirzakhani" }),
-              /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("strong", { className: "f753-rating", children: "8.5 / 10" })
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "f753-card-body", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "f753-card-heading", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("h2", { children: "Zahra Mirzakhani" }),
+              /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("strong", { className: "f753-rating", children: "8.5 / 10" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "f753-role", children: "Senior UX Designer \xB7 CreativeUX Design Studio" }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "f753-completed", children: "\u5DF2\u5B8C\u6210 128 \u5834 1-on-1" }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u900F\u904E\u7814\u7A76\u8207\u8A2D\u8A08\uFF0C\u5E6B\u52A9\u4F60\u91D0\u6E05\u8077\u6DAF\u65B9\u5411\u8207\u4F5C\u54C1\u96C6\u7684\u4E0B\u4E00\u6B65\u3002" }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: "f753-tags", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { children: "UI Design" }),
-              /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { children: "UX Design" })
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "f753-role", children: "Senior UX Designer \xB7 CreativeUX Design Studio" }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "f753-completed", children: "\u5DF2\u5B8C\u6210 128 \u5834 1-on-1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { children: "\u900F\u904E\u7814\u7A76\u8207\u8A2D\u8A08\uFF0C\u5E6B\u52A9\u4F60\u91D0\u6E05\u8077\u6DAF\u65B9\u5411\u8207\u4F5C\u54C1\u96C6\u7684\u4E0B\u4E00\u6B65\u3002" }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: "f753-tags", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { children: "UI Design" }),
+              /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { children: "UX Design" })
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "f753-bookmark", "aria-label": "\u6536\u85CF\u5C0E\u5E2B", "aria-pressed": saved, onClick: () => setSaved(!saved), children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Bookmark, { size: 20, fill: saved ? "currentColor" : "none" }) })
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("button", { className: "f753-bookmark", "aria-label": "\u6536\u85CF\u5C0E\u5E2B", "aria-pressed": saved, onClick: () => setSaved(!saved), children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Bookmark, { size: 20, fill: saved ? "currentColor" : "none" }) })
       ] }) })
     ] })
   ] });
 }
 document.getElementById("root").dataset.scene = scene;
-(0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime19.jsx)(App, {}));
+(0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ (0, import_jsx_runtime22.jsx)(App, {}));
 /*! Bundled license information:
 
 react/cjs/react.production.min.js:
@@ -15353,10 +16119,14 @@ lucide-react/dist/esm/shared/src/utils.js:
 lucide-react/dist/esm/defaultAttributes.js:
 lucide-react/dist/esm/Icon.js:
 lucide-react/dist/esm/createLucideIcon.js:
+lucide-react/dist/esm/icons/arrow-down.js:
 lucide-react/dist/esm/icons/arrow-left.js:
 lucide-react/dist/esm/icons/arrow-right.js:
+lucide-react/dist/esm/icons/arrow-up-right.js:
+lucide-react/dist/esm/icons/arrow-up.js:
 lucide-react/dist/esm/icons/bell.js:
 lucide-react/dist/esm/icons/bookmark.js:
+lucide-react/dist/esm/icons/briefcase-business.js:
 lucide-react/dist/esm/icons/calendar-days.js:
 lucide-react/dist/esm/icons/check.js:
 lucide-react/dist/esm/icons/chevron-down.js:
@@ -15364,26 +16134,33 @@ lucide-react/dist/esm/icons/chevron-left.js:
 lucide-react/dist/esm/icons/chevron-right.js:
 lucide-react/dist/esm/icons/chevron-up.js:
 lucide-react/dist/esm/icons/circle-alert.js:
+lucide-react/dist/esm/icons/clock-3.js:
 lucide-react/dist/esm/icons/clock.js:
-lucide-react/dist/esm/icons/code-xml.js:
 lucide-react/dist/esm/icons/download.js:
 lucide-react/dist/esm/icons/ellipsis.js:
 lucide-react/dist/esm/icons/eye-off.js:
 lucide-react/dist/esm/icons/eye.js:
+lucide-react/dist/esm/icons/file-archive.js:
+lucide-react/dist/esm/icons/file-image.js:
+lucide-react/dist/esm/icons/file-spreadsheet.js:
 lucide-react/dist/esm/icons/file-text.js:
-lucide-react/dist/esm/icons/file-x-2.js:
+lucide-react/dist/esm/icons/file.js:
+lucide-react/dist/esm/icons/graduation-cap.js:
 lucide-react/dist/esm/icons/info.js:
-lucide-react/dist/esm/icons/layers.js:
 lucide-react/dist/esm/icons/loader-circle.js:
+lucide-react/dist/esm/icons/map-pin.js:
+lucide-react/dist/esm/icons/message-circle-more.js:
+lucide-react/dist/esm/icons/message-circle.js:
 lucide-react/dist/esm/icons/message-square.js:
 lucide-react/dist/esm/icons/paperclip.js:
-lucide-react/dist/esm/icons/pen-line.js:
+lucide-react/dist/esm/icons/pencil.js:
 lucide-react/dist/esm/icons/rotate-ccw.js:
 lucide-react/dist/esm/icons/search.js:
 lucide-react/dist/esm/icons/send-horizontal.js:
 lucide-react/dist/esm/icons/smile.js:
 lucide-react/dist/esm/icons/star.js:
 lucide-react/dist/esm/icons/trash-2.js:
+lucide-react/dist/esm/icons/users-round.js:
 lucide-react/dist/esm/icons/x.js:
 lucide-react/dist/esm/lucide-react.js:
   (**

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-12T17:54:02.979Z",
+  "syncedAt": "2026-11-13T08:05:08.118Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -8,14 +8,59 @@
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
   "summary": {
-    "totalScreens": 29,
-    "totalComponents": 28,
+    "totalScreens": 30,
+    "totalComponents": 32,
     "existingStorybookMappedCount": 11,
-    "newCompositeDesignsCount": 14,
-    "totalStorybookStories": 415,
-    "trackedTicketsCount": 14
+    "newCompositeDesignsCount": 18,
+    "totalStorybookStories": 449,
+    "trackedTicketsCount": 23
   },
   "tickets": [
+    {
+      "id": "847",
+      "name": "聊聊 #847",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "777",
+      "name": "聊聊 #777",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "776",
+      "name": "聊聊 #776",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "775",
+      "name": "聊聊 #775",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "773",
+      "name": "聊聊 #773",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "772",
+      "name": "聊聊 #772",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "771",
+      "name": "聊聊 #771",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "729",
+      "name": "聊聊 #729",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "727",
+      "name": "聊聊 #727",
+      "date": "2026-11-13"
+    },
     {
       "id": "736",
       "name": "導師頁摘要列與評價 Tab（#hashtag 產業）",
@@ -400,12 +445,38 @@
       ]
     },
     {
+      "group": "訊息與聯絡",
+      "count": 1,
+      "screens": [
+        {
+          "id": "chat",
+          "name": "站內聊聊",
+          "tickets": [
+            "654",
+            "727",
+            "729",
+            "771",
+            "772",
+            "773",
+            "774",
+            "775",
+            "776",
+            "777",
+            "847"
+          ],
+          "version": "1",
+          "scenariosCount": 60,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
+        }
+      ]
+    },
+    {
       "group": "獨立探索原型 (Standalone Screens)",
       "count": 2,
       "screens": [
         {
           "id": "chat-654",
-          "name": "導師個人頁統一版面（簡介／評價 Tab、4格摘要列）與聊聊設計探索",
+          "name": "站內聊聊 · T01–T10 完整互動流程",
           "tickets": [
             "654",
             "727",
@@ -419,7 +490,7 @@
           ],
           "version": "Approved",
           "scenariosCount": 1,
-          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html"
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat&ticket=654&scenario=list"
         },
         {
           "id": "mentor-card-737",
@@ -1442,8 +1513,282 @@
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=favorites"
     },
     {
+      "id": "chat",
+      "name": "站內聊聊",
+      "group": "訊息與聯絡",
+      "description": "T01–T10 完整互動情境",
+      "module": "chat",
+      "tickets": [
+        "654",
+        "727",
+        "729",
+        "771",
+        "772",
+        "773",
+        "774",
+        "775",
+        "776",
+        "777",
+        "847"
+      ],
+      "date": "2026-11-13",
+      "version": "1",
+      "sourceKind": "delivery-snapshot",
+      "sourceUrl": "https://xtalent-chat-654.bonny80.chatgpt.site/",
+      "scenarios": [
+        {
+          "key": "list",
+          "label": "雙欄／未選取對話"
+        },
+        {
+          "key": "profile",
+          "label": "導師頁入口 · 過渡版時段"
+        },
+        {
+          "key": "profile-v2",
+          "label": "導師公開頁 v2 · 同導師中心"
+        },
+        {
+          "key": "favorite-login",
+          "label": "#756 · 未登入收藏／登入後自動收藏"
+        },
+        {
+          "key": "favorite-self",
+          "label": "#756 · 無法收藏自己"
+        },
+        {
+          "key": "profile-no-reviews",
+          "label": "導師頁 · 尚無評價"
+        },
+        {
+          "key": "guest",
+          "label": "訪客登入返回"
+        },
+        {
+          "key": "login-failure",
+          "label": "登入失敗／取消"
+        },
+        {
+          "key": "mentor-profile",
+          "label": "Mentor · 不可從個人頁主動發起"
+        },
+        {
+          "key": "role-switch",
+          "label": "切換為 Mentee 後聯絡"
+        },
+        {
+          "key": "self-profile",
+          "label": "自己的導師頁 v2 · 無預約日曆"
+        },
+        {
+          "key": "paused",
+          "label": "暫停接受預約"
+        },
+        {
+          "key": "open-failure",
+          "label": "開啟對話失敗"
+        },
+        {
+          "key": "missing-profile",
+          "label": "導師個人頁不存在"
+        },
+        {
+          "key": "deleted-mentor",
+          "label": "導師帳號已刪除"
+        },
+        {
+          "key": "deleted-mentee",
+          "label": "學員帳號已刪除"
+        },
+        {
+          "key": "conversation",
+          "label": "雙向對話"
+        },
+        {
+          "key": "sending",
+          "label": "傳送中"
+        },
+        {
+          "key": "attachment-limit",
+          "label": "10 個附件預覽"
+        },
+        {
+          "key": "attachments-1",
+          "label": "已送出 · 1 個附件"
+        },
+        {
+          "key": "attachments-3",
+          "label": "已送出 · 3 個附件"
+        },
+        {
+          "key": "attachments-10",
+          "label": "已送出 · 10 個附件"
+        },
+        {
+          "key": "attachments",
+          "label": "圖片與文件附件"
+        },
+        {
+          "key": "failure",
+          "label": "文字傳送失敗"
+        },
+        {
+          "key": "attachment-failure",
+          "label": "附件上傳失敗"
+        },
+        {
+          "key": "drafts",
+          "label": "文字與附件草稿"
+        },
+        {
+          "key": "history-loading",
+          "label": "向上載入歷史訊息"
+        },
+        {
+          "key": "previews",
+          "label": "預覽類型／跨年時間"
+        },
+        {
+          "key": "empty",
+          "label": "沒有對話"
+        },
+        {
+          "key": "list-failure",
+          "label": "列表載入失敗"
+        },
+        {
+          "key": "invalid-link",
+          "label": "無效對話連結"
+        },
+        {
+          "key": "forbidden-link",
+          "label": "無權限對話連結"
+        },
+        {
+          "key": "unread",
+          "label": "未讀篩選"
+        },
+        {
+          "key": "empty-unread",
+          "label": "沒有未讀訊息"
+        },
+        {
+          "key": "unread-99",
+          "label": "99+ 未讀對話"
+        },
+        {
+          "key": "search",
+          "label": "搜尋姓名"
+        },
+        {
+          "key": "search-content",
+          "label": "搜尋訊息內容"
+        },
+        {
+          "key": "search-file",
+          "label": "搜尋附件檔名／最早命中"
+        },
+        {
+          "key": "search-short",
+          "label": "搜尋不足 2 個字元"
+        },
+        {
+          "key": "new",
+          "label": "首次對話建議"
+        },
+        {
+          "key": "first-failure",
+          "label": "首次傳送失敗"
+        },
+        {
+          "key": "notifications",
+          "label": "聊聊未讀／不重複系統通知"
+        },
+        {
+          "key": "booking-mentor",
+          "label": "Mentor · 即將到來"
+        },
+        {
+          "key": "booking-mentor-pending",
+          "label": "Mentor · 待您回覆"
+        },
+        {
+          "key": "booking-mentor-history",
+          "label": "Mentor · 歷史／取消／婉拒"
+        },
+        {
+          "key": "booking-mentee",
+          "label": "Mentee · 即將到來"
+        },
+        {
+          "key": "booking-mentee-pending",
+          "label": "Mentee · 等待回覆"
+        },
+        {
+          "key": "booking-mentee-history",
+          "label": "Mentee · 歷史／取消／婉拒"
+        },
+        {
+          "key": "feedback-unlisted",
+          "label": "#734 · 歷史紀錄／評價未公開"
+        },
+        {
+          "key": "booking-mentor-contact",
+          "label": "Mentor · 導師中心預約卡入口"
+        },
+        {
+          "key": "booking-mentor-new",
+          "label": "Mentor · 從預約卡首次聯絡"
+        },
+        {
+          "key": "booking-mentor-pending-new",
+          "label": "Mentor · 待回覆首次聯絡"
+        },
+        {
+          "key": "booking-mentor-history-new",
+          "label": "Mentor · 歷史／取消／婉拒首次聯絡"
+        },
+        {
+          "key": "booking-mentee-new",
+          "label": "Mentee · 首次聯絡"
+        },
+        {
+          "key": "mobile-entry",
+          "label": "入口與返回"
+        },
+        {
+          "key": "reservation-message",
+          "label": "T10 · 預約留言轉聊聊"
+        },
+        {
+          "key": "reservation-empty",
+          "label": "T10 · 空白留言僅成立預約"
+        },
+        {
+          "key": "reservation-existing",
+          "label": "T10 · 沿用既有對話"
+        },
+        {
+          "key": "reservation-failure",
+          "label": "T10 · 預約失敗後重試"
+        },
+        {
+          "key": "reservation-message-failure",
+          "label": "T10 · 預約成功／留言失敗"
+        }
+      ],
+      "components": [
+        "chat-list",
+        "chat-thread",
+        "chat-composer",
+        "chat-files"
+      ],
+      "note": "沿用 #654 最新已交付版本 43efad0；Julie 11/13 確認。操作與檢視模式分離，所有資料為原型模擬。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
+    },
+    {
       "id": "chat-654",
-      "name": "導師個人頁統一版面（簡介／評價 Tab、4格摘要列）與聊聊設計探索",
+      "name": "站內聊聊 · T01–T10 完整互動流程",
       "group": "獨立探索原型 (Standalone Screens)",
       "module": "standalone",
       "tickets": [
@@ -1457,19 +1802,19 @@
         "734",
         "830"
       ],
-      "date": "2026-11-12",
+      "date": "2026-11-13",
       "version": "Approved",
       "sourceKind": "standalone-prototype",
-      "sourceUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html",
+      "sourceUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat&ticket=654&scenario=list",
       "scenarios": [
         {
           "key": "default",
-          "label": "導師個人頁統一版面（簡介／評價 Tab、4格摘要列）與聊聊設計探索"
+          "label": "站內聊聊 · T01–T10 完整互動流程"
         }
       ],
       "components": [],
-      "note": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。",
-      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/screens/chat-654.html"
+      "note": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。 2026/11/13 Julie 確認；整合最新 60 個情境、操作／檢視模式與 4 個聊聊組合元件。",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat&ticket=654&scenario=list"
     },
     {
       "id": "mentor-card-737",
@@ -2450,6 +2795,122 @@
       "changes": [],
       "mapping": "已直接引用前端元件，Storybook 已有對應。",
       "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/佈局元件-header-notificationbell--default"
+    },
+    {
+      "id": "chat-list",
+      "name": "chat-list",
+      "label": "對話列表",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "chat"
+      ],
+      "rules": [
+        "搜尋、全部／未讀、草稿與列表狀態",
+        "沿用既有按鈕、頭像、輸入框與品牌 token。"
+      ],
+      "changes": [
+        {
+          "ticket": "654",
+          "date": "2026-11-13",
+          "text": "合併已確認聊聊互動設計；#727 刪除帳號歷史、#729 失敗選單、#774 雙向預約卡聯絡。"
+        }
+      ],
+      "mapping": "Chat 原型新增組合；前端串接沿用既有基礎元件。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "搜尋、全部／未讀、草稿與列表狀態",
+        "reuse": []
+      }
+    },
+    {
+      "id": "chat-thread",
+      "name": "chat-thread",
+      "label": "聊天室",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "chat"
+      ],
+      "rules": [
+        "連續訊息群組、時間、已讀與失敗重試",
+        "沿用既有按鈕、頭像、輸入框與品牌 token。"
+      ],
+      "changes": [
+        {
+          "ticket": "654",
+          "date": "2026-11-13",
+          "text": "合併已確認聊聊互動設計；#727 刪除帳號歷史、#729 失敗選單、#774 雙向預約卡聯絡。"
+        }
+      ],
+      "mapping": "Chat 原型新增組合；前端串接沿用既有基礎元件。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "連續訊息群組、時間、已讀與失敗重試",
+        "reuse": []
+      }
+    },
+    {
+      "id": "chat-composer",
+      "name": "chat-composer",
+      "label": "訊息輸入",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "chat"
+      ],
+      "rules": [
+        "附件在上、文字在下；最多 10 個附件",
+        "沿用既有按鈕、頭像、輸入框與品牌 token。"
+      ],
+      "changes": [
+        {
+          "ticket": "654",
+          "date": "2026-11-13",
+          "text": "合併已確認聊聊互動設計；#727 刪除帳號歷史、#729 失敗選單、#774 雙向預約卡聯絡。"
+        }
+      ],
+      "mapping": "Chat 原型新增組合；前端串接沿用既有基礎元件。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "附件在上、文字在下；最多 10 個附件",
+        "reuse": []
+      }
+    },
+    {
+      "id": "chat-files",
+      "name": "chat-files",
+      "label": "附件檔案條",
+      "kind": "組合元件",
+      "code": null,
+      "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
+      "screens": [
+        "chat"
+      ],
+      "rules": [
+        "各格式共用黑色檔案條、類型圖示與下載",
+        "沿用既有按鈕、頭像、輸入框與品牌 token。"
+      ],
+      "changes": [
+        {
+          "ticket": "654",
+          "date": "2026-11-13",
+          "text": "合併已確認聊聊互動設計；#727 刪除帳號歷史、#729 失敗選單、#774 雙向預約卡聯絡。"
+        }
+      ],
+      "mapping": "Chat 原型新增組合；前端串接沿用既有基礎元件。",
+      "storybookUrl": null,
+      "composition": {
+        "level": "組合元件",
+        "scope": "各格式共用黑色檔案條、類型圖示與下載",
+        "reuse": []
+      }
     }
   ],
   "componentMap": {
@@ -2685,6 +3146,26 @@
             "url": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/基礎-原子元件-button--default"
           }
         ]
+      },
+      "chat-list": {
+        "level": "組合元件",
+        "scope": "搜尋、全部／未讀、草稿與列表狀態",
+        "reuse": []
+      },
+      "chat-thread": {
+        "level": "組合元件",
+        "scope": "連續訊息群組、時間、已讀與失敗重試",
+        "reuse": []
+      },
+      "chat-composer": {
+        "level": "組合元件",
+        "scope": "附件在上、文字在下；最多 10 個附件",
+        "reuse": []
+      },
+      "chat-files": {
+        "level": "組合元件",
+        "scope": "各格式共用黑色檔案條、類型圖示與下載",
+        "reuse": []
       }
     }
   }
