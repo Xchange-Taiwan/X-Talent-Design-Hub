@@ -14351,7 +14351,7 @@ function initialState(scene2) {
   }
   if (scene2 === "sending") {
     const text = "\u8B1D\u8B1D\uFF01\u6211\u6703\u5148\u6574\u7406\u597D\u4F5C\u54C1\u96C6\u3002";
-    s.threads.zahra.draft = text;
+    s.threads.zahra.draft = "";
     s.threads.zahra.messages.push(msg("sending-preview", true, text, now(s), { status: "sending", read: false }));
   }
   if (scene2 === "search-content") {
@@ -15176,6 +15176,11 @@ function Profile({ onContact, mode = "normal", onFind, allowContact = true, allo
   ] });
 }
 
+// src/composer-policy.ts
+var limitDraft = (text) => Array.from(text).slice(0, 500).join("");
+var appendSuggestion = (draft, suggestion) => limitDraft(draft ? draft + "\n" + suggestion : suggestion);
+var shouldSend = (key, shift4, composing, keyCode, width) => key === "Enter" && !shift4 && !composing && keyCode !== 229 && width >= 768;
+
 // src/Chat.tsx
 var import_react10 = __toESM(require_react(), 1);
 var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
@@ -15217,7 +15222,7 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
   const update = (fn) => {
     if (active) setState((p) => ({ ...p, threads: { ...p.threads, [active]: fn(p.threads[active] || emptyThread()) } }));
   };
-  const write = (draft) => update((t) => ({ ...t, draft }));
+  const write = (draft) => update((t) => ({ ...t, draft: limitDraft(draft) }));
   const removeFailed = (id) => update((t) => ({ ...t, messages: t.messages.filter((m) => m.id !== id) }));
   (0, import_react10.useEffect)(() => {
     setEmojis(false);
@@ -15346,7 +15351,7 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
       /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: "\u5F9E\u5DE6\u5074\u5217\u8868\u9078\u53D6\u5C0D\u8A71\uFF0C\u958B\u59CB\u4EA4\u6D41\u3002" })
     ] }) }),
     invalid ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: "chat-room invalid-room invalid-mobile", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: "thread-header", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ChevronLeft, { size: 22 }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: "thread-header", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: "\u8FD4\u56DE\u5C0D\u8A71\u5217\u8868", className: "thread-back", onClick: back, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ChevronLeft, { size: 22 }) }) }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "invalid-content", children: [
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Info, { size: 28 }),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h2", { children: "\u7121\u6CD5\u958B\u555F\u6B64\u5C0D\u8A71" }),
@@ -15419,7 +15424,7 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
       ] }) }),
       /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "composer-area", children: [
         first && canCompose && s.role === "mentee" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "suggestion-scroll", "aria-label": "\u958B\u5834\u5EFA\u8B70", children: suggestions.map((t) => /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { title: t, onClick: () => {
-          write(t);
+          write(appendSuggestion(thread.draft, t));
           composer.current?.focus();
         }, children: t }, t)) }),
         /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("form", { className: `composer ${!canCompose ? "is-disabled" : ""}`, onSubmit: (e) => {
@@ -15433,7 +15438,13 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
               /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { children: f.name }),
               /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(IconButton, { label: `\u79FB\u9664 ${f.name}`, onClick: () => update((t) => ({ ...t, files: t.files.filter((_, j) => i !== j) })), children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(X, { size: 16 }) })
             ] }, i)) }),
-            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("textarea", { disabled: !canCompose, ref: composer, rows: 1, "aria-label": "\u8F38\u5165\u8A0A\u606F", placeholder: deleted ? "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F" : !canCompose ? "\u7531\u5B78\u54E1\u5148\u767C\u8D77\u5C0D\u8A71" : "\u8F38\u5165\u8A0A\u606F\u2026", value: thread.draft, onChange: (e) => write(e.target.value) })
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("textarea", { disabled: !canCompose, ref: composer, rows: 1, "aria-label": "\u8F38\u5165\u8A0A\u606F", placeholder: deleted ? "\u5C0D\u65B9\u5DF2\u522A\u9664\uFF0C\u7121\u6CD5\u50B3\u9001\u8A0A\u606F" : !canCompose ? "\u7531\u5B78\u54E1\u5148\u767C\u8D77\u5C0D\u8A71" : "\u8F38\u5165\u8A0A\u606F\u2026", "aria-describedby": "composer-count", value: thread.draft, onKeyDown: (e) => {
+              if (shouldSend(e.key, e.shiftKey, e.nativeEvent.isComposing, e.keyCode, window.innerWidth)) {
+                e.preventDefault();
+                send();
+                setEmojis(false);
+              }
+            }, onChange: (e) => write(e.target.value) })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "composer-controls", children: [
             /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("input", { hidden: true, ref: uploader, type: "file", multiple: true, onChange: (e) => {
@@ -15449,7 +15460,11 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
                 composer.current?.focus();
               }, children: e }, e)) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "send-button", type: "submit", disabled: !canCompose || !thread.draft.trim() && !thread.files.length || allItems.some((m) => m.status === "sending"), "aria-label": "\u50B3\u9001\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(SendHorizontal, { size: 21 }) })
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("span", { id: "composer-count", className: "composer-count", children: [
+              Array.from(thread.draft).length,
+              "/500"
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { className: "send-button", type: "submit", disabled: !canCompose || !thread.draft.trim() && !thread.files.length, "aria-label": "\u50B3\u9001\u8A0A\u606F", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(SendHorizontal, { size: 21 }) })
           ] })
         ] })
       ] })
@@ -15732,7 +15747,7 @@ function App() {
     toastTimer.current = setTimeout(() => setToast(null), 6500);
   };
   const changeRoute = (route, replace = false) => {
-    setState((s) => ({ ...s.route.view === "chat" && route.view !== "chat" ? leaveChat(s) : s, route }));
+    setState((s) => ({ ...s, route }));
     history[replace ? "replaceState" : "pushState"]({ chatRun: run, route }, "", location.href);
     window.scrollTo(0, 0);
   };
@@ -15825,14 +15840,14 @@ function App() {
     const message = retryMessage ? { ...retryMessage, files: textOnly ? [] : retryMessage.files, status: "sending", reason: void 0 } : { id: crypto.randomUUID(), own: true, text: t.draft.trim(), files: t.files, at: now(s), status: "sending", read: false };
     const failedReason = nextFailure.current;
     nextFailure.current = null;
-    setState((p) => ({ ...p, threads: { ...p.threads, [id]: { ...p.threads[id], messages: retryId ? p.threads[id].messages.map((m) => m.id === retryId ? message : m) : [...p.threads[id].messages, message] } } }));
+    setState((p) => ({ ...p, threads: { ...p.threads, [id]: { ...p.threads[id], ...retryId ? {} : { draft: "", files: [] }, messages: retryId ? p.threads[id].messages.map((m) => m.id === retryId ? message : m) : [...p.threads[id].messages, message] } } }));
     const delay = scene === "sending" ? 2500 : 700;
     pendingTimers.current.push(setTimeout(() => {
       setState((p) => {
         const thread = p.threads[id];
         if (!thread || !thread.messages.some((m) => m.id === message.id)) return p;
         const status = failedReason ? "failed" : "sent";
-        return { ...p, threads: { ...p.threads, [id]: { ...thread, messages: thread.messages.map((m) => m.id === message.id ? { ...m, status, at: now(p), reason: failedReason || void 0 } : m), draft: thread.draft.trim() === message.text ? "" : thread.draft, files: thread.files === message.files ? [] : thread.files } } };
+        return { ...p, threads: { ...p.threads, [id]: { ...thread, messages: thread.messages.map((m) => m.id === message.id ? { ...m, status, at: now(p), reason: failedReason || void 0 } : m) } } };
       });
       if (failedReason) showToast("\u50B3\u9001\u5931\u6557", failedReason);
     }, delay));
@@ -15852,8 +15867,9 @@ function App() {
   }, [state]);
   (0, import_react12.useEffect)(() => {
     document.body.classList.toggle("chat-view", state.route.view === "chat");
+    document.body.classList.toggle("thread-view", state.route.view === "chat" && !!state.route.active);
     window.parent.postMessage({ type: "chat-preview-view", view: state.route.view }, location.origin);
-  }, [state.route.view]);
+  }, [state.route.view, state.route.active]);
   (0, import_react12.useEffect)(() => {
     if (history.state?.chatRun !== run) {
       const r = stateRef.current.route;
@@ -15867,7 +15883,7 @@ function App() {
       if (e.state?.chatRun === run) {
         const route = e.state.route;
         setState((s) => {
-          let next = s.route.view === "chat" && route.view !== "chat" ? leaveChat(s) : s;
+          let next = s;
           if (route.view === "chat" && route.active && route.active !== "invalid") next = readThread(next, route.active);
           return { ...next, route };
         });
@@ -15888,7 +15904,7 @@ function App() {
         const key = s.route.active, t = key ? s.threads[key] : null;
         if (!key || !t) return s;
         const pending = t.messages.filter((m) => m.status === "sending");
-        return { ...s, threads: { ...s.threads, [key]: { ...t, messages: t.messages.map((m) => m.status === "sending" ? { ...m, status: "sent", at: now(s) } : m), draft: pending.some((m) => m.text === t.draft.trim()) ? "" : t.draft, files: pending.some((m) => m.files === t.files) ? [] : t.files } } };
+        return { ...s, threads: { ...s.threads, [key]: { ...t, messages: t.messages.map((m) => m.status === "sending" ? { ...m, status: "sent", at: now(s) } : m) } } };
       });
       if (command === "receive") {
         setState((s) => receive(s, id));

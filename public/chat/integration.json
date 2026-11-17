@@ -1,9 +1,32 @@
 {
-  "sourceCommit": "43efad0e76b8d29e6d8ece24169a904b48a28fcc",
-  "integratedAt": "2026-11-13",
+  "sourceCommit": "04f1cb1c1493896a8d4d1ca60bf9a28a35c4cfd3",
+  "sourceVersion": 23,
+  "integratedAt": "2026-11-17",
   "sourceFiles": {
-    "app.js": "c6ce676ed2195c5b02ac7a49f2f512cde9067b51c3079961fed3dbcc23fda366",
-    "app.css": "566dd725286b2a3fe6345abda9d3fde677c7b3cce17f0868fbb19240fd5f029c"
+    "app.css": "b5e56102a3d215c817c2f1b1e3444d8ecb990fd505ee4c7ca6b5a40092e6941b",
+    "app.js": "dfa975918f573eebf33615482efb4d34a0ef18519add9a8b59cc410bd0404131",
+    "assets/753-alex.png": "60b836e515347c273b2baff238450892e2fc6e365a5ea90c46a2988dc1776bba",
+    "assets/753-emily.png": "84e9a01a18fefb8c986b7397e505f900202d111785edb63649e6564a10a41192",
+    "assets/753-logo.svg": "15afe6dcb241d0a90d9c648ddbb81952ede0b70f1e31f83e70b7f3b7b0f82e37",
+    "assets/753-sarah.png": "22f7144126e277bd2e4f6c7ff894fc740cb20930da3445508739da7f1cd98cfd",
+    "assets/753-user.png": "bf0a304e91cc39f3e4332fd2f238985eab2afbf4402436f5e7b79dce7e36562b",
+    "assets/753-zahra.png": "f6e1e864e5b51156f7d2204e4770451072202afe14049f1437536e2c7c7ebbf5",
+    "assets/default-avatar-1.webp": "f929ab940ef93c0c26b6cfb1a6773688fc1e266f856ef3f72775c3a7ec808e7c",
+    "assets/default-avatar-2.webp": "d34cdd60a8c2a758387c64082e8717be994f01401fdbba53de66db8bae22b82b",
+    "assets/default-avatar-3.webp": "1a724d13f538aacdffb3fa57c81c53f6ffc78ff25da371cfb95fe3442f83e57f",
+    "assets/default-avatar-4.webp": "9726e78fa935945ad516ed2fc3c2529ab3633d6b7da08044ec635dfeada8784e",
+    "assets/default-avatar-5.webp": "c1a0d12b18a803526287afd1de11ef596ab4752ce35f038f66fcc7756c668794",
+    "assets/default-avatar-6.webp": "950785a81df789576faba1aa3bd72dc03edd4cd120e35dee4f6153dd29d00709",
+    "assets/default-avatar-742.png": "78f4b606590269b0680ca9d48a4f63842d06fef27d2fb6f721c3c9f8cc3ebd22",
+    "assets/deleted-account-avatar.png": "479c2aef2cbeb36dd8229bd13a427d310fbc01403aa4847ecabd37c247b63c54",
+    "assets/sample-portfolio.png": "5f91f7105dc4428cda6fd65c4c4b7ac3ce60dff9d1430f85c4a31347627d9716",
+    "assets/sample-portfolio.svg": "909f0c1f54ff2dbe3bfa9305e20be8485b5b784ad55080ab81cf60b9f7518261",
+    "assets/sample-resume.txt": "78f592183b69fad921f85fc7b769ec47e5069746cfe18292e6a26e7c80bf670a",
+    "audit.html": "6941890c35c81a043c4c1e3163151e052ad820b1c9420734294197794f797a7a",
+    "index.html": "8f0d7af701dcb1763f2b1de80434c7052504bfae7378ae7d8eb0f04b7ba223da"
   },
-  "approval": "https://discord.com/channels/1387270551927787540/1551599059456884736/1570649433199345716"
+  "approval": "Bonny confirmed v23 tests and requested full Design Hub synchronization on 2026-11-17.",
+  "adaptations": [
+    "preview.html retains the Design Hub inspection bridge."
+  ]
 }
