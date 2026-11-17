@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-17T10:34:32.494Z",
+  "syncedAt": "2026-11-17T14:52:33.178Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -464,7 +464,7 @@
             "777",
             "847"
           ],
-          "version": "23",
+          "version": "24",
           "scenariosCount": 60,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
         }
@@ -489,7 +489,8 @@
             "830",
             "771",
             "772",
-            "775"
+            "775",
+            "847"
           ],
           "version": "Approved",
           "scenariosCount": 1,
@@ -1535,7 +1536,7 @@
         "847"
       ],
       "date": "2026-11-17",
-      "version": "23",
+      "version": "24",
       "sourceKind": "delivery-snapshot",
       "sourceUrl": "https://xtalent-chat-654.bonny80.chatgpt.site/",
       "scenarios": [
@@ -1761,23 +1762,23 @@
         },
         {
           "key": "reservation-message",
-          "label": "T10 · 預約留言轉聊聊"
+          "label": "T10 · 預約成立／自行聯絡"
         },
         {
-          "key": "reservation-empty",
-          "label": "T10 · 空白留言僅成立預約"
+          "key": "booking-mentor-reasons",
+          "label": "T10 · 導師原因查看"
         },
         {
           "key": "reservation-existing",
-          "label": "T10 · 沿用既有對話"
+          "label": "T10 · 既有對話不新增訊息"
         },
         {
           "key": "reservation-failure",
           "label": "T10 · 預約失敗後重試"
         },
         {
-          "key": "reservation-message-failure",
-          "label": "T10 · 預約成功／留言失敗"
+          "key": "booking-mentee-reasons",
+          "label": "T10 · 學員原因查看"
         }
       ],
       "components": [
@@ -1786,7 +1787,7 @@
         "chat-composer",
         "chat-files"
       ],
-      "note": "沿用 #654 最新已交付版本 43efad0；Julie 11/13 確認。操作與檢視模式分離，所有資料為原型模擬。",
+      "note": "依 Julie 2026-11-17 #847 決議更新；保留 #729／#771／#772／#775 已核准修正。操作與檢視模式分離，所有資料為原型模擬。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
     },
     {
@@ -1806,7 +1807,8 @@
         "830",
         "771",
         "772",
-        "775"
+        "775",
+        "847"
       ],
       "date": "2026-11-17",
       "version": "Approved",
@@ -1819,7 +1821,7 @@
         }
       ],
       "components": [],
-      "note": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。 2026/11/13 Julie 確認；整合最新 60 個情境、操作／檢視模式與 4 個聊聊組合元件。 2026/11/17 Bonny 確認 v23：連續送出、500 字、跨頁草稿、建議追加、手機浮動入口與返回箭頭、白色送出圖示。",
+      "note": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。 2026/11/13 Julie 確認；整合最新 60 個情境、操作／檢視模式與 4 個聊聊組合元件。 2026/11/17 Bonny 確認 v23：連續送出、500 字、跨頁草稿、建議追加、手機浮動入口與返回箭頭、白色送出圖示。 2026/11/17 Julie #847：移除預約問題與自動傳訊；婉拒／取消原因必填，僅填寫者本人歷史卡可查看。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat&ticket=654&scenario=list"
     },
     {

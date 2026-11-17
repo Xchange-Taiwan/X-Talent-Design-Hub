@@ -783,6 +783,8 @@ body.chat-view{background:#fff}.chat-shell{width:100%;height:calc(100dvh - 80px)
 .booking-card .booking-actions{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.booking-actions>.contact-booking{flex:none}.booking-actions>div{margin-left:auto;display:flex;justify-content:flex-end;gap:12px}
 @media(max-width:639px){.booking-card .booking-actions{margin-left:0;row-gap:12px}.booking-actions>div{flex-wrap:wrap}}
 
+.booking-private-reason{margin:16px 0;border-top:1px solid var(--border-color,#e5e7eb);padding-top:12px}.booking-private-reason summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;cursor:pointer;font-weight:600;list-style:none}.booking-private-reason summary::-webkit-details-marker{display:none}.booking-private-reason[open] summary svg{transform:rotate(180deg)}.booking-private-reason p{margin:8px 0 4px;line-height:1.7;overflow-wrap:anywhere;white-space:pre-wrap}.booking-private-reason summary:focus-visible{outline:2px solid #197d80;outline-offset:3px}
+
 /* Level system (#746/#832). Shared by Mentor/app and Chat/src; keep both copies identical.
    Clean surfaces, one tier emblem as the focal point, big numerals, soft fills instead of borders. */
 :where([data-level]){--xl-ink:#13767a;--xl-tint:#e4f7f6;--xl-soft:#f2fbfb;--xl-accent:#23c5c8}

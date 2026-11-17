@@ -242,6 +242,19 @@ body.chat-view{background:#fff}.chat-shell{width:100%;height:calc(100dvh - 80px)
 }
 @media(max-width:359px){.site-header{padding:0 16px}.logo{width:112px}}
 
+/* 2026-11-17: user-directed interaction and responsive updates. */
+.suggestion-scroll{display:flex;flex-wrap:wrap;overflow:visible;gap:8px;white-space:normal}
+.suggestion-scroll button{white-space:normal;max-width:100%;min-width:0;flex:0 1 auto;text-align:left;overflow-wrap:anywhere;height:auto;line-height:1.6;padding:8px 12px}
+.composer-count{margin-left:auto;font-size:12px;color:var(--color-text-secondary,#596575);white-space:nowrap}
+.send-button:not(:disabled){color:#fff}
+@media(max-width:767px){
+ .site-header .header-actions .global-message{display:none}
+ body.thread-view .site-header{display:none!important}
+ body.thread-view .chat-shell{height:var(--usable-vh,100dvh);max-height:var(--usable-vh,100dvh)}
+ .invalid-mobile .thread-header{display:flex;align-self:stretch;width:100%;justify-content:flex-start}
+ .thread-header>.icon-button.thread-back{order:-1;margin:0;flex:0 0 40px}
+}
+
 /* Task states reuse Hub's #753 toast, #730 history cards, FE auth and NotificationBell. */
 .site-header nav button{font-size:14px;font-weight:500;color:var(--ink)}
 .notification-anchor{position:relative}.notification-popover{position:absolute;z-index:60;right:0;top:48px;width:360px;max-width:calc(100vw - 32px);background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 25px -5px #0000001a,0 8px 10px -6px #0000001a;padding:20px 0;overflow:hidden}.notification-popover h2{font-size:18px;line-height:28px;padding:0 20px 12px;font-weight:700}.notification-list{max-height:360px;overflow:auto}.notification-item{display:flex;align-items:flex-start;gap:10px;text-align:left;width:100%;padding:12px 20px;border-top:1px solid var(--line)}.notification-item:hover{background:var(--color-background-hover)}.notice-dot{width:16px;flex:none;padding-top:6px;display:grid;place-items:center}.notice-dot i{width:8px;height:8px;border-radius:50%;background:var(--brand)}.notification-item strong{font-size:14px;line-height:20px;display:block;font-weight:700;overflow-wrap:anywhere}.notification-item p{font-size:12px;line-height:18px;color:var(--color-text-secondary);margin:4px 0 6px}.notification-item time{font-size:11px;color:var(--muted)}.notification-item.is-read strong{font-weight:400;color:var(--color-text-secondary)}.notification-empty{display:grid;justify-items:center;gap:12px;padding:32px 20px;color:var(--muted);font-size:14px}.notification-button.active{color:white;background:var(--brand);border-color:var(--brand)}.notification-button.active svg{fill:white;stroke:var(--brand)}
@@ -769,6 +782,8 @@ body.chat-view{background:#fff}.chat-shell{width:100%;height:calc(100dvh - 80px)
 
 .booking-card .booking-actions{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.booking-actions>.contact-booking{flex:none}.booking-actions>div{margin-left:auto;display:flex;justify-content:flex-end;gap:12px}
 @media(max-width:639px){.booking-card .booking-actions{margin-left:0;row-gap:12px}.booking-actions>div{flex-wrap:wrap}}
+
+.booking-private-reason{margin:16px 0;border-top:1px solid var(--border-color,#e5e7eb);padding-top:12px}.booking-private-reason summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;cursor:pointer;font-weight:600;list-style:none}.booking-private-reason summary::-webkit-details-marker{display:none}.booking-private-reason[open] summary svg{transform:rotate(180deg)}.booking-private-reason p{margin:8px 0 4px;line-height:1.7;overflow-wrap:anywhere;white-space:pre-wrap}.booking-private-reason summary:focus-visible{outline:2px solid #197d80;outline-offset:3px}
 
 /* Level system (#746/#832). Shared by Mentor/app and Chat/src; keep both copies identical.
    Clean surfaces, one tier emblem as the focal point, big numerals, soft fills instead of borders. */
