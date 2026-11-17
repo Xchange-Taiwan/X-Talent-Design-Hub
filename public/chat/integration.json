@@ -1,10 +1,10 @@
 {
-  "sourceCommit": "b7e80282adb71b69a5e6d7bcf1bcc2fdaa864260",
-  "sourceVersion": 24,
+  "sourceCommit": "fa482dba65928ac7409aaf96c6c8fcd5b5859a2e",
+  "sourceVersion": 25,
   "integratedAt": "2026-11-17",
   "sourceFiles": {
     "app.css": "81957f4bf1069ddb49503eb358ac18fba2dc181122b7487ef2365d111873b2eb",
-    "app.js": "423e2a69e1de1c6755aa87f09afabbe2fdbdbefc36857cf839782714bcd70308",
+    "app.js": "866723a9814a29b467dcd0729c2070d5142f9b80338e84e083f2f51731780efe",
     "assets/753-alex.png": "60b836e515347c273b2baff238450892e2fc6e365a5ea90c46a2988dc1776bba",
     "assets/753-emily.png": "84e9a01a18fefb8c986b7397e505f900202d111785edb63649e6564a10a41192",
     "assets/753-logo.svg": "d46f87b4698017101c802618223b0b5822746a9fe090d97b0d7e39066f9085ee",

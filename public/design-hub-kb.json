@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-17T14:52:33.178Z",
+  "syncedAt": "2026-11-17T15:00:54.642Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -205,10 +205,11 @@
           "tickets": [
             "774",
             "832",
-            "842"
+            "842",
+            "847"
           ],
-          "version": "11/12 核對 · 後台滿寬對齊與聊聊",
-          "scenariosCount": 3,
+          "version": "11/17 · #847 原因查看",
+          "scenariosCount": 4,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
         },
         {
@@ -216,10 +217,12 @@
           "name": "預約導師",
           "route": "/reservation/mentee",
           "tickets": [
-            "774"
+            "774",
+            "847",
+            "842"
           ],
-          "version": "11/07 會議 · 聊聊整合",
-          "scenariosCount": 3,
+          "version": "11/17 · #847 原因查看",
+          "scenariosCount": 4,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-reservations"
         }
       ]
@@ -464,7 +467,7 @@
             "777",
             "847"
           ],
-          "version": "24",
+          "version": "25",
           "scenariosCount": 60,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
         }
@@ -1316,16 +1319,17 @@
       "id": "mentor-reservations",
       "name": "擔任導師",
       "group": "預約與回饋",
-      "module": "frontend",
+      "module": "chat",
       "route": "/reservation/mentor",
       "tickets": [
         "774",
         "832",
-        "842"
+        "842",
+        "847"
       ],
-      "date": "2026-11-12",
-      "version": "11/12 核對 · 後台滿寬對齊與聊聊",
-      "sourceKind": "frontend",
+      "date": "2026-11-17",
+      "version": "11/17 · #847 原因查看",
+      "sourceKind": "confirmed-update",
       "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
       "scenarios": [
         {
@@ -1334,7 +1338,11 @@
         },
         {
           "key": "pending",
-          "label": "待確認"
+          "label": "待您回覆"
+        },
+        {
+          "key": "history",
+          "label": "歷史紀錄"
         },
         {
           "key": "empty",
@@ -1349,21 +1357,23 @@
         "textarea",
         "reservation"
       ],
-      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。11/08：移除學員留言／導師回覆板，預約卡提供「聯絡學員」按鈕（即使預約未留問題亦可開啟空白聊聊，#774）。11/12 對齊（#832／#842）：導師管理後台「預約管理」標題與「即將到來 / 待您回復 / 歷史紀錄」分頁一律靠左對齊，下方預約卡片拉長為 100% 滿版寬度（桌機版 1096px），左邊界與上方「導師管理後台」及「成長總覽」對齊於同一垂直線。",
+      "note": "沿用共用預約卡；取消／婉拒原因依填寫角色顯示。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
     },
     {
       "id": "mentee-reservations",
       "name": "預約導師",
       "group": "預約與回饋",
-      "module": "frontend",
+      "module": "chat",
       "route": "/reservation/mentee",
       "tickets": [
-        "774"
+        "774",
+        "847",
+        "842"
       ],
-      "date": "2026-11-08",
-      "version": "11/07 會議 · 聊聊整合",
-      "sourceKind": "frontend",
+      "date": "2026-11-17",
+      "version": "11/17 · #847 原因查看",
+      "sourceKind": "confirmed-update",
       "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
       "scenarios": [
         {
@@ -1372,7 +1382,11 @@
         },
         {
           "key": "pending",
-          "label": "待確認"
+          "label": "等待回覆"
+        },
+        {
+          "key": "history",
+          "label": "歷史紀錄"
         },
         {
           "key": "empty",
@@ -1387,7 +1401,7 @@
         "textarea",
         "reservation"
       ],
-      "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
+      "note": "沿用共用預約卡；取消／婉拒原因依填寫角色顯示。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-reservations"
     },
     {
@@ -1520,7 +1534,7 @@
       "id": "chat",
       "name": "站內聊聊",
       "group": "訊息與聯絡",
-      "description": "站內聊聊 v23 · 60 個完整互動情境",
+      "description": "站內聊聊 v25 · 60 個完整互動情境",
       "module": "chat",
       "tickets": [
         "654",
@@ -1536,7 +1550,7 @@
         "847"
       ],
       "date": "2026-11-17",
-      "version": "24",
+      "version": "25",
       "sourceKind": "delivery-snapshot",
       "sourceUrl": "https://xtalent-chat-654.bonny80.chatgpt.site/",
       "scenarios": [
