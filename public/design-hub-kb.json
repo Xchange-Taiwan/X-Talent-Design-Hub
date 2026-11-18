@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-17T10:34:32.494Z",
-  "revision": "github-alignment-2026-11-12",
+  "syncedAt": "2026-11-18T14:49:50.079Z",
+  "revision": "github-alignment-2026-11-18",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
   "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev",
@@ -63,8 +63,8 @@
     },
     {
       "id": "736",
-      "name": "導師頁摘要列與評價 Tab（#hashtag 產業）",
-      "date": "2026-11-12"
+      "name": "導師頁摘要列與評價 Tab（#hashtag 產業、長評價 3 行折疊）",
+      "date": "2026-11-17"
     },
     {
       "id": "830",
@@ -2444,11 +2444,17 @@
       ],
       "rules": [
         "分頁標籤：左欄預設停在「簡介」，右側為「評價 N」（0 則顯示「評價 0」）；選取態為品牌青綠字與底線（評價文字 font-medium、右側數字較小且留有間距），未選取態為清楚深灰字（不可過淡或整串粗體擠在一起）。",
-        "頂部總分摘要卡：有評價時於列表上方顯示大字平均分「X.X / 10」與「★ N 則會談評價」。",
+        "頂部總分摘要卡：有評價時於列表上方顯示大字平均分「X.X / 10」與「★ N 則會談評價」，並附底部分隔線。",
         "單筆評價卡片：左側為遮罩姓氏首字圓形頭像（如「陳」）＋遮罩姓名（如「陳**」）；右上角靠右對齊顯示單顆空心星「☆ X / 10」與評價日期「YYYY/MM/DD」；下方顯示保留換行的評價內容；所有分數維持同一品牌色樣式。",
-        "分頁與空狀態：每 10 則一頁，超過 10 則才顯示分頁器；0 則評價顯示對話框圖示、標題「目前還沒有評價」與副標「完成會談後，學員的評價會顯示在這裡。」。"
+        "長評價折疊（2026-11-17 定案）：單筆評價內容預設最多顯示前 3 行（line-clamp-3），超過 3 行時於文末顯示「查看更多」展開全文並切換為「收合」（未超過 3 行不顯示按鈕），換頁時自動重設為收合態。",
+        "分頁與空狀態：每 10 則一頁，超過 10 則才顯示分頁器與當頁筆數範圍（「第 X–Y 則，共 N 則」）；0 則評價顯示對話框圖示、標題「目前還沒有評價」與副標「完成會談後，學員的評價會顯示在這裡。」。"
       ],
       "changes": [
+        {
+          "ticket": "736",
+          "date": "2026-11-17",
+          "text": "依 11/13 會議決議與 Bonny 11/16 原型（?scene=owner-reviews／owner-reviews-expanded）：新增超過 3 行長評價預設收合與「查看更多／收合」展開互動及分頁筆數範圍文字。"
+        },
         {
           "ticket": "736",
           "date": "2026-11-10",
@@ -2460,7 +2466,7 @@
           "text": "導師評價與空白狀態的三裝置設計。"
         }
       ],
-      "mapping": "對齊 #736 最新定案設計與 screens/chat-654.html。",
+      "mapping": "對齊 #736 最新定案設計（owner-reviews／owner-reviews-expanded）與 MentorFeedbackSection.tsx（PR #1332）。",
       "storybookUrl": null,
       "composition": {
         "level": "組合元件",
