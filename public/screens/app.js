@@ -14253,9 +14253,9 @@ var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
 function IconButton({ label, children, onClick, className = "", ...props }) {
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("button", { type: "button", className: `icon-button ${className}`, "aria-label": label, "data-tooltip": label, onClick, ...props, children });
 }
-function Modal({ open, title, children, onClose, actions, className = "" }) {
+function Modal({ open, title, children, onClose, actions, className = "", overlayClassName = "" }) {
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Dialog, { open, onOpenChange: (next) => !next && onClose(), children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DialogPortal, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogOverlay, { className: "dialog-overlay" }),
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogOverlay, { className: `dialog-overlay ${overlayClassName}` }),
     /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DialogContent, { className: `confirm-dialog ${className}`, "aria-describedby": void 0, children: [
       /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogTitle, { children: title }),
       children,
@@ -15619,7 +15619,7 @@ function Bookings({ state: s, setState, contact, toast, heading, showHours = fal
 function Feedback({ booking, person, mentor, close, save }) {
   const [step, setStep] = (0, import_react11.useState)(1), [answer, setAnswer] = (0, import_react11.useState)(""), [rating, setRating] = (0, import_react11.useState)(10), [comment, setComment] = (0, import_react11.useState)(""), [reason, setReason] = (0, import_react11.useState)(""), [other, setOther] = (0, import_react11.useState)("");
   const mentorDirectSubmit = mentor && step === 1 && answer !== "no";
-  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Modal, { open: true, title: mentor ? "\u78BA\u8A8D\u6703\u8AC7" : "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", onClose: close, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Modal, { open: true, title: "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", overlayClassName: "feedback-overlay", onClose: close, children: [
     /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-person", children: [
       /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Avatar, { person }),
       /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [

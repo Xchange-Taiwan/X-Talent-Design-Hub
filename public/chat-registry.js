@@ -10,7 +10,7 @@ D.components=D.components.filter(c=>c.id!=="chat-composer");D.components.push({"
 M.newDesigns["chat-composer"]={"level": "組合元件", "scope": "附件在上、文字在下；最多 10 個附件", "reuse": []};
 D.components=D.components.filter(c=>c.id!=="chat-files");D.components.push({"id": "chat-files", "name": "chat-files", "label": "附件檔案條", "kind": "組合元件", "screens": ["chat"], "rules": ["各格式共用黑色檔案條、類型圖示與下載", "沿用既有按鈕、頭像、輸入框與品牌 token。"], "changes": [{"ticket": "654", "date": "2026-11-17", "text": "合併已確認聊聊互動設計；#727 刪除帳號歷史、#729 失敗選單、#774 雙向預約卡聯絡。"}], "mapping": "Chat 原型新增組合；前端串接沿用既有基礎元件。"});
 M.newDesigns["chat-files"]={"level": "組合元件", "scope": "各格式共用黑色檔案條、類型圖示與下載", "reuse": []};
-D.storybook='https://x-talent-storybook.x-talent.workers.dev/';const screen=D.screens.find(s=>s.id==='chat');screen.description='站內聊聊 v25 · 60 個完整互動情境';
+D.storybook='https://x-talent-storybook.x-talent.workers.dev/';const screen=D.screens.find(s=>s.id==='chat');screen.description='站內聊聊 v26 · 60 個完整互動情境';
 const rules={
  'chat-composer':['送出立即清空，可連續送出；非同步結果不清除下一則草稿','Desktop / Tablet：Enter 送出、Shift + Enter 換行；IME 選字除外','最多 500 字，顯示 n/500；依 threadId 保留跨頁草稿','首次建議完整折行，追加至既有草稿；可送出圖示為白色'],
  'chat-thread':['Mobile 對話只保留聊天室標頭；無效連結返回鍵與一般對話靠左對齊'],

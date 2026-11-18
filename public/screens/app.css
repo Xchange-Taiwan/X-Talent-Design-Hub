@@ -274,6 +274,64 @@ body.chat-view{background:#fff}.chat-shell{width:100%;height:calc(100dvh - 80px)
 
 .feedback-noshow-warning{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;border-radius:6px;background:#fffaf0;border:1px solid #f1dfb7;color:#8a5a00;font-size:13px;line-height:20px}.feedback-noshow-warning svg{flex:none;margin-top:2px}
 
+/* Single reservation uses the #740 feedback card without the login queue. */
+.dialog-overlay.feedback-overlay {
+  background: #1d1f2538;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.confirm-dialog.feedback-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 480px;
+  padding: 24px;
+  box-shadow: 0 12px 28px #00000012;
+}
+.feedback-dialog > * { flex-shrink: 0 }
+.confirm-dialog.feedback-dialog > h2 {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+.feedback-dialog .feedback-person { margin-bottom: 16px }
+.feedback-dialog .feedback-person .avatar { width: 40px; height: 40px }
+.feedback-dialog .feedback-person p { font-size: 12px; line-height: 20px; margin: 0 }
+.feedback-dialog .feedback-step { margin: 0 0 8px }
+.feedback-dialog h3 { margin: 0 0 6px }
+.feedback-dialog .choice-row, .feedback-dialog .reason-options {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0 0;
+}
+.feedback-dialog .choice-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px }
+.feedback-dialog :is(.choice-row, .reason-options) label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-background-border);
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.feedback-dialog :is(.choice-row, .reason-options) input { width: 16px; height: 16px; margin: 0 }
+.feedback-dialog :is(.choice-row, .reason-options) label:hover { background: var(--color-brand-50) }
+.feedback-dialog :is(.choice-row, .reason-options) label:has(:checked) {
+  border-color: var(--color-brand-700);
+  background: var(--color-brand-50);
+}
+.feedback-dialog .field-label, .feedback-dialog .feedback-noshow-warning { margin-top: 16px }
+.feedback-dialog .feedback-actions { margin-top: 24px }
+@media (max-width: 640px) {
+  .confirm-dialog.feedback-dialog { padding: 20px }
+  .feedback-dialog :is(.choice-row, .reason-options) label { min-height: 44px }
+}
+
 /* Native #753 delivery, October 7 + October 13 header corrections.
    Card source: Desktop 414px (photo 412 × 292), Mobile 334px (photo 332 × 292).
    Scale the photo with its card; never stretch sparse results into wider cards.

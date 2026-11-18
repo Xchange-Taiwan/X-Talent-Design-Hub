@@ -1,10 +1,10 @@
 {
-  "sourceCommit": "fa482dba65928ac7409aaf96c6c8fcd5b5859a2e",
-  "sourceVersion": 25,
-  "integratedAt": "2026-11-17",
+  "sourceCommit": "e46fc8354d8ae995b4022cf74eb3eac28f6da67f",
+  "sourceVersion": 26,
+  "integratedAt": "2026-11-18",
   "sourceFiles": {
-    "app.css": "81957f4bf1069ddb49503eb358ac18fba2dc181122b7487ef2365d111873b2eb",
-    "app.js": "866723a9814a29b467dcd0729c2070d5142f9b80338e84e083f2f51731780efe",
+    "app.css": "8f0432ae06e00b9cf5e40fbfce621442f6151144f91395356b1537a28e749003",
+    "app.js": "921c5e9ecbc4ff18752b8812aebfce8f1ff5537c86e038e5ddefdc301f9f8ace",
     "assets/753-alex.png": "60b836e515347c273b2baff238450892e2fc6e365a5ea90c46a2988dc1776bba",
     "assets/753-emily.png": "84e9a01a18fefb8c986b7397e505f900202d111785edb63649e6564a10a41192",
     "assets/753-logo.svg": "d46f87b4698017101c802618223b0b5822746a9fe090d97b0d7e39066f9085ee",
@@ -25,7 +25,7 @@
     "audit.html": "ac54cbfcacc0fec2dec2296b28ddcac3ae08808cc71f892a088905fbeebdc4eb",
     "index.html": "519ea5ec174b36d8a43b31162e9586bd80e3457790e2a2c30b7bbd1760af6935"
   },
-  "approval": "Bonny requested Julie 2026-11-17 #847 decision, linked #840/#842; preserves remote main c0f6996 chat fixes.",
+  "approval": "Single-session reservation feedback follows #730 / #740, synchronized after chat verification.",
   "adaptations": [
     "preview.html retains the Design Hub inspection bridge."
   ]
