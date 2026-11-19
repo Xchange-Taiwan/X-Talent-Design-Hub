@@ -1,0 +1,1 @@
+import{d as o}from"./chunk-5AWST6KG.js";o();function u(r){return r.map(t=>({key:t.subject_group,label:t.subject,options:(t.leaves??[]).map(e=>({value:e.subject_group,label:e.subject}))}))}export{u as a};

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-17T15:00:54.642Z",
+  "syncedAt": "2026-11-19T02:02:03.124Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -12,8 +12,8 @@
     "totalComponents": 32,
     "existingStorybookMappedCount": 11,
     "newCompositeDesignsCount": 18,
-    "totalStorybookStories": 522,
-    "trackedTicketsCount": 23
+    "totalStorybookStories": 548,
+    "trackedTicketsCount": 28
   },
   "tickets": [
     {
@@ -129,6 +129,31 @@
     {
       "id": "774",
       "name": "預約與聊聊整合"
+    },
+    {
+      "id": "828",
+      "name": "學員個人頁與整頁編輯",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "862",
+      "name": "個人連結新增 GitHub",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "959",
+      "name": "方案 A 共用編輯頁",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "960",
+      "name": "學員個人顯示頁",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "961",
+      "name": "導師申請與建立完成",
+      "date": "2026-11-19"
     }
   ],
   "screenGroups": [
@@ -236,10 +261,12 @@
           "name": "導師資料建立",
           "tickets": [
             "742",
-            "830"
+            "830",
+            "961",
+            "959"
           ],
           "version": "7",
-          "scenariosCount": 10,
+          "scenariosCount": 11,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-form"
         },
         {
@@ -247,7 +274,8 @@
           "name": "導師建立完成",
           "tickets": [
             "742",
-            "830"
+            "830",
+            "961"
           ],
           "version": "7",
           "scenariosCount": 4,
@@ -280,25 +308,33 @@
             "830"
           ],
           "version": "交付稿 2026.10",
-          "scenariosCount": 3,
+          "scenariosCount": 4,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-calendar"
         },
         {
           "id": "mentee-profile",
           "name": "學員個人頁",
           "route": "/profile/100?role=mentee",
-          "tickets": [],
+          "tickets": [
+            "828",
+            "960",
+            "862"
+          ],
           "version": "develop · c6c3660",
-          "scenariosCount": 1,
+          "scenariosCount": 2,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-profile"
         },
         {
           "id": "mentee-edit",
           "name": "學員編輯資料",
           "route": "/profile/100/edit",
-          "tickets": [],
+          "tickets": [
+            "828",
+            "959",
+            "862"
+          ],
           "version": "develop · c6c3660",
-          "scenariosCount": 2,
+          "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-edit"
         },
         {
@@ -669,7 +705,9 @@
       "module": "742",
       "tickets": [
         "742",
-        "830"
+        "830",
+        "961",
+        "959"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -679,15 +717,18 @@
       "scenarios": [
         {
           "key": "fresh",
-          "label": "首次建立 · 只有姓名"
+          "label": "首次建立 · 只有姓名",
+          "mentorScene": "fresh"
         },
         {
           "key": "partial",
-          "label": "部分完成"
+          "label": "部分完成",
+          "mentorScene": "partial"
         },
         {
           "key": "complete",
-          "label": "資料完整"
+          "label": "資料完整",
+          "mentorScene": "complete"
         },
         {
           "key": "name-edit",
@@ -699,7 +740,8 @@
         },
         {
           "key": "work-empty",
-          "label": "工作經驗 · 尚未新增"
+          "label": "工作經驗 · 尚未新增",
+          "mentorScene": "work-empty"
         },
         {
           "key": "work-filled",
@@ -707,7 +749,8 @@
         },
         {
           "key": "education-empty",
-          "label": "教育經歷 · 尚未新增"
+          "label": "教育經歷 · 尚未新增",
+          "mentorScene": "education-empty"
         },
         {
           "key": "education-filled",
@@ -715,7 +758,13 @@
         },
         {
           "key": "save-error",
-          "label": "儲存失敗 · 內容保留"
+          "label": "儲存失敗 · 內容保留",
+          "mentorScene": "save-error"
+        },
+        {
+          "key": "owner-edit",
+          "label": "D-5 · 編輯導師資料",
+          "mentorScene": "owner-edit"
         }
       ],
       "components": [
@@ -739,7 +788,8 @@
       "module": "742",
       "tickets": [
         "742",
-        "830"
+        "830",
+        "961"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -749,11 +799,13 @@
       "scenarios": [
         {
           "key": "welcome",
-          "label": "建立成功 · 小卡正面"
+          "label": "建立成功 · 小卡正面",
+          "mentorScene": "welcome"
         },
         {
           "key": "card-back",
-          "label": "導師小卡背面"
+          "label": "導師小卡背面",
+          "mentorScene": "card-back"
         },
         {
           "key": "personal-profile",
@@ -1214,6 +1266,11 @@
         {
           "key": "empty",
           "label": "尚無時段"
+        },
+        {
+          "key": "owner-return",
+          "label": "D-4 · 從導師編輯返回",
+          "mentorScene": "owner-filled"
         }
       ],
       "components": [
@@ -1233,7 +1290,11 @@
       "group": "導師與個人頁",
       "module": "frontend",
       "route": "/profile/100?role=mentee",
-      "tickets": [],
+      "tickets": [
+        "828",
+        "960",
+        "862"
+      ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
       "sourceKind": "frontend",
@@ -1241,7 +1302,13 @@
       "scenarios": [
         {
           "key": "default",
-          "label": "已完成資料"
+          "label": "已完成資料",
+          "mentorScene": "mentee-profile"
+        },
+        {
+          "key": "empty",
+          "label": "尚未補齊選填資料",
+          "mentorScene": "mentee-profile-empty"
         }
       ],
       "components": [
@@ -1261,7 +1328,11 @@
       "group": "導師與個人頁",
       "module": "frontend",
       "route": "/profile/100/edit",
-      "tickets": [],
+      "tickets": [
+        "828",
+        "959",
+        "862"
+      ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
       "sourceKind": "frontend",
@@ -1269,11 +1340,18 @@
       "scenarios": [
         {
           "key": "default",
-          "label": "已有資料"
+          "label": "已有資料",
+          "mentorScene": "mentee-edit"
         },
         {
           "key": "empty",
-          "label": "尚未填寫"
+          "label": "尚未填寫",
+          "mentorScene": "mentee-edit"
+        },
+        {
+          "key": "avatar",
+          "label": "編輯學員頭像",
+          "mentorScene": "mentee-avatar"
         }
       ],
       "components": [
@@ -1534,7 +1612,7 @@
       "id": "chat",
       "name": "站內聊聊",
       "group": "訊息與聯絡",
-      "description": "站內聊聊 v25 · 60 個完整互動情境",
+      "description": "站內聊聊 v26 · 60 個完整互動情境",
       "module": "chat",
       "tickets": [
         "654",
