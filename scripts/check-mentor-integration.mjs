@@ -13,7 +13,9 @@ const data = context.window.HUB_DATA;
 const original = structuredClone(data.screens);
 vm.runInContext(read('mentor/registry.js').toString(),context);
 const routes = context.window.MENTOR_SCREENS;
-assert.deepEqual(data.screens.map(s=>s.id).join(),original.map(s=>s.id).join());
+const flows={'mentor-growth':'#746','mentor-plans':'#837','mentor-income':'#843','booking-payment':'#841','team-support':'#829','feedback-tip':'#834'};
+assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows)].join());
+assert.equal(new Set(data.screens.map(s=>s.id)).size,data.screens.length);
 for (const screen of original) {
   const current = data.screens.find(s=>s.id===screen.id);
   assert.equal(current.module,screen.module);
@@ -28,13 +30,15 @@ for(const [id,entry] of Object.entries(routes)){
     const page=context.window.mentorEntryPath(id,key)+'index.html';
     assert.ok(existsSync(new URL(page,root)),page);
   }
-  assert.equal(entry.ticket,entry.role==='mentee'?'#828':'#830');
+  assert.equal(entry.ticket,flows[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
 }
 assert.equal(routes['mentor-form'].scenes['owner-edit'],'owner-edit');
 assert.equal(routes['mentee-edit'].scenes.default,'mentee-edit');
-assert.deepEqual(Object.keys(routes['mentor-calendar'].scenes),['owner-return']);
+assert.equal(routes['mentor-calendar'].scenes.owner,'owner-filled');
+assert.equal(data.screens.find(s=>s.id==='mentor-calendar').name,'我的導師頁面');
+assert.equal(routes['mentor-plans'].scenes['plan-schedule'],'plan-schedule');
 assert.equal(routes['mentor-calendar'].sourceScreen,'public-profile');
-assert.equal(routes['public-profile'],undefined);
+assert.equal(routes['public-profile'].scenes.default,'public-plans');
 const {hashes} = JSON.parse(read('mentor/source.json'));
 for(const [file,expected] of Object.entries(hashes))assert.equal(createHash('sha256').update(read('mentor/'+file)).digest('hex'),expected);
 console.log('Mentor integration passed: unique routes, role contracts, legacy scenarios and imported assets.');

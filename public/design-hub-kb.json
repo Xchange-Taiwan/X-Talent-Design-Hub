@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-19T02:02:03.124Z",
+  "syncedAt": "2026-11-19T03:00:31.443Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -8,12 +8,12 @@
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
   "summary": {
-    "totalScreens": 30,
+    "totalScreens": 36,
     "totalComponents": 32,
     "existingStorybookMappedCount": 11,
     "newCompositeDesignsCount": 18,
     "totalStorybookStories": 548,
-    "trackedTicketsCount": 28
+    "trackedTicketsCount": 37
   },
   "tickets": [
     {
@@ -131,13 +131,53 @@
       "name": "預約與聊聊整合"
     },
     {
+      "id": "746",
+      "name": "成長總覽",
+      "date": "2026-11-19"
+    },
+    {
       "id": "828",
       "name": "學員個人頁與整頁編輯",
       "date": "2026-11-19"
     },
     {
+      "id": "829",
+      "name": "支持開發團隊",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "834",
+      "name": "回饋贊助與同職能推薦",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "837",
+      "name": "方案時段",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "840",
+      "name": "導師公開頁與方案預約",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "841",
+      "name": "方案付款與預約結果",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "843",
+      "name": "收入統計",
+      "date": "2026-11-19"
+    },
+    {
       "id": "862",
       "name": "個人連結新增 GitHub",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "872",
+      "name": "付款結果確認",
       "date": "2026-11-19"
     },
     {
@@ -153,6 +193,11 @@
     {
       "id": "961",
       "name": "導師申請與建立完成",
+      "date": "2026-11-19"
+    },
+    {
+      "id": "962",
+      "name": "導師本人頁與公開頁",
       "date": "2026-11-19"
     }
   ],
@@ -260,10 +305,10 @@
           "id": "mentor-form",
           "name": "導師資料建立",
           "tickets": [
-            "742",
             "830",
             "961",
-            "959"
+            "959",
+            "742"
           ],
           "version": "7",
           "scenariosCount": 11,
@@ -273,9 +318,9 @@
           "id": "mentor-welcome",
           "name": "導師建立完成",
           "tickets": [
-            "742",
             "830",
-            "961"
+            "961",
+            "742"
           ],
           "version": "7",
           "scenariosCount": 4,
@@ -286,29 +331,35 @@
           "name": "導師公開頁",
           "route": "/profile/1",
           "tickets": [
+            "830",
+            "840",
             "736",
+            "758",
+            "654",
+            "862",
+            "962",
             "774",
             "274",
             "753",
-            "756",
-            "758",
-            "830"
+            "756"
           ],
           "version": "11/07 會議 · 聊聊整合",
-          "scenariosCount": 7,
+          "scenariosCount": 13,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=public-profile"
         },
         {
           "id": "mentor-calendar",
-          "name": "導師行事曆",
+          "name": "我的導師頁面",
           "route": "/profile/100",
           "tickets": [
+            "830",
+            "837",
+            "962",
             "736",
-            "274",
-            "830"
+            "274"
           ],
           "version": "交付稿 2026.10",
-          "scenariosCount": 4,
+          "scenariosCount": 7,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-calendar"
         },
         {
@@ -510,6 +561,79 @@
       ]
     },
     {
+      "group": "導師管理後台",
+      "count": 3,
+      "screens": [
+        {
+          "id": "mentor-growth",
+          "name": "成長總覽",
+          "tickets": [
+            "746"
+          ],
+          "version": "048a516",
+          "scenariosCount": 13,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-growth"
+        },
+        {
+          "id": "mentor-plans",
+          "name": "方案時段",
+          "tickets": [
+            "837"
+          ],
+          "version": "048a516",
+          "scenariosCount": 10,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-plans"
+        },
+        {
+          "id": "mentor-income",
+          "name": "收入統計",
+          "tickets": [
+            "843"
+          ],
+          "version": "048a516",
+          "scenariosCount": 12,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-income"
+        }
+      ]
+    },
+    {
+      "group": "付款與贊助",
+      "count": 3,
+      "screens": [
+        {
+          "id": "booking-payment",
+          "name": "方案付款與預約結果",
+          "tickets": [
+            "841",
+            "872"
+          ],
+          "version": "048a516",
+          "scenariosCount": 9,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=booking-payment"
+        },
+        {
+          "id": "team-support",
+          "name": "支持開發團隊",
+          "tickets": [
+            "829"
+          ],
+          "version": "048a516",
+          "scenariosCount": 7,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=team-support"
+        },
+        {
+          "id": "feedback-tip",
+          "name": "回饋贊助與同職能推薦",
+          "tickets": [
+            "834"
+          ],
+          "version": "048a516",
+          "scenariosCount": 7,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=feedback-tip"
+        }
+      ]
+    },
+    {
       "group": "獨立探索原型 (Standalone Screens)",
       "count": 2,
       "screens": [
@@ -704,10 +828,10 @@
       "description": "FR-01 · 表單與主要狀態",
       "module": "742",
       "tickets": [
-        "742",
         "830",
         "961",
-        "959"
+        "959",
+        "742"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -787,9 +911,9 @@
       "description": "FR-02 · 導師卡與設定時段",
       "module": "742",
       "tickets": [
-        "742",
         "830",
-        "961"
+        "961",
+        "742"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -1185,13 +1309,17 @@
       "module": "frontend",
       "route": "/profile/1",
       "tickets": [
+        "830",
+        "840",
         "736",
+        "758",
+        "654",
+        "862",
+        "962",
         "774",
         "274",
         "753",
-        "756",
-        "758",
-        "830"
+        "756"
       ],
       "date": "2026-11-08",
       "version": "11/07 會議 · 聊聊整合",
@@ -1200,31 +1328,68 @@
       "scenarios": [
         {
           "key": "default",
-          "label": "簡介與收藏"
+          "label": "簡介與收藏",
+          "mentorScene": "public-plans"
         },
         {
           "key": "guest",
-          "label": "訪客 · 個人頁"
+          "label": "訪客 · 個人頁",
+          "mentorScene": "public-plans"
         },
         {
           "key": "login",
-          "label": "登入攔截"
+          "label": "登入攔截",
+          "mentorScene": "public-plans"
         },
         {
           "key": "saved",
-          "label": "收藏成功"
+          "label": "收藏成功",
+          "mentorScene": "public-plans"
         },
         {
           "key": "failure",
-          "label": "收藏失敗 · 可重試"
+          "label": "收藏失敗 · 可重試",
+          "mentorScene": "public-plans"
         },
         {
           "key": "reviews",
-          "label": "評價與分頁"
+          "label": "評價與分頁",
+          "mentorScene": "public-reviews"
         },
         {
           "key": "no-reviews",
-          "label": "尚無評價"
+          "label": "尚無評價",
+          "mentorScene": "public-no-reviews"
+        },
+        {
+          "key": "public-mentor",
+          "label": "導師身分瀏覽",
+          "mentorScene": "public-mentor"
+        },
+        {
+          "key": "public-no-plans",
+          "label": "尚未開放預約",
+          "mentorScene": "public-no-plans"
+        },
+        {
+          "key": "public-unavailable",
+          "label": "方案皆未上架",
+          "mentorScene": "public-unavailable"
+        },
+        {
+          "key": "booking-paid",
+          "label": "收費方案與問卷",
+          "mentorScene": "booking-paid"
+        },
+        {
+          "key": "booking-free",
+          "label": "免費方案與問卷",
+          "mentorScene": "booking-free"
+        },
+        {
+          "key": "booking-no-questions",
+          "label": "無事前問卷",
+          "mentorScene": "booking-no-questions"
         }
       ],
       "components": [
@@ -1241,14 +1406,16 @@
     },
     {
       "id": "mentor-calendar",
-      "name": "導師行事曆",
+      "name": "我的導師頁面",
       "group": "導師與個人頁",
       "module": "frontend",
       "route": "/profile/100",
       "tickets": [
+        "830",
+        "837",
+        "962",
         "736",
-        "274",
-        "830"
+        "274"
       ],
       "date": "2026-10-15",
       "version": "交付稿 2026.10",
@@ -1257,7 +1424,8 @@
       "scenarios": [
         {
           "key": "owner",
-          "label": "導師查看"
+          "label": "導師查看",
+          "mentorScene": "owner-filled"
         },
         {
           "key": "schedule",
@@ -1271,6 +1439,21 @@
           "key": "owner-return",
           "label": "D-4 · 從導師編輯返回",
           "mentorScene": "owner-filled"
+        },
+        {
+          "key": "owner-empty",
+          "label": "本人頁 · 無方案／無評價",
+          "mentorScene": "owner-empty"
+        },
+        {
+          "key": "owner-reviews",
+          "label": "本人頁 · 評價",
+          "mentorScene": "owner-reviews"
+        },
+        {
+          "key": "owner-reviews-expanded",
+          "label": "本人頁 · 展開長評價",
+          "mentorScene": "owner-reviews-expanded"
         }
       ],
       "components": [
@@ -1881,6 +2064,423 @@
       ],
       "note": "依 Julie 2026-11-17 #847 決議更新；保留 #729／#771／#772／#775 已核准修正。操作與檢視模式分離，所有資料為原型模擬。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat"
+    },
+    {
+      "id": "mentor-growth",
+      "name": "成長總覽",
+      "group": "導師管理後台",
+      "module": "mentor",
+      "tickets": [
+        "746"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
+      "scenarios": [
+        {
+          "key": "growth-l2",
+          "label": "L2 · 成長總覽",
+          "mentorScene": "growth-l2"
+        },
+        {
+          "key": "growth-intro",
+          "label": "首次進入 · 等級制度介紹",
+          "mentorScene": "growth-intro"
+        },
+        {
+          "key": "growth-empty",
+          "label": "L1 · 尚無會談",
+          "mentorScene": "growth-empty"
+        },
+        {
+          "key": "growth-l1",
+          "label": "L1 · 成長中",
+          "mentorScene": "growth-l1"
+        },
+        {
+          "key": "growth-l3",
+          "label": "L3 · 成長總覽",
+          "mentorScene": "growth-l3"
+        },
+        {
+          "key": "growth-l4",
+          "label": "L4 · 成長總覽",
+          "mentorScene": "growth-l4"
+        },
+        {
+          "key": "growth-l5",
+          "label": "L5 · 最高等級",
+          "mentorScene": "growth-l5"
+        },
+        {
+          "key": "growth-loading",
+          "label": "載入中",
+          "mentorScene": "growth-loading"
+        },
+        {
+          "key": "growth-error",
+          "label": "載入失敗",
+          "mentorScene": "growth-error"
+        },
+        {
+          "key": "growth-updating",
+          "label": "完成會談 · 時數更新中",
+          "mentorScene": "growth-updating"
+        },
+        {
+          "key": "growth-refund",
+          "label": "時數扣回 · 保留已取得等級",
+          "mentorScene": "growth-refund"
+        },
+        {
+          "key": "growth-boundary",
+          "label": "邊界 · 49.99 小時仍為 L1",
+          "mentorScene": "growth-boundary"
+        },
+        {
+          "key": "growth-promoted",
+          "label": "邊界 · 50 小時升為 L2",
+          "mentorScene": "growth-promoted"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "成長總覽",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-growth"
+    },
+    {
+      "id": "mentor-plans",
+      "name": "方案時段",
+      "group": "導師管理後台",
+      "module": "mentor",
+      "tickets": [
+        "837"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plans-filled",
+      "scenarios": [
+        {
+          "key": "plans-filled",
+          "label": "方案列表 · 有方案",
+          "mentorScene": "plans-filled"
+        },
+        {
+          "key": "plans-empty",
+          "label": "方案列表 · 空白",
+          "mentorScene": "plans-empty"
+        },
+        {
+          "key": "plan-new",
+          "label": "新增方案 · 免費",
+          "mentorScene": "plan-new"
+        },
+        {
+          "key": "plan-paid",
+          "label": "新增方案 · 收費／問卷",
+          "mentorScene": "plan-paid"
+        },
+        {
+          "key": "plan-paid-no-bank",
+          "label": "收費上架 · 未設定收款帳戶",
+          "mentorScene": "plan-paid-no-bank"
+        },
+        {
+          "key": "plan-edit",
+          "label": "原地編輯方案",
+          "mentorScene": "plan-edit"
+        },
+        {
+          "key": "plan-custom",
+          "label": "指定開放時段 · 後續版本設計預覽",
+          "mentorScene": "plan-custom"
+        },
+        {
+          "key": "plans-migrated",
+          "label": "原有時段 · 一般預約",
+          "mentorScene": "plans-migrated"
+        },
+        {
+          "key": "plan-schedule",
+          "label": "設定可預約時段",
+          "mentorScene": "plan-schedule"
+        },
+        {
+          "key": "plan-schedule-empty",
+          "label": "尚未設定可預約時段",
+          "mentorScene": "plan-schedule-empty"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "方案時段",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-plans"
+    },
+    {
+      "id": "mentor-income",
+      "name": "收入統計",
+      "group": "導師管理後台",
+      "module": "mentor",
+      "tickets": [
+        "843"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
+      "scenarios": [
+        {
+          "key": "income",
+          "label": "F-3 · 收入總覽",
+          "mentorScene": "income"
+        },
+        {
+          "key": "income-above-ceiling",
+          "label": "F-3 · 累積 NT$6,240／進度滿格",
+          "mentorScene": "income-above-ceiling"
+        },
+        {
+          "key": "income-below-threshold",
+          "label": "F-3 · 尚未達提領門檻",
+          "mentorScene": "income-below-threshold"
+        },
+        {
+          "key": "income-empty",
+          "label": "F-3 · 尚無收入",
+          "mentorScene": "income-empty"
+        },
+        {
+          "key": "income-transactions",
+          "label": "F-3 · 交易紀錄",
+          "mentorScene": "income-transactions"
+        },
+        {
+          "key": "income-transactions-empty",
+          "label": "F-3 · 交易紀錄空狀態",
+          "mentorScene": "income-transactions-empty"
+        },
+        {
+          "key": "income-payouts",
+          "label": "F-3 · 提領紀錄",
+          "mentorScene": "income-payouts"
+        },
+        {
+          "key": "income-payouts-empty",
+          "label": "F-3 · 提領紀錄空狀態",
+          "mentorScene": "income-payouts-empty"
+        },
+        {
+          "key": "income-settings",
+          "label": "F-3 · 收款設定／已驗證",
+          "mentorScene": "income-settings"
+        },
+        {
+          "key": "income-settings-missing",
+          "label": "F-3 · 尚未設定帳戶",
+          "mentorScene": "income-settings-missing"
+        },
+        {
+          "key": "income-settings-reviewing",
+          "label": "F-3 · 帳戶審核中",
+          "mentorScene": "income-settings-reviewing"
+        },
+        {
+          "key": "income-settings-rejected",
+          "label": "F-3 · 審核退件",
+          "mentorScene": "income-settings-rejected"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "收入統計",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-income"
+    },
+    {
+      "id": "booking-payment",
+      "name": "方案付款與預約結果",
+      "group": "付款與贊助",
+      "module": "mentor",
+      "tickets": [
+        "841",
+        "872"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
+      "scenarios": [
+        {
+          "key": "checkout",
+          "label": "G-4 · 付款／15 分鐘保留",
+          "mentorScene": "checkout"
+        },
+        {
+          "key": "checkout-failed",
+          "label": "G-4 · 付款失敗／時段釋放",
+          "mentorScene": "checkout-failed"
+        },
+        {
+          "key": "checkout-closed",
+          "label": "G-4 · 取消付款／時段釋放",
+          "mentorScene": "checkout-closed"
+        },
+        {
+          "key": "checkout-expired",
+          "label": "G-4 · 保留逾時／重選時段",
+          "mentorScene": "checkout-expired"
+        },
+        {
+          "key": "checkout-refunded",
+          "label": "G-4 · 逾時扣款／全額退刷",
+          "mentorScene": "checkout-refunded"
+        },
+        {
+          "key": "payment-processing",
+          "label": "G-5 · 處理中／通知尚未送達",
+          "mentorScene": "payment-processing"
+        },
+        {
+          "key": "payment-return",
+          "label": "G-5 · 自動查詢 → 預約成功",
+          "mentorScene": "payment-return"
+        },
+        {
+          "key": "booking-success",
+          "label": "G-5 · 收費預約成功",
+          "mentorScene": "booking-success"
+        },
+        {
+          "key": "booking-waiting",
+          "label": "G-5 · 免費等待導師回覆",
+          "mentorScene": "booking-waiting"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "方案付款與預約結果",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=booking-payment"
+    },
+    {
+      "id": "team-support",
+      "name": "支持開發團隊",
+      "group": "付款與贊助",
+      "module": "mentor",
+      "tickets": [
+        "829"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=support",
+      "scenarios": [
+        {
+          "key": "support",
+          "label": "C-2 · 選擇支持金額",
+          "mentorScene": "support"
+        },
+        {
+          "key": "support-guest",
+          "label": "C-2 · 訪客支持／不需登入",
+          "mentorScene": "support-guest"
+        },
+        {
+          "key": "support-checkout",
+          "label": "C-3 · 確認支持付款",
+          "mentorScene": "support-checkout"
+        },
+        {
+          "key": "support-failed",
+          "label": "C-3 · 付款失敗／保留內容",
+          "mentorScene": "support-failed"
+        },
+        {
+          "key": "support-cancelled",
+          "label": "C-3 · 外部取消／保留內容",
+          "mentorScene": "support-cancelled"
+        },
+        {
+          "key": "support-timeout",
+          "label": "C-3 · 外部付款逾時／保留內容",
+          "mentorScene": "support-timeout"
+        },
+        {
+          "key": "support-success",
+          "label": "C-3 · 支持完成",
+          "mentorScene": "support-success"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "支持開發團隊",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=team-support"
+    },
+    {
+      "id": "feedback-tip",
+      "name": "回饋贊助與同職能推薦",
+      "group": "付款與贊助",
+      "module": "mentor",
+      "tickets": [
+        "834"
+      ],
+      "date": "2026-11-19",
+      "version": "048a516",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
+      "scenarios": [
+        {
+          "key": "mentee-history",
+          "label": "H-1 · 歷史紀錄／同職能推薦",
+          "mentorScene": "mentee-history"
+        },
+        {
+          "key": "mentee-empty",
+          "label": "H-1 · 尚無預約",
+          "mentorScene": "mentee-empty"
+        },
+        {
+          "key": "mentee-auto-cancelled",
+          "label": "H-1 · 系統自動取消／不可評價",
+          "mentorScene": "mentee-auto-cancelled"
+        },
+        {
+          "key": "tip-feedback",
+          "label": "H-2 · 填寫回饋與贊助",
+          "mentorScene": "tip-feedback"
+        },
+        {
+          "key": "tip-checkout",
+          "label": "H-3 · 確認贊助付款",
+          "mentorScene": "tip-checkout"
+        },
+        {
+          "key": "tip-failed",
+          "label": "H-3 · 付款失敗／僅當下重試",
+          "mentorScene": "tip-failed"
+        },
+        {
+          "key": "tip-success",
+          "label": "H-1 · 已評價／已贊助",
+          "mentorScene": "tip-success"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "回饋贊助與同職能推薦",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=feedback-tip"
     },
     {
       "id": "chat-654",
