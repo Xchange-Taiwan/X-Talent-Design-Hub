@@ -28,6 +28,9 @@
    ["growth-boundary","邊界 · 49.99 小時仍為 L1"],
    ["growth-promoted","邊界 · 50 小時升為 L2"],
   ]},
+  {id:'mentor-bookings',name:'預約管理',role:'mentor',ticket:'#842',icon:'calendar-check',scenarios:[
+   ['bookings-upcoming','即將到來'],['bookings-pending','待您回覆'],['bookings-history','歷史紀錄']
+  ]},
   {id:'mentor-plans',name:'方案時段',role:'mentor',ticket:'#837',icon:'calendar-days',scenarios:[
    ["plans-filled","方案列表 · 有方案"],
    ["plans-empty","方案列表 · 空白"],
@@ -102,13 +105,13 @@
  calendar.name='我的導師頁面';
  for(const flow of flows){
   if(data.screens.some(s=>s.id===flow.id))throw Error('Duplicate screen: '+flow.id);
-  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:'2026-11-19',version:'048a516',sourceKind:'design',source:'https://xtalent-mentor-742.bonny80.chatgpt.site/?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
+  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:'2026-11-19',version:'751c9d7',sourceKind:'design',source:'https://xtalent-mentor-742.bonny80.chatgpt.site/?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
  }
  const ticketLinks={
   'public-profile':['830','840','736','758','654','862','962'], 'mentor-calendar':['830','837','962'],
   'mentor-form':['830','961','959'], 'mentor-welcome':['830','961'],
   'mentee-edit':['828','959','862'], 'mentee-profile':['828','960','862'],
-  'booking-payment':['841','872']
+  'mentor-bookings':['842','746'], 'booking-payment':['841','872']
  };
  const extraScenarios={
   'owner-edit':'D-5 · 編輯導師資料','owner-return':'D-4 · 從導師編輯返回','owner-empty':'本人頁 · 無方案／無評價',

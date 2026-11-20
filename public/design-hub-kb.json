@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-19T03:00:31.443Z",
+  "syncedAt": "2026-11-20T01:18:42.353Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -8,11 +8,11 @@
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
   "summary": {
-    "totalScreens": 36,
+    "totalScreens": 37,
     "totalComponents": 32,
     "existingStorybookMappedCount": 11,
     "newCompositeDesignsCount": 18,
-    "totalStorybookStories": 548,
+    "totalStorybookStories": 593,
     "trackedTicketsCount": 37
   },
   "tickets": [
@@ -562,7 +562,7 @@
     },
     {
       "group": "導師管理後台",
-      "count": 3,
+      "count": 4,
       "screens": [
         {
           "id": "mentor-growth",
@@ -570,9 +570,20 @@
           "tickets": [
             "746"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 13,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-growth"
+        },
+        {
+          "id": "mentor-bookings",
+          "name": "預約管理",
+          "tickets": [
+            "842",
+            "746"
+          ],
+          "version": "751c9d7",
+          "scenariosCount": 3,
+          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-bookings"
         },
         {
           "id": "mentor-plans",
@@ -580,7 +591,7 @@
           "tickets": [
             "837"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 10,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-plans"
         },
@@ -590,7 +601,7 @@
           "tickets": [
             "843"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 12,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-income"
         }
@@ -607,7 +618,7 @@
             "841",
             "872"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 9,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=booking-payment"
         },
@@ -617,7 +628,7 @@
           "tickets": [
             "829"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 7,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=team-support"
         },
@@ -627,7 +638,7 @@
           "tickets": [
             "834"
           ],
-          "version": "048a516",
+          "version": "751c9d7",
           "scenariosCount": 7,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=feedback-tip"
         }
@@ -2074,7 +2085,7 @@
         "746"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "scenarios": [
@@ -2152,6 +2163,43 @@
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-growth"
     },
     {
+      "id": "mentor-bookings",
+      "name": "預約管理",
+      "group": "導師管理後台",
+      "module": "mentor",
+      "tickets": [
+        "842",
+        "746"
+      ],
+      "date": "2026-11-19",
+      "version": "751c9d7",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-upcoming",
+      "scenarios": [
+        {
+          "key": "bookings-upcoming",
+          "label": "即將到來",
+          "mentorScene": "bookings-upcoming"
+        },
+        {
+          "key": "bookings-pending",
+          "label": "待您回覆",
+          "mentorScene": "bookings-pending"
+        },
+        {
+          "key": "bookings-history",
+          "label": "歷史紀錄",
+          "mentorScene": "bookings-history"
+        }
+      ],
+      "components": [
+        "header",
+        "button"
+      ],
+      "note": "預約管理",
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-bookings"
+    },
+    {
       "id": "mentor-plans",
       "name": "方案時段",
       "group": "導師管理後台",
@@ -2160,7 +2208,7 @@
         "837"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plans-filled",
       "scenarios": [
@@ -2231,7 +2279,7 @@
         "843"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "scenarios": [
@@ -2313,7 +2361,7 @@
         "872"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
       "scenarios": [
@@ -2379,7 +2427,7 @@
         "829"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=support",
       "scenarios": [
@@ -2435,7 +2483,7 @@
         "834"
       ],
       "date": "2026-11-19",
-      "version": "048a516",
+      "version": "751c9d7",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
       "scenarios": [

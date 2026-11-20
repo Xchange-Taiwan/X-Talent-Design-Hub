@@ -1,7 +1,7 @@
 {
-  "sourceCommit": "048a51608a8d1e71cfc42a4d5c716f68cf6b7f82",
+  "sourceCommit": "751c9d7ce81426a0a2be4e09a8934f1a6f2e1899",
   "hashes": {
-    "app.js": "68a557e4b95b2ca5646b90c27e3177c83c0a11877ba9046662d522f6e957169e",
+    "app.js": "4670ed6d099be13d988d990867be349417e730b3a67da29481eb97788d9af852",
     "app.css": "7c42e33078096d2f5b5bf430d077ddd52ff8bf93c9c1374df4796f9a34923244"
   },
   "overlay": "scripts/mentor-hub.patch"

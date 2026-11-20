@@ -13,7 +13,7 @@ const data = context.window.HUB_DATA;
 const original = structuredClone(data.screens);
 vm.runInContext(read('mentor/registry.js').toString(),context);
 const routes = context.window.MENTOR_SCREENS;
-const flows={'mentor-growth':'#746','mentor-plans':'#837','mentor-income':'#843','booking-payment':'#841','team-support':'#829','feedback-tip':'#834'};
+const flows={'mentor-growth':'#746','mentor-bookings':'#842','mentor-plans':'#837','mentor-income':'#843','booking-payment':'#841','team-support':'#829','feedback-tip':'#834'};
 assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows)].join());
 assert.equal(new Set(data.screens.map(s=>s.id)).size,data.screens.length);
 for (const screen of original) {

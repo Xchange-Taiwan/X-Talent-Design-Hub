@@ -49,6 +49,10 @@
    return {screen,scene};
   }
   if(page==='mentee-bookings'&&product.dataset.bookingTab!=='history'&&currentScene!=='mentee-empty')return null;
+  if(page==='bookings'){
+   const scene='bookings-'+product.dataset.bookingTab;
+   return {screen:'mentor-bookings',scene};
+  }
   const dest=backendFlows[page] || ({
    checkout:['booking-payment','checkout'],'payment-return':['booking-payment','payment-return'],
    'booking-result':['booking-payment','booking-success'],'mentee-bookings':['feedback-tip','mentee-history']
@@ -76,7 +80,7 @@
   if(!verified && !(registry[screen]?.scenes[scenario]===current && matches(product,screen,current)))return;
   const next = flow ? (matches(product,flow.screen,current)?[flow.screen,flow.scene]:null) : registry[screen]?.scenes[scenario]===current && matches(product,screen,current) ? [screen,scenario]
    : Object.entries(registry).flatMap(([id,entry])=>Object.entries(entry.scenes).filter(([,scene])=>scene===current&&matches(product,id,current)).map(([key])=>[id,key]))[0];
-  const redirect={bookings:['mentor-reservations','default'],'mentor-search':['mentor-search','default'] }[product.dataset.page];
+  const redirect={'mentor-search':['mentor-search','default'] }[product.dataset.page];
   if(redirect && !next){
    if(outbound!==product.dataset.page){outbound=product.dataset.page;send('navigate',{screen:redirect[0],scenario:redirect[1]});}
    return;
