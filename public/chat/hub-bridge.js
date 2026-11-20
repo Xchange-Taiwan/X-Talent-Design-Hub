@@ -1,6 +1,6 @@
 (()=>{
  const post=(type,payload={})=>parent.postMessage({channel:'xt-hub',type,...payload},location.origin);
- const defs=[['chat-files','.sent-file'],['chat-composer','.composer-area'],['chat-list','.conversation-list'],['chat-thread','.chat-room']];
+ const defs=[['reservation','.booking-card'],['chat-files','.sent-file'],['chat-composer','.composer-area'],['chat-list','.conversation-list'],['chat-thread','.chat-room']];
  let inspect=false,selection=null;
  const box=document.createElement('div');box.setAttribute('aria-hidden','true');Object.assign(box.style,{position:'fixed',pointerEvents:'none',border:'2px solid #007aff',borderRadius:'4px',zIndex:2147483647,display:'none'});document.body.append(box);
  const visible=e=>e&&e.getBoundingClientRect().width>0&&e.getBoundingClientRect().height>0&&!e.closest('[hidden]');

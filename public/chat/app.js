@@ -14253,9 +14253,9 @@ var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
 function IconButton({ label, children, onClick, className = "", ...props }) {
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("button", { type: "button", className: `icon-button ${className}`, "aria-label": label, "data-tooltip": label, onClick, ...props, children });
 }
-function Modal({ open, title, children, onClose, actions, className = "" }) {
+function Modal({ open, title, children, onClose, actions, className = "", overlayClassName = "" }) {
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Dialog, { open, onOpenChange: (next) => !next && onClose(), children: /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DialogPortal, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogOverlay, { className: "dialog-overlay" }),
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogOverlay, { className: `dialog-overlay ${overlayClassName}` }),
     /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(DialogContent, { className: `confirm-dialog ${className}`, "aria-describedby": void 0, children: [
       /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogTitle, { children: title }),
       children,
@@ -14310,7 +14310,15 @@ function DeleteConfirmation({ open, onClose, onConfirm }) {
 var import_react6 = __toESM(require_react(), 1);
 
 // src/booking-records.ts
-var bookingSeeds = [{ id: "u1", person: "zahra", tab: "upcoming", date: "2026/11/12", time: "19:00\u201319:30" }, { id: "u2", person: "emily", tab: "upcoming", date: "2026/11/15", time: "20:00\u201320:30" }, { id: "p1", person: "sarah", tab: "pending", date: "2026/11/20", time: "19:00\u201319:30" }, { id: "h1", person: "zahra", tab: "history", date: "2026/10/28", time: "19:00\u201319:30", feedback: { rating: 8, comment: "\u7D66\u4E86\u6211\u5F88\u5177\u9AD4\u7684\u4F5C\u54C1\u96C6\u5EFA\u8B70\uFF0C\u8B93\u6211\u66F4\u6E05\u695A\u4E0B\u4E00\u6B65\u7684\u6E96\u5099\u65B9\u5411\u3002" } }, { id: "h2", person: "emily", tab: "history", date: "2026/10/26", time: "20:00\u201320:30" }, { id: "h3", person: "alex", tab: "history", date: "2026/10/20", time: "19:00\u201319:30", status: "Cancelled" }, { id: "h4", person: "sarah", tab: "history", date: "2026/10/19", time: "20:00\u201320:30", status: "\u5DF2\u5A49\u62D2" }];
+var bookingSeeds = [{ id: "u1", person: "zahra", tab: "upcoming", date: "2026/11/12", time: "19:00\u201319:30" }, { id: "u2", person: "emily", tab: "upcoming", date: "2026/11/15", time: "20:00\u201320:30" }, { id: "p1", person: "sarah", tab: "pending", date: "2026/11/20", time: "19:00\u201319:30" }, { id: "h1", person: "zahra", tab: "history", date: "2026/10/28", time: "19:00\u201319:30", feedback: { rating: 8, comment: "\u7D66\u4E86\u6211\u5F88\u5177\u9AD4\u7684\u4F5C\u54C1\u96C6\u5EFA\u8B70\uFF0C\u8B93\u6211\u66F4\u6E05\u695A\u4E0B\u4E00\u6B65\u7684\u6E96\u5099\u65B9\u5411\u3002" } }, { id: "h2", person: "emily", tab: "history", date: "2026/10/26", time: "20:00\u201320:30" }, { id: "h3", person: "alex", tab: "history", date: "2026/10/20", time: "19:00\u201319:30", status: "\u5DF2\u53D6\u6D88", reasonBy: "mentee", reason: "\u81E8\u6642\u6709\u5DE5\u4F5C\u5B89\u6392\uFF0C\u9700\u8981\u53D6\u6D88\u9019\u6B21\u9810\u7D04\u3002" }, { id: "h4", person: "sarah", tab: "history", date: "2026/10/19", time: "20:00\u201320:30", status: "\u5DF2\u5A49\u62D2", reasonBy: "mentor", reason: "\u9019\u500B\u6642\u6BB5\u7121\u6CD5\u914D\u5408\uFF0C\u671F\u5F85\u4E0B\u6B21\u4EA4\u6D41\u3002" }];
+function privateBookingReason(b, role) {
+  if (b.tab !== "history" || b.reasonBy !== role || !b.reason?.trim() || !["\u5DF2\u5A49\u62D2", "\u5DF2\u53D6\u6D88"].includes(b.status || "")) return null;
+  return { title: b.status === "\u5DF2\u5A49\u62D2" ? "\u5A49\u62D2\u539F\u56E0" : "\u53D6\u6D88\u539F\u56E0", text: b.reason };
+}
+function endBooking(b, role, kind, reason) {
+  if (!reason.trim() || !["pending", "upcoming"].includes(b.tab) || kind === "\u5A49\u62D2\u9810\u7D04" && (role !== "mentor" || b.tab !== "pending")) return b;
+  return { ...b, tab: "history", status: kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5DF2\u5A49\u62D2" : "\u5DF2\u53D6\u6D88", reasonBy: role, reason: reason.trim() };
+}
 
 // src/model.ts
 var asset = (name) => `./assets/753-${name}`;
@@ -14340,9 +14348,10 @@ var initialThreads = () => ({
   sarah: { ...emptyThread(), messages: [msg("s1", false, "\u5F88\u958B\u5FC3\u9019\u6B21\u7684\u4EA4\u6D41\u5C0D\u4F60\u6709\u5E6B\u52A9 \u{1F60A}", days(5, 19, 6))] }
 });
 function initialState(scene2) {
-  const profileScenes = ["favorite-login", "favorite-self", "profile-v2", "profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry", "profile-no-reviews", "reservation-message", "reservation-empty", "reservation-existing", "reservation-failure", "reservation-message-failure"];
+  const profileScenes = ["favorite-login", "favorite-self", "profile-v2", "profile", "guest", "login-failure", "self-profile", "paused", "open-failure", "missing-profile", "mentor-profile", "role-switch", "mobile-entry", "profile-no-reviews", "reservation-message", "reservation-existing", "reservation-failure"];
   const booking = scene2.startsWith("booking-") || scene2 === "feedback-unlisted";
-  const s = { threads: initialThreads(), people: basePeople.map((p) => ({ ...p })), route: { view: profileScenes.includes(scene2) ? "profile" : booking ? "bookings" : "chat", active: ["list", "empty", "list-failure", "search", "unread", "unread-99", "notifications", "empty-unread", "search-short", "search-content"].includes(scene2) ? null : ["invalid-link", "forbidden-link"].includes(scene2) ? "invalid" : "zahra", origin: booking ? "bookings" : "profile" }, member: !["guest", "login-failure", "favorite-login", "favorite-self"].includes(scene2), role: ["self-profile", "mentor-profile", "role-switch"].includes(scene2) || scene2.startsWith("booking-mentor") ? "mentor" : "mentee", search: "", filter: scene2.startsWith("unread") || scene2 === "empty-unread" ? "unread" : "all", scroll: 0, offset: 0, listError: scene2 === "list-failure", profileMode: scene2 === "self-profile" ? "self" : scene2 === "paused" ? "paused" : scene2 === "missing-profile" ? "missing" : "normal", bookingTab: scene2.includes("history") || scene2 === "feedback-unlisted" ? "history" : scene2.includes("pending") ? "pending" : "upcoming" };
+  const s = { threads: initialThreads(), people: basePeople.map((p) => ({ ...p })), route: { view: profileScenes.includes(scene2) ? "profile" : booking ? "bookings" : "chat", active: ["list", "empty", "list-failure", "search", "unread", "unread-99", "notifications", "empty-unread", "search-short", "search-content"].includes(scene2) ? null : ["invalid-link", "forbidden-link"].includes(scene2) ? "invalid" : "zahra", origin: booking ? "bookings" : "profile" }, member: !["guest", "login-failure", "favorite-login", "favorite-self"].includes(scene2), role: ["self-profile", "mentor-profile", "role-switch"].includes(scene2) || scene2.startsWith("booking-mentor") ? "mentor" : "mentee", search: "", filter: scene2.startsWith("unread") || scene2 === "empty-unread" ? "unread" : "all", scroll: 0, offset: 0, listError: scene2 === "list-failure", profileMode: scene2 === "self-profile" ? "self" : scene2 === "paused" ? "paused" : scene2 === "missing-profile" ? "missing" : "normal", bookingTab: scene2.includes("history") || scene2.endsWith("-reasons") || scene2 === "feedback-unlisted" ? "history" : scene2.includes("pending") ? "pending" : "upcoming" };
+  if (scene2 === "booking-mentor-empty" || scene2 === "booking-mentee-empty") s.bookingRecords = [];
   if (profileScenes.includes(scene2) && scene2 !== "reservation-existing" || ["new", "first-failure", "drafts"].includes(scene2)) s.threads.zahra = emptyThread();
   if (scene2 === "guest") s.route = { view: "login", active: null, origin: "profile" };
   if (scene2 === "search") {
@@ -14464,14 +14473,9 @@ function listedPeople(s) {
     return score(b) - score(a);
   });
 }
-function confirmReservation(s, reservation, note, messageFailure) {
+function confirmReservation(s, reservation) {
   if (!s.member || s.role !== "mentee" || s.profileMode !== "normal" || !s.people.some((p) => p.id === reservation.person && !p.deleted) || s.reservations?.some((b) => b.id === reservation.id)) return s;
-  const hasNote = !!note.trim(), messageId = hasNote ? "reservation-" + reservation.id : void 0;
-  const next = { ...s, reservations: [...s.reservations || [], { ...reservation, messageId }] };
-  if (!hasNote) return next;
-  const t = s.threads[reservation.person] || emptyThread();
-  const message = { id: messageId, own: true, text: note, at: now(s), status: messageFailure ? "failed" : "sent", read: false, reason: messageFailure };
-  return { ...next, search: "", filter: "all", scroll: 0, threads: { ...s.threads, [reservation.person]: { ...t, messages: [...t.messages, message], unread: false } }, route: { view: "chat", active: reservation.person, origin: "profile" } };
+  return { ...s, reservations: [...s.reservations || [], { ...reservation }] };
 }
 function readThread(s, id) {
   return { ...s, threads: { ...s.threads, [id]: { ...s.threads[id] || emptyThread(), unread: false } } };
@@ -15080,9 +15084,9 @@ var profileExamplePlans = [{ id: "portfolio", name: "\u4F5C\u54C1\u96C6\u8207\u8
 
 // src/Profile.tsx
 var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
-function Profile({ onContact, mode = "normal", onFind, allowContact = true, allowBooking = false, onBook, initialNote = "", reviewCount = 12, v2 = false, favorite, onFavorite }) {
+function Profile({ onContact, mode = "normal", onFind, allowContact = true, allowBooking = false, onBook, reviewCount = 12, v2 = false, favorite, onFavorite }) {
   const [day, setDay] = (0, import_react9.useState)(17), [month, setMonth] = (0, import_react9.useState)(11), [year, setYear] = (0, import_react9.useState)(2026);
-  const [slot, setSlot] = (0, import_react9.useState)(""), [note, setNote] = (0, import_react9.useState)(initialNote), [confirming, setConfirming] = (0, import_react9.useState)(false), [completed, setCompleted] = (0, import_react9.useState)(false);
+  const [slot, setSlot] = (0, import_react9.useState)(""), [confirming, setConfirming] = (0, import_react9.useState)(false), [completed, setCompleted] = (0, import_react9.useState)(false);
   const reservationKey = (0, import_react9.useState)(() => crypto.randomUUID())[0];
   const changeDate = () => {
     setSlot("");
@@ -15144,9 +15148,6 @@ function Profile({ onContact, mode = "normal", onFind, allowContact = true, allo
             /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("legend", { children: "\u7576\u65E5\u53EF\u9810\u7D04\u6642\u6BB5" }),
             /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: "reservation-slots", children: ["19:00\u201319:30", "20:00\u201320:30", "21:00\u201321:30"].map((time) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { type: "button", "aria-pressed": slot === time, disabled: completed, onClick: () => setSlot(time), children: time }, time)) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("label", { htmlFor: "reservation-note", children: "\u4F60\u60F3\u554F\u5C0E\u5E2B\u7684\u554F\u984C\uFF08\u9078\u586B\uFF09" }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("textarea", { id: "reservation-note", className: "form-textarea", placeholder: "\u7C21\u55AE\u5206\u4EAB\u4F60\u60F3\u8A0E\u8AD6\u7684\u554F\u984C\u2026", value: note, disabled: completed, onChange: (e) => setNote(e.target.value) }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-help", children: "\u6709\u586B\u5BEB\u554F\u984C\u6642\uFF0C\u9810\u7D04\u6210\u529F\u5F8C\u6703\u9001\u5230\u8207\u5C0E\u5E2B\u7684\u804A\u804A\u3002" }),
           /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", disabled: !slot || completed, onClick: () => setConfirming(true), children: completed ? "\u9810\u7D04\u5DF2\u6210\u7ACB" : "\u78BA\u8A8D\u9810\u7D04" }),
           completed && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-success", role: "status", children: "\u9810\u7D04\u5DF2\u6210\u7ACB\uFF0C\u7B49\u5F85\u5C0E\u5E2B\u56DE\u8986\u3002" })
         ] }),
@@ -15156,7 +15157,7 @@ function Profile({ onContact, mode = "normal", onFind, allowContact = true, allo
     /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(Modal, { open: confirming, title: "\u78BA\u8A8D\u9810\u7D04\u8CC7\u8A0A", onClose: () => setConfirming(false), actions: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "outline-button", onClick: () => setConfirming(false), children: "\u8FD4\u56DE" }),
       /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("button", { className: "primary-button", disabled: completed, onClick: () => {
-        if (onBook({ id: reservationKey + "-" + date + "-" + slot, person: "zahra", date, time: slot }, note)) {
+        if (onBook({ id: reservationKey + "-" + date + "-" + slot, person: "zahra", date, time: slot })) {
           setCompleted(true);
           setConfirming(false);
         }
@@ -15167,11 +15168,7 @@ function Profile({ onContact, mode = "normal", onFind, allowContact = true, allo
         date,
         " \xB7 ",
         slot
-      ] }),
-      note.trim() ? /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u4F60\u60F3\u554F\u5C0E\u5E2B\u7684\u554F\u984C" }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: "reservation-note-preview", children: note })
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { children: "\u672A\u586B\u5BEB\u554F\u984C\u7559\u8A00" })
+      ] })
     ] })
   ] });
 }
@@ -15481,11 +15478,11 @@ function Chat({ state: s, setState, open, back, find, send, retry, toast }) {
 var import_react11 = __toESM(require_react(), 1);
 var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
 function Bookings({ state: s, setState, contact, toast, heading, showHours = false, feedbackUnlisted = false }) {
-  const [cards, setCards] = (0, import_react11.useState)(() => feedbackUnlisted ? bookingSeeds.map((card) => card.id === "h1" ? { ...card, feedback: { ...card.feedback, isPublic: false } } : card) : bookingSeeds), [expanded, setExpanded] = (0, import_react11.useState)(null), [action, setAction] = (0, import_react11.useState)(null), [reply, setReply] = (0, import_react11.useState)(""), [feedback, setFeedback] = (0, import_react11.useState)(null);
-  (0, import_react11.useEffect)(() => {
-    setCards((current) => [...(s.reservations || []).filter((b) => !current.some((c) => c.id === b.id)).map((b) => ({ id: b.id, person: b.person, date: b.date, time: b.time, tab: "pending" })), ...current]);
-  }, [s.reservations]);
-  const mentor = s.role === "mentor", tab = s.bookingTab, allCards = cards, rows = allCards.filter((b) => b.tab === tab);
+  const cards = s.bookingRecords || bookingSeeds.map((card) => feedbackUnlisted && card.id === "h1" ? { ...card, feedback: { ...card.feedback, isPublic: false } } : card);
+  const allReservations = [...(s.reservations || []).filter((b) => !cards.some((c) => c.id === b.id)).map((b) => ({ ...b, tab: "pending" })), ...cards];
+  const setCards = (update) => setState((prev) => ({ ...prev, bookingRecords: update(allReservations) }));
+  const [expanded, setExpanded] = (0, import_react11.useState)(null), [action, setAction] = (0, import_react11.useState)(null), [reply, setReply] = (0, import_react11.useState)(""), [feedback, setFeedback] = (0, import_react11.useState)(null);
+  const mentor = s.role === "mentor", tab = s.bookingTab, allCards = allReservations, rows = allCards.filter((b) => b.tab === tab);
   const close = () => {
     setAction(null);
     setReply("");
@@ -15493,7 +15490,8 @@ function Bookings({ state: s, setState, contact, toast, heading, showHours = fal
   function perform() {
     if (!action) return;
     const { card, kind } = action;
-    setCards((all) => all.map((b) => b.id !== card.id ? b : kind === "\u63A5\u53D7\u9810\u7D04" ? { ...b, tab: "upcoming" } : { ...b, tab: "history", status: kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5DF2\u5A49\u62D2" : "Cancelled" }));
+    if (kind !== "\u63A5\u53D7\u9810\u7D04" && !reply.trim()) return;
+    setCards((all) => all.map((b) => b.id !== card.id ? b : kind === "\u63A5\u53D7\u9810\u7D04" ? { ...b, tab: "upcoming" } : endBooking(b, s.role, kind, reply)));
     close();
     toast(kind === "\u63A5\u53D7\u9810\u7D04" ? "\u5DF2\u63A5\u53D7\u9810\u7D04" : kind === "\u5A49\u62D2\u9810\u7D04" ? "\u5DF2\u5A49\u62D2\u9810\u7D04" : "\u5DF2\u53D6\u6D88\u9810\u7D04");
   }
@@ -15510,6 +15508,7 @@ function Bookings({ state: s, setState, contact, toast, heading, showHours = fal
       ] }),
       rows.map((b) => {
         const p = s.people.find((p2) => p2.id === b.person);
+        const reason = privateBookingReason(b, s.role);
         const unlisted = !mentor && b.feedback?.isPublic === false;
         return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("article", { className: `booking-card booking-${b.tab}`, children: [
           /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "booking-identity", children: [
@@ -15541,6 +15540,13 @@ function Bookings({ state: s, setState, contact, toast, heading, showHours = fal
               /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Clock, { size: 16 }),
               b.time
             ] })
+          ] }),
+          reason && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("details", { className: "booking-private-reason", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("summary", { children: [
+              reason.title,
+              /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ChevronDown, { size: 16 })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { children: reason.text })
           ] }),
           expanded === b.id && b.feedback && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: `booking-feedback ${unlisted ? "booking-feedback--unlisted" : ""}`, children: unlisted ? /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
             /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: "\u8A55\u50F9\u672A\u516C\u958B" }),
@@ -15613,7 +15619,7 @@ function Bookings({ state: s, setState, contact, toast, heading, showHours = fal
 function Feedback({ booking, person, mentor, close, save }) {
   const [step, setStep] = (0, import_react11.useState)(1), [answer, setAnswer] = (0, import_react11.useState)(""), [rating, setRating] = (0, import_react11.useState)(10), [comment, setComment] = (0, import_react11.useState)(""), [reason, setReason] = (0, import_react11.useState)(""), [other, setOther] = (0, import_react11.useState)("");
   const mentorDirectSubmit = mentor && step === 1 && answer !== "no";
-  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Modal, { open: true, title: mentor ? "\u78BA\u8A8D\u6703\u8AC7" : "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", onClose: close, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(Modal, { open: true, title: "\u6703\u8AC7\u56DE\u994B", className: "feedback-dialog", overlayClassName: "feedback-overlay", onClose: close, children: [
     /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: "feedback-person", children: [
       /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Avatar, { person }),
       /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { children: [
@@ -15718,7 +15724,7 @@ var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
 var params = new URLSearchParams(location.search);
 var scene = params.get("scene") || "profile";
 var run = params.get("run") || scene + ":" + (params.get("conversation") || "") + ":" + (params.get("reservation") || "") + ":" + (params.get("person") || "");
-var storageKey = "xt-chat-v7:" + run + ":" + (params.get("partner") || "");
+var storageKey = "xt-chat-v8:" + run + ":" + (params.get("partner") || "");
 function restored() {
   let snapshot = null;
   try {
@@ -15738,7 +15744,7 @@ function restored() {
 var initialReview = restored();
 function App() {
   const [state, setState] = (0, import_react12.useState)(initialReview.state), [noticeOpen, setNoticeOpen] = (0, import_react12.useState)(initialReview.presentation.noticeOpen), [toast, setToast] = (0, import_react12.useState)(initialReview.presentation.toast), [openError, setOpenError] = (0, import_react12.useState)(initialReview.presentation.openError), [loginTarget, setLoginTarget] = (0, import_react12.useState)("zahra"), [loginError, setLoginError] = (0, import_react12.useState)(initialReview.presentation.loginError);
-  const stateRef = (0, import_react12.useRef)(state), nextFailure = (0, import_react12.useRef)(scene === "reservation-message-failure" ? "\u7DB2\u8DEF\u9023\u7DDA\u4E2D\u65B7\uFF0C\u8A0A\u606F\u672A\u9001\u51FA\u3002" : null), pendingTimers = (0, import_react12.useRef)([]), toastTimer = (0, import_react12.useRef)(), contactButton = (0, import_react12.useRef)(), storageWarning = (0, import_react12.useRef)(false);
+  const stateRef = (0, import_react12.useRef)(state), nextFailure = (0, import_react12.useRef)(null), pendingTimers = (0, import_react12.useRef)([]), toastTimer = (0, import_react12.useRef)(), contactButton = (0, import_react12.useRef)(), storageWarning = (0, import_react12.useRef)(false);
   stateRef.current = state;
   const unread = Object.values(state.threads).filter((t) => t.unread && isEstablished(t)).length;
   const showToast = (title, body = "", error = true) => {
@@ -15766,26 +15772,18 @@ function App() {
     window.scrollTo(0, 0);
   };
   const bookingFailure = (0, import_react12.useRef)(scene === "reservation-failure");
-  const book = (booking, note) => {
+  const book = (booking) => {
     const current = stateRef.current;
     if (bookingFailure.current) {
       bookingFailure.current = false;
       showToast("\u9810\u7D04\u5931\u6557", "\u76EE\u524D\u7121\u6CD5\u5B8C\u6210\u9810\u7D04\uFF0C\u8ACB\u7A0D\u5F8C\u91CD\u8A66\u3002");
       return false;
     }
-    const reason = note.trim() ? nextFailure.current : null;
-    const next = confirmReservation(current, booking, note, reason || void 0);
+    const next = confirmReservation(current, booking);
     if (next === current) return false;
-    if (note.trim()) nextFailure.current = null;
     stateRef.current = next;
     setState(next);
-    if (note.trim()) {
-      history.pushState({ chatRun: run, route: { view: "chat", active: null, origin: "profile" } }, "", location.href);
-      history.pushState({ chatRun: run, route: next.route }, "", location.href);
-      window.scrollTo(0, 0);
-      if (reason) showToast("\u9810\u7D04\u5DF2\u6210\u7ACB\uFF0C\u7559\u8A00\u50B3\u9001\u5931\u6557", reason);
-      else showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u554F\u984C\u5DF2\u9001\u81F3\u8207\u5C0E\u5E2B\u7684\u804A\u804A\u3002", false);
-    } else showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u7B49\u5F85\u5C0E\u5E2B\u56DE\u8986\u3002", false);
+    showToast("\u9810\u7D04\u5DF2\u6210\u7ACB", "\u7B49\u5F85\u5C0E\u5E2B\u56DE\u8986\u3002", false);
     return true;
   };
   const back = () => history.back();
@@ -15964,7 +15962,7 @@ function App() {
       if (role === "mentor" && state.route.view === "chat" && state.route.active && !isEstablished(state.threads[state.route.active]) && !canMessage({ ...state, role }, state.route.active)) changeRoute({ ...state.route, active: null }, true);
     } }),
     state.member && !["chat", "login", "email"].includes(state.route.view) && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(ChatFab, { unread, onClick: openInbox }),
-    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Profile, { favorite: !!state.favorite, onFavorite: toggleFavorite, v2: scene === "profile-v2", reviewCount: scene === "profile-no-reviews" ? 0 : 12, allowBooking: state.member && state.role === "mentee" && state.profileMode === "normal", onBook: book, initialNote: scene.startsWith("reservation-") && scene !== "reservation-empty" ? "\u4F60\u597D\uFF01\u60F3\u8ACB\u6559 UX \u4F5C\u54C1\u96C6\u7684\u6E96\u5099\u65B9\u5411\u3002" : "", allowContact: !state.member || state.role === "mentee", mode: state.profileMode, onContact: () => contact(), onFind: () => go("pool") }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { hidden: state.route.view !== "profile", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Profile, { favorite: !!state.favorite, onFavorite: toggleFavorite, v2: scene === "profile-v2", reviewCount: scene === "profile-no-reviews" ? 0 : 12, allowBooking: state.member && state.role === "mentee" && state.profileMode === "normal", onBook: book, allowContact: !state.member || state.role === "mentee", mode: state.profileMode, onContact: () => contact(), onFind: () => go("pool") }) }),
     /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: "chat-page", hidden: state.route.view !== "chat", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Chat, { state, setState, open: (id) => openThread(id), back, find: () => go("pool"), send: () => send(), retry: send, toast: showToast }) }),
     /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { hidden: state.route.view !== "bookings", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Bookings, { feedbackUnlisted: scene === "feedback-unlisted", state, setState, contact: (id, bookingId) => contact(id, bookingId), toast: (a, b) => showToast(a, b, false) }) }),
     state.route.view === "login" && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Login, { failed: loginError, onCancel: () => {

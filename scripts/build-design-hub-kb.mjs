@@ -60,6 +60,8 @@ async function main() {
   if (feRegJs) vm.runInContext(feRegJs, sandbox);
   if (cmpMapJs) vm.runInContext(cmpMapJs, sandbox);
   if (chatRegJs) vm.runInContext(chatRegJs, sandbox);
+  const mentorRegistry = await readTextIfExists(path.join(pubDir, 'mentor/registry.js'));
+  if (mentorRegistry) vm.runInContext(mentorRegistry, sandbox);
 
   const HUB_DATA = sandbox.window.HUB_DATA || { tickets: [], screens: [], components: [] };
   const HUB_COMPONENT_MAP = sandbox.window.HUB_COMPONENT_MAP || { existing: {}, newDesigns: {} };
@@ -77,7 +79,7 @@ async function main() {
     sourceKind: s.sourceKind || (s.module === 'frontend' ? 'frontend' : 'delivery-snapshot'),
     sourceUrl: s.source,
     frontendCode: s.frontendCode || undefined,
-    scenarios: (s.scenarios || []).map(([key, label]) => ({ key, label })),
+    scenarios: (s.scenarios || []).map(([key, label]) => ({ key, label, mentorScene: sandbox.window.MENTOR_SCREENS?.[s.id]?.scenes[key] })),
     components: s.components || [],
     note: s.note,
     hubUrl: `${DESIGN_HUB_PROD_URL}/?view=screens&screen=${encodeURIComponent(s.id)}`,

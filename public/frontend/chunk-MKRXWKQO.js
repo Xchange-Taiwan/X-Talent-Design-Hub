@@ -1,0 +1,1 @@
+import{d as O}from"./chunk-RN4BCAPM.js";import{d as E}from"./chunk-5AWST6KG.js";E();var R=(_=>(_.BELOW_ONE_YEAR="1 \u5E74\u4EE5\u4E0B",_.ONE_TO_THREE="1~3 \u5E74",_.THREE_TO_FIVE="3~5 \u5E74",_.FIVE_TO_TEN="5~10 \u5E74",_.OVER_TEN_YEAR="10 \u5E74\u4EE5\u4E0A",_))(R||{}),i=O(R);export{i as a};

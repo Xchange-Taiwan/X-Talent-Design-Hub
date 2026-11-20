@@ -32,3 +32,7 @@ const hub = fs.readFileSync(path.join(root, 'hub.js'), 'utf8');
 assert.equal((hub.match(/if\(p\.module==='chat'\)/g) || []).length, 1);
 assert.equal((hub.match(/doc\.addEventListener\('click'/g) || []).length, 1);
 console.log('Chat integration: 60 unique scenarios, component registration, approved source hashes and local entry assets verified.');
+
+for(const role of ['mentor','mentee']){const screen=data.screens.find(s=>s.id===role+'-reservations');assert.equal(screen.module,'chat');assert.equal(screen.chatRole,role);assert.ok(screen.tickets.includes('847'));}
+assert.ok(hub.includes("p.chatRole?'booking-'+p.chatRole"));
+console.log('Both legacy booking entry points retain URLs and use the shared #847 role-aware cards.');
