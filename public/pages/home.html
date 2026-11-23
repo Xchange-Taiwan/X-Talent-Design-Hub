@@ -7,7 +7,8 @@
  window.openai={widgetState:{privateContent:initial},setWidgetState(value){this.widgetState=value;post('app-state',{state:value.modelContent||{}});return Promise.resolve();}};
  window.addEventListener('error',e=>post('error',{message:e.message,file:e.filename,line:e.lineno,stack:e.error?.stack}));
 })();
-</script></head><body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap">
+</script><style>#xt-home709 .p3-dual-track{max-width:1096px;margin:16px auto 72px;padding:32px 40px;border:1px solid hsl(180 62% 90%);border-radius:16px;background:linear-gradient(110deg,hsl(180 62% 95%),#fff);display:flex;align-items:center;justify-content:space-between;gap:28px}#xt-home709 .p3-dual-track h2{font-size:22px;margin:0 0 10px;font-weight:600}#xt-home709 .p3-dual-track p{font-size:14px;color:hsl(218 10% 31%);line-height:1.9;max-width:700px;margin:0}#xt-home709 .p3-dual-track a{background:hsl(180 64% 48%);border-radius:8px;padding:12px 22px;font-size:14px;white-space:nowrap;text-decoration:none;color:hsl(225 12% 13%)}#xt-home709 .p3-dual-track a:hover{background:hsl(180 64% 39%)}@media(max-width:750px){#xt-home709 .p3-dual-track{margin:16px 20px 40px;padding:24px;display:block}#xt-home709 .p3-dual-track h2{font-size:20px}#xt-home709 .p3-dual-track p{font-size:13px}#xt-home709 .p3-dual-track a{display:inline-block;margin-top:20px}}
+</style></head><body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap">
 <div id="xt-home709" aria-label="X-Talent 首頁 CTA 提案">
   <div class="hp-page">
     <header class="hp-header">
@@ -46,6 +47,7 @@
         <article class="hp-role"><img class="hp-role-photo" data-asset="79215611078998b9" alt="成為 Mentee 主視覺"><div class="hp-role-content"><h2>成為 Mentee，你將可以‧‧‧</h2><div class="hp-benefits"><div><img data-asset="ca8f68ea3d68f01b" alt=""><p>探索產業與<br>職涯發展方向</p></div><div><img data-asset="064cbaccc1f98929" alt=""><p>與經驗豐富的 Mentor<br>互動獲取第一手職涯秘笈</p></div><div><img data-asset="09d2831477639854" alt=""><p>學習更多學校沒教的事<br>讓你快速成長</p></div></div></div></article>
         <div class="hp-join" data-component="Homepage/JoinCTA"><p>成為 Mentor 或 Mentee，展開你的下一段交流。</p><a class="hp-button hp-large cursor-interaction" data-cta="shared" href="https://xtalentdev.vercel.app/auth/signup" target="_blank" rel="noopener noreferrer"><span class="hp-cta-content"><span class="hp-cta-label" data-label="成為 Mentor/Mentee"><span>成為 Mentor/Mentee</span></span><span class="hp-cta-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span></span></a></div>
       </section>
+      <section class="p3-dual-track"><div><h2>一個帳號，雙軌成長</h2><p>註冊後，同一個帳號就能當 Mentee，也能在右上角切換成 Mentor。完成導師資料，即可以 L1 導師身分開始服務，累積有效服務時數升級。</p></div><a href="/auth/signup">加入 X-Talent ↗</a></section>
       <section class="hp-testimonials" aria-label="使用者推薦語" data-component="HomePageSlider"><div class="hp-quotes"></div></section>
       <section class="hp-closing" data-component="Homepage/ClosingCTA" aria-labelledby="hp-closing-title"><div class="hp-width"><h2 id="hp-closing-title">你的下一步，<span class="hp-mobile-break"></span>從一次交流開始。</h2><p>找到適合你的 Mentor，<span class="hp-mobile-break"></span>讓前輩的經驗陪你探索職涯方向。</p><a class="hp-button hp-large cursor-interaction" data-cta="closing" href="https://xtalentdev.vercel.app/mentor-pool" target="_blank" rel="noopener noreferrer"><span class="hp-cta-content"><span class="hp-cta-label" data-label="加入 X-Talent"><span>加入 X-Talent</span></span><span class="hp-cta-arrow" aria-hidden="true"><i data-lucide="arrow-right"></i></span></span></a></div></section>
     </main>
@@ -104,7 +106,7 @@ window.addEventListener('openai:set_globals',event=>{const s=event.detail.global
 })();
 </script>
 <link rel="stylesheet" href="../frontend/carousel.css?v=7e0b26ef42f4">
-<script type="module" src="../frontend/carousel.js?v=c4f17e4189a1"></script>
+<script type="module" src="../frontend/carousel.js?v=d6490cd29c1e"></script>
 <style>
 #xt-home709 .hp-header{position:relative}
 #xt-home709 .hp-account-button{display:grid;place-items:center;width:40px;height:40px;padding:8px;background:white;border:0;border-radius:6px;color:#1d1f25}
@@ -285,4 +287,4 @@ header [data-testid="mobile-header-right"]{gap:16px!important}
  root.querySelector('.hp-menu').hidden=true;
  window.lucide?.createIcons();
 })();
-</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a57be2896f47a7e9',t:'MTc5NDIxNzUyOQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a57be2896f47a7e9',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+</script></body></html>

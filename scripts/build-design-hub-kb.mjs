@@ -63,6 +63,9 @@ async function main() {
   const mentorRegistry = await readTextIfExists(path.join(pubDir, 'mentor/registry.js'));
   if (mentorRegistry) vm.runInContext(mentorRegistry, sandbox);
 
+  for (const file of ['story-references.js','prototype-registry.js','design-components.js','review-sources.js']) {
+    vm.runInContext(await fs.readFile(path.join(pubDir,file),'utf8'),sandbox);
+  }
   const HUB_DATA = sandbox.window.HUB_DATA || { tickets: [], screens: [], components: [] };
   const HUB_COMPONENT_MAP = sandbox.window.HUB_COMPONENT_MAP || { existing: {}, newDesigns: {} };
 
@@ -79,13 +82,23 @@ async function main() {
     sourceKind: s.sourceKind || (s.module === 'frontend' ? 'frontend' : 'delivery-snapshot'),
     sourceUrl: s.source,
     frontendCode: s.frontendCode || undefined,
-    scenarios: (s.scenarios || []).map(([key, label]) => ({ key, label, mentorScene: sandbox.window.MENTOR_SCREENS?.[s.id]?.scenes[key] })),
+    scenarios: (s.scenarios || []).map(([key,label]) => {
+      const src=sandbox.window.hubScreenSource(s,key);
+      return {key,label,mentorScene:src.mentorScene,sourceVersion:src.version,sourceUrl:src.source,
+        sourceCommit:src.commit,hubUrl:DESIGN_HUB_PREVIEW_URL+'/?screen='+encodeURIComponent(s.id)+'&scenario='+encodeURIComponent(key)};
+    }),
     components: s.components || [],
     note: s.note,
+    reviewDecision: s.reviewDecision,
     hubUrl: `${DESIGN_HUB_PROD_URL}/?view=screens&screen=${encodeURIComponent(s.id)}`,
   }));
 
   for (const ms of manifestJson.screens || []) {
+    const owner=screensCatalog.find(x=>x.id===ms.hubScreenId);
+    if(owner){
+      (owner.references ||= []).push({id:ms.id,title:ms.title,url:new URL(ms.path,DESIGN_HUB_PROD_URL).href});
+      continue;
+    }
     if (!screensCatalog.some((x) => x.id === ms.id)) {
       screensCatalog.push({
         id: ms.id,
@@ -116,8 +129,13 @@ async function main() {
       name: c.name,
       label: c.label,
       kind: c.kind,
+      sourceUrl: c.sourceUrl || undefined,
+      examples: c.examples || undefined,
       code: c.code || null,
-      commit: c.commit || HUB_DATA.commit,
+      commit: c.commit || (c.sourceFile || c.sourceComponent ? sandbox.window.MENTOR_RELEASE.commit : c.code ? HUB_DATA.commit : undefined),
+      sourceComponent: c.sourceComponent,
+      sourceFile: c.sourceFile,
+      verifiedAt: c.catalogDate,
       screens: c.screens || [],
       scenario: c.scenario || undefined,
       rules: c.rules || [],
@@ -164,6 +182,8 @@ async function main() {
     designHubProductionUrl: DESIGN_HUB_PROD_URL,
     designHubPreviewUrl: DESIGN_HUB_PREVIEW_URL,
     storybookUrl: STORYBOOK_URL,
+    mentorRelease: sandbox.window.MENTOR_RELEASE,
+    storybookSyncedAt: sbBaselineJson.syncedAt,
     repository: 'Xchange-Taiwan/X-Talent-Design-Hub',
     frontendRepo: HUB_DATA.repo || 'https://github.com/Xchange-Taiwan/X-Talent-Frontend',
     frontendBaselineCommit: HUB_DATA.commit || '',
@@ -171,7 +191,7 @@ async function main() {
       totalScreens: screensCatalog.length,
       totalComponents: componentsCatalog.length,
       existingStorybookMappedCount: Object.keys(HUB_COMPONENT_MAP.existing || {}).length,
-      newCompositeDesignsCount: Object.keys(HUB_COMPONENT_MAP.newDesigns || {}).length,
+      newCompositeDesignsCount: Object.keys(HUB_COMPONENT_MAP.newDesigns || {}).filter(id=>!HUB_COMPONENT_MAP.existing[id]).length,
       totalStorybookStories: sbBaselineJson.totalStories || 0,
       trackedTicketsCount: tickets.length,
     },

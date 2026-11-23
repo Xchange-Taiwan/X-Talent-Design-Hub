@@ -1,4 +1,4 @@
-#xt742 .fr-review,#xt742 .fr-review-shortcuts,#xt742 .fr-review-note {display:none}
+#xt742 .fr-review,#xt742 .fr-review-shortcuts,#xt742 .fr-review-note:not(.fr-audit .fr-review-note) {display:none}
 #xt742 .xt-device-stage {margin:0;padding:0}
 #xt742 .xt-device-stage .xt-device-surface {width:100%;max-width:none;border:0;border-radius:0;box-shadow:none}
 #xt742 .xt-device-stage .xt-device-surface .xt-product {height:100dvh;max-height:none}

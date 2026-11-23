@@ -14,7 +14,7 @@ const original = structuredClone(data.screens);
 vm.runInContext(read('mentor/registry.js').toString(),context);
 const routes = context.window.MENTOR_SCREENS;
 const flows={'mentor-growth':'#746','mentor-bookings':'#842','mentor-plans':'#837','mentor-income':'#843','booking-payment':'#841','team-support':'#829','feedback-tip':'#834'};
-assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows)].join());
+assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows),'mentor-audit','mentor-components'].join());
 assert.equal(new Set(data.screens.map(s=>s.id)).size,data.screens.length);
 for (const screen of original) {
   const current = data.screens.find(s=>s.id===screen.id);
@@ -23,6 +23,7 @@ for (const screen of original) {
   for(const [key,label] of screen.scenarios)assert.equal(current.scenarios.find(([k])=>k===key)?.[1],label);
   if(!routes[screen.id])assert.deepEqual(JSON.parse(JSON.stringify(current)),screen);
 }
+const nativeTickets={'mentor-search':'#839','mentor-audit':'#742','mentor-components':'#742'};
 for(const [id,entry] of Object.entries(routes)){
   const screen=data.screens.find(s=>s.id===id);
   for(const key of Object.keys(entry.scenes)){
@@ -30,7 +31,7 @@ for(const [id,entry] of Object.entries(routes)){
     const page=context.window.mentorEntryPath(id,key)+'index.html';
     assert.ok(existsSync(new URL(page,root)),page);
   }
-  assert.equal(entry.ticket,flows[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
+  assert.equal(entry.ticket,flows[id]??nativeTickets[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
 }
 for(const scene of ['mentee-history','tip-feedback','tip-feedback-paid','tip-checkout','tip-success']){
   assert.equal(routes['feedback-tip'].scenes[scene],scene);

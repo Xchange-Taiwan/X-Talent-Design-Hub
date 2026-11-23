@@ -24,6 +24,13 @@ async function main() {
     iframeUrl: `${STORYBOOK_URL}/iframe.html?id=${encodeURIComponent(e.id)}&viewMode=story`
   }));
 
+  const references = {};
+  for (const story of stories) {
+    const name = story.title.split('/').pop();
+    if (!references[name] || story.name === 'Default') references[name] = story.id;
+  }
+  await fs.writeFile('public/story-references.js', 'window.HUB_STORY_REFERENCES = '+JSON.stringify(references,null,2)+';\n');
+
   const outPath = path.resolve(process.cwd(), 'public', 'storybook-baseline.json');
   await fs.writeFile(
     outPath,

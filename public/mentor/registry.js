@@ -1,13 +1,29 @@
 // Only these screen/scenario pairs may use the mentor prototype.
 // All other scenarios keep their original module and URL.
 (() => {
+ const release = window.MENTOR_RELEASE = {
+  version:72,commit:'dbc28b1984955a6f3f1b8686e7555c9b3cc01259',date:'2026-11-23',
+  url:'https://xtalent-mentor-742.bonny80.chatgpt.site/'
+ };
+ const versionLabel='v'+release.version+' · '+release.commit.slice(0,7);
+ const formStates = {
+  'work-new':'新增工作經驗','education-new':'新增教育經歷','links-empty':'尚無個人連結',
+  'required-error':'必填驗證','image-error':'照片上傳失敗','link-error':'連結格式錯誤',
+  'period-error':'年份錯誤',saving:'儲存中',leave:'未儲存離開'
+ };
+ const searchStates = {
+  'mentor-search':'G-1 · 導師搜尋與等級標章','mentor-search-filters':'G-1 · 技能與主題篩選',
+  'mentor-search-empty':'G-1 · 無符合結果'
+ };
+ const sameKeys = obj => Object.fromEntries(Object.keys(obj).map(key=>[key,key]));
  const entries = {
+  'mentor-search':{role:'mentee',ticket:'#839',nativePage:'mentor-search',marker:'main.p2-search',scenes:sameKeys(searchStates)},
   'mentor-form': {
    role:'mentor', ticket:'#830',
-   scenes:{fresh:'fresh',partial:'partial',complete:'complete','work-empty':'work-empty','education-empty':'education-empty','save-error':'save-error','owner-edit':'owner-edit'}
+   scenes:{...sameKeys(formStates),fresh:'fresh',partial:'partial',complete:'complete','work-empty':'work-empty','education-empty':'education-empty','save-error':'save-error','owner-edit':'owner-edit'}
   },
   'mentor-calendar': {role:'mentor',ticket:'#830',sourceScreen:'public-profile',scenes:{owner:'owner-filled','owner-return':'owner-filled','owner-empty':'owner-empty','owner-reviews':'owner-reviews','owner-reviews-expanded':'owner-reviews-expanded'}},
-  'public-profile':{role:'mentor',ticket:'#840',scenes:{"default": "public-plans", "guest": "public-plans", "login": "public-plans", "saved": "public-plans", "failure": "public-plans", "reviews": "public-reviews", "no-reviews": "public-no-reviews", "public-mentor": "public-mentor", "public-no-plans": "public-no-plans", "public-unavailable": "public-unavailable", "booking-paid": "booking-paid", "booking-no-questions": "booking-no-questions", "booking-free": "booking-free"}},
+  'public-profile':{role:'mentor',ticket:'#840',scenes:{public:"public","default": "public-plans", "guest": "public-plans", "login": "public-plans", "saved": "public-plans", "failure": "public-plans", "reviews": "public-reviews", "no-reviews": "public-no-reviews", "public-mentor": "public-mentor", "public-no-plans": "public-no-plans", "public-unavailable": "public-unavailable", "booking-paid": "booking-paid", "booking-no-questions": "booking-no-questions", "booking-free": "booking-free"}},
   'mentor-welcome': {role:'mentor',ticket:'#830',scenes:{welcome:'welcome','card-back':'card-back'}},
   'mentee-profile': {role:'mentee',ticket:'#828',scenes:{default:'mentee-profile',empty:'mentee-profile-empty'}},
   'mentee-edit': {role:'mentee',ticket:'#828',scenes:{default:'mentee-edit',empty:'mentee-edit',avatar:'mentee-avatar'}}
@@ -29,7 +45,8 @@
    ["growth-promoted","邊界 · 50 小時升為 L2"],
   ]},
   {id:'mentor-bookings',name:'預約管理',role:'mentor',ticket:'#842',icon:'calendar-check',scenarios:[
-   ['bookings-upcoming','即將到來'],['bookings-pending','待您回覆'],['bookings-history','歷史紀錄']
+   ['bookings-upcoming','即將到來'],['bookings-pending','待您回覆'],['bookings-history','歷史紀錄'],
+   ['bookings-empty','預約管理 · 空清單'],['bookings-auto-cancelled','免費預約 · 系統自動取消']
   ]},
   {id:'mentor-plans',name:'方案時段',role:'mentor',ticket:'#837',icon:'calendar-days',scenarios:[
    ["plans-filled","方案列表 · 有方案"],
@@ -77,7 +94,7 @@
    ["support-timeout","C-3 · 外部付款逾時／保留內容"],
    ["support-success","C-3 · 支持完成"],
   ]},
-  {id:'feedback-tip',name:'回饋贊助與同職能推薦',version:'v72 · dbc28b1',date:'2026-11-23',role:'mentee',ticket:'#834',icon:'messages-square',scenarios:[
+  {id:'feedback-tip',name:'回饋贊助與同職能推薦',role:'mentee',ticket:'#834',icon:'messages-square',scenarios:[
    ["mentee-history","H-1 · 歷史紀錄／同職能推薦"],
    ["mentee-empty","H-1 · 尚無預約"],
    ["mentee-auto-cancelled","H-1 · 系統自動取消／不可評價"],
@@ -90,6 +107,13 @@
  ];
  for(const flow of flows){
   entries[flow.id]={role:flow.role,ticket:flow.ticket,flow:true,scenes:Object.fromEntries(flow.scenarios.map(([scene])=>[scene,scene]))};
+ }
+ const reviewPages = [
+  {id:'mentor-audit',name:'導師規格對照',scene:'audit',marker:'.fr-audit',icon:'clipboard-check',note:'導師站 v72 的 FR 規格對照與驗收入口。來源備註依原型交付版本保留。'},
+  {id:'mentor-components',name:'導師元件展示',scene:'components',marker:'.fr-components',icon:'component',note:'導師站 v72 的可操作元件範例與使用情境。'}
+ ];
+ for(const {id,scene,marker} of reviewPages){
+  entries[id]={role:'reviewer',ticket:'#742',nativePage:scene,marker,scenes:{[scene]:scene}};
  }
  window.MENTOR_SCREENS = entries;
  window.mentorEntryPath = (screen, scenario) => {
@@ -106,15 +130,25 @@
  calendar.name='我的導師頁面';
  for(const flow of flows){
   if(data.screens.some(s=>s.id===flow.id))throw Error('Duplicate screen: '+flow.id);
-  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:flow.date||'2026-11-19',version:flow.version||'751c9d7',sourceKind:'design',source:'https://xtalent-mentor-742.bonny80.chatgpt.site/?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
+  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:release.date,version:versionLabel,sourceKind:'design',source:release.url+'?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
+ }
+ for(const {id,name,scene,icon,note} of reviewPages){
+  data.screens.push({id,name,module:'mentor',group:'設計對照',tickets:['742'],icon,date:release.date,
+   version:versionLabel,sourceKind:'design',source:release.url+'?scene='+scene,
+   scenarios:[[scene,name]],components:['button'],note});
  }
  const ticketLinks={
+  'mentor-search':['839'],
   'public-profile':['830','840','736','758','654','862','962'], 'mentor-calendar':['830','837','962'],
-  'mentor-form':['830','961','959'], 'mentor-welcome':['830','961'],
+  'mentor-form':['830','961','959','750'], 'mentor-welcome':['830','961','747'],
+  'mentor-growth':['746','744','745','749','748'],
+  'mentor-components':['742','746','837','843','736','840','841','842','834','829','839'],
+  'mentor-audit':['742','830','837','829','834','839','750','747','745','736','746','832','744','749','752','748','751','840','872','841','842','843'],
   'mentee-edit':['828','959','862'], 'mentee-profile':['828','960','862'],
   'mentor-bookings':['842','746'], 'booking-payment':['841','872']
  };
  const extraScenarios={
+  ...formStates,...searchStates,public:'學員看導師 · 等級公開／時數隱藏',
   'owner-edit':'D-5 · 編輯導師資料','owner-return':'D-4 · 從導師編輯返回','owner-empty':'本人頁 · 無方案／無評價',
   'owner-reviews':'本人頁 · 評價','owner-reviews-expanded':'本人頁 · 展開長評價',
   empty:'尚未補齊選填資料',avatar:'編輯學員頭像','public-mentor':'導師身分瀏覽',
@@ -130,7 +164,15 @@
    if(entry.scenes[key]&&!screen.scenarios.some(([value])=>value===key))screen.scenarios.push([key,label]);
   }
  }
- for(const [id,name] of Object.entries({...Object.fromEntries(flows.map(f=>[f.ticket.slice(1),f.name])),840:'導師公開頁與方案預約',872:'付款結果確認',962:'導師本人頁與公開頁',828:'學員個人頁與整頁編輯',862:'個人連結新增 GitHub',959:'方案 A 共用編輯頁',960:'學員個人顯示頁',961:'導師申請與建立完成'})){
+ const earlierTickets = {
+  744:'L1–L5 成長狀態、進度與前台文案',745:'有效服務時數與 L1–L5 等級機制',747:'Mentor 啟用清單',
+  748:'Mentor 註冊、啟用與 L1–L5 驗收',749:'狀態、響應式與無障礙規格',750:'單頁表單補齊欄位引導文案',
+  751:'規劃 Mentor 品質治理制度',752:'Mentor 成長體驗 API、權限與資料模型'
+ };
+ for(const [id,name] of Object.entries(earlierTickets)){
+  if(!data.tickets.some(t=>t.id===id))data.tickets.push({id,name});
+ }
+ for(const [id,name] of Object.entries({...Object.fromEntries(flows.map(f=>[f.ticket.slice(1),f.name])),839:'尋找導師與篩選',840:'導師公開頁與方案預約',872:'付款結果確認',962:'導師本人頁與公開頁',828:'學員個人頁與整頁編輯',862:'個人連結新增 GitHub',959:'方案 A 共用編輯頁',960:'學員個人顯示頁',961:'導師申請與建立完成'})){
   if(!data.tickets.some(t=>t.id===id))data.tickets.push({id,name,date:'2026-11-19'});
  }
 })();

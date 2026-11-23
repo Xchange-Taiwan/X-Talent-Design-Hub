@@ -30,3 +30,9 @@ html,body{min-width:1120px}.app-header{min-width:1120px}.context-top{flex-wrap:n
 body{height:100dvh;overflow:hidden}.main{height:calc(100dvh - 64px);display:flex;flex-direction:column;min-height:0}.context{flex:none}.screens-view{display:flex;flex:1;flex-direction:column;min-height:0}.canvas{min-height:0;flex:1}.canvas #frame-wrap{height:100%}.canvas iframe#product{height:100%;min-height:0}
 /* Keep the selected 768px / 390px preview width inside the frame, too. */
 .canvas #frame-wrap{border:0;box-shadow:0 0 0 1px #d1d1d659,0 4px 18px #1c1c1e05}
+
+.inspector-title {cursor:grab;touch-action:none;user-select:none}
+.inspector-title:active {cursor:grabbing}
+.inspector-title button {cursor:pointer}
+.inspector {max-width:calc(100vw - 8px);max-height:calc(100dvh - 8px)}
+.context-component .component-state.is-story {background:#f0f1f4;color:#545962}

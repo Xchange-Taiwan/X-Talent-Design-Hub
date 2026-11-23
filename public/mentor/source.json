@@ -1,15 +1,9 @@
 {
-  "sourceCommit": "751c9d7ce81426a0a2be4e09a8934f1a6f2e1899",
+  "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
   "hashes": {
-    "app.js": "e2658ba09f27c89e65c06faa46df19e4ebb78f458a68852b70dc630d3729ee9b",
-    "app.css": "60ac79204da25a52c58838d5e93e8b159fcc679e3a1b7934ef610eeef717fd09"
+    "app.js": "93140e6e44398f7b3426f5cf926402ae6cbf8e18b99121ed7ec190c3795ebd06",
+    "app.css": "58920f416c4b54ae210c2c737efb94f57c62e2444a2a97375271171c5a81dff6"
   },
   "overlay": "scripts/mentor-hub.patch",
-  "ticketOverlays": {
-    "#834": {
-      "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
-      "siteVersion": 72,
-      "patch": "scripts/mentor-feedback-834.patch"
-    }
-  }
+  "siteVersion": 72
 }
