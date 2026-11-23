@@ -314,9 +314,30 @@
   usedOn('mentor-bookings','bookings-upcoming','status-pill');
   usedOn('feedback-tip','mentee-history','booking-contact reservation-details booking-tabs');
   usedOn('mentee-edit','default','leave-editor-dialog inline-validation');
-  usedOn('mentor-search','mentor-search','level-badge mentor-header');
+  usedOn('mentor-search','default','level-badge mentor-header favorites-header favorite-card favorite-toggle');
+  usedOn('mentor-search','menu','account-menu identity-switch');
+  usedOn('mentor-search','favorite-login','favorite-login');
+  usedOn('favorites','default','level-badge pool-card favorite-card favorite-toggle favorites-header');
+  usedOn('favorites','empty-favorites','favorites-empty');
   usedOn('mentor-audit','audit','mentor-header');
   usedOn('mentor-components','components','mentor-header');
+  // The shared account header is also available from ordinary product routes.
+  // Pick a signed-in example for screens that include guest or modal fixtures.
+  const accountExamples={
+    home:'mentee-cta',about:'member-mentee',privacy:'member-mentee',terms:'member-mentee',history:'default','login-feedback':'empty','mentor-form':'owner-edit',
+    'mentor-welcome':'welcome','mentor-search':'menu','public-profile':'public',
+    'mentor-calendar':'owner','mentee-profile':'default','mentee-edit':'default','mentee-card':'default',
+    'mentor-reservations':'default','mentee-reservations':'default',favorites:'default',chat:'list',
+    'mentor-growth':'growth-l2','mentor-bookings':'bookings-upcoming','mentor-plans':'plans-filled',
+    'mentor-income':'income','booking-payment':'checkout','team-support':'support','feedback-tip':'mentee-history',
+    'mentor-audit':'audit','mentor-components':'components','role-switch':'role-shared','mentee-growth':'growth',
+    milestones:'growth','growth-report':'report-owner'
+  };
+  for(const [id,example] of Object.entries(accountExamples)) {
+    const screen=get(id);
+    if(!screen.tickets.includes('890'))screen.tickets.push('890');
+    usedOn(id,example,'mentor-header identity-trigger identity-switch');
+  }
   const authScreens={
     signin:['SignInForm','登入表單','form'], signup:['SignUpForm','註冊與條款同意','form'],
     verify:['EmailVerificationPage','驗證信箱','main'],verified:['EmailVerifiedPresentation','信箱驗證結果','main'],
@@ -336,10 +357,28 @@
     reservation:'.xt730-history-item,.booking-card',input:'main input:not([type=hidden])',textarea:'main textarea',
     hero:'.hp-hero',quote:'.hp-quotes',chip:'.xt-compact-chip',member:'.xt-member-card',booking:'.xt-welcome-next',
     profile:'.xt-profile-block,.editor-section','chat-files':'.sent-file','chat-composer':'.composer-area','chat-list':'.conversation-list','chat-thread':'.chat-room',
-    'mentor-filter':'.f753-filter,[aria-label*="篩選"]','booking-form':'.xc-booking-dialog,.reservation-form',
+    'mentor-filter':'.p2-filter-dialog,.f753-filter,[aria-label*="篩選"]','booking-form':'.xc-booking-dialog,.reservation-form',
+    'favorites-header':'[data-hub-component="favorites-header"],header.identity-header',
+    'favorite-toggle':'[data-hub-component="favorite-toggle"],.mp-actions button[aria-pressed],.p2-card-save',
+    'favorite-login':'[data-hub-component="favorite-login"],[role="dialog"]:has(.f753-primary)',
+    'favorite-card':'[data-hub-component="favorite-card"],.p2-mentor-card',
+    'favorites-empty':'[data-hub-component="favorites-empty"]',
+    'account-menu':'[data-hub-component="account-menu"],.identity-menu',
     'notification-bell':'[aria-label="通知"],[aria-label="開啟通知選單"]'
   };
   for(const c of D.components) if(direct[c.id])c.selector=direct[c.id];
+  const directoryContracts={
+    'favorites-header':{ticket:'890',scene:'mentor-search',rules:['訪客顯示登入與註冊。會員顯示聊聊、通知及帳號選單。','寬度不足時，次要導覽收進選單。']},
+    'account-menu':{ticket:'890',scene:'role-shared',rules:['帳號選單底部分隔線下方顯示目前身分與切換操作。','共用頁可原地切換，選單持續顯示。我的收藏顯示筆數並連至收藏清單。']},
+    'mentor-filter':{ticket:'839',scene:'mentor-search-filters',rules:['技能與主題可複選，產業單選。套用後顯示符合任一選取條件的導師。','可單獨移除已套用條件，或清除全部。']}
+  };
+  for(const [id,details] of Object.entries(directoryContracts)){
+    const c=D.components.find(c=>c.id===id);
+    c.rules=details.rules;
+    c.sourceUrl=mentor+'?scene='+details.scene;
+    c.mapping='導師中心 v72 · #'+details.ticket+'，Storybook 提供相關基礎元件對照。';
+    c.changes.push({ticket:details.ticket,date:'2026-11-23',text:details.rules[0]});
+  }
   const review=D.components.find(c=>c.id==='mentor-reviews');
   review.rules=['簡介與「評價 N」共用底線分頁；無評價仍顯示 0。摘要顯示平均分數與滿分 10 分。',
     '每筆顯示預設頭像、遮罩姓名、分數與日期；保留評語換行。',

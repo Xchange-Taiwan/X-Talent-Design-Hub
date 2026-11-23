@@ -15,6 +15,8 @@
       url:'https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/'+(decision.issue||decision.ticket)+'#issuecomment-'+decision.comment};
   }
   window.hubScreenSource = (screen,key) => {
+    const alias = window.hubScenarioDestination(screen.id,key);
+    if (alias) return window.hubScreenSource(data.screens.find(s=>s.id===alias.screen),alias.scenario);
     const entry = window.MENTOR_SCREENS[screen.id];
     const scene = entry?.scenes[key] || (screen.module === 'identity' ? key : null);
     if (scene) {
@@ -23,6 +25,7 @@
         date:release.date,source:release.url+'?scene='+encodeURIComponent(scene),commit:release.commit,
         note:(entry?.ticket||'#890')+' · '+scene};
     }
+    if (screen.id==='history') return {...screen,note:'#730 單場回饋互動範例 · '+(screen.scenarios.find(([value])=>value===key)?.[1]||key)};
     if (screen.module==='growth') return {...screen,source:'https://xtalent-mentee-growth.bonny80.chatgpt.site/?scene='+encodeURIComponent(key)};
     return screen;
   };

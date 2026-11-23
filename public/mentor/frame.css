@@ -4,3 +4,33 @@
 #xt742 .xt-device-stage .xt-device-surface .xt-product {height:100dvh;max-height:none}
 html:not(.verified) #xt742 {visibility:hidden}
 .mentor-inspect {position:fixed;pointer-events:none;z-index:2147483647;border:2px solid #007aff;border-radius:4px}
+
+/* Single-session feedback uses the #730/#740 queue's card treatment. */
+#xt742 .xt-overlay-anchor>div:has(+.fr-booking-dialog.feedback-dialog){
+  background:#1d1f2538;
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+#xt742 .fr-booking-dialog.feedback-dialog{box-shadow:0 12px 28px #00000012}
+#xt742 .fr-booking-dialog.feedback-dialog .reason-options,
+#xt742 .fr-booking-dialog.feedback-dialog .choice-row{display:grid;gap:6px}
+#xt742 .fr-booking-dialog.feedback-dialog .choice-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label{
+  display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 12px;
+  border:1px solid hsl(var(--color-background-border));border-radius:6px;
+  background:hsl(var(--color-background-white));font-size:14px;line-height:20px;cursor:pointer;
+}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) input{width:16px;height:16px;margin:0}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:hover,
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:has(:checked){background:var(--color-brand-50)}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:has(:checked){border-color:hsl(var(--color-brand-700))}
+@media(max-width:640px){#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label{min-height:44px}}
+
+/* The embedded canvas can be shorter than a product page, even at desktop width. */
+body[data-xt-device] .identity-menu[role=dialog] {
+  display:flex;flex-direction:column;
+  max-height:var(--radix-popover-content-available-height,calc(100dvh - 80px));
+  overflow-y:auto;
+}
+.identity-menu nav{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.identity-menu .identity-options{flex:none}

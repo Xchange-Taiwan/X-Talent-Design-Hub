@@ -17,10 +17,15 @@
  };
  const sameKeys = obj => Object.fromEntries(Object.keys(obj).map(key=>[key,key]));
  const entries = {
-  'mentor-search':{role:'mentee',ticket:'#839',nativePage:'mentor-search',marker:'main.p2-search',scenes:sameKeys(searchStates)},
+  favorites:{role:'mentee',ticket:'#753',nativePage:'favorites',marker:'main.p2-favorites',
+   scenes:{default:'mentor-search',one:'mentor-search','empty-favorites':'mentor-search'}},
+  'mentor-search':{role:'mentee',ticket:'#839',nativePage:'mentor-search',marker:'main.p2-search',scenes:{
+   default:'mentor-search',guest:'mentor-search',menu:'mentor-search',empty:'mentor-search-empty',
+   'no-ratings':'mentor-search','favorite-login':'mentor-search',...sameKeys(searchStates)
+  }},
   'mentor-form': {
    role:'mentor', ticket:'#830',
-   scenes:{...sameKeys(formStates),fresh:'fresh',partial:'partial',complete:'complete','work-empty':'work-empty','education-empty':'education-empty','save-error':'save-error','owner-edit':'owner-edit'}
+   scenes:{...sameKeys(formStates),fresh:'fresh',partial:'partial',complete:'complete','work-empty':'work-empty','education-empty':'education-empty','save-error':'save-error','owner-edit':'owner-edit','name-edit':'owner-edit','service-open':'complete','work-filled':'complete','education-filled':'complete'}
   },
   'mentor-calendar': {role:'mentor',ticket:'#830',sourceScreen:'public-profile',scenes:{owner:'owner-filled','owner-return':'owner-filled','owner-empty':'owner-empty','owner-reviews':'owner-reviews','owner-reviews-expanded':'owner-reviews-expanded'}},
   'public-profile':{role:'mentor',ticket:'#840',scenes:{public:"public","default": "public-plans", "guest": "public-plans", "login": "public-plans", "saved": "public-plans", "failure": "public-plans", "reviews": "public-reviews", "no-reviews": "public-no-reviews", "public-mentor": "public-mentor", "public-no-plans": "public-no-plans", "public-unavailable": "public-unavailable", "booking-paid": "booking-paid", "booking-no-questions": "booking-no-questions", "booking-free": "booking-free"}},
@@ -28,6 +33,15 @@
   'mentee-profile': {role:'mentee',ticket:'#828',scenes:{default:'mentee-profile',empty:'mentee-profile-empty'}},
   'mentee-edit': {role:'mentee',ticket:'#828',scenes:{default:'mentee-edit',empty:'mentee-edit',avatar:'mentee-avatar'}}
  };
+ // The booking aliases use the same current cards (including feedback and private
+ // reasons) as the dashboard. The independent chat demos still exercise T01–T10.
+ entries.history={role:'mentee',ticket:'#834',bookingPage:'mentee-bookings',scenes:{default:'mentee-history'}};
+ entries['mentor-reservations']={role:'mentor',ticket:'#842',bookingPage:'bookings',scenes:{
+  default:'bookings-upcoming',pending:'bookings-pending',history:'bookings-history',empty:'bookings-empty'
+ }};
+ entries['mentee-reservations']={role:'mentee',ticket:'#834',bookingPage:'mentee-bookings',scenes:{
+  default:'mentee-history',pending:'mentee-history',history:'mentee-history',empty:'mentee-empty'
+ }};
  const flows=[
   {id:'mentor-growth',name:'成長總覽',role:'mentor',ticket:'#746',icon:'chart-no-axes-combined',scenarios:[
    ["growth-l2","L2 · 成長總覽"],
@@ -115,17 +129,31 @@
  for(const {id,scene,marker} of reviewPages){
   entries[id]={role:'reviewer',ticket:'#742',nativePage:scene,marker,scenes:{[scene]:scene}};
  }
+ // Legacy completion shortcuts are outcomes, so show the corresponding current
+ // page and select its matching sidebar item when an old deep link is opened.
+ const welcomeDestinations={
+  'personal-profile':{screen:'mentor-calendar',scenario:'owner'},
+  'booking-settings':{screen:'mentor-plans',scenario:'plan-schedule'}
+ };
+ window.hubScenarioDestination=(screen,scenario)=>screen==='mentor-welcome'?welcomeDestinations[scenario]:undefined;
  window.MENTOR_SCREENS = entries;
  window.mentorEntryPath = (screen, scenario) => {
   if(screen==='mentee-profile')return 'mentor/profile/100/';
   if(screen==='mentee-edit')return 'mentor/profile/100/edit/';
-  if(screen==='mentor-form'&&scenario==='owner-edit')return 'mentor/profile/1/edit/';
+  if(screen==='mentor-form'&&entries[screen].scenes[scenario]==='owner-edit')return 'mentor/profile/1/edit/';
   if(screen==='public-profile')return 'mentor/public/';
   if(screen==='mentor-calendar')return 'mentor/profile/1/';
   return 'mentor/';
  };
  if (!window.HUB_DATA) return;
  const data=window.HUB_DATA;
+ const directory=data.screens.find(s=>s.id==='mentor-search');
+ directory.scenarios.push(['favorite-login','訪客收藏 · 登入後返回該導師']);
+ Object.assign(directory,{date:release.date,version:versionLabel,sourceKind:'design',source:release.url+'?scene=mentor-search'});
+ directory.note='G-1 導師搜尋、等級與篩選沿用 #839。登入頁首與帳號選單共用 #890，導師卡沿用 #737 評分及 #753 收藏規則。';
+ const favorites=data.screens.find(s=>s.id==='favorites');
+ Object.assign(favorites,{date:release.date,version:'#753 · 共用 v72 導師卡',
+   note:'沿用 #753 的收藏清單與空狀態。卡片、導師等級和資料與尋找導師共用，收藏也同步到導師個人頁。'});
  const calendar=data.screens.find(s=>s.id==='mentor-calendar');
  calendar.name='我的導師頁面';
  for(const flow of flows){
@@ -138,7 +166,8 @@
    scenarios:[[scene,name]],components:['button'],note});
  }
  const ticketLinks={
-  'mentor-search':['839'],
+  'mentor-search':['839','890'],
+  favorites:['753','839','890'],
   'public-profile':['830','840','736','758','654','862','962'], 'mentor-calendar':['830','837','962'],
   'mentor-form':['830','961','959','750'], 'mentor-welcome':['830','961','747'],
   'mentor-growth':['746','744','745','749','748'],

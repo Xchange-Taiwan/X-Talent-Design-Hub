@@ -36,3 +36,36 @@ body{height:100dvh;overflow:hidden}.main{height:calc(100dvh - 64px);display:flex
 .inspector-title button {cursor:pointer}
 .inspector {max-width:calc(100vw - 8px);max-height:calc(100dvh - 8px)}
 .context-component .component-state.is-story {background:#f0f1f4;color:#545962}
+
+/* On narrow devices the existing directory button opens the sidebar over the canvas. */
+@media (max-width:1119px) {
+  html,body,.app-header{min-width:0}
+  .main{margin-left:0;min-width:0}
+  .sidebar{z-index:60;max-width:calc(100vw - 52px);box-shadow:4px 10px 24px #1c1c1e24}
+  .context{padding-inline:16px}
+  .context-top,.context-bottom{min-width:0;flex-wrap:wrap;gap:8px}
+  .screens-view{padding:10px 12px 12px}
+}
+@media (max-width:650px) {
+  .app-header{padding-inline:8px;gap:8px}
+  .brand{gap:2px}
+  .brand strong{display:none}
+  .main-nav{margin-left:0;gap:0}
+  .main-nav button{padding:6px 10px;min-width:0}
+  .ticket-filter{min-width:0;flex:1}
+  .ticket-filter select{width:100%;min-width:0;max-width:100%}
+  .context{padding:8px}
+  .context-top,.context-bottom{gap:4px 6px}
+  .context-top .page-heading{flex:1 1 calc(100% - 90px);min-width:0}
+  .context-top h1{font-size:17px;line-height:1.35}
+  .context-top :is(#reset,#share){order:1}
+  .context-top :is(.device-control,.mode-control){order:2;margin:0}
+  .context-top :is(.device-control,.mode-control) button{padding:4px 8px;min-width:0}
+  .context-bottom{margin-top:6px}
+  .context-bottom .related{min-width:0;max-width:100%}
+  .context-bottom #related-tags{display:flex;max-width:100%;gap:4px;overflow-x:auto}
+  .context-bottom .scenario-field{margin:0;max-width:100%;min-width:0;flex:1 1 170px}
+  .scenario-field select{flex:1;min-width:0;width:0}
+  .screens-view{padding:4px}
+  .inspector{right:4px;bottom:4px;max-width:calc(100vw - 8px)}
+}

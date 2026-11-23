@@ -33,7 +33,10 @@ window.attachCatalogInspector = function(frame,entries,isInspecting,selected) {
   const visible=el=>el.getClientRects().length && !el.closest('[hidden],[inert]') &&
     !(doc.querySelector('[role="dialog"][data-state="open"]') && el.closest('[aria-hidden="true"]') && !el.closest('[role="dialog"]'));
   const items=()=>entries().filter(c=>c.selector);
-  const target=c=>Array.from(doc.querySelectorAll(c.selector)).find(visible);
+  function target(component){
+    const header=doc.querySelector('.hub-account-host')?.shadowRoot;
+    return [...(header?.querySelectorAll(component.selector)||[]),...doc.querySelectorAll(component.selector)].find(visible);
+  }
   let marked;
   const css=doc.createElement('style');
   css.textContent='[data-hub-highlight]{outline:2px solid #007aff!important;outline-offset:-2px!important}';

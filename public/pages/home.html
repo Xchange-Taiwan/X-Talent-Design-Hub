@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta name="darkreader-lock"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>X-Talent existing delivery</title><style>html{color-scheme:light!important;background:#fff}body{margin:0;background:#fff;font-family:"Noto Sans TC",sans-serif;color:#1e2026}*{box-sizing:border-box}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #1a7a7a;outline-offset:2px}[hidden]{display:none!important}.cursor-interaction{cursor:pointer}button:disabled{cursor:default}</style><script src="../lucide.min.js"></script><script>(() => {
+<!doctype html><html lang="zh-Hant"><head><meta name="darkreader-lock"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>X-Talent existing delivery</title><style>html{color-scheme:light!important;background:#fff}body{margin:0;background:#fff;font-family:"Noto Sans TC",sans-serif;color:#1e2026}*{box-sizing:border-box}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #1a7a7a;outline-offset:2px}[hidden]{display:none!important}.cursor-interaction{cursor:pointer}button:disabled{cursor:default}</style><script src="../lucide.min.js?v=3411692820cb"></script><script>(() => {
  const params=new URLSearchParams(location.search),module=params.get('module'),device=params.get('device')||'desktop',scenario=params.get('scenario')||'default';
  const post=(type,rest={})=>parent.postMessage({channel:'xt-hub',type,...rest},location.origin);
  window.HUB_BOOT={module,device,scenario,post,controls:{},initialized:false};
@@ -8,7 +8,7 @@
  window.addEventListener('error',e=>post('error',{message:e.message,file:e.filename,line:e.lineno,stack:e.error?.stack}));
 })();
 </script><style>#xt-home709 .p3-dual-track{max-width:1096px;margin:16px auto 72px;padding:32px 40px;border:1px solid hsl(180 62% 90%);border-radius:16px;background:linear-gradient(110deg,hsl(180 62% 95%),#fff);display:flex;align-items:center;justify-content:space-between;gap:28px}#xt-home709 .p3-dual-track h2{font-size:22px;margin:0 0 10px;font-weight:600}#xt-home709 .p3-dual-track p{font-size:14px;color:hsl(218 10% 31%);line-height:1.9;max-width:700px;margin:0}#xt-home709 .p3-dual-track a{background:hsl(180 64% 48%);border-radius:8px;padding:12px 22px;font-size:14px;white-space:nowrap;text-decoration:none;color:hsl(225 12% 13%)}#xt-home709 .p3-dual-track a:hover{background:hsl(180 64% 39%)}@media(max-width:750px){#xt-home709 .p3-dual-track{margin:16px 20px 40px;padding:24px;display:block}#xt-home709 .p3-dual-track h2{font-size:20px}#xt-home709 .p3-dual-track p{font-size:13px}#xt-home709 .p3-dual-track a{display:inline-block;margin-top:20px}}
-</style></head><body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap">
+</style><link rel="stylesheet" href="../pages/account-adapter.css?v=537c2d445df6"></head><body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap">
 <div id="xt-home709" aria-label="X-Talent 首頁 CTA 提案">
   <div class="hp-page">
     <header class="hp-header">
@@ -262,15 +262,19 @@ header [data-testid="mobile-header-right"]{gap:16px!important}
 (() => {
  const role=window.HUB_BOOT.scenario.startsWith('mentor-')?'mentor':window.HUB_BOOT.scenario.startsWith('mentee-')?'mentee':'guest';
  const root=document.querySelector('#xt-home709');
+ function updateRoleCtas(role){
  for(const a of root.querySelectorAll('[data-cta]')){
   const shared=a.dataset.cta==='shared';
   const label=shared?(role==='guest'?'成為 Mentor/Mentee':role==='mentor'?'開放預約時段':'成為 Mentor'):(role==='guest'?'加入 X-Talent':'尋找導師');
   const screen=shared?(role==='guest'?'signup':role==='mentor'?'mentor-calendar':'mentor-form'):(role==='guest'?'signup':'mentor-search');
   a.dataset.hubNav=screen;
-  if(shared&&role==='mentor')a.dataset.hubScenario='schedule';
+  if(shared&&role==='mentor')a.dataset.hubScenario='schedule';else delete a.dataset.hubScenario;
   a.href=screen==='signup'?'/auth/signup':screen==='mentor-search'?'/mentor-pool':screen==='mentor-calendar'?'/profile/100?open-schedule=true':'/profile/100/edit?role=mentor';
   const text=a.querySelector('.hp-cta-label');text.dataset.label=label;text.firstElementChild.textContent=label;
  }
+ }
+ window.updateHubHomeRole=updateRoleCtas;
+ updateRoleCtas(role);
  if(role==='guest')return;
  const auth=root.querySelector('.hp-auth');auth.innerHTML=`<button class="hp-account-button" aria-label="通知" aria-expanded="false" data-home-pop="notifications"><i data-lucide="bell"></i></button><button class="hp-account-button" aria-label="帳號選單" aria-expanded="false" data-home-pop="account"><img src="/frontend/assets/753-user.png" alt="Jamie"></button>`;
  const menu=document.createElement('div');menu.className='hp-account-pop';menu.hidden=true;root.querySelector('.hp-header').append(menu);
@@ -287,4 +291,4 @@ header [data-testid="mobile-header-right"]{gap:16px!important}
  root.querySelector('.hp-menu').hidden=true;
  window.lucide?.createIcons();
 })();
-</script></body></html>
+</script><script defer src="../pages/account-adapter.js?v=0151626fcfc3"></script></body></html>

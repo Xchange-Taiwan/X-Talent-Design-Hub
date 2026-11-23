@@ -23,7 +23,14 @@ for (const screen of original) {
   for(const [key,label] of screen.scenarios)assert.equal(current.scenarios.find(([k])=>k===key)?.[1],label);
   if(!routes[screen.id])assert.deepEqual(JSON.parse(JSON.stringify(current)),screen);
 }
-const nativeTickets={'mentor-search':'#839','mentor-audit':'#742','mentor-components':'#742'};
+// Links saved before #839 / #890 must open the same directory and account menu as the new scenarios.
+const directory=routes['mentor-search'];
+for (const [legacy,source] of Object.entries({default:'mentor-search',guest:'mentor-search',menu:'mentor-search',empty:'mentor-search-empty','no-ratings':'mentor-search'})) {
+  assert.equal(directory.scenes[legacy],source,'Stale directory entry: '+legacy);
+}
+for(const scenario of ['default','one','empty-favorites'])assert.equal(routes.favorites.scenes[scenario],'mentor-search');
+assert.equal(routes.favorites.marker,'main.p2-favorites');
+const nativeTickets={favorites:'#753',history:'#834','mentor-reservations':'#842','mentee-reservations':'#834','mentor-search':'#839','mentor-audit':'#742','mentor-components':'#742'};
 for(const [id,entry] of Object.entries(routes)){
   const screen=data.screens.find(s=>s.id===id);
   for(const key of Object.keys(entry.scenes)){
@@ -33,10 +40,25 @@ for(const [id,entry] of Object.entries(routes)){
   }
   assert.equal(entry.ticket,flows[id]??nativeTickets[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
 }
+for (const [role,page] of [['mentor','bookings'],['mentee','mentee-bookings']]) {
+  const entry=routes[role+'-reservations'];
+  assert.equal(entry.bookingPage,page);
+  const scenarios=original.find(s=>s.id===role+'-reservations').scenarios;
+  for(const [key] of scenarios)assert.ok(entry.scenes[key],role+' booking alias missing its native state: '+key);
+}
+assert.equal(routes.history.scenes.default,'mentee-history');
+for(const key of ['form','rating','failure'])assert.equal(routes.history.scenes[key],undefined,'Keep the specific #730 diagnostic fixture');
 for(const scene of ['mentee-history','tip-feedback','tip-feedback-paid','tip-checkout','tip-success']){
   assert.equal(routes['feedback-tip'].scenes[scene],scene);
 }
 assert.equal(routes['mentor-form'].scenes['owner-edit'],'owner-edit');
+for(const [key,source] of Object.entries({'name-edit':'owner-edit','service-open':'complete','work-filled':'complete','education-filled':'complete'})){
+  assert.equal(routes['mentor-form'].scenes[key],source);
+  const page=context.window.mentorEntryPath('mentor-form',key)+'index.html';
+  assert.match(read(page).toString(),/legacy-states\.js/);
+}
+assert.equal(context.window.hubScenarioDestination('mentor-welcome','personal-profile').screen,'mentor-calendar');
+assert.equal(context.window.hubScenarioDestination('mentor-welcome','booking-settings').scenario,'plan-schedule');
 assert.equal(routes['mentee-edit'].scenes.default,'mentee-edit');
 assert.equal(routes['mentor-calendar'].scenes.owner,'owner-filled');
 assert.equal(data.screens.find(s=>s.id==='mentor-calendar').name,'我的導師頁面');

@@ -8,12 +8,15 @@
  if(screen==='mentor-growth' && scenario!=='growth-intro') {
    try {localStorage.setItem('xtalent-level-intro-v1','seen');} catch {}
  }
+ let entryBookingTab=screen==='history'?'history':registry[screen]?.bookingPage && ({default:'upcoming',pending:'pending',history:'history',empty:'upcoming'})[scenario];
  let identityFixture = screen === 'role-switch';
  let verified = false, openingEmptyEditor = screen === 'mentee-edit' && scenario === 'empty';
  const send = (type, payload = {}) => parent.postMessage({channel:'xt-hub', type, token, ...payload}, location.origin);
  const matches = (product, id, scene) => {
   const entry = registry[id];
   if (!entry) return false;
+  if (entry.bookingPage) return product.dataset.page===entry.bookingPage && !product.dataset.contribution
+   && roleOf()===entry.role && !!product.querySelector('main.booking-page');
   // The design review pages and the native search page have a stable page root, rather
   // than the profile/commerce role markers provided by the imported product.
   if (entry.nativePage) return product.dataset.page===entry.nativePage && !!product.querySelector(entry.marker);
@@ -33,6 +36,8 @@
   textarea:'main textarea', chip:'.xt-compact-chip', profile:'main[data-hub-screen]', avatar:'.fr-portrait,.xt-profile-identity img',
   toast:'[role=status]', button:'main button'
  };
+ let lastRole;
+ const roleOf = () => document.querySelector('.xt-product[data-member="guest"]')?'guest':document.querySelector('.identity-header[data-role]')?.dataset.role;
  let inspect = false, outline, lastIds = '', queued = false, outbound = '', lastPerson = '';
  function clear(){outline?.remove(); outline=null;}
  function locate(id, scroll){
@@ -76,10 +81,35 @@
  function refresh(){
   const product=document.querySelector('.xt-product');
   if(!product)return;
+  const role=roleOf();
+  if(role && role!==lastRole){lastRole=role;send('identity-role',{role});}
   // #890 keeps its account popover mounted while switching the underlying page.
   // #840 deliberately demonstrates the booking guard on the preceding search page.
   if(identityFixture||(screen==='public-profile'&&scenario==='public-mentor'&&product.dataset.page==='mentor-search')){
     if(!verified){verified=true;document.documentElement.classList.add('verified');send('ready');}return;
+  }
+  const alias=registry[screen];
+  if(alias?.bookingPage && matches(product,screen)){
+    const {bookingTab,currentScene}=product.dataset;
+    if(entryBookingTab){
+      // Wait for the imported app's named fixture to finish its own initialization.
+      if(currentScene!==alias.scenes[scenario])return;
+      if(bookingTab!==entryBookingTab){
+       const target=Array.from(product.querySelectorAll('.booking-tabs [role=tab]'))[['upcoming','pending','history'].indexOf(entryBookingTab)];
+       if(target)target.click();
+       return;
+      }
+      entryBookingTab=null;
+    }
+    const viewingHistoryAlias=screen==='history' && bookingTab==='history';
+    const nextScreen=screen==='history' && !viewingHistoryAlias?'mentee-reservations':screen;
+    const key=viewingHistoryAlias?'default':bookingTab==='upcoming'?(currentScene===alias.scenes.empty?'empty':'default'):bookingTab;
+    if(!verified||scenario!==key||screen!==nextScreen){
+     screen=nextScreen;scenario=key;
+     if(!verified){verified=true;document.documentElement.classList.add('verified');send('ready');}
+     send('mentor-view',{screen,scenario,role});
+    }
+    return;
   }
   const flow=currentFlow(product);
   let current=flow?.scene||product.dataset.currentScene;
@@ -92,17 +122,15 @@
    return;
   }
   if(!verified && !(registry[screen]?.scenes[scenario]===current && matches(product,screen,current)))return;
-  // App navigation from the existing profile should still open the Hub's original
-  // favorite-aware directory. Source search fixtures and gallery links stay native.
-  const legacyDirectory = product.dataset.page==='mentor-search' &&
-    !['mentor-search','mentor-audit','mentor-components'].includes(screen);
-  const next = legacyDirectory ? null : flow ? (matches(product,flow.screen,current)?[flow.screen,flow.scene]:null) : registry[screen]?.scenes[scenario]===current && matches(product,screen,current) ? [screen,scenario]
-   : Object.entries(registry).flatMap(([id,entry])=>Object.entries(entry.scenes).filter(([,scene])=>scene===current&&matches(product,id,current)).map(([key])=>[id,key]))[0];
-  const redirect={'mentor-search':['mentor-search','default'] }[product.dataset.page];
-  if(redirect && !next){
-   if(outbound!==product.dataset.page){outbound=product.dataset.page;send('navigate',{screen:redirect[0],scenario:redirect[1]});}
-   return;
-  }
+  const remainsHere=registry[screen]?.scenes[scenario]===current && matches(product,screen,current);
+  let next=remainsHere ? [screen,scenario] : flow ? (matches(product,flow.screen,current)?[flow.screen,flow.scene]:null)
+   : Object.entries(registry).filter(([,entry])=>!entry.bookingPage).flatMap(([id,entry])=>Object.entries(entry.scenes).filter(([,scene])=>scene===current&&matches(product,id,current)).map(([key])=>[id,key]))[0];
+  // Search, profile and dashboard share this React root: keep the current account
+  // menu, edited data and real search selection mounted when the role changes.
+  if(!remainsHere && product.dataset.page==='mentor-search' && matches(product,'mentor-search',current))
+   next=['mentor-search',product.dataset.member==='guest'?'guest':current==='mentor-search-empty'?current:'default'];
+  if(!remainsHere && next?.[0]==='public-profile' && product.dataset.member==='guest' && current==='public-plans')
+   next=['public-profile','guest'];
   if(!next && verified && product.dataset.page==='mentee-bookings'){
    const tab=product.dataset.bookingTab==='pending'?'pending':'default';
    if(outbound!==tab){outbound=tab;send('reservation-view',{scenario:tab});}
@@ -124,6 +152,7 @@
    if(outbound!==target){outbound=target;send('navigate',{screen:next[0],scenario:next[1]});}
    return;
   }
+  window.applyHubLegacyState?.(next[0],next[1],product);
   const returning=!!outbound;
   outbound='';
   if(lastPerson!==person || returning || !verified || next[0]!==screen || next[1]!==scenario){
@@ -131,16 +160,22 @@
    const url=new URL('/'+window.mentorEntryPath(screen,scenario),location.origin);
    for(const [key,value] of Object.entries({screen,scenario,scene:current,token}))url.searchParams.set(key,value);
    if(person)url.searchParams.set('person',person);
+   if(role && role!=='guest')url.searchParams.set('memberRole',role);
    history.replaceState(history.state,'',url);
    if(!verified){verified=true;document.documentElement.classList.add('verified');send('ready');}
-   send('mentor-view',{screen,scenario,person});
+   send('mentor-view',{screen,scenario,person,role});
   }
   const ids=Object.entries(selectors).filter(([,s])=>product.querySelector(s)).map(([id])=>id);
   if(lastIds!==ids.join()){lastIds=ids.join();send('available',{ids});}
  }
  const observer=new MutationObserver(()=>{if(!queued){queued=true;requestAnimationFrame(()=>{queued=false;refresh();});}});
- observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-hub-screen','data-page','data-role','data-current-scene','data-contribution','data-contribution-scene','data-payment-stage','data-person','data-booking-tab']});
- window.addEventListener('hub-favorites',()=>send('navigate',{screen:'favorites',scenario:'default'}));
+ observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-hub-screen','data-page','data-role','data-current-scene','data-contribution','data-contribution-scene','data-payment-stage','data-person','data-booking-tab','data-member']});
+ window.addEventListener('hub-favorites',()=>send('navigate',{screen:'favorites',scenario:'default',role:roleOf()}));
+ window.addEventListener('hub-booking-signin',event=>send('booking-signin',event.detail));
+ window.addEventListener('hub-navigate',event=>{
+  const dest=event.detail;
+  if(dest && typeof dest.screen==='string')send('navigate',{screen:dest.screen,scenario:dest.scenario,role:dest.screen==='signin'?'guest':roleOf()});
+ });
  window.addEventListener('message',e=>{
   if(e.origin!==location.origin||e.source!==parent||e.data?.channel!=='xt-hub')return;
   const m=e.data;

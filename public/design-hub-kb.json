@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-23T13:10:23.301Z",
+  "syncedAt": "2026-11-23T13:41:46.134Z",
   "revision": "github-alignment-2026-11-18",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -10,7 +10,7 @@
     "date": "2026-11-23",
     "url": "https://xtalent-mentor-742.bonny80.chatgpt.site/"
   },
-  "storybookSyncedAt": "2026-11-23T13:02:10.328Z",
+  "storybookSyncedAt": "2026-11-23T13:19:38.308Z",
   "repository": "Xchange-Taiwan/X-Talent-Design-Hub",
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
@@ -310,7 +310,8 @@
           "tickets": [
             "709",
             "710",
-            "836"
+            "836",
+            "890"
           ],
           "version": "GitHub 核對 11/07",
           "scenariosCount": 5,
@@ -322,22 +323,25 @@
           "route": "/mentor-pool",
           "tickets": [
             "839",
+            "890",
             "737",
             "753",
             "756",
             "758"
           ],
-          "version": "11/07 核對 · #737 B",
-          "scenariosCount": 8,
+          "version": "v72 · dbc28b1",
+          "scenariosCount": 9,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-search"
         },
         {
           "id": "about",
           "name": "關於 X-Talent",
           "route": "/about",
-          "tickets": [],
+          "tickets": [
+            "890"
+          ],
           "version": "develop · c6c3660",
-          "scenariosCount": 1,
+          "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=about"
         }
       ]
@@ -352,7 +356,8 @@
           "tickets": [
             "730",
             "731",
-            "735"
+            "735",
+            "890"
           ],
           "version": "4",
           "scenariosCount": 4,
@@ -362,7 +367,8 @@
           "id": "login-feedback",
           "name": "登入回饋",
           "tickets": [
-            "740"
+            "740",
+            "890"
           ],
           "version": "GitHub 核對 11/07",
           "scenariosCount": 7,
@@ -376,7 +382,8 @@
             "774",
             "832",
             "842",
-            "847"
+            "847",
+            "890"
           ],
           "version": "11/17 · #847 原因查看",
           "scenariosCount": 4,
@@ -389,7 +396,8 @@
           "tickets": [
             "774",
             "847",
-            "842"
+            "842",
+            "890"
           ],
           "version": "11/17 · #847 原因查看",
           "scenariosCount": 4,
@@ -409,7 +417,8 @@
             "961",
             "959",
             "750",
-            "742"
+            "742",
+            "890"
           ],
           "version": "7",
           "scenariosCount": 20,
@@ -422,7 +431,8 @@
             "830",
             "961",
             "747",
-            "742"
+            "742",
+            "890"
           ],
           "version": "7",
           "scenariosCount": 4,
@@ -443,7 +453,8 @@
             "774",
             "274",
             "753",
-            "756"
+            "756",
+            "890"
           ],
           "version": "11/07 會議 · 聊聊整合",
           "scenariosCount": 14,
@@ -458,7 +469,8 @@
             "837",
             "962",
             "736",
-            "274"
+            "274",
+            "890"
           ],
           "version": "交付稿 2026.10",
           "scenariosCount": 7,
@@ -471,7 +483,8 @@
           "tickets": [
             "828",
             "960",
-            "862"
+            "862",
+            "890"
           ],
           "version": "develop · c6c3660",
           "scenariosCount": 2,
@@ -484,7 +497,8 @@
           "tickets": [
             "828",
             "959",
-            "862"
+            "862",
+            "890"
           ],
           "version": "develop · c6c3660",
           "scenariosCount": 3,
@@ -495,6 +509,7 @@
           "name": "學員建立完成",
           "route": "/profile/card",
           "tickets": [
+            "890",
             "972"
           ],
           "version": "develop · c6c3660",
@@ -506,13 +521,15 @@
           "name": "我的收藏",
           "route": "/favorites",
           "tickets": [
-            "737",
             "753",
+            "839",
+            "890",
+            "737",
             "754",
             "755",
             "756"
           ],
-          "version": "11/07 核對 · #737 B",
+          "version": "#753 · 共用 v72 導師卡",
           "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=favorites"
         }
@@ -615,18 +632,22 @@
           "id": "privacy",
           "name": "隱私權政策",
           "route": "/privacy",
-          "tickets": [],
+          "tickets": [
+            "890"
+          ],
           "version": "develop · c6c3660",
-          "scenariosCount": 1,
+          "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=privacy"
         },
         {
           "id": "terms",
           "name": "服務條款",
           "route": "/terms",
-          "tickets": [],
+          "tickets": [
+            "890"
+          ],
           "version": "develop · c6c3660",
-          "scenariosCount": 1,
+          "scenariosCount": 3,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=terms"
         },
         {
@@ -658,7 +679,8 @@
             "775",
             "776",
             "777",
-            "847"
+            "847",
+            "890"
           ],
           "version": "25",
           "scenariosCount": 60,
@@ -678,7 +700,8 @@
             "744",
             "745",
             "749",
-            "748"
+            "748",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 13,
@@ -689,7 +712,8 @@
           "name": "預約管理",
           "tickets": [
             "842",
-            "746"
+            "746",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 5,
@@ -699,7 +723,8 @@
           "id": "mentor-plans",
           "name": "方案時段",
           "tickets": [
-            "837"
+            "837",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 10,
@@ -709,7 +734,8 @@
           "id": "mentor-income",
           "name": "收入統計",
           "tickets": [
-            "843"
+            "843",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 12,
@@ -726,7 +752,8 @@
           "name": "方案付款與預約結果",
           "tickets": [
             "841",
-            "872"
+            "872",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 9,
@@ -736,7 +763,8 @@
           "id": "team-support",
           "name": "支持開發團隊",
           "tickets": [
-            "829"
+            "829",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 7,
@@ -746,7 +774,8 @@
           "id": "feedback-tip",
           "name": "回饋贊助與同職能推薦",
           "tickets": [
-            "834"
+            "834",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 8,
@@ -783,7 +812,8 @@
             "872",
             "841",
             "842",
-            "843"
+            "843",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 1,
@@ -803,7 +833,8 @@
             "842",
             "834",
             "829",
-            "839"
+            "839",
+            "890"
           ],
           "version": "v72 · dbc28b1",
           "scenariosCount": 1,
@@ -835,7 +866,8 @@
           "id": "mentee-growth",
           "name": "學員成長紀錄",
           "tickets": [
-            "844"
+            "844",
+            "890"
           ],
           "version": "a790d7b",
           "scenariosCount": 3,
@@ -845,7 +877,8 @@
           "id": "milestones",
           "name": "學員里程碑",
           "tickets": [
-            "845"
+            "845",
+            "890"
           ],
           "version": "a790d7b",
           "scenariosCount": 2,
@@ -855,7 +888,8 @@
           "id": "growth-report",
           "name": "學員成長報告",
           "tickets": [
-            "846"
+            "846",
+            "890"
           ],
           "version": "a790d7b",
           "scenariosCount": 4,
@@ -874,7 +908,8 @@
       "tickets": [
         "709",
         "710",
-        "836"
+        "836",
+        "890"
       ],
       "date": "2026-11-07",
       "version": "GitHub 核對 11/07",
@@ -923,7 +958,10 @@
         "hero",
         "quote",
         "avatar",
-        "dual-track-section"
+        "dual-track-section",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "首頁依身分呈現 CTA。推薦語輪播使用六款專屬插畫，雙軌說明提供註冊入口。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=home"
@@ -937,7 +975,8 @@
       "tickets": [
         "730",
         "731",
-        "735"
+        "735",
+        "890"
       ],
       "date": "2026-10-26",
       "version": "4",
@@ -948,8 +987,10 @@
         {
           "key": "default",
           "label": "歷史紀錄",
-          "sourceVersion": 4,
-          "sourceUrl": "https://xtalent-feedback-730.bonny80.chatgpt.site/",
+          "mentorScene": "mentee-history",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=history&scenario=default"
         },
         {
@@ -981,7 +1022,10 @@
         "rating",
         "textarea",
         "toast",
-        "button"
+        "button",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "以你的交付設計為主。沿用 #730 v4。可填寫、送出及查看回饋。情境切換會重設這一段示範資料。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=history"
@@ -993,7 +1037,8 @@
       "description": "登入彈窗、逐場填寫",
       "module": "740",
       "tickets": [
-        "740"
+        "740",
+        "890"
       ],
       "date": "2026-11-07",
       "version": "GitHub 核對 11/07",
@@ -1057,7 +1102,10 @@
         "rating",
         "textarea",
         "toast",
-        "button"
+        "button",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用 #740 卡疊與 #730 表單。依 PM 決議，X 只略過本次登入的當前場次，下次重新登入仍提醒未回答場次；Mentor 取消 14 天截止。可關完彈窗後從帳號選單登出，再登入驗證。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=login-feedback"
@@ -1073,7 +1121,8 @@
         "961",
         "959",
         "750",
-        "742"
+        "742",
+        "890"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -1111,15 +1160,19 @@
         {
           "key": "name-edit",
           "label": "編輯姓名",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "owner-edit",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=owner-edit",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-form&scenario=name-edit"
         },
         {
           "key": "service-open",
           "label": "服務選單展開",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "complete",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=complete",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-form&scenario=service-open"
         },
         {
@@ -1134,8 +1187,10 @@
         {
           "key": "work-filled",
           "label": "工作經驗 · 已新增",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "complete",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=complete",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-form&scenario=work-filled"
         },
         {
@@ -1150,8 +1205,10 @@
         {
           "key": "education-filled",
           "label": "教育經歷 · 已新增",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "complete",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=complete",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-form&scenario=education-filled"
         },
         {
@@ -1276,9 +1333,11 @@
         "links-editor",
         "leave-editor-dialog",
         "inline-validation",
-        "mentor-header"
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
-      "note": "D-1 與 D-5 的原型情境採用導師中心 v72；原交付的欄位操作範例獨立保留。",
+      "note": "D-1 與 D-5 的原型情境採用導師中心 v72；姓名、服務選單及經歷情境直接開啟現行表單的對應欄位。",
       "reviewDecision": {
         "text": "D-1 建立流程目前為整頁表單。11/21 定案的分步建立流程待交付。",
         "ticket": "830",
@@ -1296,7 +1355,8 @@
         "830",
         "961",
         "747",
-        "742"
+        "742",
+        "890"
       ],
       "date": "2026-11-03",
       "version": "7",
@@ -1325,15 +1385,19 @@
         {
           "key": "personal-profile",
           "label": "返回個人頁",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "owner-filled",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=owner-filled",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-welcome&scenario=personal-profile"
         },
         {
           "key": "booking-settings",
           "label": "設定預約時段",
-          "sourceVersion": 7,
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/",
+          "mentorScene": "plan-schedule",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-welcome&scenario=booking-settings"
         }
       ],
@@ -1343,7 +1407,9 @@
         "booking",
         "button",
         "booking-setup-action",
-        "mentor-header"
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "以你的交付設計為主。沿用 #742 v7 的導師小卡、翻面及後續設定；點「編輯資料」可以回到既有表單。 11/07 #742 新增雙軌導師規劃，涉及新增方案／後台（#830–#832），尚無本平台已交付畫面；本次保留已 review 的 v7，待新流程設計。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-welcome"
@@ -1356,50 +1422,70 @@
       "route": "/mentor-pool",
       "tickets": [
         "839",
+        "890",
         "737",
         "753",
         "756",
         "758"
       ],
-      "date": "2026-11-07",
-      "version": "11/07 核對 · #737 B",
-      "sourceKind": "confirmed-update",
-      "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+      "date": "2026-11-23",
+      "version": "v72 · dbc28b1",
+      "sourceKind": "design",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
       "scenarios": [
         {
           "key": "default",
           "label": "登入後 · 導師池",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=default"
         },
         {
           "key": "guest",
           "label": "訪客 · 導師池",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=guest"
         },
         {
           "key": "menu",
           "label": "帳號選單",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=menu"
         },
         {
           "key": "empty",
           "label": "沒有搜尋結果",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search-empty",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search-empty",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=empty"
         },
         {
           "key": "no-ratings",
           "label": "尚無評價與完成場次",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=no-ratings"
+        },
+        {
+          "key": "favorite-login",
+          "label": "訪客收藏 · 登入後返回該導師",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-search&scenario=favorite-login"
         },
         {
           "key": "mentor-search",
@@ -1445,9 +1531,11 @@
         "pool-empty",
         "header",
         "level-badge",
-        "mentor-header"
+        "mentor-header",
+        "identity-switch",
+        "identity-trigger"
       ],
-      "note": "補入已交付 #753 導師池、帳號選單及收藏流程。沿用 10/13 中文 header 和全螢幕 Mobile 帳號選單；Tablet 由同一設計響應調整。最新 ticket 已排除新時段通知。 #737 已確認 B 版：姓名左／純數字平均分右，職稱公司滿寬，完成場次另列；保留 #753 照片比例與收藏。",
+      "note": "G-1 導師搜尋、等級與篩選沿用 #839。登入頁首與帳號選單共用 #890，導師卡沿用 #737 評分及 #753 收藏規則。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-search",
       "references": [
         {
@@ -1463,7 +1551,9 @@
       "group": "探索與首頁",
       "module": "frontend",
       "route": "/about",
-      "tickets": [],
+      "tickets": [
+        "890"
+      ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
       "sourceKind": "frontend",
@@ -1475,11 +1565,28 @@
           "sourceVersion": "develop · c6c3660",
           "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/about/page.tsx",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=about&scenario=default"
+        },
+        {
+          "key": "member-mentee",
+          "label": "已登入 · Mentee",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/about/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=about&scenario=member-mentee"
+        },
+        {
+          "key": "member-mentor",
+          "label": "已登入 · Mentor",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/about/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=about&scenario=member-mentor"
         }
       ],
       "components": [
         "header",
-        "button"
+        "button",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=about"
@@ -1808,7 +1915,8 @@
         "774",
         "274",
         "753",
-        "756"
+        "756",
+        "890"
       ],
       "date": "2026-11-08",
       "version": "11/07 會議 · 聊聊整合",
@@ -1967,7 +2075,9 @@
         "level-badge",
         "mentor-header",
         "header",
-        "status-pill"
+        "status-pill",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "還原 #274 導師頁與 #753 收藏交付：Zahra 示範資料、簡介／評價／空評價、三裝置排列、收藏與登入攔截。收藏狀態與導師池、我的收藏共用。 11/08：移除學員留言／導師回覆板及預約問題欄位；對話改走獨立聊聊 prototype，舊留言不自動當成聊天紀錄。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=public-profile"
@@ -1983,7 +2093,8 @@
         "837",
         "962",
         "736",
-        "274"
+        "274",
+        "890"
       ],
       "date": "2026-10-15",
       "version": "交付稿 2026.10",
@@ -2063,7 +2174,10 @@
         "profile-industries",
         "profile-experience",
         "mentor-summary",
-        "level-badge"
+        "level-badge",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "以已交付 #274 導師頁的雙欄、簡介／評價分頁及預約側欄為主，#753 收藏控制保留。人物內容使用模擬資料。導師設定時段彈窗沿用前端既有功能，尚無已確認的對應交付稿。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-calendar"
@@ -2077,7 +2191,8 @@
       "tickets": [
         "828",
         "960",
-        "862"
+        "862",
+        "890"
       ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
@@ -2113,7 +2228,10 @@
         "social-links",
         "profile-empty",
         "profile-industries",
-        "profile-experience"
+        "profile-experience",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-profile"
@@ -2127,7 +2245,8 @@
       "tickets": [
         "828",
         "959",
-        "862"
+        "862",
+        "890"
       ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
@@ -2179,7 +2298,10 @@
         "education",
         "links-editor",
         "leave-editor-dialog",
-        "inline-validation"
+        "inline-validation",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-edit"
@@ -2191,6 +2313,7 @@
       "module": "frontend",
       "route": "/profile/card",
       "tickets": [
+        "890",
         "972"
       ],
       "date": "2026-11-07",
@@ -2209,6 +2332,9 @@
       "components": [
         "avatar",
         "button",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch",
         "frontend-mentee-card"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
@@ -2229,7 +2355,8 @@
         "774",
         "832",
         "842",
-        "847"
+        "847",
+        "890"
       ],
       "date": "2026-11-17",
       "version": "11/17 · #847 原因查看",
@@ -2239,29 +2366,37 @@
         {
           "key": "default",
           "label": "即將到來",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
+          "mentorScene": "bookings-upcoming",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-upcoming",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-reservations&scenario=default"
         },
         {
           "key": "pending",
           "label": "待您回覆",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
+          "mentorScene": "bookings-pending",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-pending",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-reservations&scenario=pending"
         },
         {
           "key": "history",
           "label": "歷史紀錄",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
+          "mentorScene": "bookings-history",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-history",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-reservations&scenario=history"
         },
         {
           "key": "empty",
           "label": "尚無預約",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentor/page.tsx",
+          "mentorScene": "bookings-empty",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-empty",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-reservations&scenario=empty"
         }
       ],
@@ -2272,7 +2407,10 @@
         "private-reason",
         "booking-actions",
         "reservation",
-        "feedback"
+        "feedback",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用共用預約卡；取消／婉拒原因依填寫角色顯示。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-reservations"
@@ -2286,7 +2424,8 @@
       "tickets": [
         "774",
         "847",
-        "842"
+        "842",
+        "890"
       ],
       "date": "2026-11-17",
       "version": "11/17 · #847 原因查看",
@@ -2296,29 +2435,37 @@
         {
           "key": "default",
           "label": "即將到來",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
+          "mentorScene": "mentee-history",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentee-reservations&scenario=default"
         },
         {
           "key": "pending",
           "label": "等待回覆",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
+          "mentorScene": "mentee-history",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentee-reservations&scenario=pending"
         },
         {
           "key": "history",
           "label": "歷史紀錄",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
+          "mentorScene": "mentee-history",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentee-reservations&scenario=history"
         },
         {
           "key": "empty",
           "label": "尚無預約",
-          "sourceVersion": "11/17 · #847 原因查看",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/reservation/mentee/page.tsx",
+          "mentorScene": "mentee-empty",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-empty",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentee-reservations&scenario=empty"
         }
       ],
@@ -2329,7 +2476,10 @@
         "private-reason",
         "booking-actions",
         "reservation",
-        "feedback"
+        "feedback",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用共用預約卡；取消／婉拒原因依填寫角色顯示。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-reservations"
@@ -2340,7 +2490,9 @@
       "group": "其他頁面",
       "module": "frontend",
       "route": "/privacy",
-      "tickets": [],
+      "tickets": [
+        "890"
+      ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
       "sourceKind": "frontend",
@@ -2352,10 +2504,27 @@
           "sourceVersion": "develop · c6c3660",
           "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/privacy/page.tsx",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=privacy&scenario=default"
+        },
+        {
+          "key": "member-mentee",
+          "label": "已登入 · Mentee",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/privacy/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=privacy&scenario=member-mentee"
+        },
+        {
+          "key": "member-mentor",
+          "label": "已登入 · Mentor",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/privacy/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=privacy&scenario=member-mentor"
         }
       ],
       "components": [
-        "header"
+        "header",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=privacy"
@@ -2366,7 +2535,9 @@
       "group": "其他頁面",
       "module": "frontend",
       "route": "/terms",
-      "tickets": [],
+      "tickets": [
+        "890"
+      ],
       "date": "2026-11-07",
       "version": "develop · c6c3660",
       "sourceKind": "frontend",
@@ -2378,10 +2549,27 @@
           "sourceVersion": "develop · c6c3660",
           "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/terms/page.tsx",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=terms&scenario=default"
+        },
+        {
+          "key": "member-mentee",
+          "label": "已登入 · Mentee",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/terms/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=terms&scenario=member-mentee"
+        },
+        {
+          "key": "member-mentor",
+          "label": "已登入 · Mentor",
+          "sourceVersion": "develop · c6c3660",
+          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Frontend/blob/c6c3660ae6c89263b15135e36060f43f162c01db/src/app/(landing)/terms/page.tsx",
+          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=terms&scenario=member-mentor"
         }
       ],
       "components": [
-        "header"
+        "header",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "沿用前端原始畫面及元件，使用模擬資料；不連接真實帳號或 API。與交付設計重疊的首頁、導師建立、建立完成與學員歷史回饋，優先顯示設計版本。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=terms"
@@ -2420,36 +2608,44 @@
       "module": "frontend",
       "route": "/favorites",
       "tickets": [
-        "737",
         "753",
+        "839",
+        "890",
+        "737",
         "754",
         "755",
         "756"
       ],
-      "date": "2026-11-07",
-      "version": "11/07 核對 · #737 B",
+      "date": "2026-11-23",
+      "version": "#753 · 共用 v72 導師卡",
       "sourceKind": "confirmed-update",
       "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
       "scenarios": [
         {
           "key": "default",
           "label": "收藏清單",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=favorites&scenario=default"
         },
         {
           "key": "one",
           "label": "剩一位導師",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=favorites&scenario=one"
         },
         {
           "key": "empty-favorites",
           "label": "尚無收藏",
-          "sourceVersion": "11/07 核對 · #737 B",
-          "sourceUrl": "https://github.com/Xchange-Taiwan/X-Talent-Tracker/issues/737#issuecomment-6648566371",
+          "mentorScene": "mentor-search",
+          "sourceVersion": "v72 · dbc28b1",
+          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
           "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=favorites&scenario=empty-favorites"
         }
       ],
@@ -2460,9 +2656,14 @@
         "favorites-empty",
         "account-menu",
         "toast",
-        "header"
+        "header",
+        "level-badge",
+        "pool-card",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
-      "note": "依 #753 原交付重建收藏清單、剩一位與空狀態。取消即移除，最後一位取消後顯示尋找導師；不通知導師、不發送新時段通知。 #737 已確認 B 版：姓名左／純數字平均分右，職稱公司滿寬，完成場次另列；保留 #753 照片比例與收藏。",
+      "note": "沿用 #753 的收藏清單與空狀態。卡片、導師等級和資料與尋找導師共用，收藏也同步到導師個人頁。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=favorites"
     },
     {
@@ -2482,7 +2683,8 @@
         "775",
         "776",
         "777",
-        "847"
+        "847",
+        "890"
       ],
       "date": "2026-11-17",
       "version": "25",
@@ -2932,7 +3134,10 @@
         "booking-actions",
         "reservation",
         "feedback",
-        "header"
+        "header",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "依 Julie 2026-11-17 #847 決議更新；保留 #729／#771／#772／#775 已核准修正。操作與檢視模式分離，所有資料為原型模擬。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=chat",
@@ -2954,7 +3159,8 @@
         "744",
         "745",
         "749",
-        "748"
+        "748",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3094,7 +3300,10 @@
         "dashboard-stats",
         "dashboard-metric-art",
         "period-control",
-        "period-bars"
+        "period-bars",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "成長總覽",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-growth"
@@ -3106,7 +3315,8 @@
       "module": "mentor",
       "tickets": [
         "842",
-        "746"
+        "746",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3174,7 +3384,10 @@
         "booking-tabs",
         "booking-reason-input",
         "booking-refund",
-        "status-pill"
+        "status-pill",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "預約管理",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-bookings"
@@ -3185,7 +3398,8 @@
       "group": "導師管理後台",
       "module": "mentor",
       "tickets": [
-        "837"
+        "837",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3298,7 +3512,10 @@
         "question-type",
         "mentor-select",
         "mentor-date-picker",
-        "shared-availability-editor"
+        "shared-availability-editor",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "方案時段",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-plans"
@@ -3309,7 +3526,8 @@
       "group": "導師管理後台",
       "module": "mentor",
       "tickets": [
-        "843"
+        "843",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3450,7 +3668,10 @@
         "period-bars",
         "revenue-overview",
         "rule-hint",
-        "commerce-art"
+        "commerce-art",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "收入統計",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-income"
@@ -3462,7 +3683,8 @@
       "module": "mentor",
       "tickets": [
         "841",
-        "872"
+        "872",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3565,7 +3787,10 @@
         "payment-rules",
         "rule-hint",
         "commerce-art",
-        "payment-fields"
+        "payment-fields",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "方案付款與預約結果",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=booking-payment"
@@ -3576,7 +3801,8 @@
       "group": "付款與贊助",
       "module": "mentor",
       "tickets": [
-        "829"
+        "829",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3662,7 +3888,10 @@
         "support-amount-dialog",
         "payment-fields",
         "rule-hint",
-        "commerce-art"
+        "commerce-art",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "支持開發團隊",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=team-support"
@@ -3673,7 +3902,8 @@
       "group": "付款與贊助",
       "module": "mentor",
       "tickets": [
-        "834"
+        "834",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3775,7 +4005,10 @@
         "commerce-art",
         "booking-contact",
         "reservation-details",
-        "booking-tabs"
+        "booking-tabs",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "回饋贊助與同職能推薦",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=feedback-tip"
@@ -3807,7 +4040,8 @@
         "872",
         "841",
         "842",
-        "843"
+        "843",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3827,7 +4061,9 @@
       "components": [
         "button",
         "mentor-audit",
-        "mentor-header"
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "導師站 v72 的 FR 規格對照與驗收入口。來源備註依原型交付版本保留。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-audit"
@@ -3848,7 +4084,8 @@
         "842",
         "834",
         "829",
-        "839"
+        "839",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "v72 · dbc28b1",
@@ -3912,7 +4149,9 @@
         "member",
         "avatar-chooser",
         "question-type",
-        "mentor-header"
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "導師站 v72 的可操作元件範例與使用情境。",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-components"
@@ -4065,7 +4304,8 @@
       "group": "學員成長",
       "module": "growth",
       "tickets": [
-        "844"
+        "844",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "a790d7b",
@@ -4104,7 +4344,10 @@
         "growth-getting-started",
         "report-teaser",
         "milestone-actions",
-        "header"
+        "header",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "學員成長紀錄",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentee-growth"
@@ -4115,7 +4358,8 @@
       "group": "學員成長",
       "module": "growth",
       "tickets": [
-        "845"
+        "845",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "a790d7b",
@@ -4142,7 +4386,10 @@
         "milestone-types",
         "milestone-actions",
         "journey-timeline",
-        "header"
+        "header",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "學員里程碑",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=milestones"
@@ -4153,7 +4400,8 @@
       "group": "學員成長",
       "module": "growth",
       "tickets": [
-        "846"
+        "846",
+        "890"
       ],
       "date": "2026-11-23",
       "version": "a790d7b",
@@ -4192,7 +4440,10 @@
       "components": [
         "growth-report-sheet",
         "report-identity",
-        "report-login"
+        "report-login",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
       ],
       "note": "學員成長報告",
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=growth-report"
@@ -4983,6 +5234,10 @@
       "name": "FavoriteToggle",
       "label": "收藏按鈕",
       "kind": "基礎元素",
+      "examples": {
+        "mentor-search": "default",
+        "favorites": "default"
+      },
       "code": null,
       "screens": [
         "mentor-search",
@@ -5019,6 +5274,10 @@
       "name": "FavoriteMentorCard",
       "label": "可收藏導師卡片",
       "kind": "組合元件",
+      "examples": {
+        "mentor-search": "default",
+        "favorites": "default"
+      },
       "code": null,
       "screens": [
         "mentor-search",
@@ -5065,6 +5324,11 @@
       "name": "FavoritesHeader",
       "label": "含收藏入口的頁首",
       "kind": "組合元件",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
+      "examples": {
+        "mentor-search": "default",
+        "favorites": "default"
+      },
       "code": null,
       "screens": [
         "mentor-search",
@@ -5072,18 +5336,22 @@
         "favorites"
       ],
       "rules": [
-        "10/13 交付：中文導覽；訪客顯示登入與註冊。",
-        "帳號選單的我的收藏位於我的預約下方。",
-        "Mobile 帳號選單滿版，保留提供回饋。"
+        "訪客顯示登入與註冊。會員顯示聊聊、通知及帳號選單。",
+        "寬度不足時，次要導覽收進選單。"
       ],
       "changes": [
         {
           "ticket": "753",
           "date": "2026-10-13",
           "text": "已交付收藏流程；補入平台並保留原設計。"
+        },
+        {
+          "ticket": "890",
+          "date": "2026-11-23",
+          "text": "訪客顯示登入與註冊。會員顯示聊聊、通知及帳號選單。"
         }
       ],
-      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "mapping": "導師中心 v72 · #890，Storybook 提供相關基礎元件對照。",
       "storybookUrl": null,
       "composition": {
         "level": "組合元件",
@@ -5105,23 +5373,32 @@
       "name": "AccountMenu",
       "label": "帳號選單",
       "kind": "組合元件",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=role-shared",
+      "examples": {
+        "mentor-search": "menu"
+      },
       "code": null,
       "screens": [
         "mentor-search",
         "favorites"
       ],
       "rules": [
-        "Desktop 264px 浮層；Mobile 滿版。",
-        "我的收藏顯示目前收藏數，點擊進入清單。"
+        "帳號選單底部分隔線下方顯示目前身分與切換操作。",
+        "共用頁可原地切換，選單持續顯示。我的收藏顯示筆數並連至收藏清單。"
       ],
       "changes": [
         {
           "ticket": "753",
           "date": "2026-10-13",
           "text": "已交付收藏流程；補入平台並保留原設計。"
+        },
+        {
+          "ticket": "890",
+          "date": "2026-11-23",
+          "text": "帳號選單底部分隔線下方顯示目前身分與切換操作。"
         }
       ],
-      "mapping": "Figma 已有交付元件；未找到 Storybook 一對一實作，不將同名基礎元素視為整組已實作。",
+      "mapping": "導師中心 v72 · #890，Storybook 提供相關基礎元件對照。",
       "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/%E4%BD%88%E5%B1%80%E5%85%83%E4%BB%B6-header-userdropdown--mentor-session",
       "composition": {
         "level": "組合元件",
@@ -5139,6 +5416,9 @@
       "name": "FavoriteLoginDialog",
       "label": "登入並收藏",
       "kind": "組合元件",
+      "examples": {
+        "mentor-search": "favorite-login"
+      },
       "code": null,
       "screens": [
         "mentor-search",
@@ -5173,6 +5453,9 @@
       "name": "FavoritesEmptyState",
       "label": "收藏空狀態",
       "kind": "組合元件",
+      "examples": {
+        "favorites": "empty-favorites"
+      },
       "code": null,
       "screens": [
         "favorites"
@@ -5206,6 +5489,7 @@
       "name": "MentorFilterDropdown",
       "label": "MentorFilterDropdown",
       "kind": "既有前端元件",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search-filters",
       "examples": {
         "mentor-search": "default"
       },
@@ -5215,11 +5499,17 @@
         "mentor-search"
       ],
       "rules": [
-        "直接使用前端篩選浮層、Select 與條件套用流程。",
-        "此處選項與結果為本地模擬資料。"
+        "技能與主題可複選，產業單選。套用後顯示符合任一選取條件的導師。",
+        "可單獨移除已套用條件，或清除全部。"
       ],
-      "changes": [],
-      "mapping": "已直接引用前端元件，Storybook 已有對應。",
+      "changes": [
+        {
+          "ticket": "839",
+          "date": "2026-11-23",
+          "text": "技能與主題可複選，產業單選。套用後顯示符合任一選取條件的導師。"
+        }
+      ],
+      "mapping": "導師中心 v72 · #839，Storybook 提供相關基礎元件對照。",
       "storybookUrl": "https://x-talent-storybook.x-talent.workers.dev/?path=/story/%E6%A5%AD%E5%8B%99%E6%A8%A1%E7%B5%84%E5%85%83%E4%BB%B6-%E7%AF%A9%E9%81%B8%E5%99%A8-filter-mentorfilterdropdown--default"
     },
     {
@@ -7758,14 +8048,74 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=role-shared",
       "examples": {
-        "role-switch": "role-shared"
+        "role-switch": "role-shared",
+        "mentor-search": "menu",
+        "home": "mentee-cta",
+        "about": "member-mentee",
+        "privacy": "member-mentee",
+        "terms": "member-mentee",
+        "history": "default",
+        "login-feedback": "empty",
+        "mentor-form": "owner-edit",
+        "mentor-welcome": "welcome",
+        "public-profile": "public",
+        "mentor-calendar": "owner",
+        "mentee-profile": "default",
+        "mentee-edit": "default",
+        "mentee-card": "default",
+        "mentor-reservations": "default",
+        "mentee-reservations": "default",
+        "favorites": "default",
+        "chat": "list",
+        "mentor-growth": "growth-l2",
+        "mentor-bookings": "bookings-upcoming",
+        "mentor-plans": "plans-filled",
+        "mentor-income": "income",
+        "booking-payment": "checkout",
+        "team-support": "support",
+        "feedback-tip": "mentee-history",
+        "mentor-audit": "audit",
+        "mentor-components": "components",
+        "mentee-growth": "growth",
+        "milestones": "growth",
+        "growth-report": "report-owner"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "MentorHeader.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "role-switch"
+        "home",
+        "history",
+        "login-feedback",
+        "mentor-form",
+        "mentor-welcome",
+        "mentor-search",
+        "about",
+        "public-profile",
+        "mentor-calendar",
+        "mentee-profile",
+        "mentee-edit",
+        "mentee-card",
+        "mentor-reservations",
+        "mentee-reservations",
+        "privacy",
+        "terms",
+        "favorites",
+        "chat",
+        "mentor-growth",
+        "mentor-bookings",
+        "mentor-plans",
+        "mentor-income",
+        "booking-payment",
+        "team-support",
+        "feedback-tip",
+        "mentor-audit",
+        "mentor-components",
+        "role-switch",
+        "mentee-growth",
+        "milestones",
+        "growth-report"
       ],
       "rules": [
         "展開帳號選單；切換完成後保留選單位置與新身分。"
@@ -7797,14 +8147,74 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=role-mentee-unread",
       "examples": {
-        "role-switch": "role-mentee-unread"
+        "role-switch": "role-shared",
+        "home": "mentee-cta",
+        "about": "member-mentee",
+        "privacy": "member-mentee",
+        "terms": "member-mentee",
+        "history": "default",
+        "login-feedback": "empty",
+        "mentor-form": "owner-edit",
+        "mentor-welcome": "welcome",
+        "mentor-search": "menu",
+        "public-profile": "public",
+        "mentor-calendar": "owner",
+        "mentee-profile": "default",
+        "mentee-edit": "default",
+        "mentee-card": "default",
+        "mentor-reservations": "default",
+        "mentee-reservations": "default",
+        "favorites": "default",
+        "chat": "list",
+        "mentor-growth": "growth-l2",
+        "mentor-bookings": "bookings-upcoming",
+        "mentor-plans": "plans-filled",
+        "mentor-income": "income",
+        "booking-payment": "checkout",
+        "team-support": "support",
+        "feedback-tip": "mentee-history",
+        "mentor-audit": "audit",
+        "mentor-components": "components",
+        "mentee-growth": "growth",
+        "milestones": "growth",
+        "growth-report": "report-owner"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "MentorHeader.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "role-switch"
+        "home",
+        "history",
+        "login-feedback",
+        "mentor-form",
+        "mentor-welcome",
+        "mentor-search",
+        "about",
+        "public-profile",
+        "mentor-calendar",
+        "mentee-profile",
+        "mentee-edit",
+        "mentee-card",
+        "mentor-reservations",
+        "mentee-reservations",
+        "privacy",
+        "terms",
+        "favorites",
+        "chat",
+        "mentor-growth",
+        "mentor-bookings",
+        "mentor-plans",
+        "mentor-income",
+        "booking-payment",
+        "team-support",
+        "feedback-tip",
+        "mentor-audit",
+        "mentor-components",
+        "role-switch",
+        "mentee-growth",
+        "milestones",
+        "growth-report"
       ],
       "rules": [
         "紅點代表另一個身分有未讀訊息。"
@@ -9610,7 +10020,8 @@
         "public-profile": "default",
         "mentor-components": "components",
         "mentor-calendar": "owner",
-        "mentor-search": "mentor-search"
+        "mentor-search": "default",
+        "favorites": "default"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -9620,6 +10031,7 @@
         "mentor-search",
         "public-profile",
         "mentor-calendar",
+        "favorites",
         "mentor-components"
       ],
       "rules": [
@@ -9647,13 +10059,37 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=public-plans",
       "examples": {
-        "public-profile": "default",
+        "public-profile": "public",
         "role-switch": "role-shared",
-        "mentor-form": "fresh",
+        "mentor-form": "owner-edit",
         "mentor-welcome": "welcome",
-        "mentor-search": "mentor-search",
+        "mentor-search": "menu",
         "mentor-audit": "audit",
-        "mentor-components": "components"
+        "mentor-components": "components",
+        "home": "mentee-cta",
+        "about": "member-mentee",
+        "privacy": "member-mentee",
+        "terms": "member-mentee",
+        "history": "default",
+        "login-feedback": "empty",
+        "mentor-calendar": "owner",
+        "mentee-profile": "default",
+        "mentee-edit": "default",
+        "mentee-card": "default",
+        "mentor-reservations": "default",
+        "mentee-reservations": "default",
+        "favorites": "default",
+        "chat": "list",
+        "mentor-growth": "growth-l2",
+        "mentor-bookings": "bookings-upcoming",
+        "mentor-plans": "plans-filled",
+        "mentor-income": "income",
+        "booking-payment": "checkout",
+        "team-support": "support",
+        "feedback-tip": "mentee-history",
+        "mentee-growth": "growth",
+        "milestones": "growth",
+        "growth-report": "report-owner"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -9673,13 +10109,37 @@
       "sourceFile": "MentorHeader.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
+        "home",
+        "history",
+        "login-feedback",
         "mentor-form",
         "mentor-welcome",
         "mentor-search",
+        "about",
         "public-profile",
+        "mentor-calendar",
+        "mentee-profile",
+        "mentee-edit",
+        "mentee-card",
+        "mentor-reservations",
+        "mentee-reservations",
+        "privacy",
+        "terms",
+        "favorites",
+        "chat",
+        "mentor-growth",
+        "mentor-bookings",
+        "mentor-plans",
+        "mentor-income",
+        "booking-payment",
+        "team-support",
+        "feedback-tip",
         "mentor-audit",
         "mentor-components",
-        "role-switch"
+        "role-switch",
+        "mentee-growth",
+        "milestones",
+        "growth-report"
       ],
       "rules": [
         "依身分與裝置寬度顯示導覽、未讀通知、帳號及身分切換。"
@@ -10146,14 +10606,16 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentor-search",
       "examples": {
-        "mentor-search": "mentor-search"
+        "mentor-search": "mentor-search",
+        "favorites": "default"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "MentorSearch.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-search"
+        "mentor-search",
+        "favorites"
       ],
       "rules": [
         "顯示職稱、公司、擅長方向與收藏狀態，可開啟同一位導師的公開頁。"

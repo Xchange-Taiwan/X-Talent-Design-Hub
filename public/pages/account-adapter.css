@@ -1,0 +1,10 @@
+/* Preserve live notification popovers owned by the original pages and the sign-in
+   queue, while leaving one visible, keyboard-accessible account header. */
+header[data-hub-legacy-header] {
+  position:absolute!important; top:0!important; left:0!important; right:0!important;
+  min-height:0!important; height:0!important; margin:0!important; border:0!important;
+  z-index:51!important; visibility:hidden!important; pointer-events:none!important;
+}
+[data-hub-legacy-header] :is(.xt-pop,.xt730-header-pop,.hp-account-pop:not([hidden])) {
+  visibility:visible; pointer-events:auto;
+}

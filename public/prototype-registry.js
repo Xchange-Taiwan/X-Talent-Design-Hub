@@ -2,6 +2,12 @@
 (() => {
   const data = window.HUB_DATA;
   const mentor=window.MENTOR_RELEASE;
+  // Public information pages also have authenticated entry points through the site navigation.
+  const sharedAccountPages=['about','privacy','terms'];
+  for(const screen of data.screens.filter(screen=>sharedAccountPages.includes(screen.id))){
+    screen.scenarios.push(['member-mentee','已登入 · Mentee'],['member-mentor','已登入 · Mentor']);
+  }
+  window.hubSharedAccountPage=id=>sharedAccountPages.includes(id);
   const roleCases = [
     ['role-shared','雙身分 · 尋找導師'], ['role-public','他人的導師頁'],
     ['role-missing-mentor','只有學員身分'], ['role-missing-mentee','只有導師身分'],
@@ -27,7 +33,7 @@
   home.tickets=[...new Set([...home.tickets,'836'])];
   if(!data.tickets.some(t=>t.id==='836'))data.tickets.push({id:'836',name:'首頁雙軌與新手引導',date:'2026-11-23'});
   const form=data.screens.find(s=>s.id==='mentor-form');
-  form.note='D-1 與 D-5 的原型情境採用導師中心 v72；原交付的欄位操作範例獨立保留。';
+  form.note='D-1 與 D-5 的原型情境採用導師中心 v72；姓名、服務選單及經歷情境直接開啟現行表單的對應欄位。';
   register('role-switch','身分切換','identity','890',roleCases,
     mentor.url,'v'+mentor.version+' · '+mentor.commit.slice(0,7),'帳號與身分');
   register('mentee-growth','學員成長紀錄','growth','844',[

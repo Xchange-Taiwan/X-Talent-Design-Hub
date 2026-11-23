@@ -1,13 +1,27 @@
 (() => {
  const D=window.HUB_DATA,M=window.HUB_COMPONENT_MAP,$=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const iconRefresh=()=>window.lucide?.createIcons({attrs:{width:18,height:18,'stroke-width':1.6}});
+ const shellVersion=new URL(document.currentScript.src).searchParams.get('v');
  const q=new URLSearchParams(location.search),validTicket=t=>t==='all'||D.tickets.some(x=>x.id===t);
  const S={view:q.get('view')==='library'?'library':'screens',ticket:validTicket(q.get('ticket'))?q.get('ticket'):'all',screen:q.get('screen')||'history',device:['desktop','tablet','mobile'].includes(q.get('device'))?q.get('device'):(innerWidth<620?'mobile':'desktop'),mode:q.get('mode')==='inspect'?'inspect':'play',scenario:q.get('scenario'),component:null,available:[],ready:false};
+ const validRole = value => value === 'mentor' || value === 'mentee' ? value : null;
+ const chatKeys=['partner','reservation','person','conversation'];
+ const chatParameters=url=>new URLSearchParams(chatKeys.filter(key=>url.searchParams.has(key)).map(key=>[key,url.searchParams.get(key)]));
+ let chatContext=S.screen==='chat'?chatParameters(new URL(location.href)):new URLSearchParams();
+ let memberRole = validRole(q.get('memberRole')), reopenAccount = false;
+ let pendingGuestBooking=null, resumePlan=null;
+ function resetAccountContext(){pendingGuestBooking=null;resumePlan=null;memberRole=null;reopenAccount=false;chatContext=new URLSearchParams();}
+ function activeFrameRole(){
+  const doc=$('#product').contentDocument;
+  const header=doc?.querySelector('.identity-header[data-role]') || doc?.querySelector('.hub-account-host')?.shadowRoot?.querySelector('.identity-header[data-role]');
+  if(doc?.querySelector('.xt-product[data-member="guest"]') || (header && !header.querySelector('.identity-trigger')))return null;
+  return validRole(header?.dataset.role)||memberRole;
+ }
  let publicPerson=q.get('person')||'zahra';
  let inspector,noticeTimer,frameModule='',frameToken=0;
  const screen=()=>D.screens.find(s=>s.id===S.screen)||D.screens[1],filtered=()=>D.screens.filter(s=>S.ticket==='all'||s.tickets.includes(S.ticket));
  function normalize(){if(!filtered().some(s=>s.id===S.screen))S.screen=filtered()[0]?.id||'history';if(!screen().scenarios.some(s=>s[0]===S.scenario))S.scenario=screen().scenarios[0][0];}
- function syncURL(){const p=new URLSearchParams({view:S.view,screen:S.screen,ticket:S.ticket,device:S.device,scenario:S.scenario,mode:S.mode});if(S.screen==='public-profile'&&publicPerson!=='zahra')p.set('person',publicPerson);history.replaceState(null,'','?'+p);}
+ function syncURL(){const p=new URLSearchParams({view:S.view,screen:S.screen,ticket:S.ticket,device:S.device,scenario:S.scenario,mode:S.mode});if(memberRole)p.set('memberRole',memberRole);if(S.screen==='chat')chatContext.forEach((value,key)=>p.set(key,value));if(S.screen==='public-profile'&&publicPerson!=='zahra')p.set('person',publicPerson);history.replaceState(null,'','?'+p);}
  function notify(message){$('#notice').textContent=message;$('#notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('#notice').hidden=true,3200);}
  function send(type,payload={}){if(S.ready)$('#product').contentWindow.postMessage({channel:'xt-hub',type,...payload},location.origin);}
  
@@ -17,10 +31,13 @@
  function renderControls(){const p=screen();$('#ticket').value=S.ticket;$('#page-group').textContent=S.view==='library'?'DESIGN SYSTEM':p.group;$('#page-title').textContent=p.name;$('#product').title=`${p.name} · ${S.device}`;$('#related-tags').innerHTML=tags(p.tickets);$('.related').hidden=!p.tickets.length;$('#scenario').innerHTML=p.scenarios.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');$('#scenario').value=S.scenario;document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.device===S.device)));document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===S.mode)));document.querySelectorAll('[data-view]').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.view===S.view));if(b.dataset.view===S.view)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});$('#screens-view').hidden=false;$('#library-view').hidden=true;$('#source-caption').textContent=`${p.sourceKind==='confirmed-update'?'已確認更新':p.sourceKind==='design'?'設計交付':p.module==='frontend'?'前端版本':'交付快照'} · ${p.version} · ${p.date.replaceAll('-','/')} · ${S.device==='desktop'?'Desktop 自適應':S.device==='tablet'?'Tablet 768px':'Mobile 390px'}`;if(mentorScene(p.id,S.scenario))$('#source-caption').textContent='導師中心 · '+window.hubScreenSource(p,S.scenario).version+' · '+S.device;$('#canvas-hint').textContent=S.mode==='inspect'?'點選區塊查看規格與修改紀錄 · Esc 返回操作':'可直接操作原有畫面';$('#canvas-hint').dataset.inspect=String(S.mode==='inspect');$('#frame-wrap').style.maxWidth=S.device==='mobile'?'390px':S.device==='tablet'?'768px':'1440px';}
  function mentorScene(id,scenario){return window.MENTOR_SCREENS[id]?.scenes[scenario];}
  function loadFrame(){normalize();
+  if(window.hubSharedAccountPage(S.screen) && S.scenario.startsWith('member-'))memberRole=validRole(S.scenario.slice('member-'.length));
+  const alias=window.hubScenarioDestination(S.screen,S.scenario);
+  if(alias){navigateScreen(alias.screen,alias.scenario);return;}
   if(S.screen==='mentor-calendar'&&['schedule','empty'].includes(S.scenario)){
    navigateScreen('mentor-plans',S.scenario==='empty'?'plan-schedule-empty':'plan-schedule');return;
   }
-  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);if(p.module==='identity'){
+  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(shellVersion)params.set('hubVersion',shellVersion);if(memberRole)params.set('memberRole',memberRole);if(reopenAccount)params.set('menuOpen','1');reopenAccount=false;if(p.id==='signin'&&pendingGuestBooking)params.set('bookingSignin','1');if(p.id==='public-profile'&&resumePlan)params.set('resumePlan',resumePlan);if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);if(p.module==='identity'){
    frameModule='mentor';params.set('screen',p.id);params.set('scene',S.scenario);
    $('#product').src='mentor/?'+params;
   }else if(p.module==='growth'){
@@ -30,9 +47,15 @@
    if(p.id==='public-profile')params.set('person',publicPerson);
    frameModule='mentor';params.set('screen',p.id);params.set('scene',p.id==='mentee-edit'&&S.scenario==='empty'?'mentee-profile-empty':approved);
    $('#product').src=window.mentorEntryPath(p.id,S.scenario)+'?'+params;
-  }else if(p.module==='chat'){params.set('scene',p.chatRole?'booking-'+p.chatRole+(S.scenario==='pending'?'-pending':S.scenario==='history'?'-history':S.scenario==='empty'?'-empty':''):S.scenario);params.set('run','hub-'+frameToken+'-'+Date.now());$('#product').src=`chat/preview.html?${params}`}else $('#product').src=`pages/${file}.html?${params}`;$('#product').title=`${p.name} · ${S.device}`;renderInspector();}
- function changePage(id,scenario=null){if(id==='public-profile')publicPerson='zahra';S.screen=id;S.scenario=scenario;normalize();render();loadFrame();}
- function navigateScreen(id,scenario){const dest=D.screens.find(x=>x.id===id);if(!dest)return;if(S.ticket!=='all'&&!dest.tickets.includes(S.ticket))S.ticket='all';S.screen=id;S.scenario=scenario||null;normalize();render();loadFrame();}
+  }else if(p.module==='chat'){if(p.id==='chat')chatContext.forEach((value,key)=>params.set(key,value));params.set('scene',p.chatRole?'booking-'+p.chatRole+(S.scenario==='pending'?'-pending':S.scenario==='history'?'-history':S.scenario==='empty'?'-empty':''):S.scenario);params.set('run','hub-'+frameToken+'-'+Date.now());$('#product').src=`chat/preview.html?${params}`}else $('#product').src=`pages/${file}.html?${params}`;$('#product').title=`${p.name} · ${S.device}`;renderInspector();}
+ function changePage(id,scenario=null){if(compactShell.matches)setDirectory(false);resetAccountContext();if(id==='public-profile')publicPerson='zahra';S.screen=id;S.scenario=scenario;normalize();render();loadFrame();}
+ function navigateScreen(id,scenario,guestBooking=null){
+ pendingGuestBooking=null;
+ if(id==='home'&&(!scenario||scenario==='default')&&memberRole)scenario=memberRole+'-cta';
+ if(['signin','signup','forgot','reset'].includes(id))resetAccountContext();
+ if(window.hubSharedAccountPage(id)&&memberRole&&(!scenario||scenario==='default'))scenario='member-'+memberRole;
+ if(id==='signin')pendingGuestBooking=guestBooking;
+ const dest=D.screens.find(x=>x.id===id);if(!dest)return;if(S.ticket!=='all'&&!dest.tickets.includes(S.ticket))S.ticket='all';S.screen=id;S.scenario=scenario||null;normalize();render();loadFrame();}
  function syncImportedScreen(state){
   if(frameModule!=='742'||!state?.screen)return;
   if(state.screen==='slots'){navigateScreen('mentor-calendar','schedule');return;}
@@ -42,7 +65,7 @@
   if(!id||id===S.screen)return;
   navigateScreen(id,id==='mentor-welcome'?'welcome':'complete');
  }
- function changeTicket(id){if(!validTicket(id))return;const old=S.screen;S.ticket=id;normalize();render();if(S.screen!==old)loadFrame();else if(S.view==='screens'&&S.screen==='home'&&id==='710'){S.scenario='quotes';renderControls();send('scenario',{scenario:'quotes'});syncURL();}}
+ function changeTicket(id){if(!validTicket(id))return;const old=S.screen;S.ticket=id;normalize();render();if(S.screen!==old){resetAccountContext();loadFrame();syncURL();}else if(S.view==='screens'&&S.screen==='home'&&id==='710'){S.scenario='quotes';renderControls();send('scenario',{scenario:'quotes'});syncURL();}}
  function render(){normalize();renderNav();renderControls();renderLibrary();renderInspector();syncURL();iconRefresh();}
  function componentURL(c){return c.code?D.repo+'/blob/'+(c.commit||D.commit)+'/'+c.code:null;}
  function renderLibrary(){const term=$('#component-search').value.trim().toLowerCase();const visible=D.components.filter(c=>(!term||(c.name+' '+c.label+' '+c.kind).toLowerCase().includes(term))&&(S.ticket==='all'||c.screens.some(id=>filtered().some(s=>s.id===id))));$('#library-count').textContent=visible.length+' 個元件／區塊';$('#component-grid').innerHTML=visible.map(c=>`<article class="component-card"><div class="component-card-head"><div><h3>${c.name}</h3><p>${c.label}</p></div><small>${c.kind}</small></div><div>${tags([...new Set(c.changes.map(h=>h.ticket))])}</div><div class="component-foot"><button data-component-detail="${c.id}">查看規格</button><button data-preview-component="${c.id}">在畫面查看</button></div></article>`).join('')||'<div class="empty">沒有符合條件的元件。</div>';}
@@ -72,7 +95,7 @@
  let pendingLocate=null;
  $('#ticket').innerHTML+=[...D.tickets].map(t=>`<option value="${t.id}">#${t.id} · ${t.name}</option>`).join('');$('#storybook').href=D.storybook;
  document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.ticket){changeTicket(b.dataset.ticket);return;}if(b.dataset.screen){if(!filtered().some(s=>s.id===b.dataset.screen))S.ticket='all';changePage(b.dataset.screen,b.dataset.example);return;}if(b.dataset.mode){mode(b.dataset.mode);return;}if(b.dataset.device){if(S.device===b.dataset.device)return;const old=S.device;S.device=b.dataset.device;renderControls();syncURL();if(frameModule==='730'&&(old==='mobile'||S.device==='mobile'))loadFrame();else send('device',{device:S.device});return;}if(b.dataset.view){S.view=b.dataset.view;S.component=null;render();return;}if(b.dataset.componentDetail){S.component=b.dataset.componentDetail;renderInspector();return;}if(b.dataset.previewComponent){previewComponent(b.dataset.previewComponent);return;}if(b.dataset.locate){previewComponent(b.dataset.locate);return;}if(b.id==='inspect-back'){inspector?.clear();S.component=null;send('clear');renderInspector();return;}});
- $('#ticket').addEventListener('change',e=>changeTicket(e.target.value));$('#scenario').addEventListener('change',e=>{S.scenario=e.target.value;S.component=null;renderControls();loadFrame();syncURL();});$('#component-search').addEventListener('input',renderLibrary);$('#reset').onclick=()=>{loadFrame();notify('已重設目前情境');};$('#close-inspector').onclick=()=>{if(S.view==='library'){S.view='screens';S.component=null;mode('play');render();}else mode('play');};$('#share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);notify('已複製目前的 Ticket、情境與模式連結');}catch{notify('請複製瀏覽器網址，已包含目前檢視設定');}};
+ $('#ticket').addEventListener('change',e=>changeTicket(e.target.value));$('#scenario').addEventListener('change',e=>{resetAccountContext();S.scenario=e.target.value;S.component=null;renderControls();loadFrame();syncURL();});$('#component-search').addEventListener('input',renderLibrary);$('#reset').onclick=()=>{resetAccountContext();loadFrame();syncURL();notify('已重設目前情境');};$('#close-inspector').onclick=()=>{if(S.view==='library'){S.view='screens';S.component=null;mode('play');render();}else mode('play');};$('#share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);notify('已複製目前的 Ticket、情境與模式連結');}catch{notify('請複製瀏覽器網址，已包含目前檢視設定');}};
  function showLocateHint(id){
   const component=D.components.find(c=>c.id===id);
   pendingLocate=null;S.view='library';S.component=id;mode('play');render();
@@ -89,7 +112,15 @@
  inspector=window.attachCatalogInspector($('#product'),()=>screen().components.map(id=>D.components.find(c=>c.id===id)).filter(Boolean),()=>S.mode==='inspect',id=>{S.component=id;renderInspector();});
  tryLocate();
  const win=doc.defaultView,originalOpen=win.open;
- function chatURL(u){if(u.hostname!=='xtalent-chat-654.bonny80.chatgpt.site')return false;navigateScreen('chat',u.searchParams.get('scene')||'list');const target=new URL($('#product').src);for(const key of ['partner','reservation','person','conversation'])if(u.searchParams.has(key))target.searchParams.set(key,u.searchParams.get(key));$('#product').src=target.href;return true;}
+ function chatURL(u){
+  if(u.hostname!=='xtalent-chat-654.bonny80.chatgpt.site')return false;
+  memberRole=activeFrameRole();chatContext=chatParameters(u);
+  let scene=u.searchParams.get('scene')||'list';
+  if(scene==='booking-mentee-contact'){
+   scene='new';if(chatContext.has('person'))chatContext.set('conversation',chatContext.get('person'));
+  }
+  navigateScreen('chat',scene);return true;
+ }
  win.open=function(url,...args){if(url&&chatURL(new URL(url,location.href)))return null;return originalOpen.call(win,url,...args);};
  const selector='a[target="_blank"][href^="https://xtalent-chat-654.bonny80.chatgpt.site/"]';
  function keepChatInHub(root){
@@ -102,7 +133,7 @@
  doc.defaultView.addEventListener('pagehide',()=>observer.disconnect(),{once:true});
  doc.addEventListener('click',e=>{const a=e.target.closest?.('a[href]');if(!a)return;const u=new URL(a.href,location.href);if(chatURL(u)){e.preventDefault();e.stopImmediatePropagation();return;}if(['xtalent.xchange.com.tw','xtalentdev.vercel.app','xtalent.vercel.app'].includes(u.hostname)){
  const dest=D.screens.find(x=>x.route===u.pathname+u.search)||D.screens.find(x=>x.route===u.pathname);
- if(dest){e.preventDefault();e.stopImmediatePropagation();navigateScreen(dest.id);return;}
+ if(dest){e.preventDefault();e.stopImmediatePropagation();memberRole=activeFrameRole();navigateScreen(dest.id);return;}
  }if(['x-talent-design-hub.x-talent.workers.dev',location.hostname].includes(u.hostname)){const target=u.searchParams.get('screen')||(u.pathname==='/'?(u.searchParams.get('scene')==='landing'||!u.search?'home':null):null);if(target&&D.screens.some(s=>s.id===target)){e.preventDefault();e.stopImmediatePropagation();navigateScreen(target,u.searchParams.get('scenario'));}};},true)}catch{}}
  $('#product').addEventListener('load',connectChatLinks);
 window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===$('#product').contentWindow&&frameModule==='chat'&&e.data?.type==='chat-preview-view'){$('#page-title').textContent=({chat:'站內聊聊',profile:'導師公開頁 · 聊聊入口',bookings:'預約管理 · 聊聊聯絡',pool:'尋找導師 · 聊聊入口',login:'登入 · 聊聊入口'})[e.data.view]||'站內聊聊';return;}if(e.origin!==location.origin||e.source!==$('#product').contentWindow||e.data?.channel!=='xt-hub')return;const m=e.data;
@@ -123,10 +154,41 @@ window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===
   if(S.ticket!=='all'&&!D.screens.find(s=>s.id===m.screen).tickets.includes(S.ticket))S.ticket='all';
   if(m.screen==='public-profile'&&m.person)publicPerson=m.person;S.screen=m.screen;S.scenario=m.scenario;S.component=pendingLocate;render();return;
  }
+ if(m.type==='identity-role' && validRole(m.role)){
+  memberRole=m.role;
+  if(window.hubSharedAccountPage(S.screen)){S.scenario='member-'+m.role;renderControls();}
+  if(S.screen==='home'&&m.homeScenario===m.role+'-cta'){S.scenario=m.homeScenario;renderControls();}
+  syncURL();return;
+ }
+ if(m.type==='booking-signin'&&frameModule==='mentor'&&S.screen==='public-profile'&&['booking-paid','booking-free'].includes(m.scenario)&&typeof m.person==='string'&&typeof m.plan==='string'){
+   navigateScreen('signin',null,{person:m.person,plan:m.plan,scenario:m.scenario});return;
+ }
+ if(m.type==='booking-authenticated'&&frameModule==='frontend'&&S.screen==='signin'&&pendingGuestBooking){
+   const booking=pendingGuestBooking;
+   memberRole='mentee'; publicPerson=booking.person; resumePlan=booking.plan;
+   navigateScreen('public-profile',booking.scenario);resumePlan=null;return;
+ }
  if(m.type==='navigate'){
+  if(!D.screens.some(s=>s.id===m.screen))return;
+  memberRole=m.role==='guest'?null:validRole(m.role)||activeFrameRole();chatContext=new URLSearchParams();
+  reopenAccount=m.keepMenu===true;
   const editingOwner=frameModule==='frontend'&&S.screen==='mentor-calendar'&&m.screen==='mentor-form'&&m.scenario==='complete';
-  navigateScreen(m.screen,editingOwner?'owner-edit':m.scenario);return;}if(m.type==='app-state'){syncImportedScreen(m.state);return;}if(m.type==='route'){const base=m.route.split('?')[0];const dest=D.screens.find(x=>x.module==='frontend'&&x.route===m.route)||(/^\/profile\/[^/]+$/.test(base)&&base!=='/profile/100'&&base!=='/profile/card'?D.screens.find(x=>x.id==='public-profile'):null)||D.screens.find(x=>x.module==='frontend'&&x.route?.split('?')[0]===base);if(dest){if(dest.id==='public-profile')publicPerson=({1:'zahra',2:'alex',3:'sarah'})[base.split('/').pop()]||base.split('/').pop();if(mentorScene(dest.id,dest.scenarios[0][0])){navigateScreen(dest.id,dest.id==='public-profile'&&S.scenario==='guest'?'guest':dest.scenarios[0][0]);return;}if(S.ticket!=='all'&&!dest.tickets.includes(S.ticket))S.ticket='all';if(S.screen!==dest.id){S.component=null;S.available=[];}S.screen=dest.id;S.scenario=dest.scenarios[0][0];render();}else{notify('此頁尚未收錄；返回目前畫面。');loadFrame();}return;}if(m.type==='ready'){connectChatLinks();S.ready=true;$('#loading').hidden=true;send('mode',{mode:S.mode});send('device',{device:S.device});if(pendingLocate){requestAnimationFrame(tryLocate);const token=frameToken;setTimeout(()=>{if(token===frameToken&&pendingLocate){tryLocate();if(pendingLocate)showLocateHint(pendingLocate);}},450);}return;}if(m.type==='available'){S.available=m.ids;tryLocate();if(!S.component)renderInspector();return;}if(m.type==='selected'){S.component=m.id;renderInspector();return;}if(m.type==='exit-inspect'){mode('play');return;}if(m.type==='external'){notify('這個連結前往原產品站；本次原型未加入這個銜接畫面。');return;}if(m.type==='error'){console.error('Imported screen error',JSON.stringify(m));notify('畫面載入遇到問題，可重設目前畫面後再試。');}});
+  navigateScreen(m.screen,editingOwner?'owner-edit':m.scenario);return;}if(m.type==='app-state'){syncImportedScreen(m.state);return;}if(m.type==='route'){const base=m.route.split('?')[0];const dest=D.screens.find(x=>x.module==='frontend'&&x.route===m.route)||(/^\/profile\/[^/]+$/.test(base)&&base!=='/profile/100'&&base!=='/profile/card'?D.screens.find(x=>x.id==='public-profile'):null)||D.screens.find(x=>x.module==='frontend'&&x.route?.split('?')[0]===base);if(dest){
+    if(dest.id==='public-profile')publicPerson=({1:'zahra',2:'alex',3:'sarah'})[base.split('/').pop()]||base.split('/').pop();
+    if(dest.id!==S.screen || mentorScene(dest.id,dest.scenarios[0][0])){
+     memberRole=activeFrameRole();
+     navigateScreen(dest.id,dest.id==='public-profile'&&S.scenario==='guest'?'guest':dest.scenarios[0][0]);
+    }
+   }else{notify('此頁尚未收錄；返回目前畫面。');loadFrame();}return;}if(m.type==='ready'){connectChatLinks();S.ready=true;$('#loading').hidden=true;send('mode',{mode:S.mode});send('device',{device:S.device});if(pendingLocate){requestAnimationFrame(tryLocate);const token=frameToken;setTimeout(()=>{if(token===frameToken&&pendingLocate){tryLocate();if(pendingLocate)showLocateHint(pendingLocate);}},450);}return;}if(m.type==='available'){S.available=m.ids;tryLocate();if(!S.component)renderInspector();return;}if(m.type==='selected'){S.component=m.id;renderInspector();return;}if(m.type==='exit-inspect'){mode('play');return;}if(m.type==='external'){notify('這個連結前往原產品站；本次原型未加入這個銜接畫面。');return;}if(m.type==='error'){console.error('Imported screen error',JSON.stringify(m));notify('畫面載入遇到問題，可重設目前畫面後再試。');}});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(S.view==='library'){S.component=null;renderInspector();}else if(S.mode==='inspect')mode('play');}});
- $('#toggle-sidebar').onclick=()=>{const hidden=document.body.classList.toggle('sidebar-hidden');$('#toggle-sidebar').setAttribute('aria-expanded',String(!hidden));$('#toggle-sidebar').setAttribute('aria-label',hidden?'顯示畫面目錄':'隱藏畫面目錄');};
+ const compactShell=matchMedia('(max-width:1119px)');
+ function setDirectory(open){
+  document.body.classList.toggle('sidebar-hidden',!open);
+  const toggle=$('#toggle-sidebar');toggle.setAttribute('aria-expanded',String(open));
+  toggle.setAttribute('aria-label',open?'隱藏畫面目錄':'顯示畫面目錄');
+ }
+ compactShell.addEventListener('change',()=>setDirectory(!compactShell.matches));
+ setDirectory(!compactShell.matches);
+ $('#toggle-sidebar').onclick=()=>setDirectory(document.body.classList.contains('sidebar-hidden'));
  render();loadFrame();iconRefresh();
 })();
