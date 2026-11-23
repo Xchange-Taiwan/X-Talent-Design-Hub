@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-23T14:29:24.947Z",
+  "syncedAt": "2026-11-23T15:29:03.640Z",
   "revision": "github-alignment-2026-11-18",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -10,13 +10,14 @@
     "date": "2026-11-23",
     "url": "https://xtalent-mentor-742.bonny80.chatgpt.site/"
   },
-  "storybookSyncedAt": "2026-11-23T14:24:47.740Z",
+  "storybookSyncedAt": "2026-11-23T15:22:07.895Z",
   "repository": "Xchange-Taiwan/X-Talent-Design-Hub",
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
   "summary": {
-    "totalScreens": 41,
+    "totalScreens": 40,
     "totalComponents": 193,
+    "totalDesignReferences": 1,
     "existingStorybookMappedCount": 44,
     "newCompositeDesignsCount": 149,
     "totalStorybookStories": 593,
@@ -785,7 +786,7 @@
     },
     {
       "group": "設計對照",
-      "count": 2,
+      "count": 1,
       "screens": [
         {
           "id": "mentor-audit",
@@ -818,27 +819,6 @@
           "version": "v72 · dbc28b1",
           "scenariosCount": 1,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-audit"
-        },
-        {
-          "id": "mentor-components",
-          "name": "導師元件展示",
-          "tickets": [
-            "742",
-            "746",
-            "837",
-            "843",
-            "736",
-            "840",
-            "841",
-            "842",
-            "834",
-            "829",
-            "839",
-            "890"
-          ],
-          "version": "v72 · dbc28b1",
-          "scenariosCount": 1,
-          "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-components"
         }
       ]
     },
@@ -4069,94 +4049,6 @@
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-audit"
     },
     {
-      "id": "mentor-components",
-      "name": "導師元件展示",
-      "group": "設計對照",
-      "module": "mentor",
-      "tickets": [
-        "742",
-        "746",
-        "837",
-        "843",
-        "736",
-        "840",
-        "841",
-        "842",
-        "834",
-        "829",
-        "839",
-        "890"
-      ],
-      "date": "2026-11-23",
-      "version": "v72 · dbc28b1",
-      "sourceKind": "design",
-      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components",
-      "scenarios": [
-        {
-          "key": "components",
-          "label": "導師元件展示",
-          "mentorScene": "components",
-          "sourceVersion": "v72 · dbc28b1",
-          "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components",
-          "sourceCommit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
-          "hubUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev/?screen=mentor-components&scenario=components"
-        }
-      ],
-      "components": [
-        "button",
-        "avatar-policy",
-        "gallery-question-type",
-        "rule-hint",
-        "commerce-art",
-        "booking-plan-card",
-        "booking-selection",
-        "calendar-slots",
-        "questionnaire-fields",
-        "order-summary",
-        "money-breakdown",
-        "hold-countdown",
-        "revenue-metrics",
-        "revenue-trend",
-        "revenue-sources",
-        "threshold-card",
-        "threshold-marker",
-        "bank-account-row",
-        "transaction-list",
-        "status-pill",
-        "reservation-details",
-        "reservation-plan",
-        "reservation-answers",
-        "private-reason",
-        "ledger-empty",
-        "bank-verification",
-        "shared-availability-editor",
-        "mentor-date-picker",
-        "mentor-select",
-        "availability-grid",
-        "availability-overrides",
-        "schedule-legend",
-        "service-stats",
-        "growth-activity",
-        "level-progress",
-        "level-roadmap",
-        "level-badge",
-        "expandable-review",
-        "dashboard-stats",
-        "dashboard-metric-art",
-        "income-metric-art",
-        "period-control",
-        "period-bars",
-        "member",
-        "avatar-chooser",
-        "question-type",
-        "mentor-header",
-        "identity-trigger",
-        "identity-switch"
-      ],
-      "note": "導師站 v72 的可操作元件範例與使用情境。",
-      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=mentor-components"
-    },
-    {
       "id": "role-switch",
       "name": "身分切換",
       "group": "帳號與身分",
@@ -4449,6 +4341,70 @@
       "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=growth-report"
     }
   ],
+  "designReferences": [
+    {
+      "id": "mentor-components",
+      "name": "導師元件展示",
+      "scene": "components",
+      "ticket": "#742",
+      "version": "v72 · dbc28b1",
+      "date": "2026-11-23",
+      "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
+      "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components",
+      "componentIds": [
+        "button",
+        "avatar-policy",
+        "gallery-question-type",
+        "rule-hint",
+        "commerce-art",
+        "booking-plan-card",
+        "booking-selection",
+        "calendar-slots",
+        "questionnaire-fields",
+        "order-summary",
+        "money-breakdown",
+        "hold-countdown",
+        "revenue-metrics",
+        "revenue-trend",
+        "revenue-sources",
+        "threshold-card",
+        "threshold-marker",
+        "bank-account-row",
+        "transaction-list",
+        "status-pill",
+        "reservation-details",
+        "reservation-plan",
+        "reservation-answers",
+        "private-reason",
+        "ledger-empty",
+        "bank-verification",
+        "shared-availability-editor",
+        "mentor-date-picker",
+        "mentor-select",
+        "availability-grid",
+        "availability-overrides",
+        "schedule-legend",
+        "service-stats",
+        "growth-activity",
+        "level-progress",
+        "level-roadmap",
+        "level-badge",
+        "expandable-review",
+        "dashboard-stats",
+        "dashboard-metric-art",
+        "income-metric-art",
+        "period-control",
+        "period-bars",
+        "member",
+        "avatar-chooser",
+        "question-type",
+        "mentor-header",
+        "identity-trigger",
+        "identity-switch"
+      ],
+      "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=library&catalog=mentor"
+    }
+  ],
   "components": [
     {
       "id": "header",
@@ -4509,9 +4465,6 @@
       "name": "Button",
       "label": "按鈕",
       "kind": "基礎元件",
-      "examples": {
-        "mentor-components": "components"
-      },
       "code": "src/components/ui/button.tsx",
       "commit": "c6c3660ae6c89263b15135e36060f43f162c01db",
       "screens": [
@@ -4543,8 +4496,7 @@
         "booking-payment",
         "team-support",
         "feedback-tip",
-        "mentor-audit",
-        "mentor-components"
+        "mentor-audit"
       ],
       "rules": [
         "保留既有 primary、outline、ghost 樣式。",
@@ -4969,13 +4921,9 @@
       "name": "MentorMemberCard",
       "label": "導師小卡",
       "kind": "業務元件",
-      "examples": {
-        "mentor-components": "components"
-      },
       "code": null,
       "screens": [
-        "mentor-welcome",
-        "mentor-components"
+        "mentor-welcome"
       ],
       "scenario": "welcome",
       "rules": [
@@ -5693,16 +5641,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
       "examples": {
-        "booking-payment": "checkout",
-        "mentor-components": "components"
+        "booking-payment": "checkout"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "booking-payment",
-        "mentor-components"
+        "booking-payment"
       ],
       "rules": [
         "顯示剩餘分秒，最後一分鐘切換提醒狀態。"
@@ -5805,8 +5751,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
       "examples": {
-        "booking-payment": "checkout",
-        "mentor-components": "components"
+        "booking-payment": "checkout"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -5826,8 +5771,7 @@
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "booking-payment",
-        "mentor-components"
+        "booking-payment"
       ],
       "rules": [
         "列出導師、方案、日期、時間與付款金額。"
@@ -6031,16 +5975,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=public-plans",
       "examples": {
-        "public-profile": "default",
-        "mentor-components": "components"
+        "public-profile": "default"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "public-profile",
-        "mentor-components"
+        "public-profile"
       ],
       "rules": [
         "方案名稱與單次費用並列，接續說明、最近可約時段與選擇按鈕。方案清單隨整頁捲動。"
@@ -6067,16 +6009,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=booking-paid",
       "examples": {
-        "public-profile": "booking-paid",
-        "mentor-components": "components"
+        "public-profile": "booking-paid"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "public-profile",
-        "mentor-components"
+        "public-profile"
       ],
       "rules": [
         "選取日期後顯示對應時段。"
@@ -6108,16 +6048,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=booking-paid",
       "examples": {
-        "public-profile": "booking-paid",
-        "mentor-components": "components"
+        "public-profile": "booking-paid"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "public-profile",
-        "mentor-components"
+        "public-profile"
       ],
       "rules": [
         "只列導師自訂題目，未設定題目時省略。"
@@ -6144,16 +6082,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=booking-free",
       "examples": {
-        "public-profile": "booking-free",
-        "mentor-components": "components"
+        "public-profile": "booking-free"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "BookingFlow.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "public-profile",
-        "mentor-components"
+        "public-profile"
       ],
       "rules": [
         "同一視窗選擇時段、作答並送出。"
@@ -6251,8 +6187,7 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=public-reviews",
       "examples": {
         "public-profile": "reviews",
-        "mentor-calendar": "owner-reviews",
-        "mentor-components": "components"
+        "mentor-calendar": "owner-reviews"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6272,8 +6207,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "public-profile",
-        "mentor-calendar",
-        "mentor-components"
+        "mentor-calendar"
       ],
       "rules": [
         "長評價可展開並收回。"
@@ -6305,8 +6239,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
-        "mentor-growth": "growth-l2",
-        "mentor-components": "components"
+        "mentor-growth": "growth-l2"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6329,8 +6262,7 @@
       "sourceFile": "GrowthComponents.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-growth",
-        "mentor-components"
+        "mentor-growth"
       ],
       "rules": [
         "顯示目前等級、有效時數及下一級差額。"
@@ -6357,8 +6289,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
-        "mentor-growth": "growth-l2",
-        "mentor-components": "components"
+        "mentor-growth": "growth-l2"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6377,8 +6308,7 @@
       "sourceFile": "GrowthComponents.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-growth",
-        "mentor-components"
+        "mentor-growth"
       ],
       "rules": [
         "區分已達、目前與未達成等級。"
@@ -6405,8 +6335,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
-        "mentor-growth": "growth-l2",
-        "mentor-components": "components"
+        "mentor-growth": "growth-l2"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6425,8 +6354,7 @@
       "sourceFile": "GrowthComponents.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-growth",
-        "mentor-components"
+        "mentor-growth"
       ],
       "rules": [
         "並列會談與服務指標。"
@@ -6453,8 +6381,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
-        "mentor-growth": "growth-l2",
-        "mentor-components": "components"
+        "mentor-growth": "growth-l2"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6475,8 +6402,7 @@
       "sourceFile": "GrowthActivity.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-growth",
-        "mentor-components"
+        "mentor-growth"
       ],
       "rules": [
         "依所選期間呈現服務活動。"
@@ -6720,16 +6646,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
       "examples": {
-        "mentor-plans": "plan-schedule",
-        "mentor-components": "components"
+        "mentor-plans": "plan-schedule"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "SharedAvailability.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "依星期與時間調整可預約區段。"
@@ -6756,16 +6680,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
       "examples": {
-        "mentor-plans": "plan-schedule",
-        "mentor-components": "components"
+        "mentor-plans": "plan-schedule"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "SharedAvailability.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "日期設定與一般週時段分開維護。"
@@ -6826,8 +6748,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6848,8 +6769,7 @@
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "餘額、進度及撥款資格共同呈現。"
@@ -6876,16 +6796,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "在金額尺度標示撥款門檻，分辨達標與未達標。"
@@ -6912,8 +6830,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6933,8 +6850,7 @@
       "sourceFile": "RevenueOverview.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "並列本月淨額、待結算及預計撥款。"
@@ -6961,8 +6877,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -6981,8 +6896,7 @@
       "sourceFile": "IncomeVisuals.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "提供每日與累積金額，切換時更新圖表。"
@@ -7009,16 +6923,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "IncomeVisuals.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "依來源呈現比例及金額。"
@@ -7079,8 +6991,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-transactions",
       "examples": {
-        "mentor-income": "income-transactions",
-        "mentor-components": "components"
+        "mentor-income": "income-transactions"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -7100,8 +7011,7 @@
       "sourceFile": "Income.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "顯示交易來源、費用與實收。"
@@ -7128,8 +7038,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-transactions",
       "examples": {
-        "mentor-income": "income-transactions",
-        "mentor-components": "components"
+        "mentor-income": "income-transactions"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -7148,8 +7057,7 @@
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "開啟交易明細可查看總額、服務費及淨額。"
@@ -7210,8 +7118,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-settings",
       "examples": {
-        "mentor-income": "income-settings",
-        "mentor-components": "components"
+        "mentor-income": "income-settings"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -7231,8 +7138,7 @@
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "可切換顯示帳號及查看審核狀態。"
@@ -7259,16 +7165,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-settings-missing",
       "examples": {
-        "mentor-income": "income-settings-missing",
-        "mentor-components": "components"
+        "mentor-income": "income-settings-missing"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "Income.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "支援未設定、審核中及退件情境。"
@@ -7295,16 +7199,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-upcoming",
       "examples": {
-        "mentor-bookings": "bookings-upcoming",
-        "mentor-components": "components"
+        "mentor-bookings": "bookings-upcoming"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "ReservationDetails.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-bookings",
-        "mentor-components"
+        "mentor-bookings"
       ],
       "rules": [
         "顯示方案與當次費用。"
@@ -7331,19 +7233,17 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-upcoming",
       "examples": {
-        "mentor-bookings": "bookings-upcoming",
-        "mentor-components": "components"
+        "mentor-bookings": "bookings-upcoming"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "ReservationDetails.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-bookings",
-        "mentor-components"
+        "mentor-bookings"
       ],
       "rules": [
-        "有自訂題目且有回答時可展開。"
+        "有問卷回答時顯示。題數與箭頭並列，點整列展開題目和回答。"
       ],
       "changes": [
         {
@@ -7356,7 +7256,7 @@
       "storybookUrl": null,
       "composition": {
         "level": "業務元件",
-        "scope": "有自訂題目且有回答時可展開。",
+        "scope": "有問卷回答時顯示。題數與箭頭並列，點整列展開題目和回答。",
         "reuse": []
       }
     },
@@ -7370,8 +7270,7 @@
         "mentor-bookings": "bookings-history",
         "chat": "booking-mentor-reasons",
         "mentor-reservations": "history",
-        "mentee-reservations": "history",
-        "mentor-components": "components"
+        "mentee-reservations": "history"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -7381,8 +7280,7 @@
         "mentor-reservations",
         "mentee-reservations",
         "chat",
-        "mentor-bookings",
-        "mentor-components"
+        "mentor-bookings"
       ],
       "rules": [
         "只有原因填寫者的卡片提供查看入口。"
@@ -8017,16 +7915,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-avatar",
       "examples": {
-        "mentee-edit": "avatar",
-        "mentor-components": "components"
+        "mentee-edit": "avatar"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "AvatarPolicy.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentee-edit",
-        "mentor-components"
+        "mentee-edit"
       ],
       "rules": [
         "選擇插畫或上傳照片後儲存。"
@@ -8075,7 +7971,6 @@
         "team-support": "support",
         "feedback-tip": "mentee-history",
         "mentor-audit": "audit",
-        "mentor-components": "components",
         "mentee-growth": "growth",
         "milestones": "growth",
         "growth-report": "report-owner"
@@ -8111,7 +8006,6 @@
         "team-support",
         "feedback-tip",
         "mentor-audit",
-        "mentor-components",
         "role-switch",
         "mentee-growth",
         "milestones",
@@ -8174,7 +8068,6 @@
         "team-support": "support",
         "feedback-tip": "mentee-history",
         "mentor-audit": "audit",
-        "mentor-components": "components",
         "mentee-growth": "growth",
         "milestones": "growth",
         "growth-report": "report-owner"
@@ -8210,7 +8103,6 @@
         "team-support",
         "feedback-tip",
         "mentor-audit",
-        "mentor-components",
         "role-switch",
         "mentee-growth",
         "milestones",
@@ -8948,16 +8840,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-transactions-empty",
       "examples": {
-        "mentor-income": "income-transactions-empty",
-        "mentor-components": "components"
+        "mentor-income": "income-transactions-empty"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "CommerceUI.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "依目前分頁顯示尚無交易或尚無撥款。"
@@ -9479,7 +9369,6 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
       "examples": {
         "booking-payment": "checkout",
-        "mentor-components": "components",
         "team-support": "support-checkout",
         "feedback-tip": "tip-checkout",
         "mentor-income": "income"
@@ -9492,8 +9381,7 @@
         "mentor-income",
         "booking-payment",
         "team-support",
-        "feedback-tip",
-        "mentor-components"
+        "feedback-tip"
       ],
       "rules": [
         "點說明圖示展開對應規則，可點外側或按 Esc 關閉。"
@@ -9526,7 +9414,6 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=checkout",
       "examples": {
         "booking-payment": "checkout",
-        "mentor-components": "components",
         "team-support": "support-checkout",
         "feedback-tip": "tip-checkout",
         "mentor-income": "income"
@@ -9539,8 +9426,7 @@
         "mentor-income",
         "booking-payment",
         "team-support",
-        "feedback-tip",
-        "mentor-components"
+        "feedback-tip"
       ],
       "rules": [
         "付款方式、預約結果及可提領金額分別使用信用卡、日曆及硬幣。"
@@ -9605,8 +9491,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income",
       "examples": {
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -9626,8 +9511,7 @@
       "sourceFile": "IncomeMetricArt.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "本月淨額、待結算和預計撥款各使用對應指標圖。"
@@ -9655,7 +9539,6 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=income-transactions",
       "examples": {
         "mentor-income": "income-transactions",
-        "mentor-components": "components",
         "public-profile": "booking-paid",
         "mentor-bookings": "bookings-upcoming"
       },
@@ -9666,8 +9549,7 @@
       "screens": [
         "public-profile",
         "mentor-bookings",
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "顯示目前收款、付款或審核狀態，文字搭配對應色階。"
@@ -10018,7 +9900,6 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=public-plans",
       "examples": {
         "public-profile": "default",
-        "mentor-components": "components",
         "mentor-calendar": "owner",
         "mentor-search": "default",
         "favorites": "default"
@@ -10031,8 +9912,7 @@
         "mentor-search",
         "public-profile",
         "mentor-calendar",
-        "favorites",
-        "mentor-components"
+        "favorites"
       ],
       "rules": [
         "L1 至 L5 各具對應標記，可搭配等級說明。"
@@ -10065,7 +9945,6 @@
         "mentor-welcome": "welcome",
         "mentor-search": "menu",
         "mentor-audit": "audit",
-        "mentor-components": "components",
         "home": "mentee-cta",
         "about": "member-mentee",
         "privacy": "member-mentee",
@@ -10135,7 +10014,6 @@
         "team-support",
         "feedback-tip",
         "mentor-audit",
-        "mentor-components",
         "role-switch",
         "mentee-growth",
         "milestones",
@@ -10172,7 +10050,6 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=bookings-upcoming",
       "examples": {
         "mentor-bookings": "bookings-upcoming",
-        "mentor-components": "components",
         "feedback-tip": "mentee-history"
       },
       "code": null,
@@ -10181,8 +10058,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "mentor-bookings",
-        "feedback-tip",
-        "mentor-components"
+        "feedback-tip"
       ],
       "rules": [
         "呈現方案、款項與自訂問卷答案；取消或婉拒原因只提供給填寫者。"
@@ -10313,16 +10189,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
       "examples": {
-        "mentor-plans": "plan-schedule",
-        "mentor-components": "components"
+        "mentor-plans": "plan-schedule"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "SharedAvailability.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "已預約時段以斜線標示，調整開放時段只影響新預約。"
@@ -10349,16 +10223,14 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-paid",
       "examples": {
-        "mentor-plans": "plan-paid",
-        "mentor-components": "components"
+        "mentor-plans": "plan-paid"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "QuestionnaireSelect.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "方案編輯時可選擇文字、單選或連結題。"
@@ -10679,17 +10551,14 @@
       "name": "AvatarPolicy",
       "label": "導師／學員頭像對照",
       "kind": "業務元件",
+      "referenceId": "mentor-components",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components",
-      "examples": {
-        "mentor-components": "components"
-      },
+      "examples": {},
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "AvatarPolicy.tsx",
       "verifiedAt": "2026-11-23",
-      "screens": [
-        "mentor-components"
-      ],
+      "screens": [],
       "rules": [
         "切換身分後實際操作預設圖與真人照片限制。"
       ],
@@ -10697,7 +10566,7 @@
         {
           "ticket": "830",
           "date": "2026-11-23",
-          "text": "已核對原型情境與使用畫面。"
+          "text": "收錄原型互動範例。"
         }
       ],
       "mapping": "導師站 v72 · app/AvatarPolicy.tsx",
@@ -10713,17 +10582,14 @@
       "name": "GalleryQuestionType",
       "label": "回答類型互動範例",
       "kind": "業務元件",
+      "referenceId": "mentor-components",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components",
-      "examples": {
-        "mentor-components": "components"
-      },
+      "examples": {},
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
       "sourceFile": "QuestionnaireSelect.tsx",
       "verifiedAt": "2026-11-23",
-      "screens": [
-        "mentor-components"
-      ],
+      "screens": [],
       "rules": [
         "選擇回答類型後即時顯示當前選項。"
       ],
@@ -10731,7 +10597,7 @@
         {
           "ticket": "830",
           "date": "2026-11-23",
-          "text": "已核對原型情境與使用畫面。"
+          "text": "收錄原型互動範例。"
         }
       ],
       "mapping": "導師站 v72 · app/QuestionnaireSelect.tsx",
@@ -11096,8 +10962,7 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
         "mentor-growth": "growth-l2",
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11119,8 +10984,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "mentor-growth",
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "同列顯示指標、數值與單位，支援具備明細入口的指標。"
@@ -11153,8 +11017,7 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
         "mentor-growth": "growth-l2",
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11176,8 +11039,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "mentor-growth",
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "圖示與色階隨場次、學員、時數或收入類型切換。"
@@ -11210,8 +11072,7 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
         "mentor-growth": "growth-l2",
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11233,8 +11094,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "mentor-growth",
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "切換期間後，同步更新統計數值與時間軸。"
@@ -11272,8 +11132,7 @@
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=growth-l2",
       "examples": {
         "mentor-growth": "growth-l2",
-        "mentor-income": "income",
-        "mentor-components": "components"
+        "mentor-income": "income"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11295,8 +11154,7 @@
       "verifiedAt": "2026-11-23",
       "screens": [
         "mentor-growth",
-        "mentor-income",
-        "mentor-components"
+        "mentor-income"
       ],
       "rules": [
         "每一欄對應一個期間，可查看單點數值與負值。"
@@ -11375,8 +11233,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-new",
       "examples": {
-        "mentor-plans": "plan-new",
-        "mentor-components": "components"
+        "mentor-plans": "plan-new"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11396,8 +11253,7 @@
       "sourceFile": "MentorFields.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "使用相同選擇器設定方案及開放時段。"
@@ -11424,8 +11280,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
       "examples": {
-        "mentor-plans": "plan-schedule",
-        "mentor-components": "components"
+        "mentor-plans": "plan-schedule"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11444,8 +11299,7 @@
       "sourceFile": "MentorFields.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "進入指定日期調整後，按日期開啟月曆。"
@@ -11472,8 +11326,7 @@
       "kind": "業務元件",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=plan-schedule",
       "examples": {
-        "mentor-plans": "plan-schedule",
-        "mentor-components": "components"
+        "mentor-plans": "plan-schedule"
       },
       "code": null,
       "commit": "dbc28b1984955a6f3f1b8686e7555c9b3cc01259",
@@ -11494,8 +11347,7 @@
       "sourceFile": "SharedAvailability.tsx",
       "verifiedAt": "2026-11-23",
       "screens": [
-        "mentor-plans",
-        "mentor-components"
+        "mentor-plans"
       ],
       "rules": [
         "集中設定每週固定時段與特定日期例外。"
@@ -12387,7 +12239,7 @@
       },
       "reservation-answers": {
         "level": "業務元件",
-        "scope": "有自訂題目且有回答時可展開。",
+        "scope": "有問卷回答時顯示。題數與箭頭並列，點整列展開題目和回答。",
         "reuse": []
       },
       "private-reason": {

@@ -68,6 +68,18 @@ async function main() {
   }
   const HUB_DATA = sandbox.window.HUB_DATA || { tickets: [], screens: [], components: [] };
   const HUB_COMPONENT_MAP = sandbox.window.HUB_COMPONENT_MAP || { existing: {}, newDesigns: {} };
+  const references = Object.values(sandbox.window.MENTOR_REFERENCES).map(reference => ({
+    id: reference.id,
+    name: reference.name,
+    scene: reference.scene,
+    ticket: reference.ticket,
+    version: reference.version,
+    date: reference.date,
+    commit: reference.commit,
+    sourceUrl: reference.source,
+    componentIds: reference.componentIds,
+    hubUrl: new URL('/?view=library&catalog=mentor',DESIGN_HUB_PROD_URL).href,
+  }));
 
   const screensCatalog = (HUB_DATA.screens || []).map((s) => ({
     id: s.id,
@@ -129,6 +141,7 @@ async function main() {
       name: c.name,
       label: c.label,
       kind: c.kind,
+      referenceId: c.referenceId || undefined,
       sourceUrl: c.sourceUrl || undefined,
       examples: c.examples || undefined,
       code: c.code || null,
@@ -190,6 +203,7 @@ async function main() {
     summary: {
       totalScreens: screensCatalog.length,
       totalComponents: componentsCatalog.length,
+      totalDesignReferences: references.length,
       existingStorybookMappedCount: Object.keys(HUB_COMPONENT_MAP.existing || {}).length,
       newCompositeDesignsCount: Object.keys(HUB_COMPONENT_MAP.newDesigns || {}).filter(id=>!HUB_COMPONENT_MAP.existing[id]).length,
       totalStorybookStories: sbBaselineJson.totalStories || 0,
@@ -198,6 +212,7 @@ async function main() {
     tickets,
     screenGroups,
     screens: screensCatalog,
+    designReferences: references,
     components: componentsCatalog,
     componentMap: HUB_COMPONENT_MAP,
   };

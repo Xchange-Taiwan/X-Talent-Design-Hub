@@ -67,3 +67,49 @@ body[data-xt-device] .identity-menu[role=dialog] {
   }
   & > button { grid-area: action; margin: 4px 0 0; }
 }
+
+/* Reservation questionnaire disclosure, shared by both booking views. */
+#xt742 .xc-booking-questions:not(.booking-private-reason) {
+  padding: 0;
+  background: transparent;
+
+  & > summary {
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    gap: 12px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    background: var(--xm-surface);
+    border: 1px solid var(--xm-line);
+    border-radius: 8px;
+    color: var(--xm-ink);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  & > summary::-webkit-details-marker { display: none; }
+  & > summary:hover { background: var(--xm-canvas); }
+  & > summary:focus-visible { outline: 2px solid var(--xm-brand-ink); outline-offset: 2px; }
+  & > summary > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+    white-space: nowrap;
+    color: hsl(var(--color-text-primary) / .72);
+    font-size: 13px;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  & > summary svg { display: block; width: 16px; height: 16px; }
+  &[open] > summary svg { transform: rotate(180deg); }
+  & > dl {
+    margin: 12px 0 0;
+    padding: 0 0 0 12px;
+    border-inline-start: 2px solid var(--xm-line);
+    gap: 12px;
+  }
+  & dt { color: hsl(var(--color-text-primary) / .72); font-size: 13px; line-height: 20px; }
+  & dd { margin: 2px 0 0; color: var(--xm-ink); font-size: 14px; line-height: 22px; }
+}

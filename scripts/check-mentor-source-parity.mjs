@@ -22,7 +22,7 @@ const runtime = vm.createContext({window:{}});
 for(const [,file] of read('index.html').matchAll(/<script src="([^"?]+)(?:\?[^"]*)?"><\/script>/g)){
   if(!['lucide.min.js','inspector.js','hub.js'].includes(file)) vm.runInContext(read(file),runtime,{filename:file});
 }
-const {HUB_DATA:hub,MENTOR_SCREENS:routes,hubScreenSource} = runtime.window;
+const {HUB_DATA:hub,MENTOR_SCREENS:routes,MENTOR_REFERENCES:references,hubScreenSource} = runtime.window;
 const imported = JSON.parse(read('mentor/source.json'));
 const mapped = new Set();
 for(const screen of hub.screens){
@@ -36,13 +36,23 @@ for(const screen of hub.screens){
     mapped.add(source);
   }
 }
+for (const reference of Object.values(references)) {
+  assert.ok(!mapped.has(reference.scene),reference.id+' also counted as a screen scenario');
+  assert.ok(scenes.some(([scene])=>scene===reference.scene),reference.id+' has no source scenario');
+  assert.equal(new URL(reference.source).searchParams.get('scene'),reference.scene);
+  assert.equal(reference.commit,imported.sourceCommit);
+  assert.ok(reference.version.startsWith('v'+imported.siteVersion+' · '),reference.id);
+  mapped.add(reference.scene);
+}
 const missing = scenes.map(([scene])=>scene).filter(scene=>!mapped.has(scene));
-assert.deepEqual(missing,[],'Source scenarios without a routable Hub entry: '+missing.join(', '));
+assert.deepEqual(missing,[],'Source scenarios missing from Hub screens and design references: '+missing.join(', '));
 for(const canonical of mentorComponents){
   const matches = hub.components.filter(c=>c.sourceComponent?.id===canonical.id);
   assert.equal(matches.length,1,'Expected exactly one canonical component for '+canonical.id);
   const [component] = matches;
   assert.deepEqual(structuredClone(component.sourceComponent),canonical,'Incorrect source contract for '+canonical.id);
-  assert.ok(component.screens.length && component.selector,'No inspectable Hub example for '+canonical.id);
+  const reference = references[component.referenceId];
+  assert.ok(component.selector && (component.screens.length || reference?.componentIds.includes(component.id)),
+    'No inspectable Hub example for '+canonical.id);
 }
 console.log('Compared the prototype source to the Hub: '+scenes.length+' source scenarios and '+mentorComponents.length+' canonical component definitions.');

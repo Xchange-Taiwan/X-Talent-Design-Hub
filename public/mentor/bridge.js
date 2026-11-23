@@ -163,7 +163,7 @@
   }
   // Review shortcuts select fixtures without resetting the source app's session role.
   // Open the target through the Hub so its role and local demo data match a direct visit.
-  if(next[0]!==screen && ['mentor-audit','mentor-components'].includes(screen)){
+  if(next[0]!==screen && screen==='mentor-audit'){
    const target=next.join('/');
    if(outbound!==target){outbound=target;send('navigate',{screen:next[0],scenario:next[1]});}
    return;

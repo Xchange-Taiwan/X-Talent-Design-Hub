@@ -4,13 +4,13 @@
 
 | 驗收項目 | 結果 |
 | --- | --- |
-| 原型情境選單 | 114 個來源情境皆有入口，涵蓋原有名稱與 Hub 對照名稱。 |
+| 原型情境選單 | 114 個來源情境皆有入口。產品與驗收情境在畫面目錄，導師元件展示收錄於元件庫。 |
 | 原型正式登記的元件 | 23 個元件逐一對應唯一一筆 Hub 紀錄，核對 ID、匯出名稱、來源檔、票號與情境。 |
 | 操作驗證 | 三種裝置共 342 組導師情境。另點測身分切換、搜尋導師、方案與時段、付款返回預約、免費與收費回饋、贊助、元件定位及拖曳。 |
 | Storybook | 直接對應的案例連到該案例；組合元件可另外列出沿用的元素。 |
 | 待設計 | #836／#830 D-1 的分角色多步驟與中斷續填，以及 #972 學員完成翻卡。檢視模式列出舊版畫面與 PM 決議。 |
 
-[導師元件展示](https://xtalent-design-hub.bonny80.chatgpt.site/?view=library&screen=mentor-components&scenario=components) · [導師規格對照](https://xtalent-design-hub.bonny80.chatgpt.site/?screen=mentor-audit&scenario=audit) · [原型來源](https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components)
+[元件庫 · 導師元件](https://xtalent-design-hub.bonny80.chatgpt.site/?view=library&catalog=mentor) · [導師規格對照](https://xtalent-design-hub.bonny80.chatgpt.site/?screen=mentor-audit&scenario=audit) · [原型來源](https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=components)
 
 ## 重新核對
 
@@ -35,6 +35,6 @@ node scripts/check-mentor-source-parity.mjs ../sites/xtalent-mentor-742
 | 首頁、帳號與其他共用頁 | 核對登入／訪客呈現，從登入頁面進入關於與政策頁時延續身分。 |
 | 導師資料舊連結 | 姓名、服務選項、工作經驗、教育經歷對應現行編輯器，建立完成後的個人頁與時段入口連到實際頁面。 |
 
-本輪從 Hub 入口載入 41 頁的 260 個情境，在桌機、平板及手機共檢查 780 次，核對載入、執行錯誤及水平溢位。另從預設入口實際操作身分切換、收藏、預約、聯絡與回饋。
+v72 首輪驗收涵蓋 260 個情境，在桌機、平板及手機共檢查 780 次，核對載入、執行錯誤及水平溢位。這批入口現分為 40 個畫面的 259 個情境，以及元件庫中的 1 個導師元件參考。元件的「使用畫面」列出實際採用該元件的頁面。
 
 獨立的早期回饋測試仍可重現單筆表單、評分與送出失敗。已登入原型中的共用頁首直接由導師 v72 的 `MentorHeader` 及 `IdentityTrack` 建出。站內資料、未讀數、通知和導覽由各頁提供。可用 `node scripts/build-account-header.mjs <導師原型路徑>` 重建嵌入版本，用 `node scripts/check-account-entrypoints.browser.mjs <Hub 網址>` 操作桌機、平板及手機的預設入口。瀏覽器測試使用 Playwright，並支援 `HUB_PLAYWRIGHT_MODULE` 指定既有安裝位置。

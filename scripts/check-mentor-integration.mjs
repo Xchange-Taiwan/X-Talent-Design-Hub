@@ -14,8 +14,12 @@ const original = structuredClone(data.screens);
 vm.runInContext(read('mentor/registry.js').toString(),context);
 const routes = context.window.MENTOR_SCREENS;
 const flows={'mentor-growth':'#746','mentor-bookings':'#842','mentor-plans':'#837','mentor-income':'#843','booking-payment':'#841','team-support':'#829','feedback-tip':'#834'};
-assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows),'mentor-audit','mentor-components'].join());
+assert.deepEqual(data.screens.map(s=>s.id).join(),[...original.map(s=>s.id),...Object.keys(flows),'mentor-audit'].join());
 assert.equal(new Set(data.screens.map(s=>s.id)).size,data.screens.length);
+const gallery = context.window.MENTOR_REFERENCES['mentor-components'];
+assert.equal(gallery.scene,'components');
+assert.equal(gallery.ticket,'#742');
+assert.equal(routes[gallery.id],undefined,'Design reference registered as a product route');
 for (const screen of original) {
   const current = data.screens.find(s=>s.id===screen.id);
   assert.equal(current.module,screen.module);
@@ -30,7 +34,7 @@ for (const [legacy,source] of Object.entries({default:'mentor-search',guest:'men
 }
 for(const scenario of ['default','one','empty-favorites'])assert.equal(routes.favorites.scenes[scenario],'mentor-search');
 assert.equal(routes.favorites.marker,'main.p2-favorites');
-const nativeTickets={favorites:'#753',history:'#834','mentor-reservations':'#842','mentee-reservations':'#834','mentor-search':'#839','mentor-audit':'#742','mentor-components':'#742'};
+const nativeTickets={favorites:'#753',history:'#834','mentor-reservations':'#842','mentee-reservations':'#834','mentor-search':'#839','mentor-audit':'#742'};
 const mentorEntries=new Set(['mentor/index.html']);
 for(const [id,entry] of Object.entries(routes)){
   const screen=data.screens.find(s=>s.id===id);

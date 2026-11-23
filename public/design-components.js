@@ -5,21 +5,26 @@
   const chat = 'https://xtalent-chat-654.bonny80.chatgpt.site/';
   const growth = 'https://xtalent-mentee-growth.bonny80.chatgpt.site/';
   const get = id => D.screens.find(s => s.id === id);
-  function group(screenId, ticket, source, items) {
+  function group(entryId, ticket, source, items) {
+    const page = get(entryId);
+    const reference = window.MENTOR_REFERENCES[entryId];
     for (const [name,label,selector,scene,rule,story] of items) {
       const id = name.replace(/([a-z0-9])([A-Z])/g,'$1-$2').toLowerCase();
-      const page = get(screenId);
-      const scenario = scene || page.scenarios[0][0];
-      const originScene = window.MENTOR_SCREENS[screenId]?.scenes[scenario] || scenario;
+      const scenario = scene || reference?.scene || page.scenarios[0][0];
+      const originScene = window.MENTOR_SCREENS[entryId]?.scenes[scenario] || scenario;
       let c = D.components.find(c => c.id === id);
       if (!c) {
         c = {id,name,label,selector,kind:'業務元件',screens:[],examples:{},rules:[rule],
-          catalogDate:'2026-11-23',changes:[{ticket,date:'2026-11-23',text:'已核對原型情境與使用畫面。'}],
-          sourceUrl:source+'?scene='+originScene,story,mapping:source===chat?'聊聊原型':source===growth?'學員成長原型':'導師中心原型'};
+          catalogDate:'2026-11-23',changes:[{ticket,date:'2026-11-23',text:reference?'收錄原型互動範例。':'已核對原型情境與使用畫面。'}],
+          sourceUrl:reference?.source || source+'?scene='+originScene,story,mapping:source===chat?'聊聊原型':source===growth?'學員成長原型':'導師中心原型'};
         D.components.push(c);
       }
+      if (reference) {
+        c.referenceId = reference.id;
+        continue;
+      }
       c.examples ||= {};
-      c.examples[screenId]=scenario;
+      c.examples[entryId]=scenario;
       if (!page.components.includes(id)) page.components.push(id);
     }
   }
@@ -75,7 +80,7 @@
   ]);
   group('mentor-bookings','842',mentor,[
     ['ReservationPlan','預約方案與費用','.xc-booking-plan-line','bookings-upcoming','顯示方案與當次費用。'],
-    ['ReservationAnswers','問卷回答摺疊列','.xc-booking-questions','bookings-upcoming','有自訂題目且有回答時可展開。'],
+    ['ReservationAnswers','問卷回答摺疊列','.xc-booking-questions:not(.booking-private-reason)','bookings-upcoming','有問卷回答時顯示。題數與箭頭並列，點整列展開題目和回答。'],
     ['PrivateReason','本人填寫的取消或婉拒原因','.booking-private-reason','bookings-history','只有原因填寫者的卡片提供查看入口。'],
     ['BookingActions','預約卡操作列','.booking-actions','bookings-history','聯絡入口與會談操作分列左右，依角色和狀態呈現。']
   ]);
@@ -300,7 +305,6 @@
       if(!screen.components.includes(id))screen.components.push(id);
     }
   }
-  usedOn('mentor-components','components','button rule-hint commerce-art booking-plan-card booking-selection calendar-slots questionnaire-fields order-summary money-breakdown hold-countdown revenue-metrics revenue-trend revenue-sources threshold-card threshold-marker bank-account-row transaction-list status-pill reservation-details reservation-plan reservation-answers private-reason ledger-empty bank-verification shared-availability-editor mentor-date-picker mentor-select availability-grid availability-overrides schedule-legend service-stats growth-activity level-progress level-roadmap level-badge expandable-review dashboard-stats dashboard-metric-art income-metric-art period-control period-bars member avatar-chooser question-type');
   usedOn('role-switch','role-shared','mentor-header');
   usedOn('team-support','support-checkout','payment-fields rule-hint commerce-art');
   usedOn('feedback-tip','tip-checkout','payment-fields contribution-summary rule-hint commerce-art');
@@ -320,7 +324,6 @@
   usedOn('favorites','default','level-badge pool-card favorite-card favorite-toggle favorites-header');
   usedOn('favorites','empty-favorites','favorites-empty');
   usedOn('mentor-audit','audit','mentor-header');
-  usedOn('mentor-components','components','mentor-header');
   // The shared account header is also available from ordinary product routes.
   // Pick a signed-in example for screens that include guest or modal fixtures.
   const accountExamples={
@@ -330,7 +333,7 @@
     'mentor-reservations':'default','mentee-reservations':'default',favorites:'default',chat:'list',
     'mentor-growth':'growth-l2','mentor-bookings':'bookings-upcoming','mentor-plans':'plans-filled',
     'mentor-income':'income','booking-payment':'checkout','team-support':'support','feedback-tip':'mentee-history',
-    'mentor-audit':'audit','mentor-components':'components','role-switch':'role-shared','mentee-growth':'growth',
+    'mentor-audit':'audit','role-switch':'role-shared','mentee-growth':'growth',
     milestones:'growth','growth-report':'report-owner'
   };
   for(const [id,example] of Object.entries(accountExamples)) {

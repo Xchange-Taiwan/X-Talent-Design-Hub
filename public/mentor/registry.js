@@ -122,9 +122,22 @@
  for(const flow of flows){
   entries[flow.id]={role:flow.role,ticket:flow.ticket,flow:true,scenes:Object.fromEntries(flow.scenarios.map(([scene])=>[scene,scene]))};
  }
+ window.MENTOR_REFERENCES = {
+  'mentor-components':{id:'mentor-components',name:'導師元件展示',scene:'components',ticket:'#742',
+   source:release.url+'?scene=components',version:versionLabel,date:release.date,commit:release.commit,
+   componentIds:[
+    'button','avatar-policy','gallery-question-type','rule-hint','commerce-art','booking-plan-card','booking-selection',
+    'calendar-slots','questionnaire-fields','order-summary','money-breakdown','hold-countdown','revenue-metrics',
+    'revenue-trend','revenue-sources','threshold-card','threshold-marker','bank-account-row','transaction-list',
+    'status-pill','reservation-details','reservation-plan','reservation-answers','private-reason','ledger-empty',
+    'bank-verification','shared-availability-editor','mentor-date-picker','mentor-select','availability-grid',
+    'availability-overrides','schedule-legend','service-stats','growth-activity','level-progress','level-roadmap',
+    'level-badge','expandable-review','dashboard-stats','dashboard-metric-art','income-metric-art','period-control',
+    'period-bars','member','avatar-chooser','question-type','mentor-header','identity-trigger','identity-switch'
+   ]}
+ };
  const reviewPages = [
-  {id:'mentor-audit',name:'導師規格對照',scene:'audit',marker:'.fr-audit',icon:'clipboard-check',note:'導師站 v72 的 FR 規格對照與驗收入口。來源備註依原型交付版本保留。'},
-  {id:'mentor-components',name:'導師元件展示',scene:'components',marker:'.fr-components',icon:'component',note:'導師站 v72 的可操作元件範例與使用情境。'}
+  {id:'mentor-audit',name:'導師規格對照',scene:'audit',marker:'.fr-audit',icon:'clipboard-check',note:'導師站 v72 的 FR 規格對照與驗收入口。來源備註依原型交付版本保留。'}
  ];
  for(const {id,scene,marker} of reviewPages){
   entries[id]={role:'reviewer',ticket:'#742',nativePage:scene,marker,scenes:{[scene]:scene}};
@@ -171,7 +184,6 @@
   'public-profile':['830','840','736','758','654','862','962'], 'mentor-calendar':['830','837','962'],
   'mentor-form':['830','961','959','750'], 'mentor-welcome':['830','961','747'],
   'mentor-growth':['746','744','745','749','748'],
-  'mentor-components':['742','746','837','843','736','840','841','842','834','829','839'],
   'mentor-audit':['742','830','837','829','834','839','750','747','745','736','746','832','744','749','752','748','751','840','872','841','842','843'],
   'mentee-edit':['828','959','862'], 'mentee-profile':['828','960','862'],
   'mentor-bookings':['842','746'], 'booking-payment':['841','872']

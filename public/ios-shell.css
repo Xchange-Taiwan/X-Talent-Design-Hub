@@ -69,3 +69,25 @@ body{height:100dvh;overflow:hidden}.main{height:calc(100dvh - 64px);display:flex
   .screens-view{padding:4px}
   .inspector{right:4px;bottom:4px;max-width:calc(100vw - 8px)}
 }
+
+.library-scope {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 12px;
+  padding: 3px;
+  border-radius: 9px;
+  background: #ebebf1;
+}
+.library-scope button {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--secondary);
+  font-size: 13px;
+}
+.library-scope button[aria-pressed="true"] {
+  background: #fff;
+  color: #005fcc;
+  box-shadow: 0 1px 3px #1d24341a;
+}
