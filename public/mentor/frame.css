@@ -34,3 +34,36 @@ body[data-xt-device] .identity-menu[role=dialog] {
 }
 .identity-menu nav{min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .identity-menu .identity-options{flex:none}
+
+/* The product is the scroll container. Keep the end of a tall plan list in reach. */
+#xt742 .xc-public .mp-booking:has(> .xc-plan-rail) {
+  max-height: none;
+  overflow: visible;
+  top: min(96px, calc(100dvh - var(--hub-plan-height, 100dvh) - 16px));
+}
+
+#xt742 :is(.xc-public, .xc-gallery) .xc-plan-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "meta meta" "title price" "description description" "date date" "action action";
+  align-items: baseline;
+  gap: 8px 12px;
+  padding: 18px;
+
+  & > .xc-plan-kicker { grid-area: meta; }
+  & > h3 { grid-area: title; margin: 0; overflow-wrap: anywhere; }
+  & > p { grid-area: description; display: block; margin: 0; }
+  & > .xc-plan-price {
+    grid-area: price;
+    margin: 0;
+    white-space: nowrap;
+  }
+  & > .xc-plan-price strong { font-size: 18px; line-height: 26px; }
+  & > .xc-plan-next {
+    grid-area: date;
+    margin: 4px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--xm-line);
+  }
+  & > button { grid-area: action; margin: 4px 0 0; }
+}

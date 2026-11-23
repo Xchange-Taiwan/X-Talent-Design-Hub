@@ -35,7 +35,7 @@
     ['PaymentRules','付款與退款說明','.xc-refund-rules','checkout','在送出前查看取消與退款規則。']
   ]);
   group('public-profile','840',mentor,[
-    ['BookingPlanCard','方案卡與最快可約標記','.xc-plan-card','default','顯示時間、費用及最近可約時段。'],
+    ['BookingPlanCard','方案卡與最快可約標記','.xc-plan-card','default','方案名稱與單次費用並列，接續說明、最近可約時段與選擇按鈕。方案清單隨整頁捲動。'],
     ['CalendarSlots','日期與可預約時段','.xc-calendar-slots','booking-paid','選取日期後顯示對應時段。'],
     ['QuestionnaireFields','方案事前問卷','.xc-questionnaire','booking-paid','只列導師自訂題目，未設定題目時省略。'],
     ['BookingSelection','預約視窗與方案摘要','.xc-booking-dialog','booking-free','同一視窗選擇時段、作答並送出。'],

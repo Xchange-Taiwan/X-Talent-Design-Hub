@@ -78,9 +78,25 @@
   const closedTip=page==='mentee-bookings'&&['tip-checkout','tip-failed'].includes(currentScene);
   return {screen,scene:!closedTip&&scenes[currentScene]?currentScene:fallback};
  }
+ // Recalculate the sticky inset when the card content or the canvas width changes.
+ let observedPlanRail;
+ const planSizeObserver=new ResizeObserver(entries=>{
+  for(const {target,borderBoxSize} of entries){
+   if(target===observedPlanRail){
+    const height=borderBoxSize?.[0]?.blockSize ?? target.getBoundingClientRect().height;
+    target.style.setProperty('--hub-plan-height',height+'px');
+   }
+  }
+ });
  function refresh(){
   const product=document.querySelector('.xt-product');
   if(!product)return;
+  const planRail=product.querySelector('.xc-public .mp-booking:has(> .xc-plan-rail)');
+  if(planRail!==observedPlanRail){
+   planSizeObserver.disconnect();
+   observedPlanRail=planRail;
+   if(planRail)planSizeObserver.observe(planRail);
+  }
   const role=roleOf();
   if(role && role!==lastRole){lastRole=role;send('identity-role',{role});}
   // #890 keeps its account popover mounted while switching the underlying page.

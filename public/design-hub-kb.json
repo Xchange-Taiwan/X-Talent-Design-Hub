@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-23T13:41:46.134Z",
+  "syncedAt": "2026-11-23T14:29:24.947Z",
   "revision": "github-alignment-2026-11-18",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -10,7 +10,7 @@
     "date": "2026-11-23",
     "url": "https://xtalent-mentor-742.bonny80.chatgpt.site/"
   },
-  "storybookSyncedAt": "2026-11-23T13:19:38.308Z",
+  "storybookSyncedAt": "2026-11-23T14:24:47.740Z",
   "repository": "Xchange-Taiwan/X-Talent-Design-Hub",
   "frontendRepo": "https://github.com/Xchange-Taiwan/X-Talent-Frontend",
   "frontendBaselineCommit": "c6c3660ae6c89263b15135e36060f43f162c01db",
@@ -6043,7 +6043,7 @@
         "mentor-components"
       ],
       "rules": [
-        "顯示時間、費用及最近可約時段。"
+        "方案名稱與單次費用並列，接續說明、最近可約時段與選擇按鈕。方案清單隨整頁捲動。"
       ],
       "changes": [
         {
@@ -6056,7 +6056,7 @@
       "storybookUrl": null,
       "composition": {
         "level": "業務元件",
-        "scope": "顯示時間、費用及最近可約時段。",
+        "scope": "方案名稱與單次費用並列，接續說明、最近可約時段與選擇按鈕。方案清單隨整頁捲動。",
         "reuse": []
       }
     },
@@ -12232,7 +12232,7 @@
       },
       "booking-plan-card": {
         "level": "業務元件",
-        "scope": "顯示時間、費用及最近可約時段。",
+        "scope": "方案名稱與單次費用並列，接續說明、最近可約時段與選擇按鈕。方案清單隨整頁捲動。",
         "reuse": []
       },
       "questionnaire-fields": {
