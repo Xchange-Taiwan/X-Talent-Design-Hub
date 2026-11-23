@@ -1,6 +1,7 @@
 (() => {
  const D=window.HUB_DATA,M=window.HUB_COMPONENT_MAP,$=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const iconRefresh=()=>window.lucide?.createIcons({attrs:{width:18,height:18,'stroke-width':1.6}});
+ const mentorVersion=document.currentScript.dataset.mentorVersion;
  const shellVersion=new URL(document.currentScript.src).searchParams.get('v');
  const q=new URLSearchParams(location.search),validTicket=t=>t==='all'||D.tickets.some(x=>x.id===t);
  const S={view:q.get('view')==='library'?'library':'screens',ticket:validTicket(q.get('ticket'))?q.get('ticket'):'all',screen:q.get('screen')||'history',device:['desktop','tablet','mobile'].includes(q.get('device'))?q.get('device'):(innerWidth<620?'mobile':'desktop'),mode:q.get('mode')==='inspect'?'inspect':'play',scenario:q.get('scenario'),component:null,available:[],ready:false};
@@ -37,7 +38,9 @@
   if(S.screen==='mentor-calendar'&&['schedule','empty'].includes(S.scenario)){
    navigateScreen('mentor-plans',S.scenario==='empty'?'plan-schedule-empty':'plan-schedule');return;
   }
-  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(shellVersion)params.set('hubVersion',shellVersion);if(memberRole)params.set('memberRole',memberRole);if(reopenAccount)params.set('menuOpen','1');reopenAccount=false;if(p.id==='signin'&&pendingGuestBooking)params.set('bookingSignin','1');if(p.id==='public-profile'&&resumePlan)params.set('resumePlan',resumePlan);if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);if(p.module==='identity'){
+  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(shellVersion)params.set('hubVersion',shellVersion);if(memberRole)params.set('memberRole',memberRole);if(reopenAccount)params.set('menuOpen','1');reopenAccount=false;if(p.id==='signin'&&pendingGuestBooking)params.set('bookingSignin','1');if(p.id==='public-profile'&&resumePlan)params.set('resumePlan',resumePlan);if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);
+  if(approved||p.module==='identity')params.set('mentorVersion',mentorVersion);
+  if(p.module==='identity'){
    frameModule='mentor';params.set('screen',p.id);params.set('scene',S.scenario);
    $('#product').src='mentor/?'+params;
   }else if(p.module==='growth'){

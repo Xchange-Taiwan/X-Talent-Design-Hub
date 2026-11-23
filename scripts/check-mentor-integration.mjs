@@ -31,15 +31,23 @@ for (const [legacy,source] of Object.entries({default:'mentor-search',guest:'men
 for(const scenario of ['default','one','empty-favorites'])assert.equal(routes.favorites.scenes[scenario],'mentor-search');
 assert.equal(routes.favorites.marker,'main.p2-favorites');
 const nativeTickets={favorites:'#753',history:'#834','mentor-reservations':'#842','mentee-reservations':'#834','mentor-search':'#839','mentor-audit':'#742','mentor-components':'#742'};
+const mentorEntries=new Set(['mentor/index.html']);
 for(const [id,entry] of Object.entries(routes)){
   const screen=data.screens.find(s=>s.id===id);
   for(const key of Object.keys(entry.scenes)){
     assert.equal(screen.scenarios.filter(([v])=>v===key).length,1);
     const page=context.window.mentorEntryPath(id,key)+'index.html';
     assert.ok(existsSync(new URL(page,root)),page);
+    mentorEntries.add(page);
   }
   assert.equal(entry.ticket,flows[id]??nativeTickets[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
 }
+// A cached iframe entry can still reference an old stylesheet after the Hub reloads.
+const entryHash=createHash('sha256');
+for(const page of [...mentorEntries].sort())entryHash.update(read(page));
+const frameVersion=entryHash.digest('hex').slice(0,12);
+assert.ok(read('index.html').includes('data-mentor-version="'+frameVersion+'"'),
+  'Update the shell data-mentor-version to '+frameVersion+' when mentor entry assets change');
 for (const [role,page] of [['mentor','bookings'],['mentee','mentee-bookings']]) {
   const entry=routes[role+'-reservations'];
   assert.equal(entry.bookingPage,page);
