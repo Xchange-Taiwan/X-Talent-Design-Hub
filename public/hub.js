@@ -26,6 +26,7 @@
  }
  let publicPerson=q.get('person')||'zahra';
  let inspector,noticeTimer,frameModule='',frameToken=0;
+ let requestedEntry=null,stopPresentation=null,presentingEntry=false;
  const screen=()=>D.screens.find(s=>s.id===S.screen)||D.screens[1],filtered=()=>D.screens.filter(s=>S.ticket==='all'||s.tickets.includes(S.ticket));
  function normalize(){if(!filtered().some(s=>s.id===S.screen))S.screen=filtered()[0]?.id||'history';if(!screen().scenarios.some(s=>s[0]===S.scenario))S.scenario=screen().scenarios[0][0];}
  function syncURL(){const p=new URLSearchParams({view:S.view,screen:S.screen,ticket:S.ticket,device:S.device,scenario:S.scenario,mode:S.mode});if(S.view==='library' && S.catalog==='mentor')p.set('catalog','mentor');if(memberRole)p.set('memberRole',memberRole);if(S.screen==='chat')chatContext.forEach((value,key)=>p.set(key,value));if(S.screen==='public-profile'&&publicPerson!=='zahra')p.set('person',publicPerson);history.replaceState(null,'','?'+p);}
@@ -37,14 +38,17 @@
  function renderNav(){const groups=[...new Set(filtered().map(s=>s.group))];$('#screen-list').innerHTML=groups.map(g=>`<div class="nav-group"><div class="nav-group-label">${g}</div>${filtered().filter(s=>s.group===g).map(s=>`<button class="screen-button" data-screen="${s.id}" ${s.id===S.screen?'aria-current="page"':''}><i data-lucide="${({home:'house',history:'history','login-feedback':'messages-square','mentor-form':'user-round','mentor-welcome':'badge-check'})[s.id]||s.icon||'layout-template'}" aria-hidden="true"></i><strong>${s.name}</strong></button>`).join('')}</div>`).join('');$('#screen-count').textContent=filtered().length+' 個畫面';}
  function renderControls(){const p=screen();$('#ticket').value=S.ticket;$('#page-group').textContent=S.view==='library'?'DESIGN SYSTEM':p.group;$('#page-title').textContent=p.name;$('#product').title=`${p.name} · ${S.device}`;$('#related-tags').innerHTML=tags(p.tickets);$('.related').hidden=!p.tickets.length;$('#scenario').innerHTML=p.scenarios.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');$('#scenario').value=S.scenario;document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.device===S.device)));document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===S.mode)));document.querySelectorAll('[data-view]').forEach(b=>{b.setAttribute('aria-selected',String(b.dataset.view===S.view));if(b.dataset.view===S.view)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});$('#screens-view').hidden=false;$('#library-view').hidden=true;$('#source-caption').textContent=`${p.sourceKind==='confirmed-update'?'已確認更新':p.sourceKind==='design'?'設計交付':p.module==='frontend'?'前端版本':'交付快照'} · ${p.version} · ${p.date.replaceAll('-','/')} · ${S.device==='desktop'?'Desktop 自適應':S.device==='tablet'?'Tablet 768px':'Mobile 390px'}`;if(mentorScene(p.id,S.scenario))$('#source-caption').textContent='導師中心 · '+window.hubScreenSource(p,S.scenario).version+' · '+S.device;$('#canvas-hint').textContent=S.mode==='inspect'?'點選區塊查看規格與修改紀錄 · Esc 返回操作':'可直接操作原有畫面';$('#canvas-hint').dataset.inspect=String(S.mode==='inspect');$('#frame-wrap').style.maxWidth=S.device==='mobile'?'390px':S.device==='tablet'?'768px':'1440px';}
  function mentorScene(id,scenario){return window.MENTOR_SCREENS[id]?.scenes[scenario];}
- function loadFrame(){normalize();
+ function loadFrame(present=false){
+  stopPresentation?.();stopPresentation=null;requestedEntry=null;presentingEntry=false;normalize();
   if(window.hubSharedAccountPage(S.screen) && S.scenario.startsWith('member-'))memberRole=validRole(S.scenario.slice('member-'.length));
   const alias=window.hubScenarioDestination(S.screen,S.scenario);
-  if(alias){navigateScreen(alias.screen,alias.scenario);return;}
+  if(alias){navigateScreen(alias.screen,alias.scenario,null,present);return;}
   if(S.screen==='mentor-calendar'&&['schedule','empty'].includes(S.scenario)){
-   navigateScreen('mentor-plans',S.scenario==='empty'?'plan-schedule-empty':'plan-schedule');return;
+   navigateScreen('mentor-plans',S.scenario==='empty'?'plan-schedule-empty':'plan-schedule',null,present);return;
   }
-  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(shellVersion)params.set('hubVersion',shellVersion);if(memberRole)params.set('memberRole',memberRole);if(reopenAccount)params.set('menuOpen','1');reopenAccount=false;if(p.id==='signin'&&pendingGuestBooking)params.set('bookingSignin','1');if(p.id==='public-profile'&&resumePlan)params.set('resumePlan',resumePlan);if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);
+  pendingLocate=null;inspector=null;S.ready=false;S.available=[];S.component=null;$('#loading').hidden=false;const p=screen();frameModule=p.module;frameToken++;
+  if(present && S.catalog!=='mentor')requestedEntry={screen:p.id,scenario:S.scenario};
+  const file=p.module==='730'&&S.device==='mobile'?'730-mobile':p.module;const params=new URLSearchParams({module:p.module,device:S.device,scenario:S.scenario,token:String(frameToken)});if(shellVersion)params.set('hubVersion',shellVersion);if(memberRole)params.set('memberRole',memberRole);if(reopenAccount)params.set('menuOpen','1');reopenAccount=false;if(p.id==='signin'&&pendingGuestBooking)params.set('bookingSignin','1');if(p.id==='public-profile'&&resumePlan)params.set('resumePlan',resumePlan);if(p.route)params.set('route',p.route+(S.scenario==='pending'?'?tab=pending':''));const approved=mentorScene(p.id,S.scenario);
   if(approved||p.module==='identity')params.set('mentorVersion',mentorVersion);
   if(p.module==='identity'){
    frameModule='mentor';params.set('screen',p.id);params.set('scene',S.scenario);
@@ -57,14 +61,14 @@
    frameModule='mentor';params.set('screen',p.id);params.set('scene',p.id==='mentee-edit'&&S.scenario==='empty'?'mentee-profile-empty':approved);
    $('#product').src=window.mentorEntryPath(p.id,S.scenario)+'?'+params;
   }else if(p.module==='chat'){if(p.id==='chat')chatContext.forEach((value,key)=>params.set(key,value));params.set('scene',p.chatRole?'booking-'+p.chatRole+(S.scenario==='pending'?'-pending':S.scenario==='history'?'-history':S.scenario==='empty'?'-empty':''):S.scenario);params.set('run','hub-'+frameToken+'-'+Date.now());$('#product').src=`chat/preview.html?${params}`}else $('#product').src=`pages/${file}.html?${params}`;$('#product').title=`${p.name} · ${S.device}`;renderInspector();}
- function changePage(id,scenario=null){S.catalog='screen';if(compactShell.matches)setDirectory(false);resetAccountContext();if(id==='public-profile')publicPerson='zahra';S.screen=id;S.scenario=scenario;normalize();render();loadFrame();}
- function navigateScreen(id,scenario,guestBooking=null){
+ function changePage(id,scenario=null){S.catalog='screen';if(compactShell.matches)setDirectory(false);resetAccountContext();if(id==='public-profile')publicPerson='zahra';S.screen=id;S.scenario=scenario;normalize();render();loadFrame(true);}
+ function navigateScreen(id,scenario,guestBooking=null,present=false){
  pendingGuestBooking=null;
  if(id==='home'&&(!scenario||scenario==='default')&&memberRole)scenario=memberRole+'-cta';
  if(['signin','signup','forgot','reset'].includes(id))resetAccountContext();
  if(window.hubSharedAccountPage(id)&&memberRole&&(!scenario||scenario==='default'))scenario='member-'+memberRole;
  if(id==='signin')pendingGuestBooking=guestBooking;
- const dest=D.screens.find(x=>x.id===id);if(!dest)return;if(S.ticket!=='all'&&!dest.tickets.includes(S.ticket))S.ticket='all';S.screen=id;S.scenario=scenario||null;normalize();render();loadFrame();}
+ const dest=D.screens.find(x=>x.id===id);if(!dest)return;if(S.ticket!=='all'&&!dest.tickets.includes(S.ticket))S.ticket='all';S.screen=id;S.scenario=scenario||null;normalize();render();loadFrame(present);}
  function syncImportedScreen(state){
   if(frameModule!=='742'||!state?.screen)return;
   if(state.screen==='slots'){navigateScreen('mentor-calendar','schedule');return;}
@@ -74,7 +78,7 @@
   if(!id||id===S.screen)return;
   navigateScreen(id,id==='mentor-welcome'?'welcome':'complete');
  }
- function changeTicket(id){if(!validTicket(id))return;const old=S.screen;S.ticket=id;normalize();render();if(S.screen!==old){resetAccountContext();loadFrame();syncURL();}else if(S.view==='screens'&&S.screen==='home'&&id==='710'){S.scenario='quotes';renderControls();send('scenario',{scenario:'quotes'});syncURL();}}
+ function changeTicket(id){if(!validTicket(id))return;const old=S.screen;S.ticket=id;normalize();render();if(S.screen!==old){resetAccountContext();loadFrame(true);syncURL();}else if(S.view==='screens'&&S.screen==='home'&&id==='710'){S.scenario='quotes';renderControls();loadFrame(true);syncURL();}}
  function render(){normalize();renderNav();renderControls();renderLibrary();renderInspector();syncURL();iconRefresh();}
  function componentURL(c){return c.code?D.repo+'/blob/'+(c.commit||D.commit)+'/'+c.code:null;}
  function componentPreview(c,primary=false){
@@ -98,8 +102,8 @@
  const changes=[...c.changes].sort((a,b)=>b.date.localeCompare(a.date));$('#inspector-body').innerHTML=`<span class="eyebrow">${c.kind}</span><h2>${c.name}</h2><p class="inspect-subtitle">${c.label}</p><div class="inspect-actions"><button class="secondary" id="inspect-back">${S.view==='library'?'所有元件':'選取其他區塊'}</button>${S.view==='library'?componentPreview(c,true):'<button class="primary" data-mode="play">繼續操作</button>'}</div>${composition(c)}<section><h3>設計規格</h3><ul>${c.rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section><h3>${c.catalogDate?'核對紀錄':'修改紀錄'}</h3>${changes.length?changes.slice(0,8).map(h=>`<div class="history-item"><div class="when"><a href="${ticketLink(h.ticket)}" target="_blank" rel="noopener">#${h.ticket}</a><time>${h.date.replaceAll('-','/')}</time></div>${esc(h.text)}</div>`).join(''):'<p class="inspect-subtitle">元件已存在；尚無已核對的直接修改紀錄，不推測關聯 ticket。</p>'}</section><section><h3>來源與對照</h3>${manifestReference(c)}<div class="inspect-links">${componentURL(c)?`<a href="${componentURL(c)}" target="_blank" rel="noopener">前端元件 ↗</a>`:''}${c.sourceUrl?`<a href="${c.sourceUrl}" target="_blank" rel="noopener">原型情境 ↗</a>`:''}<a href="${M.existing[c.id]?.url||D.storybook}" target="_blank" rel="noopener">${M.existing[c.id]?'Storybook 案例':'Storybook 目錄'} ↗</a></div><p class="mapping-note">${c.mapping}</p></section>${c.screens.length?`<section><h3>使用畫面</h3><div class="quick-components">${c.screens.map(id=>`<button data-screen="${id}" data-example="${c.examples?.[id]||''}">${D.screens.find(x=>x.id===id)?.name||id}</button>`).join('')}</div></section>`:''}`;}
  function mode(next){S.mode=next;if(next==='play')inspector?.clear();send('mode',{mode:next});renderControls();renderInspector();syncURL();}
  function previewComponent(id){const c=D.components.find(x=>x.id===id);if(!c?.screens.length)return;S.catalog='screen';S.view='screens';S.mode='inspect';S.component=id;renderControls();send('mode',{mode:'inspect'});if(inspector?.locate(id)){syncURL();return;}if(S.available.includes(id)){send('locate',{id});renderInspector();syncURL();return;}const scenes={history:{feedback:'form',rating:'rating',textarea:'rating',toast:'failure'},'login-feedback':{feedback:'default',rating:'rating',textarea:'rating',queue:'default'},'mentor-search':{'account-menu':'menu','favorite-card':'default','favorite-toggle':'default'},'favorites':{'favorites-empty':'empty-favorites','favorite-card':'default'},'public-profile':{'favorite-login':'login','favorite-toggle':'default',toast:'failure'},'mentor-form':{input:'name-edit',textarea:'partial',chip:'partial',toast:'save-error'},'mentor-welcome':{member:'welcome',booking:'welcome'}};const dest=c.screens.includes(S.screen)?S.screen:c.screens[0];
- if(dest && dest!==S.screen){navigateScreen(dest,c.examples?.[dest]||scenes[dest]?.[id]);pendingLocate=id;return;}
- const next=c.examples?.[S.screen]||scenes[S.screen]?.[id];if(next&&next!==S.scenario&&screen().scenarios.some(x=>x[0]===next)){S.scenario=next;loadFrame();pendingLocate=id;S.component=id;render();}else{send('locate',{id});renderInspector();showLocateHint(id);}syncURL();}
+ if(dest && dest!==S.screen){navigateScreen(dest,c.examples?.[dest]||scenes[dest]?.[id],null,true);pendingLocate=id;return;}
+ const next=c.examples?.[S.screen]||scenes[S.screen]?.[id];if(next&&screen().scenarios.some(x=>x[0]===next)){S.scenario=next;loadFrame(true);pendingLocate=id;S.component=id;render();}else{send('locate',{id});renderInspector();showLocateHint(id);}syncURL();}
 
  function composition(c){const m=M.newDesigns[c.id];if(!m||c.sourceUrl&&!m.reuse.length)return '';return `<section><h3>${m.level==='組合元件'?'整組更新':'共用元素'}</h3><p class="scope-note">${m.scope}</p>${m.reuse.length?`<h3 class="reuse-title">沿用元素</h3><div class="inspect-links">${m.reuse.map(r=>`<a href="${r.url}" target="_blank" rel="noopener">${r.name} ↗</a>`).join('')}</div>`:''}</section>`;}
  function componentState(c){const added={history:['feedback','rating'],'login-feedback':['queue'],'mentor-welcome':['member','booking']};if(added[S.screen]?.includes(c.id))return '新增';if(c.changes.some(x=>screen().tickets.includes(x.ticket)))return '調整';return '沿用';}
@@ -112,21 +116,44 @@
  let pendingLocate=null;
  $('#ticket').innerHTML+=[...D.tickets].map(t=>`<option value="${t.id}">#${t.id} · ${t.name}</option>`).join('');$('#storybook').href=D.storybook;
  document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.catalog){S.catalog=b.dataset.catalog;S.component=null;renderInspector();syncURL();return;}if(b.dataset.ticket){changeTicket(b.dataset.ticket);return;}if(b.dataset.screen){if(!filtered().some(s=>s.id===b.dataset.screen))S.ticket='all';changePage(b.dataset.screen,b.dataset.example);return;}if(b.dataset.mode){mode(b.dataset.mode);return;}if(b.dataset.device){if(S.device===b.dataset.device)return;const old=S.device;S.device=b.dataset.device;renderControls();syncURL();if(frameModule==='730'&&(old==='mobile'||S.device==='mobile'))loadFrame();else send('device',{device:S.device});return;}if(b.dataset.view){S.view=b.dataset.view;if(S.view==='screens')S.catalog='screen';S.component=null;render();return;}if(b.dataset.componentDetail){S.component=b.dataset.componentDetail;renderInspector();return;}if(b.dataset.previewComponent){previewComponent(b.dataset.previewComponent);return;}if(b.dataset.locate){previewComponent(b.dataset.locate);return;}if(b.id==='inspect-back'){inspector?.clear();S.component=null;send('clear');renderInspector();return;}});
- $('#ticket').addEventListener('change',e=>changeTicket(e.target.value));$('#scenario').addEventListener('change',e=>{resetAccountContext();S.scenario=e.target.value;S.component=null;renderControls();loadFrame();syncURL();});$('#component-search').addEventListener('input',renderLibrary);$('#reset').onclick=()=>{resetAccountContext();loadFrame();syncURL();notify('已重設目前情境');};$('#close-inspector').onclick=()=>{if(S.view==='library'){S.view='screens';S.catalog='screen';S.component=null;mode('play');render();}else mode('play');};$('#share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);notify('已複製目前的 Ticket、情境與模式連結');}catch{notify('請複製瀏覽器網址，已包含目前檢視設定');}};
+ $('#ticket').addEventListener('change',e=>changeTicket(e.target.value));$('#scenario').addEventListener('change',e=>{resetAccountContext();S.scenario=e.target.value;S.component=null;renderControls();loadFrame(true);syncURL();});$('#component-search').addEventListener('input',renderLibrary);$('#reset').onclick=()=>{resetAccountContext();loadFrame(true);syncURL();notify('已重設目前情境');};$('#close-inspector').onclick=()=>{if(S.view==='library'){S.view='screens';S.catalog='screen';S.component=null;mode('play');render();}else mode('play');};$('#share').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);notify('已複製目前的 Ticket、情境與模式連結');}catch{notify('請複製瀏覽器網址，已包含目前檢視設定');}};
  function showLocateHint(id){
   const component=D.components.find(c=>c.id===id);
   pendingLocate=null;S.view='library';S.component=id;mode('play');render();
   notify(component?.hint||'請在操作模式開啟對應選單或視窗，再點「在畫面查看」。');
  }
  function tryLocate(){
-  if(!pendingLocate)return;
+  if(!pendingLocate||presentingEntry)return;
   const id=pendingLocate;
   if(inspector?.locate(id)){pendingLocate=null;return;}
   if(S.available.includes(id)){pendingLocate=null;send('locate',{id});}
  }
+ function onFrameReady(){
+  const frame=$('#product'),token=frameToken;
+  const loadedToken=new URL(frame.contentDocument.URL).searchParams.get('token');
+  if(loadedToken && loadedToken!==String(token))return;
+  connectChatLinks();S.ready=true;
+  send('device',{device:S.device});
+  const entry=requestedEntry;
+  if(!entry && presentingEntry)return;
+  requestedEntry=null;
+  function resumeInspection(){
+   if(token!==frameToken)return;
+   presentingEntry=false;$('#loading').hidden=true;
+   send('mode',{mode:S.mode});
+   if(!pendingLocate)return;
+   requestAnimationFrame(tryLocate);
+   setTimeout(()=>{if(token===frameToken&&pendingLocate){tryLocate();if(pendingLocate)showLocateHint(pendingLocate);}},450);
+  }
+  if(entry){
+   presentingEntry=true;
+   send('mode',{mode:'play'});
+   stopPresentation=window.presentHubEntry(frame,frameModule,entry,resumeInspection);
+  }else resumeInspection();
+ }
  const linkedDocuments=new WeakSet();
  function connectChatLinks(){try{const doc=$('#product').contentDocument;if(!doc||linkedDocuments.has(doc))return;linkedDocuments.add(doc);
- inspector=window.attachCatalogInspector($('#product'),()=>screen().components.map(id=>D.components.find(c=>c.id===id)).filter(Boolean),()=>S.mode==='inspect',id=>{S.component=id;renderInspector();});
+ inspector=window.attachCatalogInspector($('#product'),()=>screen().components.map(id=>D.components.find(c=>c.id===id)).filter(Boolean),()=>S.mode==='inspect' && !presentingEntry,id=>{S.component=id;renderInspector();});
  tryLocate();
  const win=doc.defaultView,originalOpen=win.open;
  function chatURL(u){
@@ -200,7 +227,7 @@ window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===
      memberRole=activeFrameRole();
      navigateScreen(dest.id,dest.id==='public-profile'&&S.scenario==='guest'?'guest':dest.scenarios[0][0]);
     }
-   }else{notify('此頁尚未收錄；返回目前畫面。');loadFrame();}return;}if(m.type==='ready'){connectChatLinks();S.ready=true;$('#loading').hidden=true;send('mode',{mode:S.mode});send('device',{device:S.device});if(pendingLocate){requestAnimationFrame(tryLocate);const token=frameToken;setTimeout(()=>{if(token===frameToken&&pendingLocate){tryLocate();if(pendingLocate)showLocateHint(pendingLocate);}},450);}return;}if(m.type==='available'){S.available=m.ids;tryLocate();if(!S.component)renderInspector();return;}if(m.type==='selected'){S.component=m.id;renderInspector();return;}if(m.type==='exit-inspect'){mode('play');return;}if(m.type==='external'){notify('這個連結前往原產品站；本次原型未加入這個銜接畫面。');return;}if(m.type==='error'){console.error('Imported screen error',JSON.stringify(m));notify('畫面載入遇到問題，可重設目前畫面後再試。');}});
+   }else{notify('此頁尚未收錄；返回目前畫面。');loadFrame();}return;}if(m.type==='ready'){onFrameReady();return;}if(m.type==='available'){S.available=m.ids;tryLocate();if(!S.component)renderInspector();return;}if(m.type==='selected'){S.component=m.id;renderInspector();return;}if(m.type==='exit-inspect'){mode('play');return;}if(m.type==='external'){notify('這個連結前往原產品站；本次原型未加入這個銜接畫面。');return;}if(m.type==='error'){console.error('Imported screen error',JSON.stringify(m));notify('畫面載入遇到問題，可重設目前畫面後再試。');}});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(S.view==='library'){S.component=null;renderInspector();}else if(S.mode==='inspect')mode('play');}});
  const compactShell=matchMedia('(max-width:1119px)');
  function setDirectory(open){
@@ -211,5 +238,5 @@ window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===
  compactShell.addEventListener('change',()=>setDirectory(!compactShell.matches));
  setDirectory(!compactShell.matches);
  $('#toggle-sidebar').onclick=()=>setDirectory(document.body.classList.contains('sidebar-hidden'));
- render();loadFrame();iconRefresh();
+ render();loadFrame(true);iconRefresh();
 })();

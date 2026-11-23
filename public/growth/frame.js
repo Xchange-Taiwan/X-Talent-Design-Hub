@@ -12,6 +12,12 @@
   const views = {growth:'mentee-growth','growth-empty':'mentee-growth','growth-first':'mentee-growth',milestone:'milestones','report-owner':'growth-report','report-shared':'growth-report','report-private':'growth-report'};
   const initial = new URLSearchParams(location.search);
   let previous = initial.get('scene');
+  if (initial.get('module') === 'growth' && ['report-shared','report-private','report-login'].includes(previous)) {
+    // Run the review on the same standalone route that the copied link opens.
+    const code = previous === 'report-private' ? 'alex-chen' : 'alex-journey';
+    if (previous === 'report-login') sessionStorage.removeItem('p3-report-login');
+    history.replaceState(history.state, '', '/growth-report/'+code+'/?'+initial);
+  }
   let ready = false;
   // Only the authenticated product gets account navigation. Standalone report
   // links retain their dedicated login gate and logo-only header.
@@ -58,6 +64,16 @@
     if (!document.querySelector('.p3-product,.p3-standalone')) return;
     connectAccount();
     if (!ready) {ready=true; send('ready');}
+    if (previous === 'report-login' && document.querySelector('.p3-standalone .p3-report-page')) {
+      // After signing in, reflect the displayed report in the Hub scenario selector.
+      const published = localStorage.getItem('p3-published-v1') !== 'false';
+      previous = published ? 'report-shared' : 'report-private';
+      const url = new URL(location.href);
+      url.searchParams.set('scene', previous);
+      history.replaceState(history.state,'',url);
+      send('growth-view',{screen:'growth-report',scenario:previous});
+      return;
+    }
     const scene = new URLSearchParams(location.search).get('scene');
     if (scene === previous) return;
     previous = scene;

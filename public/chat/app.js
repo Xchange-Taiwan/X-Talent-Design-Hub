@@ -15752,6 +15752,7 @@ function restored() {
 var initialReview = restored();
 /* HUB_ACCOUNT_START */
 window.HubChatAccount?.restoreRole(initialReview);
+window.HubChatAccount?.reservationPreview(initialReview, {confirmReservation, readThread, storageKey});
 /* HUB_ACCOUNT_END */
 function App() {
   const [state, setState] = (0, import_react12.useState)(initialReview.state), [noticeOpen, setNoticeOpen] = (0, import_react12.useState)(initialReview.presentation.noticeOpen), [toast, setToast] = (0, import_react12.useState)(initialReview.presentation.toast), [openError, setOpenError] = (0, import_react12.useState)(initialReview.presentation.openError), [loginTarget, setLoginTarget] = (0, import_react12.useState)("zahra"), [loginError, setLoginError] = (0, import_react12.useState)(initialReview.presentation.loginError);

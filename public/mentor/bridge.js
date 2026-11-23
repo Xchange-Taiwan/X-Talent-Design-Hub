@@ -202,8 +202,9 @@
  });
  document.addEventListener('click',e=>{
   // An explicit navigation leaves the identity demo; toggling roles keeps its menu mounted.
-  if(identityFixture && !inspect && e.target.closest('.identity-banner button,.identity-menu nav button,.xt-topbar nav button,.p2-card-main')){
-   identityFixture=false;
+  if(identityFixture && !inspect){
+   const confirmedNotice=scenario.startsWith('role-notice-') && e.target.closest('[role=dialog] button')?.textContent.trim()==='切換並查看';
+   if(confirmedNotice || e.target.closest('.identity-banner button,.identity-menu nav button,.xt-topbar nav button,.p2-card-main')) identityFixture=false;
   }
   if(!inspect)return;
   const id=Object.entries(selectors).filter(([,s])=>e.target.closest(s)).sort((a,b)=>a[0]==='profile'?1:b[0]==='profile'?-1:0)[0]?.[0];

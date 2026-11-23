@@ -12,6 +12,20 @@
     if (scene === 'list' && review.state.member && isRole(role)) review.state.role = role;
   }
 
+  function reservationPreview(review, {confirmReservation, readThread, storageKey}) {
+    if (scene !== 'reservation-message' && scene !== 'reservation-existing') return;
+    if (entry.has('conversation') || entry.has('partner') || entry.has('reservation')) return;
+    try { if (sessionStorage.getItem(storageKey)) return; } catch {}
+    const reservation = {id:'hub-t10-preview',person:'zahra',date:'2026/11/17',time:'19:00–19:30'};
+    const state = confirmReservation(review.state, reservation);
+    if (scene === 'reservation-existing') {
+      review.state = {...readThread(state,'zahra'),route:{view:'chat',active:'zahra',origin:'bookings'}};
+    } else {
+      review.state = {...state,bookingTab:'pending',route:{view:'bookings',active:null,origin:'bookings'}};
+    }
+    review.presentation.toast = {title:'預約已成立',body:'等待導師回覆。',error:false};
+  }
+
   function MemberHeader({React, state, unread, noticeOpen, setNoticeOpen, onMessages, onRole, onLogout, defaultAvatar, Bell}) {
     const host = React.useRef(null);
     const widget = React.useRef(null);
@@ -73,5 +87,5 @@
   function openDirectory(state){
     navigate('mentor-search',state.member?'default':'guest',state.member?state.role:'guest');
   }
-  window.HubChatAccount = {restoreRole,MemberHeader,openDirectory};
+  window.HubChatAccount = {restoreRole,reservationPreview,MemberHeader,openDirectory};
 })();
