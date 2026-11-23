@@ -1,0 +1,14 @@
+.header-device{container:xtdevice / inline-size;--mentor-surface:white;--popover:0 0% 100%}
+.identity-menu{background:white}
+.identity-header .inbox-count{position:absolute;right:-3px;top:-3px;padding:1px 4px;border-radius:10px;background:#d84b31;color:#fff;font:600 10px/14px system-ui;text-align:center}
+.identity-header a[aria-current=page].fr-message-entry{background:var(--identity-tint)}
+[data-hub-highlight]{outline:2px solid #007aff!important;outline-offset:-2px!important}
+@container xtdevice (max-width:767px){#xt742[data-mobile-chat] .xt-topbar .fr-header-actions .fr-message-entry{display:inline-flex}}
+/* The borrowed header owns horizontal site navigation. Its popover owns a vertical list. */
+#xt742 .identity-menu nav{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0}
+#xt742 .identity-menu nav :is(button,a){display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;min-height:44px;padding-inline:var(--menu-row-inset);font-size:14px;color:hsl(var(--color-text-primary))}
+#xt742 .identity-menu nav svg{display:block;flex:none}
+#xt742 .identity-menu nav :is(button,a):hover{background:hsl(var(--color-brand-50))}
+#xt742 .identity-menu{display:flex;flex-direction:column;max-height:var(--radix-popover-content-available-height,calc(100dvh - 80px));overflow-y:auto}
+#xt742 .identity-menu nav{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.identity-menu .identity-options{flex:none}

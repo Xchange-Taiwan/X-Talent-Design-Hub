@@ -27,6 +27,7 @@
   },
   "approval": "Single-session reservation feedback follows #730 / #740, synchronized after chat verification.",
   "adaptations": [
-    "preview.html retains the Design Hub inspection bridge."
+    "preview.html retains the Design Hub inspection bridge.",
+    "Hub-only account adapter displays the shared #890 header using the live chat role, unread count and notification state. The canonical chat bundle hash excludes its marked adapter hooks."
   ]
 }

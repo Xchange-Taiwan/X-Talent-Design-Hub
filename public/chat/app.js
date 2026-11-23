@@ -14494,6 +14494,9 @@ var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
 function Header({ state: s, unread, noticeOpen, setNoticeOpen, onMessages, onProfile, onFind, onLogin, onRole, roleMenuOpen = false }) {
   const panel = (0, import_react6.useRef)(null);
   (0, import_react6.useEffect)(() => {
+    /* HUB_ACCOUNT_START */
+    if (s.member && window.HubChatAccount) return;
+    /* HUB_ACCOUNT_END */
     if (!noticeOpen) return;
     const close = (e) => {
       if (e.type === "keydown" ? e.key === "Escape" : !panel.current?.contains(e.target)) setNoticeOpen(false);
@@ -14505,6 +14508,11 @@ function Header({ state: s, unread, noticeOpen, setNoticeOpen, onMessages, onPro
       document.removeEventListener("keydown", close);
     };
   }, [noticeOpen, setNoticeOpen]);
+  /* HUB_ACCOUNT_START */
+  if (s.member && window.HubChatAccount) return import_react6.createElement(window.HubChatAccount.MemberHeader, {
+    React: import_react6, state:s, unread, noticeOpen, setNoticeOpen, onMessages, onRole, onLogout:() => sessionStorage.removeItem(storageKey), Bell, defaultAvatar:asset("user.png")
+  });
+  /* HUB_ACCOUNT_END */
   return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("header", { className: "site-header", children: [
     /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("button", { className: "logo", onClick: onProfile, "aria-label": "X-Talent", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("img", { src: asset("logo.svg"), alt: "X-Talent" }) }),
     /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("nav", { "aria-label": "\u4E3B\u9078\u55AE", children: [
@@ -15742,6 +15750,10 @@ function restored() {
   return result;
 }
 var initialReview = restored();
+/* HUB_ACCOUNT_START */
+window.HubChatAccount?.restoreRole(initialReview);
+window.HubChatAccount?.reservationPreview(initialReview, {confirmReservation, readThread, storageKey});
+/* HUB_ACCOUNT_END */
 function App() {
   const [state, setState] = (0, import_react12.useState)(initialReview.state), [noticeOpen, setNoticeOpen] = (0, import_react12.useState)(initialReview.presentation.noticeOpen), [toast, setToast] = (0, import_react12.useState)(initialReview.presentation.toast), [openError, setOpenError] = (0, import_react12.useState)(initialReview.presentation.openError), [loginTarget, setLoginTarget] = (0, import_react12.useState)("zahra"), [loginError, setLoginError] = (0, import_react12.useState)(initialReview.presentation.loginError);
   const stateRef = (0, import_react12.useRef)(state), nextFailure = (0, import_react12.useRef)(null), pendingTimers = (0, import_react12.useRef)([]), toastTimer = (0, import_react12.useRef)(), contactButton = (0, import_react12.useRef)(), storageWarning = (0, import_react12.useRef)(false);
@@ -15753,6 +15765,9 @@ function App() {
     toastTimer.current = setTimeout(() => setToast(null), 6500);
   };
   const changeRoute = (route, replace = false) => {
+    /* HUB_ACCOUNT_START */
+    if (route.view === "pool" && window.HubChatAccount) return window.HubChatAccount.openDirectory(stateRef.current);
+    /* HUB_ACCOUNT_END */
     setState((s) => ({ ...s, route }));
     history[replace ? "replaceState" : "pushState"]({ chatRun: run, route }, "", location.href);
     window.scrollTo(0, 0);

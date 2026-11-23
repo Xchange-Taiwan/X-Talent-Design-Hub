@@ -1,245 +1,562 @@
 diff --git a/app/App.tsx b/app/App.tsx
-index ea4f252..65d3cb2 100644
+index 6acfce1..9d7eda9 100644
 --- a/app/App.tsx
 +++ b/app/App.tsx
-@@ -91,2 +91,3 @@ const audit=[
- ];
-+import {initialPerson,flowAttributes,guestEntry} from './HubProfileActions';
- function App(){
-@@ -104,4 +105,7 @@ function App(){
-  const isMenteeProfile=menteeProfileScenes.includes(scenario),isMenteeEditing=isMenteeProfile&&['mentee-edit','mentee-avatar'].includes(scenario);
-+ const [guestViewer,setGuestViewer]=useState(guestEntry);
-+ useEffect(()=>{const done=()=>setGuestViewer(false);window.addEventListener('hub-sign-in',done);return()=>window.removeEventListener('hub-sign-in',done)},[]);
+@@ -1,3 +1,4 @@
++import {initialPerson,flowAttributes,guestEntry,sharedEntryRole,favoritesEntry} from './HubProfileActions';
+ import {BookingRoleNotice} from './BookingRoleNotice';
+ import {menteeProfileSchema,menteeProfileValues} from './mentee-profile-model';
+ import {hubScreenMap,hubScreenAttributes,hubScreenLabel,menteeProfileScenes} from './hub-screen-map';
+@@ -25,7 +26,7 @@ import {QuestionnaireSelectDemo} from './QuestionnaireSelect';
+ import {Bookings} from './Bookings';
+ import {ContributionFlow,SupportFooter} from './Contributions';
+ import {ContributionDraft,teamDraft,phase2Reservations,menteeHistory,applyTipPayment} from './phase2-model';
+-import {MentorSearch,MentorRecommendations,PoolMentor,poolMentors} from './MentorSearch';
++import {MentorSearch,FavoriteMentors,MentorRecommendations,PoolMentor,poolMentors} from './MentorSearch';
+ import {PublicBooking} from './BookingFlow';
+ import {BookingOutcome} from './BookingOutcome';
+ import {Checkout} from './Checkout';
+@@ -127,6 +128,14 @@ function App(){
+  const isMenteeProfile=page==='mentee-profile',isMenteeEditing=isMenteeProfile&&['mentee-edit','mentee-avatar'].includes(scenario);
   const screenMapping=page==='profile'?hubScreenMap[editing?'owner-edit':'owner-filled']:page==='mentee-profile'?hubScreenMap[isMenteeEditing?'mentee-edit':'mentee-profile']:page==='welcome'?hubScreenMap.welcome:page==='public-booking'?hubScreenMap['public-plans']:undefined;
   const [bookingState,setBookingState]=useState<any>({role:'mentor',bookingTab:'upcoming',reservations:migrateBookings(readLocal<Booking[]>('xtalent-reservations-842-v1',bookingSeeds)),people:[{id:'zahra',name:'Zahra Mirzakhani',role:'Senior UX Designer',avatar:zahraAvatar},{id:'emily',name:'Emily Chen',role:'UI/UX 設計師',avatar:'',avatarPreset:0},{id:'alex',name:'Alex Wang',role:'後端工程師',avatar:alexAvatar},{id:'sarah',name:'Sarah Lin',role:'Product Designer',avatar:sarahAvatar}],threads:{zahra:{messages:[1]},emily:{messages:[1]},alex:{messages:[1]},sarah:{messages:[1]}}});
++ const [guestViewer,setGuestViewer]=useState(guestEntry);
++ useEffect(()=>{
++   const notify=(e:Event)=>setToast({title:(e as CustomEvent<string>).detail});
++   window.addEventListener('hub-favorite-notice',notify);
++   return ()=>window.removeEventListener('hub-favorite-notice',notify);
++ },[]);
++ useEffect(()=>{const done=()=>setGuestViewer(false);window.addEventListener('hub-sign-in',done);return()=>window.removeEventListener('hub-sign-in',done)},[]);
 + const activeFlow=contribution?(contribution.kind==='team'?'team-support':'feedback-tip'):({bookings:'mentor-bookings',growth:'mentor-growth',plans:'mentor-plans',income:'mentor-income',checkout:'booking-payment','payment-return':'booking-payment','booking-result':'booking-payment','mentee-bookings':bookingState.bookingTab==='history'||scenario==='mentee-empty'?'feedback-tip':undefined} as Record<string,string>)[page];
+  const bookingSeedsPeople=useRef(bookingState.people);
   const serial=useRef(0),form=useForm<any>({defaultValues:profileValues(true),resolver:zodResolver(prototypeSchema),mode:'onSubmit',reValidateMode:'onChange',shouldFocusError:false});
-@@ -117,3 +121,3 @@ function App(){
+  const {toasts,dismiss}=useToast();
+@@ -139,17 +148,18 @@ function App(){
+  const paymentReturned=(order:Order)=>{setCheckout(order);route('payment-return','payment-return')};
+  const paymentComplete=(order:Order)=>{if(order.status!=='paid')return;recordReservation(order.selection,order.id);setResult(order.selection);writeLocal('xtalent-last-booking',order.selection);setScenario('booking-success');setPage('booking-result');setToast(null);history.replaceState({},'','?scene=booking-success')};
   useEffect(()=>{writeLocal('xtalent-reservations-842-v1',bookingState.reservations)},[bookingState.reservations]);
-- const scene=(id:string,resume=false)=>{if(!resume&&isMenteeEditing&&menteeForm.formState.isDirty){setMenteeLeaveTarget(id);return}setAvailability(structuredClone(initialAvailability));serial.current++;setContribution(null);setContributionFull(false);setSelectedMentor(null);setScenario(id);if(id.startsWith('income')&&!id.startsWith('income-settings'))setBankAccount(sampleBank);setMetrics(demoMetrics(id));setToast(null);dismiss();setLeave(false);setSaving(id==='saving');setBoundary('');setKey(k=>k+1);let data:any=profileValues(!['fresh','required-error','image-error','partial'].includes(id));if(id==='partial'){data.about=profileValues(true).about;data.have_skill=['ui','ux'];data.have_topic=['resume'];}if(id==='work-empty'||id==='work-new')data.work_experiences=[];if(id==='education-empty'||id==='education-new')data.educations=[];if(id==='links-empty'){data.linkedin.url='';data.website.url='';}if(id==='period-error'){data.work_experiences[0].job_period_start='2025';data.work_experiences[0].job_period_end='2023';}if(id==='link-error')data.linkedin.url='https://notlinkedin.com/user';form.reset(data);setSaved(profileValues(true));setPlans(['owner-empty','plans-empty','plan-new','plan-paid','fresh','welcome','card-back','growth-empty'].includes(id)?[]:id==='plans-migrated'?[{...examplePlans[0],id:'legacy',name:'一般預約',duration:30,slots:['2026/11/17 19:00–19:30']}]:structuredClone(examplePlans));const group=scenes.find(s=>s[0]===id)?.[1];setCreating(group==='FR01');setEditing(group==='FR01'||id==='owner-edit');setPage(group==='FR01'||group==='本人頁 #830'?'profile':group==='FR02'?'welcome':group==='FR03–06'?'growth':group==='銜接 #837'?'plans':group==='既有預約'?'bookings':id);if(id.startsWith('bookings-'))setBookingState((p:any)=>({...p,role:'mentor',bookingTab:id==='bookings-empty'?'upcoming':id==='bookings-auto-cancelled'?'history':id.replace('bookings-',''),reservations:id==='bookings-empty'?[]:id==='bookings-auto-cancelled'?[...bookingSeeds,{id:'auto-free',person:'sarah',tab:'history',date:'2026/11/12',time:'19:00–19:30',planName:'作品集與職涯方向',amount:0,status:'已自動取消'}]:p.reservations.length?p.reservations:structuredClone(bookingSeeds)}));
-+ const scene=(id:string,resume=false)=>{if(!resume&&isMenteeEditing&&menteeForm.formState.isDirty){setMenteeLeaveTarget(id);return}setAvailability(structuredClone(initialAvailability));serial.current++;setContribution(null);setContributionFull(false);setSelectedMentor(resume&&id.startsWith('public-')?poolMentors.find(p=>p.id===initialPerson)||null:null);setScenario(id);if(id.startsWith('income')&&!id.startsWith('income-settings'))setBankAccount(sampleBank);setMetrics(demoMetrics(id));setToast(null);dismiss();setLeave(false);setSaving(id==='saving');setBoundary('');setKey(k=>k+1);let data:any=profileValues(!['fresh','required-error','image-error','partial'].includes(id));if(id==='partial'){data.about=profileValues(true).about;data.have_skill=['ui','ux'];data.have_topic=['resume'];}if(id==='work-empty'||id==='work-new')data.work_experiences=[];if(id==='education-empty'||id==='education-new')data.educations=[];if(id==='links-empty'){data.linkedin.url='';data.website.url='';}if(id==='period-error'){data.work_experiences[0].job_period_start='2025';data.work_experiences[0].job_period_end='2023';}if(id==='link-error')data.linkedin.url='https://notlinkedin.com/user';form.reset(data);setSaved(profileValues(true));setPlans(['owner-empty','plans-empty','plan-new','plan-paid','fresh','welcome','card-back','growth-empty'].includes(id)?[]:id==='plans-migrated'?[{...examplePlans[0],id:'legacy',name:'一般預約',duration:30,slots:['2026/11/17 19:00–19:30']}]:structuredClone(examplePlans));const group=scenes.find(s=>s[0]===id)?.[1];setCreating(group==='FR01');setEditing(group==='FR01'||id==='owner-edit');setPage(group==='FR01'||group==='本人頁 #830'?'profile':group==='FR02'?'welcome':group==='FR03–06'?'growth':group==='銜接 #837'?'plans':group==='既有預約'?'bookings':id);if(id.startsWith('bookings-'))setBookingState((p:any)=>({...p,role:'mentor',bookingTab:id==='bookings-empty'?'upcoming':id==='bookings-auto-cancelled'?'history':id.replace('bookings-',''),reservations:id==='bookings-empty'?[]:id==='bookings-auto-cancelled'?[...bookingSeeds,{id:'auto-free',person:'sarah',tab:'history',date:'2026/11/12',time:'19:00–19:30',planName:'作品集與職涯方向',amount:0,status:'已自動取消'}]:p.reservations.length?p.reservations:structuredClone(bookingSeeds)}));
+- const scene=(id:string,resume=false)=>{if(!resume&&isMenteeEditing&&menteeForm.formState.isDirty){setMenteeLeaveTarget(id);return}setAvailability(structuredClone(initialAvailability));serial.current++;setContribution(null);setContributionFull(false);setSelectedMentor(null);setBookingNotice(id==='public-mentor');setScenario(id);if(id.startsWith('income')&&!id.startsWith('income-settings'))setBankAccount(sampleBank);setMetrics(demoMetrics(id));setToast(null);dismiss();setLeave(false);setSaving(id==='saving');setBoundary('');setKey(k=>k+1);let data:any=profileValues(!['fresh','required-error','image-error','partial'].includes(id));if(id==='partial'){data.about=profileValues(true).about;data.have_skill=['ui','ux'];data.have_topic=['resume'];}if(id==='work-empty'||id==='work-new')data.work_experiences=[];if(id==='education-empty'||id==='education-new')data.educations=[];if(id==='links-empty'){data.linkedin.url='';data.website.url='';}if(id==='period-error'){data.work_experiences[0].job_period_start='2025';data.work_experiences[0].job_period_end='2023';}if(id==='link-error')data.linkedin.url='https://notlinkedin.com/user';form.reset(data);setSaved(profileValues(true));setPlans(['owner-empty','plans-empty','plan-new','plan-paid','fresh','welcome','card-back','growth-empty'].includes(id)?[]:id==='plans-migrated'?[{...examplePlans[0],id:'legacy',name:'一般預約',duration:30,slots:['2026/11/17 19:00–19:30']}]:structuredClone(examplePlans));const group=scenes.find(s=>s[0]===id)?.[1];setCreating(group==='FR01');setEditing(group==='FR01'||id==='owner-edit');setPage(group==='FR01'||group==='本人頁 #830'?'profile':group==='FR02'?'welcome':group==='FR03–06'?'growth':group==='銜接 #837'?'plans':group==='既有預約'?'bookings':id);if(id.startsWith('bookings-'))setBookingState((p:any)=>({...p,role:'mentor',bookingTab:id==='bookings-empty'?'upcoming':id==='bookings-auto-cancelled'?'history':id.replace('bookings-',''),reservations:id==='bookings-empty'?[]:id==='bookings-auto-cancelled'?[...bookingSeeds,{id:'auto-free',person:'sarah',tab:'history',date:'2026/11/12',time:'19:00–19:30',planName:'作品集與職涯方向',amount:0,status:'已自動取消'}]:p.reservations.length?p.reservations:structuredClone(bookingSeeds)}));
++ const scene=(id:string,resume=false)=>{if(!resume&&isMenteeEditing&&menteeForm.formState.isDirty){setMenteeLeaveTarget(id);return}setAvailability(structuredClone(initialAvailability));serial.current++;setContribution(null);setContributionFull(false);setSelectedMentor(resume&&(id.startsWith('public-')||['public','booking-paid','booking-free','booking-no-questions'].includes(id))?poolMentors.find(p=>p.id===initialPerson)||null:null);setBookingNotice(id==='public-mentor');setScenario(id);if(id.startsWith('income')&&!id.startsWith('income-settings'))setBankAccount(sampleBank);setMetrics(demoMetrics(id));setToast(null);dismiss();setLeave(false);setSaving(id==='saving');setBoundary('');setKey(k=>k+1);let data:any=profileValues(!['fresh','required-error','image-error','partial'].includes(id));if(id==='partial'){data.about=profileValues(true).about;data.have_skill=['ui','ux'];data.have_topic=['resume'];}if(id==='work-empty'||id==='work-new')data.work_experiences=[];if(id==='education-empty'||id==='education-new')data.educations=[];if(id==='links-empty'){data.linkedin.url='';data.website.url='';}if(id==='period-error'){data.work_experiences[0].job_period_start='2025';data.work_experiences[0].job_period_end='2023';}if(id==='link-error')data.linkedin.url='https://notlinkedin.com/user';form.reset(data);setSaved(profileValues(true));setPlans(['owner-empty','plans-empty','plan-new','plan-paid','fresh','welcome','card-back','growth-empty'].includes(id)?[]:id==='plans-migrated'?[{...examplePlans[0],id:'legacy',name:'一般預約',duration:30,slots:['2026/11/17 19:00–19:30']}]:structuredClone(examplePlans));const group=scenes.find(s=>s[0]===id)?.[1];setCreating(group==='FR01');setEditing(group==='FR01'||id==='owner-edit');setPage(group==='FR01'||group==='本人頁 #830'?'profile':group==='FR02'?'welcome':group==='FR03–06'?'growth':group==='銜接 #837'?'plans':group==='既有預約'?'bookings':id);if(id.startsWith('bookings-'))setBookingState((p:any)=>({...p,role:'mentor',bookingTab:id==='bookings-empty'?'upcoming':id==='bookings-auto-cancelled'?'history':id.replace('bookings-',''),reservations:id==='bookings-empty'?[]:id==='bookings-auto-cancelled'?[...bookingSeeds,{id:'auto-free',person:'sarah',tab:'history',date:'2026/11/12',time:'19:00–19:30',planName:'作品集與職涯方向',amount:0,status:'已自動取消'}]:p.reservations.length?p.reservations:structuredClone(bookingSeeds)}));
   if(id==='plan-paid-no-bank'||id==='income-settings-missing')setBankAccount({holder:'',bank:'',branch:'',account:'',status:'missing',coverName:''});
-@@ -128,2 +132,3 @@ function App(){
-  if(id.startsWith('mentor-search'))setPage('mentor-search');
+  if(id==='plan-paid-no-bank')setPlans(examplePlans.map(p=>({...p,published:p.price?false:p.published})));
+  if(id==='income-settings-rejected')setBankAccount({...sampleBank,status:'rejected'});
+  if(id==='income-settings-reviewing')setBankAccount({...sampleBank,status:'reviewing'});
+  if(id==='income-settings')setBankAccount(sampleBank);
 + if(id==='plan-schedule-empty'){setAvailability({...initialAvailability,slots:[],dateOverrides:{}});setPlans([]);}
+  if(id==='public'||id.startsWith('public-')||['booking-paid','booking-free','booking-no-questions'].includes(id)){setPage(id==='public-mentor'?'mentor-search':'public-booking');if(id==='public-no-plans')setPlans([]);if(id==='public-unavailable')setPlans(examplePlans.map(p=>({...p,published:false})));}
+  if(id.startsWith('checkout')){const previous=readOrder();let order=id==='checkout'&&resume&&previous&&!['paid','refunded'].includes(previous.status)?previous:makeOrder(demoSelection());if(id==='checkout-failed'||id==='checkout-closed')order={...order,status:'failed'};if(id==='checkout-expired')order={...order,status:'expired',expiresAt:Date.now()-1};if(id==='checkout-refunded')order={...order,status:'refunded',expiresAt:Date.now()-1};setCheckout(storeOrder(order));setPage(['paying','processing'].includes(order.status)?'payment-return':'checkout');}
+  if(id==='payment-return'||id==='payment-processing'){const previous=readOrder();const order=resume&&previous&&['processing','paid'].includes(previous.status)?previous:beginPaymentReturn(makeOrder(demoSelection()),id==='payment-processing');setCheckout(storeOrder(order));setPage('payment-return');}
+  if(id==='booking-success'||id==='booking-waiting'){const paid=id==='booking-success',last=readLocal<Selection|null>('xtalent-last-booking',null),selection=last&&!!last.plan.price===paid?last:demoSelection(paid);if(!last||!!last.plan.price!==paid)recordReservation(selection,paid?'XT-preview-paid':'XT-preview-free');setResult(selection);setPage('booking-result');}
+- if(id.startsWith('mentor-search'))setPage('mentor-search');
++ if(id.startsWith('mentor-search'))setPage(resume&&favoritesEntry?'favorites':'mentor-search');
   if(id.startsWith('support')){setPage('public-booking');setContribution(teamDraft(id==='support-guest'));setContributionScene(id);setContributionFull(!['support','support-guest'].includes(id));}
-@@ -144,3 +149,3 @@ function App(){
+  if((id.startsWith('mentee-')&&!menteeProfileScenes.includes(id))||id.startsWith('tip-')){setPage('mentee-bookings');setBookingState((p:any)=>({...p,role:'mentee',bookingTab:id==='mentee-empty'?'upcoming':'history',people:poolMentors.map(person=>({...person,role:person.job})),reservations:id==='mentee-history'?menteeHistory(p.reservations):phase2Reservations(bookingSeeds,id)}));if(['tip-checkout','tip-failed'].includes(id)){setContribution({kind:'mentor',amount:'100',message:'很實用的作品集建議，謝謝你！',bookingId:'h2',mentorName:'Zahra Mirzakhani',planName:'作品集與職涯方向',date:'2026/10/26'});setContributionScene(id);setContributionFull(true);}}
+  if(menteeProfileScenes.includes(id)){const value=id==='mentee-profile-empty'?menteeProfileValues(false):menteeSaved;if(id==='mentee-profile-empty')setMenteeSaved(value);menteeForm.reset(value);setPage('mentee-profile');setEditing(false);setCreating(false);}
+@@ -183,6 +193,7 @@ function App(){
+  }
+  function review(id:string,resume=false){
+    const next=fixture(id);
++   if(resume)next.role=sharedEntryRole(id)||next.role;
+    if(resume&&id==='role-own'&&location.pathname.startsWith('/profile/1')){
+      try{const snapshot=JSON.parse(sessionStorage.getItem('xt-own-profile')||'null');
+        if(snapshot?.mentor&&snapshot.mentee&&['mentor','mentee'].includes(snapshot.identity?.role)){
+@@ -237,29 +248,30 @@ function App(){
+  const closeContribution=()=>{setContribution(null);setContributionFull(false);scrollTop()};
+  const openSupport=()=>{setContributionScene('support');setContribution(teamDraft(scenario==='support-guest'));setContributionFull(false)};
   const startTip=(draft:ContributionDraft)=>{setContributionScene('tip-checkout');setContribution(draft);setContributionFull(true);scrollTop()};
 - const contributionPaid=(draft:ContributionDraft)=>{if(draft.kind!=='mentor')return;setBookingState((p:any)=>({...p,bookingTab:'history',reservations:applyTipPayment(p.reservations,draft)}));closeContribution();setToast({title:'贊助已完成，謝謝你的支持'})};
 + const contributionPaid=(draft:ContributionDraft)=>{if(draft.kind!=='mentor')return;setBookingState((p:any)=>({...p,bookingTab:'history',reservations:applyTipPayment(p.reservations,draft)}));closeContribution();route('mentee-bookings','tip-success');setToast({title:'贊助已完成，謝謝你的支持'})};
-  const edit=()=>{form.reset(saved);setEditing(true);setCreating(false);route('profile','owner-edit')};
-@@ -148,3 +153,3 @@ function App(){
-  const goProfile=()=>{if(editing&&form.formState.isDirty){setLeave(true);return}form.reset(saved);setScenario('owner-filled');setEditing(false);setCreating(false);route('profile','owner-filled')};
+  const edit=()=>own('mentor',true);
+  const cancel=()=>{if(form.formState.isDirty){setLeave(true);return}form.reset(saved);setCreating(false);setEditing(false);route('profile','owner-filled')};
+  const goProfile=()=>{if(editing&&form.formState.isDirty){setLeave(true);return}own('mentor')};
 - const newPlan=()=>{track('mentor_setup_slots_click');setScenario('plan-new');show('plans')};
 + const newPlan=()=>{track('mentor_setup_slots_click');route('plans','plan-schedule')};
   const groups=[...new Set(scenes.map(s=>s[1]))];
-@@ -154,3 +159,3 @@ function App(){
+  const outcomeSelection=page==='payment-return'?checkout?.selection:page==='booking-result'?result:null;
+  const visibleToast=toast||(toasts[0]?.open?{title:toasts[0].title+' '+toasts[0].description,error:true}:null);
+  return <div className="xt-app"><div className="fr-review"><strong>{scenario.startsWith('role-')?'身分切換':isMenteeProfile?'Mentee':'Mentor'} <span>{scenario.startsWith('role-')?'#890':isMenteeProfile?'#828':'#742'}</span></strong><div className="fr-device-controls">{['desktop','tablet','mobile'].map(d=><button key={d} aria-pressed={device===d} onClick={()=>setDevice(d)}>{d[0].toUpperCase()+d.slice(1)}</button>)}</div><label><span className="sr-only">主要情境</span><select aria-label="主要情境" value={scenario} onChange={e=>review(e.target.value)}>{groups.map(g=><optgroup key={g} label={g}>{scenes.filter(s=>s[1]===g).map(s=><option key={s[0]} value={s[0]}>{s[2]}</option>)}</optgroup>)}</select></label><span className="fr-hub-mapping">{hubScreenLabel(screenMapping)}</span><button onClick={()=>setNotes(!notes)} aria-expanded={notes}><Info size={16}/>PRD 對照</button></div><nav className="fr-review-shortcuts" aria-label="預覽流程">{[['fresh','建立資料'],['welcome','導師小卡'],['owner-filled','本人頁'],['mentee-profile','學員個人頁'],['growth-l2','成長總覽'],['plans-filled','方案時段'],['public-plans','預約流程'],['checkout','付款'],['income','收入統計'],['mentor-search','尋找導師'],['mentee-history','回饋與贊助'],['support','支持團隊'],['components','元件']].map(([id,text])=><button key={id} onClick={()=>review(id)}>{text}</button>)}</nav>
   {notes&&<aside className="fr-review-note">依 #829、#834、#839 延伸支持團隊、回饋贊助與搜尋；#840–843、#872 為預約、付款與收入流程；成長沿用 #832／#746／#745。僅更新這個 prototype，尚未同步 Figma。<button onClick={()=>scene('audit')}>查看完整對照</button></aside>}
-- <div className="xt-device-stage"><div className="xt-device-surface" data-device={device}><div className="xt-product" data-page={page} {...hubScreenAttributes(screenMapping)}><MentorHeader creating={creating} isMentor={!creating&&!['mentee-profile','mentee-avatar','mentor-search','mentee-bookings'].includes(page)&&(page!=='public-booking'||scenario==='public-mentor')} guest={scenario==='support-guest'} avatar={isMenteeProfile?avatarSource(menteeSaved.avatarSelection):userAvatar} onCreate={()=>scene('fresh')} onProfile={isMenteeProfile?()=>scene('mentee-profile'):goProfile} onBackend={()=>show('growth')} onSearch={()=>scene('mentor-search')} onNotice={title=>setToast({title})}/>
-+ <div className="xt-device-stage"><div className="xt-device-surface" data-device={device}><div className="xt-product" data-page={page} data-current-scene={scenario} data-booking-tab={['bookings','mentee-bookings'].includes(page)?bookingState.bookingTab:undefined} data-person={page==='public-booking'?(selectedMentor?.id||'zahra'):undefined} data-contribution={contribution?.kind} data-contribution-scene={contribution?contributionScene:undefined} {...hubScreenAttributes(screenMapping)} {...flowAttributes(activeFlow)}><MentorHeader creating={creating} isMentor={!creating&&!['mentee-profile','mentee-avatar','mentor-search','mentee-bookings'].includes(page)&&(page!=='public-booking'||scenario==='public-mentor')} guest={scenario==='support-guest'||(page==='public-booking'&&guestViewer)} avatar={isMenteeProfile?avatarSource(menteeSaved.avatarSelection):userAvatar} onCreate={()=>scene('fresh')} onProfile={isMenteeProfile?()=>scene('mentee-profile'):goProfile} onBackend={()=>show('growth')} onSearch={()=>scene('mentor-search')} onNotice={title=>setToast({title})}/>
+- <div className="xt-device-stage"><div className="xt-device-surface" data-device={device}><div className="xt-product" data-page={page} {...hubScreenAttributes(screenMapping)}><MentorHeader guest={scenario==='support-guest'} creating={creating} role={role} avatar={role==='mentor'?saved.avatar||userAvatar:avatarSource(menteeSaved.avatarSelection)} unread={{mentor:identity.mentorUnread,mentee:identity.menteeUnread}} missing={role==='mentor'?!identity.mentorReady:!identity.menteeReady} editing={editing||isMenteeEditing} onSwitch={switchRole} onProfile={()=>creating?scrollTop():own(role)} onWorkspace={()=>workspace(role)} onSearch={()=>route('mentor-search','mentor-search')} onComplete={completeProfile} onNotice={openNotice}/>
++ <div className="xt-device-stage"><div className="xt-device-surface" data-device={device}><div className="xt-product" data-member={guestViewer||scenario==='support-guest'?'guest':'member'} data-page={page} data-current-scene={scenario} data-booking-tab={['bookings','mentee-bookings'].includes(page)?bookingState.bookingTab:undefined} data-person={page==='public-booking'?(selectedMentor?.id||'zahra'):undefined} data-contribution={contribution?.kind} data-contribution-scene={contribution?contributionScene:undefined} {...hubScreenAttributes(screenMapping)} {...flowAttributes(activeFlow)}><MentorHeader guest={scenario==='support-guest'||guestViewer} creating={creating} role={role} avatar={role==='mentor'?saved.avatar||userAvatar:avatarSource(menteeSaved.avatarSelection)} unread={{mentor:identity.mentorUnread,mentee:identity.menteeUnread}} missing={role==='mentor'?!identity.mentorReady:!identity.menteeReady} editing={editing||isMenteeEditing} onSwitch={switchRole} onProfile={()=>creating?scrollTop():own(role)} onWorkspace={()=>workspace(role)} onSearch={()=>route('mentor-search','mentor-search')} onComplete={completeProfile} onNotice={openNotice}/>
+  {bookingNotice&&role==='mentor'&&<BookingRoleNotice position={position} onClose={()=>setBookingNotice(false)}/>}
   {visibleToast&&<div className={'xt-toast '+(visibleToast.error?'xt-toast-error':'')} style={position} role="status"><strong>{visibleToast.title}</strong><button aria-label="關閉通知" onClick={()=>{setToast(null);dismiss()}}><X size={20}/></button></div>}
-@@ -158,3 +163,3 @@ function App(){
+  <div hidden={contributionFull}>
   {['growth','plans','bookings','income','boundary'].includes(page)&&<div className="fr-backend-top"><div className="fr-wrap"><h2>導師管理後台</h2><nav className="fr-tabs" aria-label="導師後台主導覽">{[['growth','成長總覽'],['bookings','預約管理'],['plans','方案時段'],['income','收入統計']].map(([id,text])=><button className={id===page?'active':''} aria-current={id===page?'page':undefined} key={id} onClick={()=>{if(id==='bookings')setBookingState((p:any)=>({...p,role:'mentor'}));if(id==='income')setScenario('income');show(id)}}>{text}</button>)}</nav></div></div>}
 - {page==='profile'&&<MentorProfile key={key} scene={scenario} metrics={metrics} form={form} editing={editing} creating={creating} saving={saving} onEdit={edit} onCancel={cancel} onSave={save} onInvalid={()=>{track('mentor_profile_validation_error');setToast({title:'請確認尚未完成或有誤的欄位。',error:true})}} onBackend={()=>show('growth')} onPlans={()=>show('plans')} plans={plans} publicView={scenario==='public'}/>}
 + {page==='profile'&&<MentorProfile key={key} scene={scenario} metrics={metrics} form={form} editing={editing} creating={creating} saving={saving} onEdit={edit} onCancel={cancel} onSave={save} onInvalid={()=>{track('mentor_profile_validation_error');setToast({title:'請確認尚未完成或有誤的欄位。',error:true})}} onBackend={()=>show('growth')} onPlans={()=>route('plans','plan-schedule')} plans={plans} publicView={scenario==='public'}/>}
-  {page==='mentee-profile'&&<MentorProfile key={key} role="mentee" scene={scenario} metrics={metrics} form={menteeForm} editing={isMenteeEditing} creating={false} saving={false} onEdit={()=>scene('mentee-edit')} onCancel={cancelMentee} onSave={saveMentee} onInvalid={()=>setToast({title:'請確認有誤的欄位',error:true})} onBackend={()=>{}} onPlans={()=>{}} plans={[]}/>}
-@@ -163,5 +168,5 @@ function App(){
+  {page==='mentee-profile'&&<MentorProfile key={key} role="mentee" photoOnly={identity.mentorReady} scene={scenario} metrics={metrics} form={menteeForm} editing={isMenteeEditing} creating={false} saving={false} onEdit={()=>own('mentee',true)} onCancel={cancelMentee} onSave={saveMentee} onInvalid={()=>setToast({title:'請確認有誤的欄位',error:true})} onBackend={()=>{}} onPlans={()=>{}} plans={[]}/>}
+  {page==='welcome'&&<main className="xt-activation-shell" {...hubScreenAttributes(hubScreenMap['welcome'])}><MentorWelcome key={key} profile={saved} entrance={scenario!=='card-back'} initialBack={scenario==='card-back'} onRevealed={()=>{}} onEdit={edit} onSlots={newPlan} onLater={goProfile}/></main>}
+- {page==='growth'&&<Growth key={key} scene={scenario} metrics={metrics} onUpdated={()=>setMetrics(m=>({...m,minutes:m.minutes+30,completed:m.completed+1}))} onProfile={goProfile} onPlans={()=>show('plans')}/>}
++ {page==='growth'&&<Growth key={key} scene={scenario} metrics={metrics} onUpdated={()=>setMetrics(m=>({...m,minutes:m.minutes+30,completed:m.completed+1}))} onProfile={goProfile} onPlans={()=>route('plans','plan-schedule')}/>}
   {page==='plans'&&<Plans key={key} occupied={bookingState.reservations.filter((b:Booking)=>['upcoming','pending'].includes(b.tab)&&b.slot).map((b:Booking)=>b.slot!)} availability={availability} onAvailability={setAvailability} scene={scenario} plans={plans} setPlans={setPlans} onProfile={goProfile} account={bankAccount} onAccountSave={saveBankAccount} toast={title=>setToast({title})}/>}
 - {['bookings','my-bookings'].includes(page)&&<Bookings heading={page==='my-bookings'?'我的預約':'預約管理'} showHours onManageAvailability={()=>show('plans')} state={bookingState} setState={setBookingState} contact={(id,bookingId)=>{const person=bookingState.people.find((p:any)=>p.id===id);const params=new URLSearchParams({scene:bookingState.role==='mentor'?'booking-mentor-contact':'booking-mentee-contact',reservation:bookingId,person:id,partner:person?.name||''});window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?'+params.toString(),'_blank','noopener')}} toast={title=>setToast({title})}/>}
 + {['bookings','my-bookings'].includes(page)&&<Bookings hubScreen={page==='bookings'?'mentor-bookings':undefined} heading={page==='my-bookings'?'我的預約':'預約管理'} showHours onManageAvailability={()=>show('plans')} state={bookingState} setState={setBookingState} contact={(id,bookingId)=>{const person=bookingState.people.find((p:any)=>p.id===id);const params=new URLSearchParams({scene:bookingState.role==='mentor'?'booking-mentor-contact':'booking-mentee-contact',reservation:bookingId,person:id,partner:person?.name||''});window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?'+params.toString(),'_blank','noopener')}} toast={title=>setToast({title})}/>}
++ {page==='favorites'&&<FavoriteMentors onOpen={openMentor} onFind={()=>route('mentor-search','mentor-search')}/>}
   {page==='mentor-search'&&<MentorSearch key={key} scene={scenario} onOpen={openMentor}/>}
-- {page==='mentee-bookings'&&<div className={'p2-history-layout '+(bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')?'has-recommendations':'')}><Bookings key={key} heading="我的預約" state={bookingState} setState={setBookingState} phase2 initialFeedbackId={scenario==='tip-feedback'?'h2':undefined} onTip={startTip} onFind={()=>scene('mentor-search')} onManageAvailability={()=>show('plans')} toast={title=>setToast({title})} contact={(id,bookingId)=>window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=booking-mentee-contact&person='+encodeURIComponent(id)+'&reservation='+encodeURIComponent(bookingId),'_blank','noopener')}/>{bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')&&<MentorRecommendations onOpen={openMentor}/>}</div>}
-+ {page==='mentee-bookings'&&<div {...flowAttributes('feedback-tip')} className={'p2-history-layout '+(bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')?'has-recommendations':'')}><Bookings key={key} heading="我的預約" state={bookingState} setState={setBookingState} phase2 initialFeedbackId={scenario==='tip-feedback'?'h2':undefined} onTip={startTip} onFind={()=>scene('mentor-search')} onManageAvailability={()=>show('plans')} toast={title=>setToast({title})} contact={(id,bookingId)=>window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=booking-mentee-contact&person='+encodeURIComponent(id)+'&reservation='+encodeURIComponent(bookingId),'_blank','noopener')}/>{bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')&&<MentorRecommendations onOpen={openMentor}/>}</div>}
-  {page==='public-booking'&&<PublicBooking key={key} person={selectedMentor||undefined} plans={plans} scene={scenario} occupied={bookingState.reservations.filter((b:Booking)=>['upcoming','pending'].includes(b.tab)&&b.slot).map((b:Booking)=>b.slot!)} onConfirm={confirmBooking} onResume={()=>{const order=readOrder();if(order){setCheckout(order);route(['paying','processing'].includes(order.status)?'payment-return':'checkout',['paying','processing'].includes(order.status)?'payment-return':'checkout')}}}/>}
+- {page==='mentee-bookings'&&<div className={'p2-history-layout '+(bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')?'has-recommendations':'')}><Bookings key={key} heading="我的預約" state={bookingState} setState={setBookingState} phase2 initialFeedbackId={scenario==='tip-feedback'?'h2':scenario==='tip-feedback-paid'?'h-paid':undefined} onTip={startTip} onFind={()=>scene('mentor-search')} onManageAvailability={()=>show('plans')} toast={title=>setToast({title})} contact={(id,bookingId)=>window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=booking-mentee-contact&person='+encodeURIComponent(id)+'&reservation='+encodeURIComponent(bookingId),'_blank','noopener')}/>{bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')&&<MentorRecommendations onOpen={openMentor}/>}</div>}
++ {page==='mentee-bookings'&&<div {...flowAttributes('feedback-tip')} className={'p2-history-layout '+(bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')?'has-recommendations':'')}><Bookings key={key} heading="我的預約" state={bookingState} setState={setBookingState} phase2 initialFeedbackId={scenario==='tip-feedback'?'h2':scenario==='tip-feedback-paid'?'h-paid':undefined} onTip={startTip} onFind={()=>scene('mentor-search')} onManageAvailability={()=>show('plans')} toast={title=>setToast({title})} contact={(id,bookingId)=>window.open('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=booking-mentee-contact&person='+encodeURIComponent(id)+'&reservation='+encodeURIComponent(bookingId),'_blank','noopener')}/>{bookingState.bookingTab==='history'&&bookingState.reservations.some(b=>b.tab==='history'&&!b.status&&b.person==='zahra')&&<MentorRecommendations onOpen={openMentor}/>}</div>}
+  {page==='public-booking'&&<PublicBooking role={role} key={key} person={selectedMentor||undefined} plans={plans} scene={scenario} occupied={bookingState.reservations.filter((b:Booking)=>['upcoming','pending'].includes(b.tab)&&b.slot).map((b:Booking)=>b.slot!)} onConfirm={confirmBooking} onResume={()=>{const order=readOrder();if(order){setCheckout(order);route(['paying','processing'].includes(order.status)?'payment-return':'checkout',['paying','processing'].includes(order.status)?'payment-return':'checkout')}}}/>}
+  {page==='checkout'&&checkout&&<Checkout key={key} order={checkout} onOrder={setCheckout} onReturn={paymentReturned} onReselect={()=>route('public-booking','public-plans')}/>}
+  {page==='payment-return'&&checkout&&<PaymentReturn key={key} order={checkout} onComplete={paymentComplete} onOrder={setCheckout} onResult={order=>{setCheckout(order);route('checkout',order.status==='refunded'?'checkout-refunded':order.status==='expired'?'checkout-expired':'checkout-failed')}}/>}
 diff --git a/app/BookingFlow.tsx b/app/BookingFlow.tsx
-index ea6d261..c123ed3 100644
+index 9a9bd04..2bc93d3 100644
 --- a/app/BookingFlow.tsx
 +++ b/app/BookingFlow.tsx
-@@ -1 +1,2 @@
-+import {HubPublicActions} from './HubProfileActions';
+@@ -1,3 +1,4 @@
++import {HubPublicActions,guestEntry,signInToBook,resumedPlan} from './HubProfileActions';
  import {hubScreenMap} from './hub-screen-map';
-@@ -36,3 +37,3 @@ export function PublicBooking({plans,scene,occupied,onConfirm,onResume,person}:{
-  return <div className="xc-public">{role==='mentor'&&<div className="xc-role-banner"><div><ShieldCheck size={18}/><span>切換為 Mentee 後才能預約</span></div><Button variant="outline" onClick={()=>setRole('mentee')}>切換為 Mentee<ArrowRight size={15}/></Button></div>}
-- <MentorReadView hubMapping={hubScreenMap['public-plans']} profile={person?poolProfile(person):{...zahraProfile,avatar:mentorPhoto}} level={person?.level||2} completed={person?.completed??128} rating={person?.rating} onContact={()=>location.assign('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=new&person='+encodeURIComponent(person?.id||'zahra'))} aside={<section className="xc-plan-rail"><div className="xc-section-head"><h2>預約一場交流</h2><CalendarDays size={20}/></div>{held.length>0&&onResume&&<button className="xc-resume-payment" onClick={onResume}>你有一筆尚未完成的付款<ArrowRight size={15}/></button>}{sorted.length?sorted.map((plan,i)=><BookingPlanCard key={plan.id} plan={plan} first={i===0} occupied={[...occupied,...held]} disabled={role==='mentor'} onChoose={()=>setSelected(plan)}/>):<div className="xc-empty"><CalendarDays size={28}/><h3>此導師目前尚未開放預約</h3></div>}</section>}/>
-+ <MentorReadView publicActions={<HubPublicActions key={person?.id||'zahra'} person={person?.id||'zahra'} name={person?.name||zahraProfile.name}/>} initialTab={['public-reviews','public-no-reviews'].includes(scene)?'reviews':'overview'} reviewCount={scene==='public-no-reviews'?0:12} hubMapping={hubScreenMap['public-plans']} profile={person?poolProfile(person):{...zahraProfile,avatar:mentorPhoto}} level={person?.level||2} completed={person?.completed??128} rating={person?.rating} onContact={()=>location.assign('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=new&person='+encodeURIComponent(person?.id||'zahra'))} aside={<section className="xc-plan-rail"><div className="xc-section-head"><h2>預約一場交流</h2><CalendarDays size={20}/></div>{held.length>0&&onResume&&<button className="xc-resume-payment" onClick={onResume}>你有一筆尚未完成的付款<ArrowRight size={15}/></button>}{sorted.length?sorted.map((plan,i)=><BookingPlanCard key={plan.id} plan={plan} first={i===0} occupied={[...occupied,...held]} disabled={role==='mentor'} onChoose={()=>setSelected(plan)}/>):<div className="xc-empty"><CalendarDays size={28}/><h3>此導師目前尚未開放預約</h3></div>}</section>}/>
-  <BookingDialog plan={selected} onClose={()=>setSelected(null)} occupied={occupied} onConfirm={s=>{confirm(s);setSelected(null)}}/>
+ import {poolProfile} from './MentorSearch';
+ import React,{useEffect,useState} from 'react';
+@@ -30,11 +31,11 @@ export function BookingForm({plan,occupied=[],inline=false,onConfirm}:{plan:Plan
+ }
+ export function BookingDialog({plan,onClose,onConfirm,occupied=[]}:{plan:Plan|null;onClose:()=>void;onConfirm:(s:Selection)=>void;occupied?:Slot[]}){return <Dialog open={!!plan} onOpenChange={open=>!open&&onClose()}><DialogContent className="xc-booking-dialog"><DialogTitle>預約會談</DialogTitle><DialogDescription className="sr-only">{plan?.questions.length?'選擇日期、時段並填寫會談前問卷。':'選擇日期與時段。'}</DialogDescription>{plan&&<BookingForm key={plan.id} plan={plan} occupied={occupied} onConfirm={onConfirm}/>}</DialogContent></Dialog>}
+ export function PublicBooking({role,plans,scene,occupied,onConfirm,onResume,person}:{role:'mentee'|'mentor';person?:import('./MentorSearch').PoolMentor;plans:Plan[];scene:string;occupied:Slot[];onConfirm:(s:Selection)=>void;onResume?:()=>void}){
+- const [selected,setSelected]=useState<Plan|null>(scene==='booking-paid'?plans.find(p=>p.price>0)||null:scene==='booking-no-questions'?{...legacyPlan}:scene==='booking-free'?plans.find(p=>!p.price)||null:null);
++ const [selected,setSelected]=useState<Plan|null>(resumedPlan && (scene==='booking-free'||scene==='booking-paid')?plans.find(p=>p.id===resumedPlan&&p.published)||null:scene==='booking-paid'?plans.find(p=>p.price>0)||null:scene==='booking-no-questions'?{...legacyPlan}:scene==='booking-free'?plans.find(p=>!p.price)||null:null);
+  const confirm=(selection:Selection)=>onConfirm({...selection,...(person?{mentor:{id:person.id,name:person.name,avatar:person.avatar,position:person.job,level:person.level}}:{})});
+  const held=useActiveHold(),sorted=availablePlans(plans,[...occupied,...held]);
+  return <div className="xc-public">
+- <MentorReadView hubMapping={hubScreenMap['public-plans']} profile={person?poolProfile(person):{...zahraProfile,avatar:mentorPhoto}} level={person?.level||2} completed={person?.completed??128} rating={person?.rating} onContact={()=>location.assign('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=new&person='+encodeURIComponent(person?.id||'zahra'))} aside={<div className="xc-plan-rail">{role==='mentee'&&held.length>0&&onResume&&<button className="xc-resume-payment" onClick={onResume}>你有一筆尚未完成的付款<ArrowRight size={15}/></button>}{sorted.length?sorted.map((plan,i)=><BookingPlanCard key={plan.id} plan={plan} first={i===0} occupied={[...occupied,...held]} disabled={role==='mentor'} onChoose={()=>setSelected(plan)}/>):<div className="xc-empty"><CalendarDays size={28}/><h3>此導師目前尚未開放預約</h3></div>}</div>}/>
+- <BookingDialog plan={role==='mentee'?selected:null} onClose={()=>setSelected(null)} occupied={occupied} onConfirm={s=>{confirm(s);setSelected(null)}}/>
++ <MentorReadView publicActions={<HubPublicActions key={person?.id||'zahra'} person={person?.id||'zahra'} name={person?.name||zahraProfile.name}/>} initialTab={['public-reviews','public-no-reviews'].includes(scene)?'reviews':'overview'} reviewCount={scene==='public-no-reviews'?0:12} hubMapping={hubScreenMap['public-plans']} profile={person?poolProfile(person):{...zahraProfile,avatar:mentorPhoto}} level={person?.level||2} completed={person?.completed??128} rating={person?.rating} onContact={()=>location.assign('https://xtalent-chat-654.bonny80.chatgpt.site/?scene=new&person='+encodeURIComponent(person?.id||'zahra'))} aside={<div className="xc-plan-rail">{role==='mentee'&&held.length>0&&onResume&&<button className="xc-resume-payment" onClick={onResume}>你有一筆尚未完成的付款<ArrowRight size={15}/></button>}{sorted.length?sorted.map((plan,i)=><BookingPlanCard key={plan.id} plan={plan} first={i===0} occupied={[...occupied,...held]} disabled={role==='mentor'} onChoose={()=>guestEntry()?signInToBook(person?.id||'zahra',plan):setSelected(plan)}/>):<div className="xc-empty"><CalendarDays size={28}/><h3>此導師目前尚未開放預約</h3></div>}</div>}/>
++ <BookingDialog plan={role==='mentee'&&!guestEntry()?selected:null} onClose={()=>setSelected(null)} occupied={occupied} onConfirm={s=>{confirm(s);setSelected(null)}}/>
+  </div>
+ }
 diff --git a/app/BookingOutcome.tsx b/app/BookingOutcome.tsx
 index 475e939..9654d1d 100644
 --- a/app/BookingOutcome.tsx
 +++ b/app/BookingOutcome.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import React from 'react';
-@@ -18,3 +19,3 @@ export function BookingOutcome({selection,state,onProfile,onBookings}:{selection
+ import {ArrowLeft,ArrowRight,LoaderCircle} from 'lucide-react';
+ import {Button} from './MentorUI';
+@@ -16,7 +17,7 @@ const messages:Record<Outcome,{title:string;description:string;badge:string}>={
+ // Keep the summary and action row mounted while only the status presentation changes.
+ export function BookingOutcome({selection,state,onProfile,onBookings}:{selection:Selection;state:Outcome;onProfile:()=>void;onBookings:()=>void}){
   const message=messages[state];
 - return <main className="xc-success xc-booking-outcome">
 + return <main {...flowAttributes('booking-payment')} className="xc-success xc-booking-outcome">
    <div className="xc-outcome-live" role="status" aria-live="polite" aria-atomic="true">
+    <div className="xc-outcome-status" key={state}>
+     <div className="xc-outcome-art" aria-hidden="true">
 diff --git a/app/Bookings.tsx b/app/Bookings.tsx
-index c0d518c..dda3fb8 100644
+index cd10202..845752a 100644
 --- a/app/Bookings.tsx
 +++ b/app/Bookings.tsx
-@@ -9,3 +9,4 @@ import {ContributionDraft,validContributionAmount} from './phase2-model';
+@@ -7,7 +7,8 @@ import {ReservationDetails} from './ReservationDetails';
+ import {TipFields} from './Contributions';
+ import {ContributionDraft,validContributionAmount,freeSession,editableReview,reviseReview} from './phase2-model';
  import {money,refundForCancellation} from './commerce-model';
 -export function Bookings({state:s,setState,contact,toast,heading,showHours=false,onManageAvailability,phase2=false,initialFeedbackId,onTip,onFind}:{phase2?:boolean;initialFeedbackId?:string;onTip?:(draft:ContributionDraft)=>void;onFind?:()=>void;onManageAvailability:()=>void;heading?:string;showHours?:boolean;state:State;setState:any;contact:(id:string,bookingId:string)=>void;toast:(a:string,b?:string)=>void}){
 +import {flowAttributes} from './HubProfileActions';
 +export function Bookings({hubScreen,state:s,setState,contact,toast,heading,showHours=false,onManageAvailability,phase2=false,initialFeedbackId,onTip,onFind}:{hubScreen?:string;phase2?:boolean;initialFeedbackId?:string;onTip?:(draft:ContributionDraft)=>void;onFind?:()=>void;onManageAvailability:()=>void;heading?:string;showHours?:boolean;state:State;setState:any;contact:(id:string,bookingId:string)=>void;toast:(a:string,b?:string)=>void}){
   const cards:Booking[]=s.reservations||bookingSeeds;
-@@ -17,3 +18,3 @@ export function Bookings({state:s,setState,contact,toast,heading,showHours=false
+  const setCards=(value:any)=>setState((prev:State)=>({...prev,reservations:typeof value==='function'?value(prev.reservations||bookingSeeds):value}));
+  const [expanded,setExpanded]=useState<string|null>(null),[action,setAction]=useState<{card:Booking;kind:string}|null>(null),[reply,setReply]=useState(''),[feedback,setFeedback]=useState<Booking|null>(cards.find(b=>b.id===initialFeedbackId&&!b.feedback)||null);
+@@ -16,7 +17,7 @@ export function Bookings({state:s,setState,contact,toast,heading,showHours=false
+  const mentor=s.role==='mentor',tab=s.bookingTab,allCards=cards.map(b=>b.tab==='pending'&&b.amount?{...b,tab:'upcoming'}:b),rows=allCards.filter(b=>b.tab===tab);
+  const close=()=>{setAction(null);setReply('')};
   function perform(){if(!action)return;const {card,kind}=action;if(kind!=='接受預約'&&!reply.trim())return;setCards(all=>all.map(b=>b.id!==card.id?b:kind==='接受預約'?{...b,tab:'upcoming',mentorReply:reply.trim().slice(0,500)||undefined}:{...endBooking(b,s.role,kind as '婉拒預約'|'取消預約',reply),refundAmount:card.amount&&card.slot?refundForCancellation(card.amount,card.slot,s.role):0}));close();toast(kind==='接受預約'?'已接受預約':kind==='婉拒預約'?'已婉拒預約':card.amount&&card.slot&&refundForCancellation(card.amount,card.slot,s.role)?'已取消預約，學員將收到全額退款':'已取消預約');}
-- return <main className={'booking-page '+(phase2?'p2-bookings':'')}><h1>{heading||(mentor?'擔任導師':'預約導師')}</h1><div className="booking-tabs" role="tablist" aria-label="預約狀態">{[['upcoming','即將到來'],['pending',mentor?'待您回復':'等待回覆'],['history','歷史紀錄']].map(([key,label])=><button role="tab" aria-selected={tab===key} key={key} onClick={()=>setState((p:State)=>({...p,bookingTab:key}))}>{label}<span>{allCards.filter(b=>b.tab===key).length}</span></button>)}</div><div className="booking-list">{!rows.length&&<div className="booking-empty"><CalendarDays size={28}/><h2>{tab==='pending'?'目前沒有待回覆的預約':tab==='upcoming'?'目前沒有即將到來的預約':'目前沒有歷史紀錄'}</h2>{mentor?<button className="outline-button" onClick={onManageAvailability}>管理可預約時段</button>:onFind&&<button className="outline-button" onClick={onFind}>尋找導師</button>}</div>}{rows.map(b=>{const p=s.people.find(p=>p.id===bookingPersonId(b,s.role,phase2))||s.people[0];return <article className={`booking-card booking-${b.tab}`} key={b.id}><div className="booking-identity"><Avatar person={p}/><div><strong>{p.name}</strong><p>{p.role} · {p.experience||'5–10 年'}工作經驗</p></div><div className="booking-status">{b.status?<><span className="status-badge">{b.status}</span>{b.feedback&&<IconButton label={expanded===b.id?'收合會談紀錄':'展開會談紀錄'} onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</IconButton>}</>:null}</div></div><ReservationDetails booking={b} role={s.role}/>{b.status==='已自動取消'&&<p className="booking-auto-notice"><Info size={16}/><span>導師未在會談開始前 24 小時確認，此預約已由系統自動取消。</span></p>}<div className="booking-time"><span><CalendarDays size={16}/>{b.date}</span><span><Clock size={16}/>{b.time}</span></div>{expanded===b.id&&b.feedback&&<div className="booking-feedback">{mentor?b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<div><strong>會談紀錄</strong>{b.feedback.attendance!=='no'&&<span>Session complete</span>}</div>:b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<><div><strong>我的回饋</strong><span>{b.feedback.rating} / 10</span></div><p>{b.feedback.comment||'沒有留下文字回饋。'}</p></>}</div>}{showHours&&mentor&&b.tab==='history'&&<p className="fr-booking-hours">認列時數 · {b.status||!b.feedback?'0.0':'0.5'} 小時</p>}<div className="booking-actions"><button className="outline-button contact-booking" disabled={!!p.deleted} onClick={()=>contact(p.id,b.id)}><MessageSquare size={16}/>{mentor?'聯絡學員':'聯絡導師'}</button><div>{b.tab==='history'&&!b.status&&(b.feedback?<>{phase2&&!mentor&&<><span className="p2-reviewed">已評價</span>{!!b.tipAmount&&<span className="p2-tipped">已贊助 {money(b.tipAmount)}</span>}</>}<button className="text-action" onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{mentor?'查看紀錄':'查看回饋'}{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</button></>:<button className="primary-button" onClick={()=>setFeedback(b)}>{mentor?'確認會談':'填寫回饋'}</button>)}{b.tab==='upcoming'?<><button className="primary-button danger-button" onClick={()=>setAction({card:b,kind:'取消預約'})}>取消預約</button><button className="primary-button" onClick={()=>setAction({card:b,kind:'會議資訊'})}>加入 Google Meet</button></>:b.tab==='pending'?mentor?<><button className="outline-button booking-decline" onClick={()=>setAction({card:b,kind:'婉拒預約'})}>婉拒預約</button><button className="primary-button" onClick={()=>setAction({card:b,kind:'接受預約'})}>接受預約</button></>:<button className="primary-button danger-button" onClick={()=>setAction({card:b,kind:'取消預約'})}>取消預約</button>:null}</div></div></article>})}</div>
-+ return <main {...flowAttributes(hubScreen)} className={'booking-page '+(phase2?'p2-bookings':'')}><h1>{heading||(mentor?'擔任導師':'預約導師')}</h1><div className="booking-tabs" role="tablist" aria-label="預約狀態">{[['upcoming','即將到來'],['pending',mentor?'待您回復':'等待回覆'],['history','歷史紀錄']].map(([key,label])=><button role="tab" aria-selected={tab===key} key={key} onClick={()=>setState((p:State)=>({...p,bookingTab:key}))}>{label}<span>{allCards.filter(b=>b.tab===key).length}</span></button>)}</div><div className="booking-list">{!rows.length&&<div className="booking-empty"><CalendarDays size={28}/><h2>{tab==='pending'?'目前沒有待回覆的預約':tab==='upcoming'?'目前沒有即將到來的預約':'目前沒有歷史紀錄'}</h2>{mentor?<button className="outline-button" onClick={onManageAvailability}>管理可預約時段</button>:onFind&&<button className="outline-button" onClick={onFind}>尋找導師</button>}</div>}{rows.map(b=>{const p=s.people.find(p=>p.id===bookingPersonId(b,s.role,phase2))||s.people[0];return <article className={`booking-card booking-${b.tab}`} key={b.id}><div className="booking-identity"><Avatar person={p}/><div><strong>{p.name}</strong><p>{p.role} · {p.experience||'5–10 年'}工作經驗</p></div><div className="booking-status">{b.status?<><span className="status-badge">{b.status}</span>{b.feedback&&<IconButton label={expanded===b.id?'收合會談紀錄':'展開會談紀錄'} onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</IconButton>}</>:null}</div></div><ReservationDetails booking={b} role={s.role}/>{b.status==='已自動取消'&&<p className="booking-auto-notice"><Info size={16}/><span>導師未在會談開始前 24 小時確認，此預約已由系統自動取消。</span></p>}<div className="booking-time"><span><CalendarDays size={16}/>{b.date}</span><span><Clock size={16}/>{b.time}</span></div>{expanded===b.id&&b.feedback&&<div className="booking-feedback">{mentor?b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<div><strong>會談紀錄</strong>{b.feedback.attendance!=='no'&&<span>Session complete</span>}</div>:b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<><div><strong>我的回饋</strong><span>{b.feedback.rating} / 10</span></div><p>{b.feedback.comment||'沒有留下文字回饋。'}</p></>}</div>}{showHours&&mentor&&b.tab==='history'&&<p className="fr-booking-hours">認列時數 · {b.status||!b.feedback?'0.0':'0.5'} 小時</p>}<div className="booking-actions"><button className="outline-button contact-booking" disabled={!!p.deleted} onClick={()=>contact(p.id,b.id)}><MessageSquare size={16}/>{mentor?'聯絡學員':'聯絡導師'}</button><div>{b.tab==='history'&&!b.status&&(b.feedback?<>{phase2&&!mentor&&<><span className="p2-reviewed">已評價</span>{!!b.tipAmount&&<span className="p2-tipped">已贊助 {money(b.tipAmount)}</span>}</>}<button className="text-action" onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{mentor?'查看紀錄':'查看回饋'}{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</button></>:<button className="primary-button" onClick={()=>setFeedback(b)}>{mentor?'確認會談':'填寫回饋'}</button>)}{b.tab==='upcoming'?<><button className="primary-button danger-button" onClick={()=>setAction({card:b,kind:'取消預約'})}>取消預約</button><button className="primary-button" onClick={()=>setAction({card:b,kind:'會議資訊'})}>加入 Google Meet</button></>:b.tab==='pending'?mentor?<><button className="outline-button booking-decline" onClick={()=>setAction({card:b,kind:'婉拒預約'})}>婉拒預約</button><button className="primary-button" onClick={()=>setAction({card:b,kind:'接受預約'})}>接受預約</button></>:<button className="primary-button danger-button" onClick={()=>setAction({card:b,kind:'取消預約'})}>取消預約</button>:null}</div></div></article>})}</div>
-  <Modal open={!!action} title={action?.kind||''} onClose={close} actions={action&&action.kind!=='會議資訊'?<><button className="outline-button" onClick={close}>返回</button><button className={`primary-button ${action.kind==='取消預約'||action.kind==='婉拒預約'?'danger-button':''}`} disabled={action.kind!=='接受預約'&&!reply.trim()} onClick={perform}>{action.kind}</button></>:null}>{action?.kind==='會議資訊'?<><p>{action.card.date} · {action.card.time}</p><p>會議連結已寄至您的信箱。</p></>:<><p>{action?.kind==='接受預約'?'確定接受這場預約？':'請說明'+(action?.kind==='婉拒預約'?'婉拒':'取消')+'預約的原因。'}</p>{action?.kind==='取消預約'&&!!action.card.amount&&<p className="xc-booking-refund">{mentor?`你取消這筆收費預約後，學員將收到全額退款 ${money(action.card.amount)}，款項將退回原付款方式。`:action.card.slot&&refundForCancellation(action.card.amount,action.card.slot,'mentee')?`會談開始前 24 小時以前取消，將全額退款 ${money(action.card.amount)}。`:'距離會談開始已不足 24 小時，取消後將不退款。'}</p>}{action?.kind==='接受預約'?<div className="booking-reply"><label className="field-label" htmlFor="accept-reply">回覆訊息 <span>（選填）</span></label><textarea id="accept-reply" className="form-textarea" maxLength={500} value={reply} onChange={e=>setReply(e.target.value)} placeholder="您好，期待與您交流。"/><div className="field-count">{reply.length} / 500</div></div>:<textarea className="form-textarea" aria-label="預約原因" placeholder="您好，…" value={reply} onChange={e=>setReply(e.target.value)}/>}</>}</Modal>
+- return <main className={'booking-page '+(phase2?'p2-bookings':'')}><h1>{heading||(mentor?'擔任導師':'預約導師')}</h1><div className="booking-tabs" role="tablist" aria-label="預約狀態">{[['upcoming','即將到來'],['pending',mentor?'待您回復':'等待回覆'],['history','歷史紀錄']].map(([key,label])=><button role="tab" aria-selected={tab===key} key={key} onClick={()=>setState((p:State)=>({...p,bookingTab:key}))}>{label}<span>{allCards.filter(b=>b.tab===key).length}</span></button>)}</div><div className="booking-list">{!rows.length&&<div className="booking-empty"><CalendarDays size={28}/><h2>{tab==='pending'?'目前沒有待回覆的預約':tab==='upcoming'?'目前沒有即將到來的預約':'目前沒有歷史紀錄'}</h2>{mentor?<button className="outline-button" onClick={onManageAvailability}>管理可預約時段</button>:onFind&&<button className="outline-button" onClick={onFind}>尋找導師</button>}</div>}{rows.map(b=>{const p=s.people.find(p=>p.id===bookingPersonId(b,s.role,phase2))||s.people[0];return <article className={`booking-card booking-${b.tab}`} key={b.id}><div className="booking-identity"><Avatar person={p}/><div><strong>{p.name}</strong><p>{p.role} · {p.experience||'5–10 年'}工作經驗</p></div><div className="booking-status">{b.status?<><span className="status-badge">{b.status}</span>{b.feedback&&<IconButton label={expanded===b.id?'收合會談紀錄':'展開會談紀錄'} onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</IconButton>}</>:null}</div></div><ReservationDetails booking={b} role={s.role}/>{b.status==='已自動取消'&&<p className="booking-auto-notice"><Info size={16}/><span>導師未在會談開始前 24 小時確認，此預約已由系統自動取消。</span></p>}<div className="booking-time"><span><CalendarDays size={16}/>{b.date}</span><span><Clock size={16}/>{b.time}</span></div>{expanded===b.id&&b.feedback&&<div className={'booking-feedback'+(!mentor&&b.feedback.rating&&!b.feedback.reason?' booking-review':'')}>{mentor?b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<div><strong>會談紀錄</strong>{b.feedback.attendance!=='no'&&<span>Session complete</span>}{freeSession(b)&&!!b.tipAmount&&b.tipMessage&&<p><strong>感謝訊息</strong> {b.tipMessage}</p>}</div>:b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<>
++ return <main {...flowAttributes(hubScreen)} className={'booking-page '+(phase2?'p2-bookings':'')}><h1>{heading||(mentor?'擔任導師':'預約導師')}</h1><div className="booking-tabs" role="tablist" aria-label="預約狀態">{[['upcoming','即將到來'],['pending',mentor?'待您回復':'等待回覆'],['history','歷史紀錄']].map(([key,label])=><button role="tab" aria-selected={tab===key} key={key} onClick={()=>setState((p:State)=>({...p,bookingTab:key}))}>{label}<span>{allCards.filter(b=>b.tab===key).length}</span></button>)}</div><div className="booking-list">{!rows.length&&<div className="booking-empty"><CalendarDays size={28}/><h2>{tab==='pending'?'目前沒有待回覆的預約':tab==='upcoming'?'目前沒有即將到來的預約':'目前沒有歷史紀錄'}</h2>{mentor?<button className="outline-button" onClick={onManageAvailability}>管理可預約時段</button>:onFind&&<button className="outline-button" onClick={onFind}>尋找導師</button>}</div>}{rows.map(b=>{const p=s.people.find(p=>p.id===bookingPersonId(b,s.role,phase2))||s.people[0];return <article className={`booking-card booking-${b.tab}`} key={b.id}><div className="booking-identity"><Avatar person={p}/><div><strong>{p.name}</strong><p>{p.role} · {p.experience||'5–10 年'}工作經驗</p></div><div className="booking-status">{b.status?<><span className="status-badge">{b.status}</span>{b.feedback&&<IconButton label={expanded===b.id?'收合會談紀錄':'展開會談紀錄'} onClick={()=>setExpanded(expanded===b.id?null:b.id)}>{expanded===b.id?<ChevronUp size={16}/>:<ChevronDown size={16}/>}</IconButton>}</>:null}</div></div><ReservationDetails booking={b} role={s.role}/>{b.status==='已自動取消'&&<p className="booking-auto-notice"><Info size={16}/><span>導師未在會談開始前 24 小時確認，此預約已由系統自動取消。</span></p>}<div className="booking-time"><span><CalendarDays size={16}/>{b.date}</span><span><Clock size={16}/>{b.time}</span></div>{expanded===b.id&&b.feedback&&<div className={'booking-feedback'+(!mentor&&b.feedback.rating&&!b.feedback.reason?' booking-review':'')}>{mentor?b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<div><strong>會談紀錄</strong>{b.feedback.attendance!=='no'&&<span>Session complete</span>}{freeSession(b)&&!!b.tipAmount&&b.tipMessage&&<p><strong>感謝訊息</strong> {b.tipMessage}</p>}</div>:b.feedback.reason?<><strong>會談紀錄</strong><p>{b.feedback.reason}</p></>:<>
+  <header className="booking-review-heading">
+    <h3>我的回饋</h3>
+    {editableReview(b)&&<button className="booking-edit-review" onClick={()=>setEditing(b)}><Pencil size={14}/>編輯</button>}
+@@ -31,4 +32,4 @@ export function Bookings({state:s,setState,contact,toast,heading,showHours=false
+  }}/>}
+  {feedback&&<Feedback booking={feedback} person={s.people.find(p=>p.id===bookingPersonId(feedback,s.role,phase2))} mentor={mentor} phase2={phase2} close={()=>setFeedback(null)} save={(value,tip)=>{setCards(all=>all.map(b=>b.id===feedback.id?{...b,feedback:{...value,actor:s.role},status:value.reason||value.attendance==='no'?'未進行':undefined}:b));setFeedback(null);if(tip&&onTip&&!mentor&&freeSession(feedback)&&!feedback.feedback){const person=s.people.find(p=>p.id===bookingPersonId(feedback,s.role,phase2));onTip({kind:'mentor',bookingId:feedback.id,mentorName:person?.name,planName:feedback.planName||'一般預約',date:feedback.date,...tip})}else toast('回饋已送出','X-Talent 已收到您的回饋，謝謝您！')}}/>}</main>
+ }
+-function Feedback({booking,person,mentor,close,save,phase2=false,editing=false}:any){const [step,setStep]=useState(editing?2:1),[answer,setAnswer]=useState(phase2||editing?'yes':''),[rating,setRating]=useState(editing?booking.feedback.rating:10),[comment,setComment]=useState(editing?booking.feedback.comment||'':''),[reason,setReason]=useState(''),[other,setOther]=useState(''),[tipAmount,setTipAmount]=useState('0'),[tipMessage,setTipMessage]=useState('');const allowTip=phase2&&!mentor&&!editing&&!booking.feedback&&freeSession(booking);const mentorDirectSubmit=mentor&&step===1&&answer!=='no';return <Modal open title={editing?'編輯回饋':mentor?'確認會談':'會談回饋'} className={'feedback-dialog '+(phase2?'p2-feedback':'')} onClose={close}><div className="feedback-person"><Avatar person={person}/><div><strong>{person.name}</strong>{phase2&&<p>{booking.planName||'一般預約'} · {freeSession(booking)?'免費':money(booking.amount)}</p>}<p>{booking.date} · {booking.time}</p></div></div>{!editing&&<div className="feedback-step">步驟 {step} / 2 · {step===1?'確認會談':answer==='yes'?'交流回饋':'會談狀況'}</div>}<h3>{step===1?'這場會談是否順利進行？':answer==='yes'?'為本次會議評分':'未進行會談的原因'}{step===2&&answer==='yes'&&<span className="privacy-info" tabIndex={0} aria-label="姓名遮罩說明"><Info size={16}/><span role="tooltip">顯示時不會完整公開姓名與個人資料</span></span>}</h3>{step===1?<><p>{phase2?'會談狀態送出後將無法修改。':'先告訴我們這次會談的狀況。'}</p><div className="choice-row">{[['yes','有進行'],['no','沒有進行']].map(([v,l])=><label key={v}><input type="radio" name="attended" checked={answer===v} onChange={()=>setAnswer(v)}/>{l}</label>)}</div></>:answer==='yes'?<><p>評分 <b className="score">{rating}</b> / 10</p><div className="rating-stars" role="radiogroup" aria-label="評分">{Array.from({length:10},(_,i)=><button role="radio" aria-checked={rating===i+1} aria-label={`${i+1} 分`} key={i} onClick={()=>setRating(i+1)}><Star fill={i<rating?'currentColor':'none'} size={24}/></button>)}</div><label className="field-label">文字回饋（選填）<textarea className="form-textarea" rows={5} maxLength={1000} value={comment} placeholder="分享這次交流的收穫，或給導師一些建議…" onChange={e=>setComment(e.target.value)}/></label><div className="field-count">{comment.length} / 1000</div>{allowTip&&<TipFields amount={tipAmount} message={tipMessage} onAmount={setTipAmount} onMessage={setTipMessage}/>}</>:<><p>為何沒有成功進行？</p><div className="reason-options">{['雙方時間無法配合','對方未出席','未收到或錯過會議通知','技術／連線問題','其他'].map(l=><label key={l}><input type="radio" name="reason" checked={reason===l} onChange={()=>setReason(l)}/>{l}</label>)}</div>{reason==='其他'&&<><label className="field-label">補充說明（選填）<textarea className="form-textarea" maxLength={1000} value={other} onChange={e=>setOther(e.target.value)} placeholder="說說發生了什麼事…"/></label><div className="field-count">{other.length} / 1000</div></>}{mentor&&<div className="feedback-noshow-warning" role="note"><Info size={16}/><span>送出後不能修改。這場會談不會計入已完成場次，學員的評價也不會公開。</span></div>}</>}<div className="feedback-actions">{step===2&&<button className="text-action" onClick={editing?close:()=>setStep(1)}>{editing?'取消':'上一步'}</button>}<button className="primary-button" disabled={step===1?!answer:answer==='no'?!reason:allowTip&&tipAmount!=='0'&&!validContributionAmount(tipAmount)} onClick={()=>mentorDirectSubmit?save({attendance:'yes'}):step===1?setStep(2):save(answer==='yes'?{rating,comment}:{attendance:'no',reason:reason==='其他'&&other.trim()?'其他 · '+other.trim():reason},allowTip&&answer==='yes'&&tipAmount!=='0'?{amount:tipAmount,message:tipMessage}:undefined)}>{editing?'儲存':mentorDirectSubmit?'確定送出':step===1?<>下一步<ArrowRight size={16}/></>:mentor?'送出':allowTip&&answer==='yes'&&tipAmount!=='0'?'送出並前往付款':'送出'}</button></div></Modal>}
++function Feedback({booking,person,mentor,close,save,phase2=false,editing=false}:any){const [step,setStep]=useState(editing?2:1),[answer,setAnswer]=useState(phase2||editing?'yes':''),[rating,setRating]=useState(editing?booking.feedback.rating:10),[comment,setComment]=useState(editing?booking.feedback.comment||'':''),[reason,setReason]=useState(''),[other,setOther]=useState(''),[tipAmount,setTipAmount]=useState('0'),[tipMessage,setTipMessage]=useState('');const allowTip=phase2&&!mentor&&!editing&&!booking.feedback&&freeSession(booking);const mentorDirectSubmit=mentor&&step===1&&answer!=='no';return <Modal open title={editing?'編輯回饋':'會談回饋'} className={'feedback-dialog '+(phase2?'p2-feedback':'')} onClose={close}><div className="feedback-person"><Avatar person={person}/><div><strong>{person.name}</strong>{phase2&&<p>{booking.planName||'一般預約'} · {freeSession(booking)?'免費':money(booking.amount)}</p>}<p>{booking.date} · {booking.time}</p></div></div>{!editing&&<div className="feedback-step">步驟 {step} / 2 · {step===1?'確認會談':answer==='yes'?'交流回饋':'會談狀況'}</div>}<h3>{step===1?'這場會談是否順利進行？':answer==='yes'?'為本次會議評分':'未進行會談的原因'}{step===2&&answer==='yes'&&<span className="privacy-info" tabIndex={0} aria-label="姓名遮罩說明"><Info size={16}/><span role="tooltip">顯示時不會完整公開姓名與個人資料</span></span>}</h3>{step===1?<><p>{phase2?'會談狀態送出後將無法修改。':'先告訴我們這次會談的狀況。'}</p><div className="choice-row">{[['yes','有進行'],['no','沒有進行']].map(([v,l])=><label key={v}><input type="radio" name="attended" checked={answer===v} onChange={()=>setAnswer(v)}/>{l}</label>)}</div></>:answer==='yes'?<><p>評分 <b className="score">{rating}</b> / 10</p><div className="rating-stars" role="radiogroup" aria-label="評分">{Array.from({length:10},(_,i)=><button role="radio" aria-checked={rating===i+1} aria-label={`${i+1} 分`} key={i} onClick={()=>setRating(i+1)}><Star fill={i<rating?'currentColor':'none'} size={24}/></button>)}</div><label className="field-label">文字回饋（選填）<textarea className="form-textarea" rows={5} maxLength={1000} value={comment} placeholder="分享這次交流的收穫，或給導師一些建議…" onChange={e=>setComment(e.target.value)}/></label><div className="field-count">{comment.length} / 1000</div>{allowTip&&<TipFields amount={tipAmount} message={tipMessage} onAmount={setTipAmount} onMessage={setTipMessage}/>}</>:<><p>為何沒有成功進行？</p><div className="reason-options">{['雙方時間無法配合','對方未出席','未收到或錯過會議通知','技術／連線問題','其他'].map(l=><label key={l}><input type="radio" name="reason" checked={reason===l} onChange={()=>setReason(l)}/>{l}</label>)}</div>{reason==='其他'&&<><label className="field-label">補充說明（選填）<textarea className="form-textarea" maxLength={1000} value={other} onChange={e=>setOther(e.target.value)} placeholder="說說發生了什麼事…"/></label><div className="field-count">{other.length} / 1000</div></>}{mentor&&<div className="feedback-noshow-warning" role="note"><Info size={16}/><span>送出後不能修改。這場會談不會計入已完成場次，學員的評價也不會公開。</span></div>}</>}<div className="feedback-actions">{step===2&&<button className="text-action" onClick={editing?close:()=>setStep(1)}>{editing?'取消':'上一步'}</button>}<button className="primary-button" disabled={step===1?!answer:answer==='no'?!reason:allowTip&&tipAmount!=='0'&&!validContributionAmount(tipAmount)} onClick={()=>mentorDirectSubmit?save({attendance:'yes'}):step===1?setStep(2):save(answer==='yes'?{rating,comment}:{attendance:'no',reason:reason==='其他'&&other.trim()?'其他 · '+other.trim():reason},allowTip&&answer==='yes'&&tipAmount!=='0'?{amount:tipAmount,message:tipMessage}:undefined)}>{editing?'儲存':mentorDirectSubmit?'確定送出':step===1?<>下一步<ArrowRight size={16}/></>:mentor?'送出':allowTip&&answer==='yes'&&tipAmount!=='0'?'送出並前往付款':'送出'}</button></div></Modal>}
 diff --git a/app/Checkout.tsx b/app/Checkout.tsx
 index 4c0215c..816f579 100644
 --- a/app/Checkout.tsx
 +++ b/app/Checkout.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import {PaymentFields} from './PaymentFields';
-@@ -21,3 +22,3 @@ export function Checkout({order:initial,onOrder,onReturn,onReselect}:{order:Orde
+ import React,{useCallback,useEffect,useState} from 'react';
+ import {ArrowLeft,ArrowRight,LockKeyhole,ShieldCheck,Info} from 'lucide-react';
+@@ -19,14 +20,14 @@ export function Checkout({order:initial,onOrder,onReturn,onReselect}:{order:Orde
+  const next=beginPaymentReturn(order);update(next);onReturn(next);
+  };
  
 - if(failed||expired)return <main className="xc-success xc-payment-result">
 + if(failed||expired)return <main {...flowAttributes('booking-payment')} className="xc-success xc-payment-result">
    <div className="xc-payment-result-icon" aria-hidden="true"><Info size={30}/></div>
-@@ -28,3 +29,3 @@ export function Checkout({order:initial,onOrder,onReturn,onReselect}:{order:Orde
+   <h1>{order.status==='refunded'?'付款逾時，已安排全額退刷':expired?'付款期限已過':'付款未完成'}</h1>
+   <p>{order.status==='refunded'?'預約未成立，款項將退回原付款方式。':'預約未成立，時段已釋放。'}</p>
+   <OrderSummary selection={order.selection} compact/>
+   <Button onClick={onReselect}>重新選擇時段<ArrowRight size={16}/></Button>
   </main>;
 - return <main className="xc-checkout"><button className="xc-back-link" onClick={onReselect}><ArrowLeft size={16}/>返回選擇時段</button><div className="xc-checkout-title"><div><h1>確認並付款</h1></div><span><LockKeyhole size={15}/>藍新安全付款</span></div><HoldCountdown expiresAt={order.expiresAt} onExpire={expire}/>
 + return <main {...flowAttributes('booking-payment')} className="xc-checkout"><button className="xc-back-link" onClick={onReselect}><ArrowLeft size={16}/>返回選擇時段</button><div className="xc-checkout-title"><div><h1>確認並付款</h1></div><span><LockKeyhole size={15}/>藍新安全付款</span></div><HoldCountdown expiresAt={order.expiresAt} onExpire={expire}/>
  
+  <div className="xc-checkout-grid"><form onSubmit={submit} noValidate><fieldset disabled={expired} className="xc-checkout-fields"><PaymentFields fields={f} change={change} errors={errors}/>
+  <section className="xc-refund-rules"><h2>取消與退款</h2><p><ShieldCheck size={17}/><span>會談開始前 24 小時以前取消，或由導師取消，均全額退款。</span></p><p>開始前 24 小時內取消，不予退款。</p></section><label className="xc-consent"><input type="checkbox" checked={f.agreed} onChange={e=>change('agreed',e.target.checked)}/><span>我已閱讀並同意<button type="button" onClick={()=>setTerms(true)}>預約與退款條款</button></span></label><FieldError message={errors.agreed}/></fieldset>
 diff --git a/app/Contributions.tsx b/app/Contributions.tsx
-index 4b9caf0..a547fe9 100644
+index 8991fe0..1decd11 100644
 --- a/app/Contributions.tsx
 +++ b/app/Contributions.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import React,{useEffect,useRef,useState} from 'react';
-@@ -38,3 +39,3 @@ export function ContributionFlow({initial,scene,onStage,onClose,onPaid}:{initial
+ import {ArrowLeft,ArrowRight,Check,Heart,LoaderCircle,Info} from 'lucide-react';
+ import {Button} from './MentorUI';
+@@ -36,7 +37,7 @@ export function ContributionFlow({initial,scene,onStage,onClose,onPaid}:{initial
+  const submit=(e:React.FormEvent)=>{e.preventDefault();const issues=validateContribution(fields);setErrors(issues);if(Object.keys(issues).length)return;setFailure('');setStage('processing')};
+  const requestLeave=()=>kind==='mentor'?setLeave(true):setStage('choose');
   const repeat=()=>{setDraft(teamDraft(initial.guest));setFields(contributionFields(initial.guest));setErrors({});setFailure('');setStage('choose')};
 - return <>
 + return <><span hidden {...flowAttributes(kind==='team'?'team-support':'feedback-tip')} data-payment-stage={stage}/>
   {stage==='choose'?<Dialog open onOpenChange={open=>!open&&onClose()}><DialogContent className="p2-support-dialog" onOpenAutoFocus={e=>{e.preventDefault();titleRef.current?.focus()}}><div className="p2-support-heading"><span className="p2-support-icon"><Heart size={22}/></span><DialogTitle ref={titleRef} tabIndex={-1}>支持開發團隊</DialogTitle></div><DialogDescription>X-Talent 由志工團隊維運，你的支持讓平台持續運作。</DialogDescription><div className="p2-field-heading">選擇捐贈金額<RuleHint label="捐贈用途">你的支持將用於伺服器與資料庫、開發與維運工具，幫助團隊開發更多功能。也歡迎留言告訴我們你想要的功能。</RuleHint></div><AmountOptions value={draft.amount} onChange={amount=>setDraft(p=>({...p,amount}))}/><label className="p2-message-field">留言給開發團隊 <span>選填</span><textarea rows={3} maxLength={500} placeholder="例如：希望有的功能" value={draft.message} onChange={e=>setDraft(p=>({...p,message:e.target.value}))}/><small>{draft.message.length} / 500</small></label><div className="p2-dialog-actions"><Button variant="ghost" onClick={onClose}>取消</Button><Button disabled={!validContributionAmount(draft.amount)} onClick={()=>setStage('checkout')}>繼續捐贈<ArrowRight size={16}/></Button></div></DialogContent></Dialog>:<main className="xc-checkout p2-contribution-checkout"><ol className="p2-stepper" aria-label="付款步驟">{[kind==='team'?'選擇金額':'評價與贊助','付款方式','完成'].map((title,i)=><li key={title} aria-current={(stage==='success'?i===2:i===1)?'step':undefined}><span>{i===0?<Check size={12}/>:i+1}</span>{title}</li>)}</ol>
+  {stage==='processing'?<div className="p2-processing" role="status"><LoaderCircle size={32}/><h1>正在確認付款結果</h1><p>請勿重複付款</p><ContributionSummary draft={draft} compact/></div>:<><button className="xc-back-link" onClick={requestLeave}><ArrowLeft size={16}/>{kind==='team'?'返回':'返回歷史紀錄'}</button><div className="xc-checkout-title"><h1>{kind==='team'?'確認捐贈':'確認贊助'}</h1></div>{failure&&<div className="p2-payment-failure" role="alert"><Info size={18}/><div><strong>{failure}</strong>{kind==='mentor'&&<p>回饋已送出，贊助尚未成立。你可以在此頁重試。</p>}</div></div>}<div className="xc-checkout-grid"><form onSubmit={submit} noValidate><PaymentFields fields={fields} change={change} errors={errors} compact actionLabel={kind==='team'?'確認捐贈':'確認贊助'}/><div className="xc-checkout-submit"><Button type="submit" disabled={!fields.agreed||!fields.method}>{kind==='team'?'確認捐贈':'確認贊助'}<ArrowRight size={16}/></Button></div></form><aside><ContributionSummary draft={draft}/>{kind==='mentor'&&<div className="p2-sponsor-rules"><span>贊助說明</span><RuleHint label="贊助說明">贊助為自願，不影響後續預約。金額不公開，平台收取 10% 服務費，付款後不可退款。</RuleHint></div>}<label className="xc-consent p2-consent"><input type="checkbox" checked={fields.agreed} onChange={e=>change('agreed',e.target.checked)}/><span>{kind==='team'?<>我已閱讀並同意<button type="button" onClick={()=>setTerms(true)}>X-Talent 服務條款</button>與<button type="button" onClick={()=>setTerms(true)}>隱私權政策</button></>:'我了解贊助為自願性質，付款後不可退款'}</span></label><FieldError message={errors.agreed}/></aside></div></>}
+  </main>}
 diff --git a/app/Growth.tsx b/app/Growth.tsx
-index c16cac2..8b5e8c4 100644
+index bb92cbc..5991ca8 100644
 --- a/app/Growth.tsx
 +++ b/app/Growth.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import React,{useEffect,useState} from 'react';
-@@ -23,3 +24,3 @@ export function Growth({scene,metrics,onUpdated,onProfile,onPlans}:{scene:string
+ import {ArrowUpRight,ArrowRight,Clock3,Info,RefreshCw,UsersRound,Check,ChevronRight} from 'lucide-react';
+ import {Button} from './MentorUI';
+@@ -21,7 +22,7 @@ export function Growth({scene,metrics,onUpdated,onProfile,onPlans}:{scene:string
+  useEffect(()=>{if(!scene.startsWith('role-')&&!loading&&!error&&!introSeen())setIntro(true)},[loading,error]);
+  const [selected,setSelected]=useState(g.level);
  
 - return <div className="fr-backend-content xl-growth"><div className="fr-page-heading"><div><h1>成長總覽</h1></div><Button variant="outline" onClick={onProfile}>我的導師頁面<ArrowUpRight size={15}/></Button></div>
 + return <div {...flowAttributes('mentor-growth')} className="fr-backend-content xl-growth"><div className="fr-page-heading"><div><h1>成長總覽</h1></div><Button variant="outline" onClick={onProfile}>我的導師頁面<ArrowUpRight size={15}/></Button></div>
   {loading?<section className="xl-skeleton" aria-busy="true"><div/><div/><div/><p>正在載入成長資料…</p></section>:error?<section className="xl-state" role="alert"><span className="xl-state-icon"><RefreshCw size={24}/></span><h2>暫時無法載入成長資料</h2><p>請稍後再試一次。</p><Button onClick={()=>{track('mentor_growth_retry');setRetried(true)}}>重新載入</Button></section>:<>
+  {updating&&<div className="xl-notice" role="status"><RefreshCw size={16}/><span><b>時數更新中</b></span><button type="button" onClick={()=>{setUpdated(true);onUpdated()}}>重新整理</button></div>}
+  {scene==='growth-refund'&&<p className="xl-notice" data-kind="info"><Info size={16}/><span>退款時數已扣回 · L2 等級保留</span></p>}
 diff --git a/app/HubProfileActions.tsx b/app/HubProfileActions.tsx
 new file mode 100644
-index 0000000..b17e635
+index 0000000..2ffb069
 --- /dev/null
 +++ b/app/HubProfileActions.tsx
-@@ -0,0 +1,40 @@
-+import React,{useState} from 'react';
+@@ -0,0 +1,101 @@
++import React,{useEffect,useState,useSyncExternalStore} from 'react';
 +import {Bookmark,MessageCircleMore} from 'lucide-react';
 +import {Button} from './MentorUI';
 +import {Dialog,DialogContent,DialogDescription,DialogTitle} from '@/components/ui/dialog';
++import type {Role} from './identity';
 +
-+const query=new URLSearchParams(location.search);
-+export const initialPerson=query.get('person');
-+export function flowAttributes(id?:string){
-+ const entry=id&&(window as any).MENTOR_SCREENS[id];
-+ return entry?{'data-hub-screen':id,'data-role':entry.role,'data-ticket':entry.ticket}:{};
++const entry=new URLSearchParams(location.search);
++export const initialPerson=entry.get('person');
++export const resumedPlan=entry.get('resumePlan');
++export function signInToBook(person:string,plan:{id:string;price:number}){
++  window.dispatchEvent(new CustomEvent('hub-booking-signin',{detail:{person,plan:plan.id,scenario:plan.price?'booking-paid':'booking-free'}}));
 +}
-+export const guestEntry=()=>['guest','login'].includes(query.get('scenario')||'');
-+const entry=query.get('screen')==='public-profile'?query.get('scenario'):'default';
++const screen=entry.get('screen');
++export const favoritesEntry=screen==='favorites';
++export const searchVariant=screen==='mentor-search'?entry.get('scenario'):null;
++const profileVariant=screen==='public-profile'?entry.get('scenario'):null;
++let guest=['guest','login','favorite-login'].includes(entry.get('scenario')||'');
++export const guestEntry=()=>guest;
++export const initialAccountMenu=()=>entry.get('menuOpen')==='1'||searchVariant==='menu';
++
++export function sharedEntryRole(scene:string):Role|undefined{
++  const role=entry.get('memberRole');
++  if(role!=='mentor'&&role!=='mentee')return;
++  if(!guest && (screen==='mentor-search' || favoritesEntry || (screen==='team-support' && scene!=='support-guest')))return role;
++}
++export function navigateHub(screen:string){
++  window.dispatchEvent(new CustomEvent('hub-navigate',{detail:{screen}}));
++}
++export function flowAttributes(id?:string){
++  const entry=id&&(window as any).MENTOR_SCREENS[id];
++  return entry?{'data-hub-screen':id,'data-role':entry.role,'data-ticket':entry.ticket}:{};
++}
++
++const favorites=(window as any).hubFavorites;
++let saved:string[]=favorites.read(guest?'guest':favoritesEntry?entry.get('scenario'):profileVariant||'default');
++export function useSavedPeople(){
++  const ids=useSyncExternalStore(subscribe,()=>saved);
++  return (person:string)=>ids.includes(favorites.ids[person]??person);
++}
++function subscribe(change:()=>void){
++  window.addEventListener('hub-favorites-change',change);
++  return ()=>window.removeEventListener('hub-favorites-change',change);
++}
++function saveIds(ids:string[]){
++  saved=favorites.save(ids);
++  window.dispatchEvent(new Event('hub-favorites-change'));
++}
++export function useFavoriteCount(){
++  return useSyncExternalStore(subscribe,()=>saved.length);
++}
++
++export function HubBookmark({person,name,card=false,onSignedIn}:{person:string;name:string;card?:boolean;onSignedIn?:()=>void}){
++  const id=favorites.ids[person]??person;
++  const selected=useSyncExternalStore(subscribe,()=>saved.includes(id));
++  const [login,setLogin]=useState(guest&&(card?searchVariant==='favorite-login'&&person==='zahra':profileVariant==='login'));
++  const [notice,setNotice]=useState(!card&&profileVariant==='failure'?'收藏失敗，請再試一次':!card&&profileVariant==='saved'?'已收藏導師':'');
++  useEffect(()=>{
++    if(!notice||notice.startsWith('收藏失敗'))return;
++    const timer=window.setTimeout(()=>setNotice(''),4500);
++    return ()=>window.clearTimeout(timer);
++  },[notice]);
++  function showNotice(title:string){
++    if(card)window.dispatchEvent(new CustomEvent('hub-favorite-notice',{detail:title}));
++    else setNotice(title);
++  }
++  function toggle(){
++    if(guest){setLogin(true);return}
++    saveIds(selected?saved.filter(value=>value!==id):[...saved,id]);
++    showNotice(selected?'已取消收藏':'已收藏導師');
++  }
++  function signIn(){
++    guest=false;
++    setLogin(false);
++    saveIds([...new Set<string>([...favorites.read('default'),id])]);
++    window.dispatchEvent(new Event('hub-sign-in'));
++    showNotice('已收藏導師');
++    onSignedIn?.();
++  }
++  const label=selected?'取消收藏':'收藏';
++  return <>
++    <button type="button" data-hub-component="favorite-toggle" className={card?'p2-card-save':'mp-action'} onClick={toggle}
++      aria-label={card?label+' '+name:label+'導師'} title={label} aria-pressed={selected}>
++      <Bookmark size={20} fill={selected?'currentColor':'none'}/>
++    </button>
++    {notice&&<div className="xt-toast" data-hub-component="toast" role={notice.startsWith('收藏失敗')?'alert':'status'}>
++      {notice}<button aria-label="關閉提示" onClick={()=>setNotice('')}>×</button>
++    </div>}
++    <Dialog open={login} onOpenChange={setLogin}><DialogContent data-hub-component="favorite-login">
++      <DialogTitle>登入後收藏這位導師</DialogTitle><DialogDescription>登入後會返回 {name} 的個人頁，並完成這次收藏。</DialogDescription>
++      <Button className="f753-primary" onClick={signIn}>登入並收藏</Button>
++    </DialogContent></Dialog>
++  </>;
++}
 +export function HubPublicActions({person,name}:{person:string;name:string}){
-+ const store=(window as any).hubFavorites;
-+ const id=store.ids[person]??person;
-+ const [saved,setSaved]=useState<string[]>(()=>store.read(entry));
-+ const [guest,setGuest]=useState(guestEntry);
-+ const [login,setLogin]=useState(entry==='login');
-+ const [notice,setNotice]=useState(entry==='failure'?'收藏失敗，請再試一次':entry==='saved'?'已收藏導師':'');
-+ function toggle(){
-+   if(guest){setLogin(true);return;}
-+   const on=saved.includes(id);
-+   setSaved(store.save(on?saved.filter(value=>value!==id):[...saved,id]));
-+   setNotice(on?'已取消收藏':'已收藏導師');
-+ }
-+ function signIn(){
-+   setGuest(false);setLogin(false);window.dispatchEvent(new Event('hub-sign-in'));
-+   setSaved(store.save([...new Set([...store.read('default'),id])]));
-+   setNotice('已收藏導師');
-+ }
-+ const contact=new URL('https://xtalent-chat-654.bonny80.chatgpt.site/');
-+ contact.search=new URLSearchParams({scene:guest?'guest':'new',person,partner:name}).toString();
-+ return <div className="mp-actions">
-+   <a className="mp-action" href={contact.href} aria-label="聯絡導師" title="聯絡導師"><MessageCircleMore size={20}/></a>
-+   <button className="mp-action" onClick={toggle} aria-label={saved.includes(id)?'取消收藏導師':'收藏導師'} aria-pressed={saved.includes(id)}><Bookmark size={20} fill={saved.includes(id)?'currentColor':'none'}/></button>
-+   {notice&&<div className="xt-toast" role={notice.startsWith('收藏失敗')?'alert':'status'}>{notice}<button aria-label="關閉提示" onClick={()=>setNotice('')}>×</button></div>}
-+   <Dialog open={login} onOpenChange={setLogin}><DialogContent><DialogTitle>登入後收藏這位導師</DialogTitle><DialogDescription>登入後會返回 {name} 的個人頁，並完成這次收藏。</DialogDescription><Button className="f753-primary" onClick={signIn}>登入並收藏</Button></DialogContent></Dialog>
-+ </div>;
++  const contact=new URL('https://xtalent-chat-654.bonny80.chatgpt.site/');
++  contact.search=new URLSearchParams({scene:guest?'guest':'new',person,partner:name}).toString();
++  return <div className="mp-actions">
++    <a className="mp-action" href={contact.href} aria-label="聯絡導師" title="聯絡導師"><MessageCircleMore size={20}/></a>
++    <HubBookmark person={person} name={name}/>
++  </div>;
 +}
 diff --git a/app/Income.tsx b/app/Income.tsx
 index 8375a8e..29cbd25 100644
 --- a/app/Income.tsx
 +++ b/app/Income.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import React,{useEffect,useRef,useState} from 'react';
-@@ -55,3 +56,3 @@ export function Income({scene,bookings=[],account,onAccountSave,toast}:{scene:st
+ import {ArrowDownLeft,ArrowRight,ArrowUpRight,CalendarDays,Check,ChevronRight,Clock3,Eye,EyeOff,FileImage,Info,Landmark,ReceiptText,ShieldCheck,Upload,X} from 'lucide-react';
+ import {Button,MentorTabs,focusFirstInvalid} from './MentorUI';
+@@ -53,7 +54,7 @@ export function Income({scene,bookings=[],account,onAccountSave,toast}:{scene:st
+  const monthRows=cycleRows.filter(r=>r.date.replaceAll('-','/').startsWith('2026/11/')&&r.status!=='已退款');
+  const monthNet=monthRows.reduce((sum,r)=>sum+netFor(r.gross),0);
   const toTab=(next:string)=>{setTab(next);setFilter('all')};
 - return <main className="fr-backend-content xc-income"><div className="fr-page-heading"><div><h1>收入統計</h1></div></div><MentorTabs items={[["overview","總覽"],["transactions","交易紀錄"],["payouts","提領紀錄"],["settings","收款設定"]]} value={tab} onChange={toTab} label="收入統計" panelId="income-panel"/><div id="income-panel" role="tabpanel" tabIndex={0} aria-labelledby={'income-panel-tab-'+tab}>
 + return <main {...flowAttributes('mentor-income')} className="fr-backend-content xc-income"><div className="fr-page-heading"><div><h1>收入統計</h1></div></div><MentorTabs items={[["overview","總覽"],["transactions","交易紀錄"],["payouts","提領紀錄"],["settings","收款設定"]]} value={tab} onChange={toTab} label="收入統計" panelId="income-panel"/><div id="income-panel" role="tabpanel" tabIndex={0} aria-labelledby={'income-panel-tab-'+tab}>
   {tab==='overview'&&<RevenueOverview rows={cycleRows} monthRows={monthRows} monthNet={monthNet} totals={totals} account={account} bankName={account.bank+' '+(bankNames[account.bank]||'銀行')} status={statusLabel(account.status)} onTab={toTab} onDetail={setDetail}/>}
+  {tab==='transactions'&&<section className="xc-income-section is-first"><div className="xc-section-head"><div><h2>交易紀錄</h2></div><Select value={filter} onValueChange={setFilter}><SelectTrigger aria-label="篩選交易狀態" className="xc-filter"><SelectValue/></SelectTrigger><SelectContent className="fr-questionnaire-menu">{['all','待結算','可提領','已排入撥款','已撥款','已退款'].map(s=><SelectItem key={s} value={s}>{s==='all'?'所有狀態':s}</SelectItem>)}</SelectContent></Select></div><TransactionList rows={shown} onDetail={setDetail}/></section>}
+  {tab==='payouts'&&<section className="xc-income-section is-first"><div className="xc-section-head"><div><h2>自動撥款紀錄</h2></div><span className="xc-icon-tile"><ArrowDownLeft size={23}/></span></div>{empty||low?<EmptyLedger payout/>:<><div className="xc-payout-group"><h3>2026 年 11 月</h3><div className="xc-payout-record"><span className="xc-icon-tile"><Clock3 size={22}/></span><div><strong>{account.status==='approved'?'預計 11/15 撥款':'撥款暫緩'}</strong><span>11/05 結算 · 國泰世華銀行 · •••• 6789</span></div><div><b>{money(2160)}</b><StatusPill tone={account.status==='approved'?'teal':'amber'}>{account.status==='approved'?'已排入撥款':'併入下一期'}</StatusPill></div></div></div><div className="xc-payout-group"><h3>2026 年 10 月</h3><div className="xc-payout-record"><span className="xc-icon-tile"><Check size={22}/></span><div><strong>10/15 已撥款</strong><span>10/05 結算 · 國泰世華銀行 · •••• 6789</span></div><div><b>{money(2700)}</b><StatusPill tone="teal">已完成</StatusPill></div></div></div></>}</section>}
 diff --git a/app/MentorHeader.tsx b/app/MentorHeader.tsx
-index 8c1b20b..7d91b8c 100644
+index 7a77e21..99d5012 100644
 --- a/app/MentorHeader.tsx
 +++ b/app/MentorHeader.tsx
-@@ -14,3 +14,3 @@ export function MentorHeader({creating,isMentor,guest,avatar,onCreate,onProfile,
-   <div className="fr-header-actions">{guest?<><Button variant="outline" onClick={()=>onNotice('不需登入即可支持開發團隊')}>登入</Button><Button onClick={()=>onNotice('不需登入即可支持開發團隊')}>註冊</Button></>:<><a className="fr-icon fr-message-entry" href="https://xtalent-chat-654.bonny80.chatgpt.site/?scene=list" aria-label="站內聊聊"><MessageSquare size={20}/></a><button type="button" className="fr-icon" aria-label="通知" onClick={()=>onNotice('目前沒有新通知')}><Bell size={20}/></button>
--   <Popover open={accountOpen} onOpenChange={setAccountOpen}><PopoverTrigger asChild><button type="button" className="fr-icon" aria-label="帳號選單"><img src={avatar} alt=""/></button></PopoverTrigger><PopoverContent align="end" className="xm-account-menu"><nav aria-label="帳號選單">{isMentor?<><button type="button" onClick={()=>go(onProfile)}><UserRound size={18}/>我的導師頁面</button><button type="button" onClick={()=>go(onBackend)}><LayoutDashboard size={18}/>導師管理後台</button></>:<button type="button" aria-current={creating?'page':undefined} onClick={()=>go(openIdentity)}><UserRound size={18}/>成為導師</button>}</nav></PopoverContent></Popover>
-+   <Popover open={accountOpen} onOpenChange={setAccountOpen}><PopoverTrigger asChild><button type="button" className="fr-icon" aria-label="帳號選單"><img src={avatar} alt=""/></button></PopoverTrigger><PopoverContent align="end" className="xm-account-menu"><nav aria-label="帳號選單"><button type="button" onClick={()=>go(()=>window.dispatchEvent(new Event('hub-favorites')))}>我的收藏</button>{isMentor?<><button type="button" onClick={()=>go(onProfile)}><UserRound size={18}/>我的導師頁面</button><button type="button" onClick={()=>go(onBackend)}><LayoutDashboard size={18}/>導師管理後台</button></>:<button type="button" aria-current={creating?'page':undefined} onClick={()=>go(openIdentity)}><UserRound size={18}/>成為導師</button>}</nav></PopoverContent></Popover>
-   </>}
+@@ -1,5 +1,6 @@
++import {initialAccountMenu,navigateHub,useFavoriteCount} from './HubProfileActions';
+ import React, {useEffect, useRef, useState} from 'react';
+-import {Bell, BookOpen, CalendarDays, ChevronsLeft, ChevronsRight, Compass, ExternalLink, Info, LayoutDashboard, Menu, MessageSquare, MessagesSquare, Presentation, Search, UserRound} from 'lucide-react';
++import {Bell, Bookmark, BookOpen, CalendarDays, ChevronsLeft, ChevronsRight, Compass, ExternalLink, Info, LayoutDashboard, LogOut, Menu, MessageSquare, MessagesSquare, Presentation, Search, UserRound} from 'lucide-react';
+ import {Popover, PopoverTrigger, PopoverContent} from '@/components/ui/popover';
+ import {Button} from '@/components/ui/button';
+ import {logo} from './assets';
+@@ -68,7 +69,8 @@ function IdentitySwitch({role, onSwitch}:Pick<Props,'role'|'onSwitch'>){
+ }
+
+ export function MentorHeader(p:Props){
+-  const [open,setOpen] = useState(false);
++  const [open,setOpen] = useState(initialAccountMenu);
++  const favoriteCount=useFavoriteCount();
+   const header = useRef<HTMLElement>(null);
+   const [compact,setCompact] = useState(false);
+   useEffect(()=>{
+@@ -86,14 +88,14 @@ export function MentorHeader(p:Props){
+   const workspace = mentor?'導師管理後台':'我的預約';
+   const act = (f:()=>void)=>{setOpen(false); f();};
+   const commonLinks = <>
+-    <a href={aboutUrl} target="_blank" rel="noreferrer"><BookOpen size={17}/>關於 X-Talent</a>
++    <a href={aboutUrl} onClick={e=>{e.preventDefault();navigateHub('about')}}><BookOpen size={17}/>關於 X-Talent</a>
+     <a href={feedbackUrl} target="_blank" rel="noreferrer"><ExternalLink size={17}/>提供回饋</a>
+   </>;
+-  return <><header ref={header} className="xt-topbar identity-header" data-role={p.role} data-compact={compact}>
+-    <a href="https://x-talent-design-hub.x-talent.workers.dev/" target="_blank" rel="noreferrer"><img className="xt-logo" src={logo} alt="X-Talent"/></a>
++  return <><header ref={header} className="xt-topbar identity-header" data-hub-component="favorites-header" data-role={p.role} data-compact={compact}>
++    <a href="/?screen=home" onClick={e=>{e.preventDefault();navigateHub('home')}}><img className="xt-logo" src={logo} alt="X-Talent"/></a>
+     <nav aria-label="主要導覽"><button onClick={p.onSearch}>尋找導師</button><button aria-current={p.creating?'page':undefined} onClick={openProfile}>{profile}</button>{commonLinks}</nav>
+     <div className="fr-header-actions">
+-      {p.guest?<><Button variant="outline" onClick={p.onNotice}>登入</Button><Button onClick={p.onNotice}>註冊</Button></>:<>
++      {p.guest?<><Button variant="outline" onClick={()=>navigateHub('signin')}>登入</Button><Button onClick={()=>navigateHub('signup')}>註冊</Button></>:<>
+         <a className="fr-icon fr-message-entry" href="https://xtalent-chat-654.bonny80.chatgpt.site/?scene=list" aria-label="站內聊聊"><MessageSquare size={20}/></a>
+         <button className="fr-icon" aria-label="通知" onClick={p.onNotice}><Bell size={20}/></button>
+       </>}
+@@ -104,12 +106,14 @@ export function MentorHeader(p:Props){
+           <span className="identity-portrait"><img alt="" src={p.avatar}/></span>
+           {p.unread[other]&&<UnreadDot/>}
+         </button>}
+-      </PopoverTrigger><PopoverContent align="end" sideOffset={10} aria-label={p.guest?'網站導覽':'帳號選單'} className="xm-account-menu identity-menu">
++      </PopoverTrigger><PopoverContent align="end" sideOffset={10} aria-label={p.guest?'網站導覽':'帳號選單'} className="xm-account-menu identity-menu" data-hub-component="account-menu">
+         <nav aria-label="帳號導覽">
+           {!p.guest&&<><button onClick={()=>act(openProfile)}><UserRound size={17}/>{profile}</button>
+           <button onClick={()=>act(p.onWorkspace)}>{mentor?<LayoutDashboard size={17}/>:<CalendarDays size={17}/>} {workspace}</button></>}
+           <button onClick={()=>act(p.onSearch)}><Search size={17}/>尋找導師</button>
++          {!p.guest&&<button onClick={()=>act(()=>navigateHub('favorites'))}><Bookmark size={17}/>我的收藏 <small>{favoriteCount}</small></button>}
+           {compact&&<>{!p.guest&&<a href="https://xtalent-chat-654.bonny80.chatgpt.site/?scene=list"><MessagesSquare size={17}/>站內聊聊</a>}{commonLinks}</>}
++          {!p.guest&&<button onClick={()=>act(()=>navigateHub('signin'))}><LogOut size={17}/>登出</button>}
+         </nav>
+         {!p.guest&&<IdentitySwitch role={p.role} onSwitch={p.onSwitch}/>}
+       </PopoverContent></Popover>}
 diff --git a/app/MentorReadView.tsx b/app/MentorReadView.tsx
 index b33156c..0c26eb5 100644
 --- a/app/MentorReadView.tsx
 +++ b/app/MentorReadView.tsx
-@@ -27,3 +27,3 @@ export {ProfileLevel} from './LevelVisual';
+@@ -25,7 +25,7 @@ export const reviewNotes=[
+
+ export {ProfileLevel} from './LevelVisual';
  export function ProfileOwnerActions({onEdit,onBackend}:{onEdit:()=>void;onBackend:()=>void}){return <div className="mp-actions mp-owner-actions"><button type="button" className="mp-action" aria-label="編輯資料" title="編輯資料" onClick={onEdit}><Pencil size={20}/></button><button type="button" className="mp-backend-action" onClick={onBackend}>前往後台<ArrowUpRight size={16}/></button></div>}
 -export function ProfilePlans({plans,owner=false,onManage}:{plans:ProfilePlan[];owner?:boolean;onManage?:()=>void}){const published=plans.filter(p=>p.published);return <section className="xt-profile-setting-card mp-plans"><div className="mp-booking-title"><h2>{owner?'我的方案':'預約會談'}</h2><CalendarDays size={20}/></div>{published.length?published.map(plan=><article className="mp-plan" key={plan.id}><h3>{plan.name}</h3><p>{plan.description}</p><div><span>{plan.duration} 分鐘</span><strong>{plan.price?'NT$ '+plan.price.toLocaleString():'免費'}</strong></div>{plan.slots.length>0&&<small>最近可預約：{plan.slots[0]}</small>}</article>):<div className="mp-plans-empty"><CalendarDays size={26}/><h3>{owner?'你還沒有上架的方案':'此導師目前尚未開放預約'}</h3></div>}{owner&&<button className="mp-manage-plans" type="button" onClick={onManage}>管理方案</button>}</section>}
 +export function ProfilePlans({plans,owner=false,onManage}:{plans:ProfilePlan[];owner?:boolean;onManage?:()=>void}){const published=plans.filter(p=>p.published);return <section className="xt-profile-setting-card mp-plans"><div className="mp-booking-title"><h2>{owner?'我的方案':'預約會談'}</h2><CalendarDays size={20}/></div>{published.length?published.map(plan=><article className="mp-plan" key={plan.id}><h3>{plan.name}</h3><p>{plan.description}</p><div><span>{plan.duration} 分鐘</span><strong>{plan.price?'NT$ '+plan.price.toLocaleString():'免費'}</strong></div>{plan.slots.length>0&&<small>最近可預約：{plan.slots[0]}</small>}</article>):<div className="mp-plans-empty"><CalendarDays size={26}/><h3>{owner?'你還沒有上架的方案':'此導師目前尚未開放預約'}</h3></div>}{owner&&<button className="mp-manage-plans" type="button" onClick={onManage}>設定時段與管理方案</button>}</section>}
  export function ProfileSummary({role='mentor',hasReviews=false,completed=0,owner=false,minutes=0,experience,location,rating=8.5,directions=0}:{role?:'mentor'|'mentee';hasReviews?:boolean;completed?:number;owner?:boolean;minutes?:number;experience:string;location:string;rating?:number;directions?:number}){
-@@ -44,3 +44,3 @@ export function ProfileAbout({about, industries}: Pick<ProfileData, 'about' | 'i
+  const mentee=role==='mentee',count=mentee?Number(!!experience)+Number(!!location)+Number(directions>0):(hasReviews?1:0)+(completed>0?1:0)+(owner?1:0)+2;
+  if(!count)return null;
+@@ -42,11 +42,11 @@ export function ProfileAbout({about, industries}: Pick<ProfileData, 'about' | 'i
+   </section>;
+ }
  export function ProfileIndustryTags({items}:{items:string[]}){return items.length>0?<ul className="mp-industry-tags" aria-label="產業">{items.map(v=><li key={v}>#{v}</li>)}</ul>:null}
 -export function MentorReadView({profile:p,owner=false,level,minutes=0,completed=128,rating=8.5,reviewCount=12,initialTab='overview',reviewExpanded=false,onContact,aside,ownerActions,hubMapping=hubScreenMap['owner-filled']}:{hubMapping?:HubScreenMapping;profile:ProfileData;owner?:boolean;level?:number;minutes?:number;completed?:number;rating?:number;reviewCount?:number;initialTab?:string;reviewExpanded?:boolean;onContact?:()=>void;aside:React.ReactNode;ownerActions?:React.ReactNode}){
 +export function MentorReadView({profile:p,owner=false,level,minutes=0,completed=128,rating=8.5,reviewCount=12,initialTab='overview',reviewExpanded=false,publicActions,onContact,aside,ownerActions,hubMapping=hubScreenMap['owner-filled']}:{hubMapping?:HubScreenMapping;profile:ProfileData;owner?:boolean;level?:number;minutes?:number;completed?:number;rating?:number;reviewCount?:number;initialTab?:string;reviewExpanded?:boolean;publicActions?:React.ReactNode;onContact?:()=>void;aside:React.ReactNode;ownerActions?:React.ReactNode}){
   const [tab,setTab]=useState(initialTab),[reviewPage,setReviewPage]=useState(0),[saved,setSaved]=useState(false);
-@@ -48,3 +48,3 @@ export function MentorReadView({profile:p,owner=false,level,minutes=0,completed=
+  const reviews=reviewNotes.slice(0,reviewCount),hasReviews=reviews.length>0;
   const tabKey=(e:React.KeyboardEvent<HTMLButtonElement>)=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const next=e.key==='Home'?'overview':e.key==='End'?'reviews':tab==='overview'?'reviews':'overview';setTab(next);document.getElementById('profile-tab-'+next)?.focus()}};
 - return <div className="profile-view-container"><main id="xt-mentor-profile" {...hubScreenAttributes(hubMapping)}><ProfileIdentity profile={p} label="導師個人資料" badge={level!==undefined?<ProfileLevel level={level}/>:undefined} actions={owner?ownerActions:<div className="mp-actions">{onContact&&<button type="button" className="mp-action" aria-label="聯絡導師" title="聯絡導師" onClick={onContact}><MessageCircleMore size={20}/></button>}<button type="button" className="mp-action" aria-label={saved?'取消收藏':'收藏導師'} title={saved?'取消收藏':'收藏導師'} aria-pressed={saved} onClick={()=>setSaved(!saved)}><Bookmark size={20} fill={saved?'currentColor':'none'}/></button></div>} summary={<ProfileSummary hasReviews={hasReviews} rating={rating} completed={completed} owner={owner} minutes={minutes} experience={p.experience} location={p.location}/>}/>
 + return <div className="profile-view-container"><main id="xt-mentor-profile" {...hubScreenAttributes(hubMapping)}><ProfileIdentity profile={p} label="導師個人資料" badge={level!==undefined?<ProfileLevel level={level}/>:undefined} actions={owner?ownerActions:publicActions??<div className="mp-actions">{onContact&&<button type="button" className="mp-action" aria-label="聯絡導師" title="聯絡導師" onClick={onContact}><MessageCircleMore size={20}/></button>}<button type="button" className="mp-action" aria-label={saved?'取消收藏':'收藏導師'} title={saved?'取消收藏':'收藏導師'} aria-pressed={saved} onClick={()=>setSaved(!saved)}><Bookmark size={20} fill={saved?'currentColor':'none'}/></button></div>} summary={<ProfileSummary hasReviews={hasReviews} rating={rating} completed={completed} owner={owner} minutes={minutes} experience={p.experience} location={p.location}/>}/>
   <ProfileColumns aside={aside} asideLabel={owner?'我的方案':'預約會談'}><div className="xt-profile-nav" role="tablist" aria-label="導師資料">{[['overview','簡介'],['reviews','評價']].map(([id,label])=><button type="button" key={id} id={'profile-tab-'+id} role="tab" aria-controls={'profile-panel-'+id} aria-selected={tab===id} tabIndex={tab===id?0:-1} onKeyDown={tabKey} onClick={()=>setTab(id)}>{label}{id==='reviews'&&<span>{reviews.length}</span>}</button>)}</div>
+  <div id="profile-panel-overview" role="tabpanel" aria-labelledby="profile-tab-overview" hidden={tab!=='overview'}>
+  <ProfileAbout about={p.about} industries={p.industries}/>
+diff --git a/app/MentorSearch.tsx b/app/MentorSearch.tsx
+index ec99204..76afab8 100644
+--- a/app/MentorSearch.tsx
++++ b/app/MentorSearch.tsx
+@@ -1,3 +1,4 @@
++import {HubBookmark,searchVariant,useSavedPeople} from './HubProfileActions';
+ import React,{useState} from 'react';
+ import {Bookmark,Search,SlidersHorizontal,X,ArrowRight} from 'lucide-react';
+ import {Button} from '@/components/ui/button';
+@@ -29,15 +30,42 @@ export function poolProfile(person:PoolMentor):ProfileData{
+ }
+ /** Keeps the delivered #753 card's photo ratio, compact text and single bookmark. */
+ export function PoolCard({person,onOpen}:{person:PoolMentor;onOpen:(p:PoolMentor)=>void}){
+- const [saved,setSaved]=useState(false);
+- return <article className="p2-mentor-card"><button className="p2-card-main" onClick={()=>onOpen(person)} aria-label={'查看導師 '+person.name}><div className="p2-card-photo"><img src={person.avatar} alt=""/><span>{person.experience}工作經驗</span></div><div className="p2-card-body"><div className="p2-card-name"><h2>{person.name}</h2><LevelPill level={person.level}/></div><p className="p2-card-job">{person.job} · {person.company}</p><div className="p2-card-stat"><strong>{person.rating.toFixed(1)} / 10</strong><span>已完成 {person.completed} 場 1-on-1</span></div><p className="p2-card-bio">{person.bio}</p><div className="p2-card-tags">{person.topics.slice(0,2).map(t=><span key={t}>{t}</span>)}{person.topics.length>2&&<span>+{person.topics.length-2}</span>}</div></div></button><Button className="p2-card-save" variant="outline" size="icon" aria-label={saved?'取消收藏 '+person.name:'收藏 '+person.name} aria-pressed={saved} onClick={()=>setSaved(!saved)}><Bookmark size={20} fill={saved?'currentColor':'none'}/></Button></article>;
++ const withHistory=searchVariant!=='no-ratings';
++ return <article className="p2-mentor-card" data-hub-component="favorite-card">
++   <button type="button" className="p2-card-main" onClick={()=>onOpen(person)} aria-label={'查看導師 '+person.name}>
++     <div className="p2-card-photo"><img src={person.avatar} alt=""/><span>{person.experience}工作經驗</span></div>
++     <div className="p2-card-body">
++       <div className="p2-card-name"><h2>{person.name}</h2><LevelPill level={person.level}/>
++         {withHistory&&<strong className="p2-card-rating" aria-label={'平均評分 '+person.rating.toFixed(1)+' 分，滿分 10 分'}>{person.rating.toFixed(1)} / 10</strong>}
++       </div>
++       <p className="p2-card-job">{person.job} · {person.company}</p>
++       {withHistory&&<div className="p2-card-stat">已完成 {person.completed} 場 1-on-1</div>}
++       <p className="p2-card-bio">{person.bio}</p>
++       <div className="p2-card-tags">{person.topics.slice(0,2).map(t=><span key={t}>{t}</span>)}{person.topics.length>2&&<span>+{person.topics.length-2}</span>}</div>
++     </div>
++   </button>
++   <HubBookmark card person={person.id} name={person.name} onSignedIn={()=>onOpen(person)}/>
++ </article>;
+ }
+ export function MentorSearch({scene,onOpen}:{scene:string;onOpen:(p:PoolMentor)=>void}){
+  const [input,setInput]=useState(scene==='mentor-search-empty'?'天文學':''),[query,setQuery]=useState(input),[filters,setFilters]=useState<PoolFilters>(emptyPoolFilters),[draft,setDraft]=useState(filters),[open,setOpen]=useState(scene==='mentor-search-filters');
+  const rows=poolMentors.filter(p=>matchesMentor(p,query,filters)),active=[...filters.skills,...filters.topics,...(filters.industry?[filters.industry]:[])];
+  const toggle=(kind:'skills'|'topics',value:string)=>setDraft(p=>({...p,[kind]:p[kind].includes(value)?p[kind].filter(v=>v!==value):[...p[kind],value]}));
+  const clear=()=>{setFilters(emptyPoolFilters());setInput('');setQuery('')};
+- return <main className="p2-search"><section className="p2-search-hero"><h1>和 Mentors 一起提升你的職涯經驗吧！</h1></section><div className="p2-pool-wrap"><form className="p2-search-bar" onSubmit={e=>{e.preventDefault();setQuery(input)}}><Search size={22}/><input aria-label="搜尋職位、公司或領域" placeholder="搜尋有興趣職位、公司或是想精進的領域" value={input} onChange={e=>setInput(e.target.value)}/><Button type="submit">搜尋</Button></form><div className="p2-popular" aria-label="熱門職位">{['前端工程師','後端工程師','全端工程師','產品經理','UIUX 設計師','資料工程師','AI 工程師','iOS 工程師'].map(t=><Button variant="outline" shape="pill" aria-pressed={query===t} key={t} onClick={()=>{setInput(t);setQuery(t)}}>{t}</Button>)}</div><div className="p2-search-tools"><p role="status">找到 <strong>{rows.length}</strong> 位導師</p><Button variant="outline" onClick={()=>{setDraft(structuredClone(filters));setOpen(true)}}><SlidersHorizontal size={16}/>篩選{active.length>0&&<span className="p2-count">{active.length}</span>}</Button></div>{(active.length>0||query)&&<div className="p2-active-filters">{query&&<button onClick={()=>{setInput('');setQuery('')}}>{query}<X size={14}/></button>}{active.map(t=><button key={t} onClick={()=>setFilters(p=>({skills:p.skills.filter(v=>v!==t),topics:p.topics.filter(v=>v!==t),industry:p.industry===t?'':p.industry}))}>{t}<X size={14}/></button>)}<Button variant="ghost" onClick={clear}>清除全部</Button></div>}<div className="p2-pool-grid">{rows.map(person=><PoolCard key={person.id} person={person} onOpen={onOpen}/>)}</div>{!rows.length&&<div className="p2-empty"><Search size={30}/><h2>沒有符合的導師</h2><p>試試其他關鍵字，或調整篩選條件。</p><Button variant="outline" onClick={clear}>清除篩選</Button></div>}</div>
++ return <main className="p2-search"><section className="p2-search-hero"><h1>和 Mentors 一起提升你的職涯經驗吧！</h1></section><div className="p2-pool-wrap"><form className="p2-search-bar" onSubmit={e=>{e.preventDefault();setQuery(input)}}><Search size={22}/><input aria-label="搜尋職位、公司或領域" placeholder="搜尋有興趣職位、公司或是想精進的領域" value={input} onChange={e=>setInput(e.target.value)}/><Button type="submit">搜尋</Button></form><div className="p2-popular" aria-label="熱門職位">{['前端工程師','後端工程師','全端工程師','產品經理','UIUX 設計師','資料工程師','AI 工程師','iOS 工程師'].map(t=><Button variant="outline" shape="pill" aria-pressed={query===t} key={t} onClick={()=>{setInput(t);setQuery(t)}}>{t}</Button>)}</div><div className="p2-search-tools"><p role="status">找到 <strong>{rows.length}</strong> 位導師</p><Button variant="outline" data-hub-component="mentor-filter" aria-label="篩選導師" onClick={()=>{setDraft(structuredClone(filters));setOpen(true)}}><SlidersHorizontal size={16}/>篩選{active.length>0&&<span className="p2-count">{active.length}</span>}</Button></div>{(active.length>0||query)&&<div className="p2-active-filters">{query&&<button onClick={()=>{setInput('');setQuery('')}}>{query}<X size={14}/></button>}{active.map(t=><button key={t} onClick={()=>setFilters(p=>({skills:p.skills.filter(v=>v!==t),topics:p.topics.filter(v=>v!==t),industry:p.industry===t?'':p.industry}))}>{t}<X size={14}/></button>)}<Button variant="ghost" onClick={clear}>清除全部</Button></div>}<div className="p2-pool-grid">{rows.map(person=><PoolCard key={person.id} person={person} onOpen={onOpen}/>)}</div>{!rows.length&&<div className="p2-empty"><Search size={30}/><h2>沒有符合的導師</h2><p>試試其他關鍵字，或調整篩選條件。</p><Button variant="outline" onClick={clear}>清除篩選</Button></div>}</div>
+  <Dialog open={open} onOpenChange={setOpen}><DialogContent className="p2-filter-dialog"><div className="p2-filter-heading"><DialogTitle>篩選導師</DialogTitle><RuleHint label="篩選方式">符合任一技能、主題或產業的導師都會顯示。</RuleHint></div><DialogDescription className="sr-only">選擇技能、主題或產業。</DialogDescription>{([['skills','技能',poolSkills],['topics','主題',poolTopics]] as const).map(([key,label,values])=><fieldset key={key}><legend>{label}<span>可多選</span></legend><div className="p2-filter-options">{values.map(t=><label key={t} data-selected={draft[key].includes(t)}><input type="checkbox" checked={draft[key].includes(t)} onChange={()=>toggle(key,t)}/>{t}</label>)}</div></fieldset>)}<div className="xc-field"><label htmlFor="pool-industry">產業<span>單選</span></label><Select value={draft.industry||'all'} onValueChange={v=>setDraft(p=>({...p,industry:v==='all'?'':v}))}><SelectTrigger id="pool-industry"><SelectValue/></SelectTrigger><SelectContent>{['all',...poolIndustries].map(v=><SelectItem key={v} value={v}>{v==='all'?'不限產業':v}</SelectItem>)}</SelectContent></Select></div><div className="p2-dialog-actions"><Button variant="ghost" onClick={()=>setDraft(emptyPoolFilters())}>清除條件</Button><Button onClick={()=>{setFilters(draft);setOpen(false)}}>顯示結果</Button></div></DialogContent></Dialog></main>;
+ }
++export function FavoriteMentors({onOpen,onFind}:{onOpen:(p:PoolMentor)=>void;onFind:()=>void}){
++ const isSaved=useSavedPeople();
++ const rows=poolMentors.filter(person=>isSaved(person.id));
++ return <main className="p2-favorites p2-pool-wrap">
++   <h1>我的收藏</h1>
++   <p className="p2-favorites-count" role="status">已收藏 {rows.length} 位導師</p>
++   {rows.length>0?<div className="p2-pool-grid">{rows.map(person=><PoolCard key={person.id} person={person} onOpen={onOpen}/>)}</div>:
++     <section className="p2-empty" data-hub-component="favorites-empty">
++       <Bookmark size={28} aria-hidden="true"/><h2>還沒有收藏的導師</h2>
++       <Button onClick={onFind}>尋找導師</Button>
++     </section>}
++ </main>;
++}
+ export function MentorRecommendations({onOpen}:{onOpen:(p:PoolMentor)=>void}){return <aside className="p2-recommendations"><h2>你可能也想聊聊</h2>{poolMentors.filter(p=>['sarah','emily','jamie'].includes(p.id)).map(p=><article key={p.id}><div><img src={p.avatar} alt=""/><div><h3>{p.name}</h3><p>{p.job}</p><small>{p.company}</small></div></div><Button variant="outline" onClick={()=>onOpen(p)}>查看導師<ArrowRight size={14}/></Button></article>)}</aside>}
 diff --git a/app/Plans.tsx b/app/Plans.tsx
 index 5698756..f89312e 100644
 --- a/app/Plans.tsx
 +++ b/app/Plans.tsx
-@@ -1 +1,2 @@
+@@ -1,3 +1,4 @@
 +import {flowAttributes} from './HubProfileActions';
  import React,{useState,useRef} from 'react';
-@@ -15,3 +16,3 @@ const seed:Plan={id:'',name:'',description:'',duration:30,price:0,published:true
+ import {Plus,Pencil,Trash2,Clock3,Info,CalendarDays} from 'lucide-react';
+ import {Button,MentorSectionTitle} from './MentorUI';
+@@ -13,7 +14,7 @@ import {PlanScheduleChoice} from './PlanSchedule';
+ import {QuestionnaireSelect} from './QuestionnaireSelect';
+ const seed:Plan={id:'',name:'',description:'',duration:30,price:0,published:true,slots:[],questions:[]};
  export function Plans({plans,setPlans,scene,onProfile,account,onAccountSave,toast,availability,onAvailability,occupied=[]}:{occupied?:Slot[];availability:SharedAvailability;onAvailability:(v:SharedAvailability)=>void;account:BankData;onAccountSave:(value:BankData)=>void;plans:Plan[];setPlans:(p:Plan[])=>void;scene:string;onProfile:()=>void;toast:(s:string)=>void}){
 - const availabilityRef=useRef<HTMLDivElement>(null),[availabilityOpen,setAvailabilityOpen]=useState(false);
 + const availabilityRef=useRef<HTMLDivElement>(null),[availabilityOpen,setAvailabilityOpen]=useState(scene==='plan-schedule'||scene==='plan-schedule-empty');
   const editAvailability=()=>{setAvailabilityOpen(true);requestAnimationFrame(()=>{const toggle=availabilityRef.current?.querySelector<HTMLButtonElement>('.xm-availability-toggle');toggle?.focus({preventScroll:true});toggle?.scrollIntoView({block:'start',behavior:'smooth'})})};
-@@ -33,3 +34,3 @@ export function Plans({plans,setPlans,scene,onProfile,account,onAccountSave,toas
+  const [bankRequired,setBankRequired]=useState(false),[leaveEditor,setLeaveEditor]=useState(false);
+  const paidDemo=scene==='plan-paid'||scene==='plan-paid-no-bank';
+@@ -31,7 +32,7 @@ export function Plans({plans,setPlans,scene,onProfile,account,onAccountSave,toas
+  const editor=<form className="fr-plan-editor" noValidate onSubmit={e=>{e.preventDefault();save()}}><div className="xm-plan-editor-title"><h2>{editing==='new'?'新增方案':'編輯方案'}</h2></div><div className="xm-plan-editor-layout"><div className="fr-plan-form"><section className="xm-plan-basics"><MentorSectionTitle number="01" title="基本資料"/><label>方案名稱 <em>＊</em><div className="fr-counter-field"><Input id="plan-name" required {...fieldA11y('plan-name')} placeholder="例如：作品集深度檢視" maxLength={50} value={draft.name} onChange={e=>update('name',e.target.value)}/><small>{draft.name.length}/50</small></div></label><label>方案介紹<Textarea maxLength={300} value={draft.description} onChange={e=>update('description',e.target.value)} placeholder="說明這個方案能協助的問題"/><small className="fr-field-count">{draft.description.length}/300</small></label><div className="fr-form-row"><label>會談長度<MentorSelect label="會談長度" value={String(draft.duration)} onChange={v=>update("duration",Number(v))} options={[30,45,60].map(v=>({value:String(v),label:v+" 分鐘"}))}/></label><label>收費方式 <span className="fr-tooltip" tabIndex={0} aria-label="平台服務費 10%，預估實收為金額的 90%"><Info size={14}/><span>平台服務費 10%{paid?` · 預估實收 NT$${Math.round(draft.price*.9).toLocaleString()}`:''}</span></span><MentorSelect label="收費方式" value={paid?"paid":"free"} onChange={v=>setPaid(v==="paid")} options={[{value:"free",label:"免費"},{value:"paid",label:"收費"}]}/></label>{paid&&<label>價格（NT$）<Input type="number" min="100" max="20000" step="1" id="plan-price" required {...fieldA11y('plan-price')} value={draft.price||''} onChange={e=>update('price',Number(e.target.value))}/></label>}</div>
+  </section><section className="fr-plan-question"><div className="fr-section-heading"><MentorSectionTitle number="02" title="事前問卷"/><label className="fr-switch"><input type="checkbox" checked={questionOn} onChange={e=>{setQuestionOn(e.target.checked);if(e.target.checked&&!draft.questions.length)update('questions',[{id:crypto.randomUUID(),text:'',type:'text',required:false,options:['','']}])}}/><span/>啟用</label></div>{questionOn&&<>{draft.questions.map((q,index)=><div className="fr-question" key={q.id}><div className="fr-section-heading"><strong>問題 {index+1}</strong><Button type="button" variant="ghost" className="fr-danger" size="icon" aria-label={`刪除問題 ${index+1}`} onClick={()=>update('questions',draft.questions.filter(v=>v.id!==q.id))}><Trash2 size={16}/></Button></div><Input aria-label={`問題 ${index+1}`} value={q.text} onChange={e=>update('questions',draft.questions.map(v=>v.id===q.id?{...q,text:e.target.value}:v))} placeholder="輸入題目"/><div className="fr-form-row"><QuestionnaireSelect ariaLabel={`問題 ${index+1} 回答類型`} value={q.type} onValueChange={type=>update('questions',draft.questions.map(v=>v.id===q.id?{...q,type}:v))}/><label className="fr-check"><input type="checkbox" checked={q.required} onChange={e=>update('questions',draft.questions.map(v=>v.id===q.id?{...q,required:e.target.checked}:v))}/>必填</label></div>{q.type==='select'&&<div className="fr-question-options">{q.options.map((v,i)=><Input key={i} aria-label={`問題 ${index+1} 選項 ${i+1}`} placeholder={`選項 ${i+1}`} value={v} onChange={e=>update('questions',draft.questions.map(x=>x.id===q.id?{...q,options:q.options.map((s,j)=>j===i?e.target.value:s)}:x))}/>)}<Button variant="ghost" onClick={()=>update('questions',draft.questions.map(x=>x.id===q.id?{...q,options:[...q.options,'']}:x))}>＋ 新增選項</Button></div>}</div>)}<Button variant="outline" onClick={()=>update('questions',[...draft.questions,{id:crypto.randomUUID(),text:'',type:'text',required:false,options:['','']}])}><Plus size={16}/>新增問題</Button></>}</section>
   <section className="fr-schedule"><MentorSectionTitle number="03" title="預約時段"/><PlanScheduleChoice draft={draft} availability={availability} onChange={setDraft} allowCustom={scene==='plan-custom'} onEditAvailability={editAvailability}/><div className="fr-form-row"><label>最低預約提前時間（小時）<Input id="plan-notice" {...fieldA11y('plan-notice')} type="number" min="0" step="1" placeholder="0" value={draft.minNoticeHours??0} onChange={e=>update('minNoticeHours',Number(e.target.value))}/></label><label>每週預約上限<Input id="plan-weekly-limit" {...fieldA11y('plan-weekly-limit')} type="number" min="1" step="1" placeholder="不限" value={draft.weeklyLimit??''} onChange={e=>update('weeklyLimit',e.target.value===''?undefined:Number(e.target.value))}/></label></div></section></div><aside className="xm-plan-summary"><span className="xm-plan-preview-label">方案摘要</span><h3>{draft.name||'未命名方案'}</h3><dl><div><dt>會談長度</dt><dd>{draft.duration} 分鐘</dd></div><div><dt>每場費用</dt><dd>{paid?'NT$ '+draft.price.toLocaleString():'免費'}</dd></div><div><dt>事前問卷</dt><dd>{questionOn?draft.questions.length+' 題':'未啟用'}</dd></div><div><dt>預約時段</dt><dd>{draft.availabilityMode==='custom'?'指定開放時段':'套用可預約時段'}</dd></div></dl><label className="fr-switch"><input type="checkbox" checked={draft.published} onChange={e=>update('published',e.target.checked)}/><span/>儲存後立即上架</label>{error&&<p className="fr-error" id="plan-error" role="alert" tabIndex={-1}>{error}</p>}<div className="fr-form-actions"><Button type="submit" disabled={busy} aria-busy={busy}>{busy?'儲存中…':editing==='new'?'建立方案':'儲存變更'}</Button><Button variant="ghost" onClick={()=>{const original=editing==='new'?seed:plans.find(p=>p.id===editing);JSON.stringify(draft)===JSON.stringify(original)&&paid===!!original?.price&&questionOn===!!original?.questions.length?setEditing(null):setLeaveEditor(true)}}>取消</Button></div></aside></div></form>;
 - return <div className="fr-backend-content xm-plans"><div className="fr-page-heading"><div><h1>方案時段</h1></div><div><Button variant="ghost" onClick={onProfile}>我的導師頁面</Button><Button disabled={editing!==null} onClick={()=>start()}><Plus size={16}/>新增方案</Button></div></div><div ref={availabilityRef}><SharedAvailabilityEditor bookings={[...occupiedFixtures,...occupied]} open={availabilityOpen} onOpenChange={setAvailabilityOpen} value={availability} onSave={v=>{onAvailability(v);setPlans(plans.map(p=>p.availabilityMode==='custom'?{...p,slots:p.slots.filter(s=>v.slots.includes(s)),dateOverrides:Object.fromEntries(Object.entries(p.dateOverrides||{}).map(([date,items])=>[date,items.filter(s=>v.dateOverrides[date]?.includes(s))])),published:p.published&&(p.slots.some(s=>v.slots.includes(s))||Object.entries(p.dateOverrides||{}).some(([d,items])=>items.some(s=>v.dateOverrides[d]?.includes(s))))}:{...p,slots:v.slots,dateOverrides:v.dateOverrides,availabilityMode:'shared'}));toast('可預約時段已儲存')}}/></div>{scene==='plan-custom'&&<p className="xm-preview-badge">指定開放時段 · 後續版本設計預覽</p>}{editing==='new'&&editor}{!plans.length&&editing===null?<div className="fr-empty"><CalendarDays size={30}/><h2>還沒有建立方案</h2><Button variant="outline" onClick={()=>start()}>新增方案</Button></div>:<div className="fr-plan-list">{sortedPlans(plans).map(plan=>editing===plan.id?<React.Fragment key={plan.id}>{editor}</React.Fragment>:<article className="xm-plan-row" key={plan.id}><div className="fr-plan-list-copy"><span className="fr-neutral-chip" data-published={plan.published}>{plan.published?'上架中':plan.slots.length?'已下架':'草稿'}</span><h2>{plan.name}</h2>{plan.description&&<p>{plan.description}</p>}<div className="fr-plan-meta"><span><Clock3 size={15}/>{plan.duration} 分鐘</span><span>{plan.questions.length?`問卷 ${plan.questions.length} 題`:'未啟用問卷'}</span><span><CalendarDays size={15}/>{plan.availabilityMode==='custom'?'指定開放時段':'套用可預約時段'}</span></div></div><div className="xm-plan-price"><strong>{plan.price?'NT$ '+plan.price.toLocaleString():'免費'}</strong></div><div className="fr-plan-actions"><label className="fr-switch"><input type="checkbox" checked={plan.published} onChange={e=>{if(e.target.checked&&!plan.slots.length&&!Object.values(plan.dateOverrides||{}).some(s=>s.length)){toast('上架前請至少設定一個時段');return}if(!canPublishPlan({...plan,published:e.target.checked},account)){setBankRequired(true);return}setPlans(plans.map(p=>p.id===plan.id?{...p,published:e.target.checked}:p))}}/><span/><span className="sr-only">上架 {plan.name}</span></label><Button disabled={editing!==null} variant="ghost" aria-label={'編輯 '+plan.name} onClick={()=>start(plan)}><Pencil size={16}/>編輯</Button><Button variant="ghost" className="fr-danger" aria-label={'刪除 '+plan.name} size="icon" onClick={()=>setRemove(plan)}><Trash2 size={16}/></Button></div></article>)}</div>}
 + return <div {...flowAttributes('mentor-plans')} className="fr-backend-content xm-plans"><div className="fr-page-heading"><div><h1>方案時段</h1></div><div><Button variant="ghost" onClick={onProfile}>我的導師頁面</Button><Button disabled={editing!==null} onClick={()=>start()}><Plus size={16}/>新增方案</Button></div></div><div ref={availabilityRef}><SharedAvailabilityEditor bookings={[...occupiedFixtures,...occupied]} open={availabilityOpen} onOpenChange={setAvailabilityOpen} value={availability} onSave={v=>{onAvailability(v);setPlans(plans.map(p=>p.availabilityMode==='custom'?{...p,slots:p.slots.filter(s=>v.slots.includes(s)),dateOverrides:Object.fromEntries(Object.entries(p.dateOverrides||{}).map(([date,items])=>[date,items.filter(s=>v.dateOverrides[date]?.includes(s))])),published:p.published&&(p.slots.some(s=>v.slots.includes(s))||Object.entries(p.dateOverrides||{}).some(([d,items])=>items.some(s=>v.dateOverrides[d]?.includes(s))))}:{...p,slots:v.slots,dateOverrides:v.dateOverrides,availabilityMode:'shared'}));toast('可預約時段已儲存')}}/></div>{scene==='plan-custom'&&<p className="xm-preview-badge">指定開放時段 · 後續版本設計預覽</p>}{editing==='new'&&editor}{!plans.length&&editing===null?<div className="fr-empty"><CalendarDays size={30}/><h2>還沒有建立方案</h2><Button variant="outline" onClick={()=>start()}>新增方案</Button></div>:<div className="fr-plan-list">{sortedPlans(plans).map(plan=>editing===plan.id?<React.Fragment key={plan.id}>{editor}</React.Fragment>:<article className="xm-plan-row" key={plan.id}><div className="fr-plan-list-copy"><span className="fr-neutral-chip" data-published={plan.published}>{plan.published?'上架中':plan.slots.length?'已下架':'草稿'}</span><h2>{plan.name}</h2>{plan.description&&<p>{plan.description}</p>}<div className="fr-plan-meta"><span><Clock3 size={15}/>{plan.duration} 分鐘</span><span>{plan.questions.length?`問卷 ${plan.questions.length} 題`:'未啟用問卷'}</span><span><CalendarDays size={15}/>{plan.availabilityMode==='custom'?'指定開放時段':'套用可預約時段'}</span></div></div><div className="xm-plan-price"><strong>{plan.price?'NT$ '+plan.price.toLocaleString():'免費'}</strong></div><div className="fr-plan-actions"><label className="fr-switch"><input type="checkbox" checked={plan.published} onChange={e=>{if(e.target.checked&&!plan.slots.length&&!Object.values(plan.dateOverrides||{}).some(s=>s.length)){toast('上架前請至少設定一個時段');return}if(!canPublishPlan({...plan,published:e.target.checked},account)){setBankRequired(true);return}setPlans(plans.map(p=>p.id===plan.id?{...p,published:e.target.checked}:p))}}/><span/><span className="sr-only">上架 {plan.name}</span></label><Button disabled={editing!==null} variant="ghost" aria-label={'編輯 '+plan.name} onClick={()=>start(plan)}><Pencil size={16}/>編輯</Button><Button variant="ghost" className="fr-danger" aria-label={'刪除 '+plan.name} size="icon" onClick={()=>setRemove(plan)}><Trash2 size={16}/></Button></div></article>)}</div>}
   <Dialog open={leaveEditor} onOpenChange={setLeaveEditor}><DialogContent className="xm-dialog"><DialogHeader><DialogTitle>離開方案編輯？</DialogTitle><DialogDescription>尚未儲存的變更不會保留。</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={()=>setLeaveEditor(false)}>繼續編輯</Button><Button variant="destructive" onClick={()=>{setLeaveEditor(false);setEditing(null)}}>離開編輯</Button></DialogFooter></DialogContent></Dialog><Dialog open={bankRequired} onOpenChange={setBankRequired}><DialogContent className="fr-plan-bank-dialog"><DialogTitle className="sr-only">設定收款帳戶</DialogTitle><DialogDescription>上架收費方案前，請先完成收款帳戶設定。</DialogDescription><BankSettings account={account} onSave={value=>{onAccountSave(value);setBankRequired(false);toast('收款帳戶已送出審核，可繼續上架方案')}}/></DialogContent></Dialog>
+  <Dialog open={!!remove} onOpenChange={o=>!o&&setRemove(null)}><DialogContent className="xm-dialog"><DialogHeader><DialogTitle>刪除方案？</DialogTitle><DialogDescription>「{remove?.name}」將被刪除，已成立的預約不受影響。</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={()=>setRemove(null)}>取消</Button><Button variant="destructive" onClick={()=>{setPlans(plans.filter(p=>p.id!==remove?.id));setRemove(null);toast('方案已刪除')}}>刪除</Button></DialogFooter></DialogContent></Dialog></div>
+ }
 diff --git a/app/model.ts b/app/model.ts
-index 607355c..bd38191 100644
+index 1e2bda3..224b7a7 100644
 --- a/app/model.ts
 +++ b/app/model.ts
-@@ -27,2 +27,4 @@ export const examplePlans:Plan[]=profileExamplePlans.map(p=>({...p,slots:[...sha
+@@ -26,6 +26,8 @@ export type Plan={availabilityMode?:'shared'|'custom';minNoticeHours?:number;wee
+ export const examplePlans:Plan[]=profileExamplePlans.map(p=>({...p,slots:[...sharedAvailabilitySlots],availabilityMode:'shared',dateOverrides:{}}));
+ import {identityCases} from './identity';
  export const scenes=[
 + ['plan-schedule','銜接 #837','設定可預約時段'],['plan-schedule-empty','銜接 #837','尚未設定可預約時段'],
 + ['public-reviews','預約流程 #840','導師評價'],['public-no-reviews','預約流程 #840','尚無評價'],
+  ...identityCases.map(([id,label])=>[id,'#890 · 全站身分切換',label]),
   ['fresh','FR01','首次建立 · 只有姓名'],['partial','FR01','部分填寫'],['complete','FR01','完整資料 · 尚未儲存'],['work-empty','FR01','工作經驗 · 空白'],['work-new','FR01','新增工作經驗'],['education-empty','FR01','教育經歷 · 空白'],['education-new','FR01','新增教育經歷'],['links-empty','FR01','個人連結 · 選填'],['required-error','FR01','必填驗證'],['image-error','FR01','照片上傳失敗'],['link-error','FR01','連結格式錯誤'],['period-error','FR01','年份錯誤'],['save-error','FR01','儲存失敗 · 保留內容'],['saving','FR01','儲存中'],['leave','FR01','未儲存離開'],
+  ['mentee-profile','學員個人頁 #828（Mentee）','B-1 · 學員個人頁（Mentee 檢視）'],
+diff --git a/app/phase2.css b/app/phase2.css
+index 3ad10b6..736be2a 100644
+--- a/app/phase2.css
++++ b/app/phase2.css
+@@ -25,7 +25,7 @@
+ #xt742 .p2-card-save{position:absolute!important;right:12px;top:12px;width:40px;height:40px;background:hsl(var(--color-background-white));color:var(--p2-text);border-radius:8px}
+ #xt742 .p2-card-save[aria-pressed=true]{background:var(--p2-tint)}
+ #xt742 .p2-card-body{padding:16px 16px 24px}
+-#xt742 .p2-card-name{display:flex;align-items:center;justify-content:space-between;gap:8px}
++#xt742 .p2-card-name{display:flex;align-items:center;gap:8px}
+ #xt742 .p2-card-name h2{font-size:16px;line-height:24px;font-weight:700;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ #xt742 .p2-card-job{font-size:12px;line-height:20px;color:var(--p2-muted);margin:4px 0 12px;min-height:40px}
+ #xt742 .p2-card-stat{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;color:var(--p2-muted)}
+@@ -217,3 +217,11 @@ body[data-xt-device=mobile] #xt742 .p2-tip-fields .p2-amount-options button{font
+ #xt742 .booking-review-score strong{color:var(--brand-dark);font-size:26px;line-height:32px}
+ #xt742 .booking-review-comment{line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+ @container xtdevice (max-width:699px){#xt742 .booking-review{padding:16px;gap:10px}}
++
++#xt742 .p2-card-rating{margin-inline-start:auto;white-space:nowrap;font-size:14px;font-weight:700;color:var(--p2-text)}
++#xt742 .p2-card-save{display:grid;place-items:center;border:1px solid var(--p2-line)}
++#xt742 .identity-menu nav small{margin-inline-start:auto;color:var(--xm-secondary,currentColor)}
++
++#xt742 .p2-favorites{padding-top:40px}
++#xt742 .p2-favorites h1{font-size:28px;font-weight:700;line-height:1.4}
++#xt742 .p2-favorites-count{color:var(--p2-muted);font-size:14px;margin:12px 0 24px}

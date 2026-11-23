@@ -39,7 +39,10 @@ jobs:
       - name: Sync latest Storybook index metadata & build Design Hub KB JSON
         run: |
           node scripts/sync-storybook-baseline.mjs || true
-          node scripts/build-design-hub-kb.mjs || true
+          node scripts/check-component-library.mjs
+          node scripts/check-mentor-integration.mjs
+          node scripts/check-chat-integration.mjs
+          node scripts/build-design-hub-kb.mjs
 
       - name: Deploy Production (main branch)
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

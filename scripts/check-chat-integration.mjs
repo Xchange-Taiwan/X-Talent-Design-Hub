@@ -20,7 +20,14 @@ for (const id of chat[0].components) {
 }
 const provenance = JSON.parse(fs.readFileSync(path.join(root, 'chat/integration.json')));
 for (const [file, hash] of Object.entries(provenance.sourceFiles)) {
-  const actual = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'chat', file))).digest('hex');
+  let source = fs.readFileSync(path.join(root,'chat',file));
+  if (file === 'app.js') {
+    const code = source.toString();
+    const hooks = /^[ \t]*\/\* HUB_ACCOUNT_START \*\/[\s\S]*?\/\* HUB_ACCOUNT_END \*\/\n/gm;
+    assert.equal(Array.from(code.matchAll(hooks)).length, 4, 'The chat adapter has four explicit integration points');
+    source = Buffer.from(code.replace(hooks,''));
+  }
+  const actual = crypto.createHash('sha256').update(source).digest('hex');
   assert.equal(actual, hash, `Approved source differs: ${file}`);
 }
 const preview = fs.readFileSync(path.join(root, 'chat/preview.html'), 'utf8');

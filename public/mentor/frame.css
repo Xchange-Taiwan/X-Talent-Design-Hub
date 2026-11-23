@@ -1,6 +1,115 @@
-#xt742 .fr-review,#xt742 .fr-review-shortcuts,#xt742 .fr-review-note {display:none}
+#xt742 .fr-review,#xt742 .fr-review-shortcuts,#xt742 .fr-review-note:not(.fr-audit .fr-review-note) {display:none}
 #xt742 .xt-device-stage {margin:0;padding:0}
 #xt742 .xt-device-stage .xt-device-surface {width:100%;max-width:none;border:0;border-radius:0;box-shadow:none}
 #xt742 .xt-device-stage .xt-device-surface .xt-product {height:100dvh;max-height:none}
 html:not(.verified) #xt742 {visibility:hidden}
 .mentor-inspect {position:fixed;pointer-events:none;z-index:2147483647;border:2px solid #007aff;border-radius:4px}
+
+/* Single-session feedback uses the #730/#740 queue's card treatment. */
+#xt742 .xt-overlay-anchor>div:has(+.fr-booking-dialog.feedback-dialog){
+  background:#1d1f2538;
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+#xt742 .fr-booking-dialog.feedback-dialog{box-shadow:0 12px 28px #00000012}
+#xt742 .fr-booking-dialog.feedback-dialog .reason-options,
+#xt742 .fr-booking-dialog.feedback-dialog .choice-row{display:grid;gap:6px}
+#xt742 .fr-booking-dialog.feedback-dialog .choice-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label{
+  display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 12px;
+  border:1px solid hsl(var(--color-background-border));border-radius:6px;
+  background:hsl(var(--color-background-white));font-size:14px;line-height:20px;cursor:pointer;
+}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) input{width:16px;height:16px;margin:0}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:hover,
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:has(:checked){background:var(--color-brand-50)}
+#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label:has(:checked){border-color:hsl(var(--color-brand-700))}
+@media(max-width:640px){#xt742 .fr-booking-dialog.feedback-dialog :is(.choice-row,.reason-options) label{min-height:44px}}
+
+/* The embedded canvas can be shorter than a product page, even at desktop width. */
+body[data-xt-device] .identity-menu[role=dialog] {
+  display:flex;flex-direction:column;
+  max-height:var(--radix-popover-content-available-height,calc(100dvh - 80px));
+  overflow-y:auto;
+}
+.identity-menu nav{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.identity-menu .identity-options{flex:none}
+
+/* The product is the scroll container. Keep the end of a tall plan list in reach. */
+#xt742 .xc-public .mp-booking:has(> .xc-plan-rail) {
+  max-height: none;
+  overflow: visible;
+  top: min(96px, calc(100dvh - var(--hub-plan-height, 100dvh) - 16px));
+}
+
+#xt742 :is(.xc-public, .xc-gallery) .xc-plan-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "meta meta" "title price" "description description" "date date" "action action";
+  align-items: baseline;
+  gap: 8px 12px;
+  padding: 18px;
+
+  & > .xc-plan-kicker { grid-area: meta; }
+  & > h3 { grid-area: title; margin: 0; overflow-wrap: anywhere; }
+  & > p { grid-area: description; display: block; margin: 0; }
+  & > .xc-plan-price {
+    grid-area: price;
+    margin: 0;
+    white-space: nowrap;
+  }
+  & > .xc-plan-price strong { font-size: 18px; line-height: 26px; }
+  & > .xc-plan-next {
+    grid-area: date;
+    margin: 4px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--xm-line);
+  }
+  & > button { grid-area: action; margin: 4px 0 0; }
+}
+
+/* Reservation questionnaire disclosure, shared by both booking views. */
+#xt742 .xc-booking-questions:not(.booking-private-reason) {
+  padding: 0;
+  background: transparent;
+
+  & > summary {
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    gap: 12px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    background: var(--xm-surface);
+    border: 1px solid var(--xm-line);
+    border-radius: 8px;
+    color: var(--xm-ink);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  & > summary::-webkit-details-marker { display: none; }
+  & > summary:hover { background: var(--xm-canvas); }
+  & > summary:focus-visible { outline: 2px solid var(--xm-brand-ink); outline-offset: 2px; }
+  & > summary > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+    white-space: nowrap;
+    color: hsl(var(--color-text-primary) / .72);
+    font-size: 13px;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  & > summary svg { display: block; width: 16px; height: 16px; }
+  &[open] > summary svg { transform: rotate(180deg); }
+  & > dl {
+    margin: 12px 0 0;
+    padding: 0 0 0 12px;
+    border-inline-start: 2px solid var(--xm-line);
+    gap: 12px;
+  }
+  & dt { color: hsl(var(--color-text-primary) / .72); font-size: 13px; line-height: 20px; }
+  & dd { margin: 2px 0 0; color: var(--xm-ink); font-size: 14px; line-height: 22px; }
+}

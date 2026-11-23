@@ -30,3 +30,64 @@ html,body{min-width:1120px}.app-header{min-width:1120px}.context-top{flex-wrap:n
 body{height:100dvh;overflow:hidden}.main{height:calc(100dvh - 64px);display:flex;flex-direction:column;min-height:0}.context{flex:none}.screens-view{display:flex;flex:1;flex-direction:column;min-height:0}.canvas{min-height:0;flex:1}.canvas #frame-wrap{height:100%}.canvas iframe#product{height:100%;min-height:0}
 /* Keep the selected 768px / 390px preview width inside the frame, too. */
 .canvas #frame-wrap{border:0;box-shadow:0 0 0 1px #d1d1d659,0 4px 18px #1c1c1e05}
+
+.inspector-title {cursor:grab;touch-action:none;user-select:none}
+.inspector-title:active {cursor:grabbing}
+.inspector-title button {cursor:pointer}
+.inspector {max-width:calc(100vw - 8px);max-height:calc(100dvh - 8px)}
+.context-component .component-state.is-story {background:#f0f1f4;color:#545962}
+
+/* On narrow devices the existing directory button opens the sidebar over the canvas. */
+@media (max-width:1119px) {
+  html,body,.app-header{min-width:0}
+  .main{margin-left:0;min-width:0}
+  .sidebar{z-index:60;max-width:calc(100vw - 52px);box-shadow:4px 10px 24px #1c1c1e24}
+  .context{padding-inline:16px}
+  .context-top,.context-bottom{min-width:0;flex-wrap:wrap;gap:8px}
+  .screens-view{padding:10px 12px 12px}
+}
+@media (max-width:650px) {
+  .app-header{padding-inline:8px;gap:8px}
+  .brand{gap:2px}
+  .brand strong{display:none}
+  .main-nav{margin-left:0;gap:0}
+  .main-nav button{padding:6px 10px;min-width:0}
+  .ticket-filter{min-width:0;flex:1}
+  .ticket-filter select{width:100%;min-width:0;max-width:100%}
+  .context{padding:8px}
+  .context-top,.context-bottom{gap:4px 6px}
+  .context-top .page-heading{flex:1 1 calc(100% - 90px);min-width:0}
+  .context-top h1{font-size:17px;line-height:1.35}
+  .context-top :is(#reset,#share){order:1}
+  .context-top :is(.device-control,.mode-control){order:2;margin:0}
+  .context-top :is(.device-control,.mode-control) button{padding:4px 8px;min-width:0}
+  .context-bottom{margin-top:6px}
+  .context-bottom .related{min-width:0;max-width:100%}
+  .context-bottom #related-tags{display:flex;max-width:100%;gap:4px;overflow-x:auto}
+  .context-bottom .scenario-field{margin:0;max-width:100%;min-width:0;flex:1 1 170px}
+  .scenario-field select{flex:1;min-width:0;width:0}
+  .screens-view{padding:4px}
+  .inspector{right:4px;bottom:4px;max-width:calc(100vw - 8px)}
+}
+
+.library-scope {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 12px;
+  padding: 3px;
+  border-radius: 9px;
+  background: #ebebf1;
+}
+.library-scope button {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--secondary);
+  font-size: 13px;
+}
+.library-scope button[aria-pressed="true"] {
+  background: #fff;
+  color: #005fcc;
+  box-shadow: 0 1px 3px #1d24341a;
+}

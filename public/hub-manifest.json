@@ -6,6 +6,7 @@
   "screens": [
     {
       "id": "chat-654",
+      "hubScreenId": "chat",
       "title": "站內聊聊 · T01–T10 完整互動流程",
       "ticket": "#654 / #727 / #729 / #774 / #736 / #753 / #756 / #734 / #830 / #771 / #772 / #775 / #847",
       "status": "Approved",
@@ -13,11 +14,12 @@
       "updatedAt": "2026-11-17",
       "path": "./?view=screens&screen=chat&ticket=654&scenario=list",
       "notes": "Bonny 定案之導師個人頁統一基底與站內聊聊原型：上方 100% 滿寬 4 格摘要列（評分、已完成 1-on-1、經驗、地點），導師「產業」改用單純 #hashtag 置於左欄「關於我」標題正下方、自我介紹內文上方（移除頂部獨立產業橫列）；下方雙欄頂部水平齊平（左欄簡介｜評價 N 分頁與姓氏圓形頭像評價列表，右欄固定預約區）。聊聊：傳送失敗採紅色驚嘆號「重新傳送／刪除」選單（#729），已刪除導師保留歷史對話與無法傳訊說明且不顯示搜尋導師按鈕（#727），雙方預約卡皆可開啟空白聊天畫面（#774）。 2026/11/13 Julie 確認；整合最新 60 個情境、操作／檢視模式與 4 個聊聊組合元件。 2026/11/17 Bonny 確認 v23：連續送出、500 字、跨頁草稿、建議追加、手機浮動入口與返回箭頭、白色送出圖示。 2026/11/17 Julie #847：移除預約問題與自動傳訊；婉拒／取消原因必填，僅填寫者本人歷史卡可查看。",
-      "sourceCommit": "fa482dba65928ac7409aaf96c6c8fcd5b5859a2e",
-      "sourceVersion": 25
+      "sourceCommit": "e46fc8354d8ae995b4022cf74eb3eac28f6da67f",
+      "sourceVersion": 26
     },
     {
       "id": "mentor-card-737",
+      "hubScreenId": "mentor-search",
       "title": "搜尋頁 Mentor 卡片顯示平均分與收藏 (Option B)",
       "ticket": "#737 / #753",
       "status": "Approved",
