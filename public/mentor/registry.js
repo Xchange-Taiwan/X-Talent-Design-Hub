@@ -77,11 +77,12 @@
    ["support-timeout","C-3 · 外部付款逾時／保留內容"],
    ["support-success","C-3 · 支持完成"],
   ]},
-  {id:'feedback-tip',name:'回饋贊助與同職能推薦',role:'mentee',ticket:'#834',icon:'messages-square',scenarios:[
+  {id:'feedback-tip',name:'回饋贊助與同職能推薦',version:'v72 · dbc28b1',date:'2026-11-23',role:'mentee',ticket:'#834',icon:'messages-square',scenarios:[
    ["mentee-history","H-1 · 歷史紀錄／同職能推薦"],
    ["mentee-empty","H-1 · 尚無預約"],
    ["mentee-auto-cancelled","H-1 · 系統自動取消／不可評價"],
-   ["tip-feedback","H-2 · 填寫回饋與贊助"],
+   ["tip-feedback","H-2 · 免費場次回饋與贊助"],
+   ["tip-feedback-paid","H-2 · 收費場次回饋"],
    ["tip-checkout","H-3 · 確認贊助付款"],
    ["tip-failed","H-3 · 付款失敗／僅當下重試"],
    ["tip-success","H-1 · 已評價／已贊助"],
@@ -105,7 +106,7 @@
  calendar.name='我的導師頁面';
  for(const flow of flows){
   if(data.screens.some(s=>s.id===flow.id))throw Error('Duplicate screen: '+flow.id);
-  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:'2026-11-19',version:'751c9d7',sourceKind:'design',source:'https://xtalent-mentor-742.bonny80.chatgpt.site/?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
+  data.screens.push({id:flow.id,name:flow.name,module:'mentor',group:flow.role==='mentor'?'導師管理後台':'付款與贊助',icon:flow.icon,tickets:[flow.ticket.slice(1)],date:flow.date||'2026-11-19',version:flow.version||'751c9d7',sourceKind:'design',source:'https://xtalent-mentor-742.bonny80.chatgpt.site/?scene='+flow.scenarios[0][0],scenarios:flow.scenarios,components:['header','button'],note:flow.name});
  }
  const ticketLinks={
   'public-profile':['830','840','736','758','654','862','962'], 'mentor-calendar':['830','837','962'],

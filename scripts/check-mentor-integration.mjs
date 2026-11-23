@@ -32,6 +32,9 @@ for(const [id,entry] of Object.entries(routes)){
   }
   assert.equal(entry.ticket,flows[id]??(id==='public-profile'?'#840':entry.role==='mentee'?'#828':'#830'));
 }
+for(const scene of ['mentee-history','tip-feedback','tip-feedback-paid','tip-checkout','tip-success']){
+  assert.equal(routes['feedback-tip'].scenes[scene],scene);
+}
 assert.equal(routes['mentor-form'].scenes['owner-edit'],'owner-edit');
 assert.equal(routes['mentee-edit'].scenes.default,'mentee-edit');
 assert.equal(routes['mentor-calendar'].scenes.owner,'owner-filled');

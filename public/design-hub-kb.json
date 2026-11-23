@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-20T01:18:42.353Z",
+  "syncedAt": "2026-11-23T07:07:19.432Z",
   "revision": "github-alignment-2026-11-12",
   "designHubProductionUrl": "https://x-talent-design-hub.x-talent.workers.dev",
   "designHubPreviewUrl": "https://x-talent-design-hub-preview.x-talent.workers.dev",
@@ -638,8 +638,8 @@
           "tickets": [
             "834"
           ],
-          "version": "751c9d7",
-          "scenariosCount": 7,
+          "version": "v72 · dbc28b1",
+          "scenariosCount": 8,
           "hubUrl": "https://x-talent-design-hub.x-talent.workers.dev/?view=screens&screen=feedback-tip"
         }
       ]
@@ -2482,8 +2482,8 @@
       "tickets": [
         "834"
       ],
-      "date": "2026-11-19",
-      "version": "751c9d7",
+      "date": "2026-11-23",
+      "version": "v72 · dbc28b1",
       "sourceKind": "design",
       "sourceUrl": "https://xtalent-mentor-742.bonny80.chatgpt.site/?scene=mentee-history",
       "scenarios": [
@@ -2504,8 +2504,13 @@
         },
         {
           "key": "tip-feedback",
-          "label": "H-2 · 填寫回饋與贊助",
+          "label": "H-2 · 免費場次回饋與贊助",
           "mentorScene": "tip-feedback"
+        },
+        {
+          "key": "tip-feedback-paid",
+          "label": "H-2 · 收費場次回饋",
+          "mentorScene": "tip-feedback-paid"
         },
         {
           "key": "tip-checkout",
